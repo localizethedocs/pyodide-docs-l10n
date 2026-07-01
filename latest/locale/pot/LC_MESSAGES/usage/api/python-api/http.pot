@@ -1,0 +1,607 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/python-api/http.md:1
+msgid "pyodide.http"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:3
+msgid ""
+"The `pyodide.http` module provides HTTP client functionality specifically "
+"designed for browser and WebAssembly environments where traditional Python "
+"HTTP libraries (like `urllib`) face significant limitations."
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:5
+msgid "Network Limitations in Pyodide"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:7
+msgid ""
+"Due to browser security constraints and WebAssembly's sandboxed environment, "
+"standard Python networking libraries have several limitations:"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:9
+msgid ""
+"**No raw socket access**: Browser security prevents direct socket operations"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:10
+msgid ""
+"**CORS restrictions**: Cross-origin requests are limited by browser CORS "
+"policies"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:11
+msgid ""
+"**No synchronous networking in main thread**: Traditional blocking HTTP "
+"calls can freeze the browser UI"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:12
+msgid ""
+"**Limited protocol support**: Only HTTP/HTTPS protocols are available, no "
+"TCP/UDP sockets"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:14
+msgid "HTTP Client Alternatives"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:16
+msgid "Pyodide provides two complementary HTTP client solutions:"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:18
+msgid "`pyfetch` - Asynchronous HTTP Client"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:20
+msgid "Based on the browser's native Fetch API, `pyfetch` provides:"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:21
+msgid ""
+"**Asynchronous operations**: Non-blocking HTTP requests using async/await"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:22
+msgid ""
+"**Full browser integration**: Leverages browser's networking stack and "
+"security features"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:23
+msgid ""
+"**Modern API**: Clean, Promise-based interface similar to JavaScript fetch()"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:25
+msgid ""
+"# Asynchronous HTTP request\n"
+"from pyodide.http import pyfetch\n"
+"response = await pyfetch(\"https://api.example.com/data\")\n"
+"data = await response.json()\n"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:32
+msgid "`pyxhr` - Synchronous HTTP Client"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:34
+msgid "Based on XMLHttpRequest, `pyxhr` provides:"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:35
+msgid ""
+"**Synchronous operations**: Blocking HTTP requests for simpler code patterns"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:36
+msgid "**requests-like API**: Familiar interface for Python developers"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:37
+msgid ""
+"**Browser compatibility**: Works in all modern browsers supporting "
+"XMLHttpRequest"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:38
+msgid "**Lightweight**: Minimal overhead for simple HTTP operations"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:40
+msgid ""
+"# Synchronous HTTP request\n"
+"from pyodide.http import pyxhr\n"
+"response = pyxhr.get(\"https://api.example.com/data\")\n"
+"data = response.json()\n"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:47
+msgid "Choosing Between pyfetch and pyxhr"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:49
+msgid "**Use `pyfetch` when:**"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:50
+msgid "Working with async/await patterns"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:51
+msgid "Need advanced features like streaming or request cancellation"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:52
+msgid "Building responsive web applications that shouldn't block the UI"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:53
+msgid "Integrating with other asynchronous Python code"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:55
+msgid "**Use `pyxhr` when:**"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:56
+msgid "Prefer synchronous, blocking operations"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:57
+msgid "Porting existing code that uses requests-like patterns"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:58
+msgid "Need simple HTTP operations without async complexity"
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:59
+msgid "Working in environments where sync operations are acceptable"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of pyodide.http:1
+msgid "**Exceptions:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+msgid ":py:obj:`AbortError <pyodide.http.AbortError>`\\ \\(reason\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+msgid ":py:obj:`BodyUsedError <pyodide.http.BodyUsedError>`\\ \\(\\*args\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+msgid ""
+":py:obj:`HttpStatusError <pyodide.http.HttpStatusError>`\\ \\(status\\, "
+"status\\_text\\, url\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring
+#: pyodide.http._exceptions.HttpStatusError:1
+msgid ""
+"A subclass of :py:exc:`OSError` raised by :py:meth:`FetchResponse."
+"raise_for_status` if the response status is 4XX or 5XX."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of pyodide.http:1
+msgid "**Classes:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+msgid ""
+":py:obj:`FetchResponse <pyodide.http.FetchResponse>`\\ \\(request\\, "
+"js\\_response\\[\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http:1:<autosummary>:1
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring
+#: pyodide.http._pyfetch.FetchResponse:1
+msgid "A wrapper for a Javascript fetch :js:data:`Response`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of pyodide.http:1
+msgid "**Functions:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
+#: pyodide.http._exceptions.AbortError:1:<autosummary>:1
+msgid ":py:obj:`open_url <pyodide.http.open_url>`\\ \\(url\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:1
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring
+#: pyodide.http._exceptions.AbortError:1:<autosummary>:1
+msgid "Fetches a given URL synchronously."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
+#: pyodide.http._exceptions.AbortError:1:<autosummary>:1
+msgid ""
+":py:obj:`pyfetch <pyodide.http.pyfetch>`\\ \\(request\\, \\/\\, \\*\\[\\, "
+"signal\\, fetcher\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:1
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring
+#: pyodide.http._exceptions.AbortError:1:<autosummary>:1
+msgid "Fetch the url and return the response."
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:0
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:0 pyodide.http.open_url:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse:3
+msgid "URL that was fetched"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse:5
+msgid "A :py:class:`~pyodide.ffi.JsProxy` of the fetch :js:class:`Response`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse:7
+msgid "The abort controller that may be used to cancel the fetch request."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse:9
+msgid "The abort signal that was used for the fetch request."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.abort:1
+msgid "Abort the fetch request."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.abort:3
+msgid ""
+"In case ``abort_controller`` is not set, a :py:exc:`ValueError` is raised."
+msgstr ""
+
+#: ../../../usage/api/python-api/http.md:0
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:0 pyodide.http.open_url:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.abort:7
+#: pyodide.http._pyfetch.FetchResponse.raise_for_status:4
+#: pyodide.http._pyfetch.FetchResponse.unpack_archive:18
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.body_used:1
+msgid "Has the response been used yet?"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.body_used:3
+msgid ""
+"If so, attempting to retrieve the body again will raise an :py:exc:"
+"`OSError`. Use :py:meth:`~FetchResponse.clone` first to avoid this. See :js:"
+"attr:`Response.bodyUsed`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.buffer:1
+msgid "Return the response body as a Javascript :js:class:`ArrayBuffer`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.buffer:3
+msgid "See :js:meth:`Response.arrayBuffer`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.buffer:6
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
+"JsBuffer\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.bytes:1
+msgid "Return the response body as a bytes object"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.bytes:4
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bytes\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.clone:1
+msgid "Return an identical copy of the :py:class:`FetchResponse`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.clone:3
+msgid ""
+"This method exists to allow multiple uses of :py:class:`FetchResponse` "
+"objects. See :js:meth:`Response.clone`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:17
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring
+#: pyodide.http._pyfetch.FetchResponse.clone:7
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.http."
+"\\_pyfetch.FetchResponse\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.headers:1
+msgid "Response headers as dictionary."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.json:1
+msgid ""
+"Treat the response body as a JSON string and use :py:func:`json.loads` to "
+"parse it into a Python object."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.json:4
+msgid "Any keyword arguments are passed to :py:func:`json.loads`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.json:8
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:data\\:\\`\\~typing.Any\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.memoryview:1
+msgid "Return the response body as a :py:class:`memoryview` object"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.memoryview:4
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`memoryview\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.ok:1
+msgid "Was the request successful?"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.ok:3
+msgid "See :js:attr:`Response.ok`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.raise_for_status:1
+msgid ""
+"Raise an :py:exc:`~pyodide.http.HttpStatusError` if the status of the "
+"response is an error (4xx or 5xx)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.redirected:1
+msgid "Was the request redirected?"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.redirected:3
+msgid "See :js:attr:`Response.redirected`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.status:1
+msgid "Response status code"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.status:3
+msgid "See :js:attr:`Response.status`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.status_text:1
+msgid "Response status text"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.status_text:3
+msgid "See :js:attr:`Response.statusText`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.string:1
+#: pyodide.http._pyfetch.FetchResponse.text:1
+msgid "Return the response body as a string"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.string:3
+msgid "Does the same thing as :py:meth:`FetchResponse.text`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.string:5
+#: pyodide.http._pyfetch.FetchResponse.text:4
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`str\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.string:10
+msgid "Use :py:meth:`FetchResponse.text` instead."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.type:1
+msgid "The type of the response."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.type:3
+msgid "See :js:attr:`Response.type`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.unpack_archive:1
+msgid "Treat the data as an archive and unpack it into target directory."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.unpack_archive:3
+msgid ""
+"Assumes that the file is an archive in a format that :py:mod:`shutil` has an "
+"unpacker for. The arguments ``extract_dir`` and ``format`` are passed "
+"directly on to :py:func:`shutil.unpack_archive`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.unpack_archive:8
+msgid ""
+"Directory to extract the archive into. If not provided, the current working "
+"directory is used."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http._pyfetch.FetchResponse.unpack_archive:11
+msgid ""
+"The archive format: one of ``\"zip\"``, ``\"tar\"``, ``\"gztar\"``, "
+"``\"bztar\"``. Or any other format registered with :py:func:`shutil."
+"register_unpack_format`. If not provided, :py:meth:`unpack_archive` will use "
+"the archive file name extension and see if an unpacker was registered for "
+"that extension. In case none is found, a :py:exc:`ValueError` is raised."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.url:1
+msgid "The url of the response."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
+#: pyodide.http.FetchResponse.url:3
+msgid ""
+"The value may be different than the url passed to fetch. See :js:attr:"
+"`Response.url`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
+#: pyodide.http._exceptions.HttpStatusError:5
+msgid "The http status code of the request"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
+#: pyodide.http._exceptions.HttpStatusError:7
+msgid "The http status text of the request"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
+#: pyodide.http._exceptions.HttpStatusError:9
+msgid "The url that was requested"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:3
+msgid ""
+"The download of binary files is not supported. To download binary files use :"
+"func:`pyodide.http.pyfetch` which is asynchronous."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:6
+msgid ""
+"It will not work in Node unless you include a polyfill for :js:class:"
+"`XMLHttpRequest`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:9
+msgid "URL to fetch"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:11
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~io.StringIO\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http.open_url:12
+msgid "The contents of the URL."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:20 pyodide.http.open_url:15
+msgid "Examples"
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:3
+msgid ""
+"This functions provides a similar API to :js:func:`fetch` however it is "
+"designed to be convenient to use from Python. The :class:`~pyodide.http."
+"FetchResponse` has methods with the output types already converted to Python "
+"objects."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:9
+msgid "Either a string URL or a JavaScript Request object to fetch."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:11
+msgid "Abort signal to use for the fetch request."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:13
+msgid "Fetcher to use for the fetch request."
+msgstr ""
+
+#: ../../../../src/py/pyodide/http/__init__.py:docstring of
+#: pyodide.http._pyfetch.pyfetch:15
+msgid ""
+"keyword arguments are passed along as `optional parameters to the fetch API "
+"<https://developer.mozilla.org/en-US/docs/Web/API/fetch#options>`_."
+msgstr ""
