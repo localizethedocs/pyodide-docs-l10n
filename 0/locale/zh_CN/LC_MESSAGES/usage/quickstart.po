@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/quickstart.md:3
+msgid "Getting started"
+msgstr ""
+
+#: ../../../usage/quickstart.md:5
+msgid "Try it online"
+msgstr ""
+
+#: ../../../usage/quickstart.md:7
+msgid ""
+"Try Pyodide in a [REPL](../console.html){.external} directly in your browser "
+"(no installation needed)."
+msgstr ""
+
+#: ../../../usage/quickstart.md:10
+msgid "Setup"
+msgstr ""
+
+#: ../../../usage/quickstart.md:12
+msgid ""
+"There is a [complete example](complete-example) that you can copy & paste "
+"into an html file below. To include Pyodide in your project you can use the "
+"following CDN URL:"
+msgstr ""
+
+#: ../../../usage/quickstart.md:16
+msgid "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:20
+msgid ""
+"You can also download a release from [GitHub releases](https://github.com/"
+"pyodide/pyodide/releases) or build Pyodide yourself. See {ref}"
+"`downloading_deploying` for more details."
+msgstr ""
+
+#: ../../../usage/quickstart.md:24
+msgid ""
+"The `pyodide.js` file defines a single async function called {js:func}"
+"`~exports.loadPyodide` which sets up the Python environment and returns {js:"
+"mod}`the Pyodide top level namespace <pyodide>`."
+msgstr ""
+
+#: ../../../usage/quickstart.md:28
+msgid ""
+"async function main() {\n"
+"  let pyodide = await loadPyodide();\n"
+"  // Pyodide is now ready to use...\n"
+"  console.log(pyodide.runPython(`\n"
+"    import sys\n"
+"    sys.version\n"
+"  `));\n"
+"};\n"
+"main();\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:40
+msgid "Running Python code"
+msgstr ""
+
+#: ../../../usage/quickstart.md:42
+msgid ""
+"Python code is run using the {js:func}`pyodide.runPython` function. It takes "
+"as input a string of Python code. If the code ends in an expression, it "
+"returns the result of the expression, translated to JavaScript objects (see "
+"{ref}`type-translations`). For example the following code will return the "
+"version string as a JavaScript string:"
+msgstr ""
+
+#: ../../../usage/quickstart.md:48
+msgid ""
+"pyodide.runPython(`\n"
+"  import sys\n"
+"  sys.version\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:55
+msgid ""
+"After importing Pyodide, only packages from the standard library are "
+"available. See {ref}`loading_packages` for information about loading "
+"additional packages."
+msgstr ""
+
+#: ../../../usage/quickstart.md:60
+msgid "Complete example"
+msgstr ""
+
+#: ../../../usage/quickstart.md:62
+msgid "Create and save a test `index.html` page with the following contents:"
+msgstr ""
+
+#: ../../../usage/quickstart.md:64
+msgid ""
+"<!doctype html>\n"
+"<html>\n"
+"  <head>\n"
+"      <script src=\"https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide."
+"js\"></script>\n"
+"  </head>\n"
+"  <body>\n"
+"    Pyodide test page <br>\n"
+"    Open your browser console to see Pyodide output\n"
+"    <script type=\"text/javascript\">\n"
+"      async function main(){\n"
+"        let pyodide = await loadPyodide();\n"
+"        console.log(pyodide.runPython(`\n"
+"            import sys\n"
+"            sys.version\n"
+"        `));\n"
+"        pyodide.runPython(\"print(1 + 2)\");\n"
+"      }\n"
+"      main();\n"
+"    </script>\n"
+"  </body>\n"
+"</html>\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:88
+msgid "Alternative Example"
+msgstr ""
+
+#: ../../../usage/quickstart.md:90
+msgid ""
+"<!doctype html>\n"
+"<html>\n"
+"  <head>\n"
+"    <script src=\"https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide."
+"js\"></script>\n"
+"  </head>\n"
+"\n"
+"  <body>\n"
+"    <p>\n"
+"      You can execute any Python code. Just enter something in the box below "
+"and\n"
+"      click the button.\n"
+"    </p>\n"
+"    <input id=\"code\" value=\"sum([1, 2, 3, 4, 5])\" />\n"
+"    <button onclick=\"evaluatePython()\">Run</button>\n"
+"    <br />\n"
+"    <br />\n"
+"    <div>Output:</div>\n"
+"    <textarea id=\"output\" style=\"width: 100%;\" rows=\"6\" disabled></"
+"textarea>\n"
+"\n"
+"    <script>\n"
+"      const output = document.getElementById(\"output\");\n"
+"      const code = document.getElementById(\"code\");\n"
+"\n"
+"      function addToOutput(s) {\n"
+"        output.value += \">>>\" + code.value + \"\\n\" + s + \"\\n\";\n"
+"      }\n"
+"\n"
+"      output.value = \"Initializing...\\n\";\n"
+"      // init Pyodide\n"
+"      async function main() {\n"
+"        let pyodide = await loadPyodide();\n"
+"        output.value += \"Ready!\\n\";\n"
+"        return pyodide;\n"
+"      }\n"
+"      let pyodideReadyPromise = main();\n"
+"\n"
+"      async function evaluatePython() {\n"
+"        let pyodide = await pyodideReadyPromise;\n"
+"        try {\n"
+"          let output = pyodide.runPython(code.value);\n"
+"          addToOutput(output);\n"
+"        } catch (err) {\n"
+"          addToOutput(err);\n"
+"        }\n"
+"      }\n"
+"    </script>\n"
+"  </body>\n"
+"</html>\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:140
+msgid "Accessing Python scope from JavaScript"
+msgstr ""
+
+#: ../../../usage/quickstart.md:142
+msgid ""
+"All functions and variables defined in the Python global scope are "
+"accessible via the {js:attr}`pyodide.globals` object."
+msgstr ""
+
+#: ../../../usage/quickstart.md:145
+msgid ""
+"For example, if you run the code `x = [3, 4]` in Python global scope, you "
+"can access the global variable `x` from JavaScript in your browser's "
+"developer console with `pyodide.globals.get(\"x\")`. The same goes for "
+"functions and imports. See {ref}`type-translations` for more details."
+msgstr ""
+
+#: ../../../usage/quickstart.md:150
+msgid ""
+"You can try it yourself in the browser console. Go to the [Pyodide REPL URL]"
+"(../console.html){.external} and type the following into the browser console:"
+msgstr ""
+
+#: ../../../usage/quickstart.md:154
+msgid ""
+"pyodide.runPython(`\n"
+"  x = [3, 4]\n"
+"`);\n"
+"pyodide.globals.get('x').toJs();\n"
+"// >>> [ 3, 4 ]\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:162
+msgid ""
+"You can assign new values to Python global variables or create new ones from "
+"Javascript."
+msgstr ""
+
+#: ../../../usage/quickstart.md:165
+msgid ""
+"// re-assign a new value to an existing variable\n"
+"pyodide.globals.set(\"x\", 'x will be now string');\n"
+"\n"
+"// add the js \"alert\" function to the Python global scope\n"
+"// this will show a browser alert if called from Python\n"
+"pyodide.globals.set(\"alert\", alert);\n"
+"\n"
+"// add a \"square\" function to Python global scope\n"
+"pyodide.globals.set(\"square\", x => x*x);\n"
+"\n"
+"// Test the new \"square\" Python function\n"
+"pyodide.runPython(\"square(3)\");\n"
+msgstr ""
+
+#: ../../../usage/quickstart.md:180
+msgid "Accessing JavaScript scope from Python"
+msgstr ""
+
+#: ../../../usage/quickstart.md:182
+msgid ""
+"The JavaScript scope can be accessed from Python using the `js` module (see "
+"{ref}`type-translations_using-js-obj-from-py`). We can use it to access "
+"global variables and functions from Python. For instance, we can directly "
+"manipulate the DOM:"
+msgstr ""
+
+#: ../../../usage/quickstart.md:186
+msgid ""
+"import js\n"
+"\n"
+"div = js.document.createElement(\"div\")\n"
+"div.innerHTML = \"<h1>This element was created from Python</h1>\"\n"
+"js.document.body.prepend(div)\n"
+msgstr ""
