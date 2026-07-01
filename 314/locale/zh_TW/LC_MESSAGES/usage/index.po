@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../../../usage/index.md:5
 msgid "Web browsers"
-msgstr ""
+msgstr "網頁瀏覽器"
 
 #: ../../../usage/index.md:7
 msgid ""

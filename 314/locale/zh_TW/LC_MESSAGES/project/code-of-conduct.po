@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../../CODE-OF-CONDUCT.md:2
 msgid "Code of Conduct"
-msgstr ""
+msgstr "行為守則"
 
 #: ../../../../CODE-OF-CONDUCT.md:4
 msgid "Conduct"

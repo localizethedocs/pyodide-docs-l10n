@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../development/testing.md:3
 msgid "Testing and benchmarking"
-msgstr ""
+msgstr "測試與基準測試"
 
 #: ../../../development/testing.md:5
 msgid "Testing"

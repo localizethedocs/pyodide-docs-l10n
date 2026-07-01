@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../../usage/socket.md:39
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: ../../../usage/socket.md:41
 msgid "Using sockets directly in Python"

@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../../../usage/quickstart.md:60
 msgid "Complete example"
-msgstr ""
+msgstr "完整範例"
 
 #: ../../../usage/quickstart.md:62
 msgid "Create and save a test `index.html` page with the following contents:"

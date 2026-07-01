@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../development/maintainers.md:3
 msgid "Maintainer information"
-msgstr ""
+msgstr "維護者資訊"
 
 #: ../../../development/maintainers.md:5
 msgid "Making a release"
