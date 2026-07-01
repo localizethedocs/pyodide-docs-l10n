@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/keyboard-interrupts.md:3
 msgid "Interrupting execution"
-msgstr ""
+msgstr "中斷執行"
 
 #: ../../../usage/keyboard-interrupts.md:5
 msgid ""
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../../usage/keyboard-interrupts.md:65
 msgid "Allowing JavaScript code to be interrupted"
-msgstr ""
+msgstr "允許中斷 JavaScript 程式碼"
 
 #: ../../../usage/keyboard-interrupts.md:67
 msgid ""

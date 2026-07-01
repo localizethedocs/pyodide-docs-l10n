@@ -356,7 +356,7 @@ msgstr ""
 #: ../../../usage/api/js-api.md:279 ../../../usage/api/js-api.md:503
 #: ../../../usage/api/js-api.md:576 ../../../usage/api/js-api.md:750
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: ../../../usage/api/js-api.md:281
 msgid ""

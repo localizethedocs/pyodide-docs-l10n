@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/faq.md:1
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "常見問題"
 
 #: ../../../usage/faq.md:5
 msgid "How can I load external files in Pyodide?"

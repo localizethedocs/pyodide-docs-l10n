@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/wasm-constraints.md:1
 msgid "Pyodide Python compatibility"
-msgstr ""
+msgstr "Pyodide Python 相容性"
 
 #: ../../../usage/wasm-constraints.md:3
 msgid "Python Standard library"
