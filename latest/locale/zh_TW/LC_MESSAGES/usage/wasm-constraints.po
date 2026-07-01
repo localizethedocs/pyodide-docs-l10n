@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/wasm-constraints.md:1
+msgid "Pyodide Python compatibility"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:3
+msgid "Python Standard library"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:5
+msgid ""
+"Most of the Python standard library is functional, except for the modules "
+"listed in the sections below. A large part of the CPython test suite passes "
+"except for tests skipped in [`src/tests/python_tests.yaml`](https://github."
+"com/pyodide/pyodide/blob/main/src/tests/python_tests.yaml) or via [patches]"
+"(https://github.com/pyodide/pyodide/tree/main/cpython/patches)."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:11
+msgid "Modules with limited functionality"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:13
+msgid ""
+"decimal: The decimal module has C (\\_decimal) and Python (\\_pydecimal) "
+"implementations with the same functionality. The Python implementation is "
+"not available."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:16
+msgid ""
+"pydoc: Help messages for Python builtins are not available by default in "
+"order to reduce the initial download size. You need to call `pyodide."
+"loadPackage('pydoc_data')` or `micropip.install('pydoc_data')` to enable "
+"them."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:21
+msgid ""
+"webbrowser: The original webbrowser module is not available. Instead, "
+"Pyodide includes some method stubs based on browser APIs: `webbrowser."
+"open()`, `webbrowser.open_new()`, `webbrowser.open_new_tab()`."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:25
+msgid ""
+"zoneinfo: The zoneinfo package will only work if you install the timezone "
+"data using the tzdata package (i.e. by calling `pyodide."
+"loadPackage(\"tzdata\")`)"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:28
+msgid ""
+"hashlib: Hash algorithms that are depending on OpenSSL are not available."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:30
+msgid ""
+"ssl: SSL module is replaced with a stub implementation that does not use "
+"OpenSSL. All the methods that depend on OpenSSL will not work as expected or "
+"will raise `NotImplementedError`."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:34
+msgid "Synchronous HTTP requests support"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:36
+msgid ""
+"Packages for `urllib3` and `requests` are included in pyodide. In browser, "
+"these function _roughly_ the same as on other operating systems with some "
+"limitations. In node.js, they are currently untested, they will require at "
+"least a polyfill for synchronous XMLHttpRequest, and WebWorker."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:41
+msgid ""
+"The first limitation is that streaming download of files only works in very "
+"specific circumstances, which are that pyodide has to be running in a web-"
+"worker, and it has to be on a cross-origin isolated website. If either of "
+"these conditions are not met, it will do a non-streaming request, i.e. "
+"download the full request body before it returns from the initial request "
+"call."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:48
+msgid ""
+"Secondly, all network calls are done via the browser. This means you are "
+"subject to the same limitations as any JavaScript network call. This means "
+"you have very little or no control over certificates, timeouts, proxies and "
+"other network related settings. You also are constrained by browser policies "
+"relating to cross-origin requests, sometimes things will be blocked by CORS "
+"policies if the server doesn't serve them with the correct headers."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:55
+msgid "Removed modules"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:57
+msgid ""
+"The following modules are removed from the standard library to reduce "
+"download size and since they currently wouldn't work in the WebAssembly VM,"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:60
+msgid "curses"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:61
+msgid "dbm"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:62
+msgid "ensurepip"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:63
+msgid "fcntl"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:64
+msgid "grp"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:65
+msgid "idlelib"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:66
+msgid "lib2to3"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:67
+msgid "msvcrt"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:68
+msgid "pwd"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:69
+msgid "resource"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:70
+msgid "syslog"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:71
+msgid "termios"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:72
+msgid "tkinter"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:73
+msgid "turtle.py"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:74
+msgid "turtledemo"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:75
+msgid "venv"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:76
+msgid "winreg"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:77
+msgid "winsound"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:79
+msgid "Included but not working modules"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:81
+msgid ""
+"The following modules can be imported, but are not functional due to the "
+"limitations of the WebAssembly VM:"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:83
+msgid "multiprocessing"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:84
+msgid "threading"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:85
+msgid "sockets"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:87
+msgid "as well as any functionality that requires these."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:89
+msgid ""
+"The following are present but cannot be imported due to a dependency on the "
+"termios package which has been removed:"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:91
+msgid "pty"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:92
+msgid "tty"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:94
+msgid "Threading and multiprocessing"
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:96
+msgid ""
+"Because Pyodide does not support threading or multiprocessing, packages that "
+"use threading or multiprocessing will not work without a patch to disable "
+"it. For example, the following snippet will determine if the platform "
+"supports creating new threads."
+msgstr ""
+
+#: ../../../usage/wasm-constraints.md:100
+msgid ""
+"def _can_start_thread() -> bool:\n"
+"    if sys.platform == \"emscripten\":\n"
+"        return sys._emscripten_info.pthreads\n"
+"    return platform.machine() not in (\"wasm32\", \"wasm64\")\n"
+"\n"
+"can_start_thread = _can_start_thread()\n"
+"\n"
+"if not can_start_thread:\n"
+"  n_threads = 1\n"
+msgstr ""

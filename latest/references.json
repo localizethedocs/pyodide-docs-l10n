@@ -13,22 +13,22 @@
     },
     "zh_CN" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-07-01 01:09:14 +0900",
+        "hash" : "093010924ae312143180ac546d58df7a061a2d95",
+        "title" : "CI Move npm publishing job before publishing github releases (#6328)"
       }
     },
     "zh_TW" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-07-01 01:09:14 +0900",
+        "hash" : "093010924ae312143180ac546d58df7a061a2d95",
+        "title" : "CI Move npm publishing job before publishing github releases (#6328)"
       }
     }
   },

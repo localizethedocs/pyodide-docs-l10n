@@ -1,0 +1,525 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/streams.md:3
+msgid "Redirecting standard streams"
+msgstr ""
+
+#: ../../../usage/streams.md:5
+msgid ""
+"Pyodide has three functions {js:func}`pyodide.setStdin`, {js:func}`pyodide."
+"setStdout`, and {js:func}`pyodide.setStderr` that change the behavior of "
+"reading from {py:data}`~sys.stdin` and writing to {py:data}`~sys.stdout` and "
+"{py:data}`~sys.stderr` respectively."
+msgstr ""
+
+#: ../../../usage/streams.md:10
+msgid "Standard Input"
+msgstr ""
+
+#: ../../../usage/streams.md:14
+msgid ""
+"{js:func}`pyodide.setStdin` sets the standard in handler. There are several "
+"different ways to do this depending on the options passed to `setStdin`."
+msgstr ""
+
+#: ../../../usage/streams.md:17
+msgid "Always raise IO Error"
+msgstr ""
+
+#: ../../../usage/streams.md:19
+msgid "If we pass `{error: true}`, any read from stdin raises an I/O error."
+msgstr ""
+
+#: ../../../usage/streams.md:21
+msgid ""
+"pyodide.setStdin({ error: true });\n"
+"pyodide.runPython(`\n"
+"    with pytest.raises(OSError, match=\"I/O error\"):\n"
+"        input()\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:29 ../../../usage/streams.md:260
+msgid "Set the default behavior"
+msgstr ""
+
+#: ../../../usage/streams.md:31
+msgid ""
+"You can set the default behavior by calling `pyodide.setStdin()` with no "
+"arguments. In Node the default behavior is to read directly from Node's "
+"standard input. In the browser, the default is the same as `pyodide."
+"setStdin({ stdin: () => prompt() })`."
+msgstr ""
+
+#: ../../../usage/streams.md:36
+msgid "A stdin handler"
+msgstr ""
+
+#: ../../../usage/streams.md:38
+msgid ""
+"We can pass the options `{stdin, isatty}`. `stdin` should be a zero-argument "
+"function which should return one of:"
+msgstr ""
+
+#: ../../../usage/streams.md:41
+msgid ""
+"A string which represents a full line of text (it will have a newline "
+"appended if it does not already end in one)."
+msgstr ""
+
+#: ../../../usage/streams.md:43
+msgid "An array buffer or Uint8Array containing utf8 encoded characters"
+msgstr ""
+
+#: ../../../usage/streams.md:44
+msgid "A number between 0 and 255 which indicates one byte of input"
+msgstr ""
+
+#: ../../../usage/streams.md:45
+msgid "`undefined` or `null` which indicates EOF."
+msgstr ""
+
+#: ../../../usage/streams.md:47
+msgid ""
+"`isatty` is a boolean which indicates whether `sys.stdin.isatty()` should "
+"return `true` or `false`."
+msgstr ""
+
+#: ../../../usage/streams.md:50
+msgid "For example, the following class plays back a list of results."
+msgstr ""
+
+#: ../../../usage/streams.md:52
+msgid ""
+"class StdinHandler {\n"
+"  constructor(results, options) {\n"
+"    this.results = results;\n"
+"    this.idx = 0;\n"
+"    Object.assign(this, options);\n"
+"  }\n"
+"\n"
+"  stdin() {\n"
+"    return this.results[this.idx++];\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/streams.md:66
+msgid "Here it is in use:"
+msgstr ""
+
+#: ../../../usage/streams.md:68
+msgid ""
+"pyodide.setStdin(\n"
+"  new StdinHandler([\"a\", \"bcd\", \"efg\"]),\n"
+");\n"
+"pyodide.runPython(`\n"
+"    assert input() == \"a\"\n"
+"    assert input() == \"bcd\"\n"
+"    assert input() == \"efg\"\n"
+"    # after this, further attempts to read from stdin will return undefined "
+"which\n"
+"    # indicates end of file\n"
+"    with pytest.raises(EOFError, match=\"EOF when reading a line\"):\n"
+"        input()\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:83
+msgid ""
+"Note that the `input()` function automatically reads a line of text and "
+"removes the trailing newline. If we use `sys.stdin.read` we see that "
+"newlines have been appended to strings that don't end in a newline:"
+msgstr ""
+
+#: ../../../usage/streams.md:87
+msgid ""
+"pyodide.setStdin(\n"
+"  new StdinHandler([\"a\", \"bcd\\n\", \"efg\", undefined, \"h\", \"i\"]),\n"
+");\n"
+"pyodide.runPython(String.raw`\n"
+"    import sys\n"
+"    assert sys.stdin.read() == \"a\\nbcd\\nefg\\n\"\n"
+"    assert sys.stdin.read() == \"h\\ni\\n\"\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:98
+msgid "Instead of strings we can return the list of utf8 bytes for the input:"
+msgstr ""
+
+#: ../../../usage/streams.md:100
+msgid ""
+"pyodide.setStdin(\n"
+"  new StdinHandler(\n"
+"    [0x61 /* a */, 0x0a /* \\n */, 0x62 /* b */, 0x63 /* c */],\n"
+"    true,\n"
+"  ),\n"
+");\n"
+"pyodide.runPython(`\n"
+"    assert input() == \"a\"\n"
+"    assert input() == \"bc\"\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:113
+msgid ""
+"Or we can return a `Uint8Array` with the utf8-encoded text that we wish to "
+"render:"
+msgstr ""
+
+#: ../../../usage/streams.md:116
+msgid ""
+"pyodide.setStdin(\n"
+"  new StdinHandler([new Uint8Array([0x61, 0x0a, 0x62, 0x63])]),\n"
+");\n"
+"pyodide.runPython(`\n"
+"    assert input() == \"a\"\n"
+"    assert input() == \"bc\"\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:126
+msgid "A read handler"
+msgstr ""
+
+#: ../../../usage/streams.md:128
+msgid ""
+"A read handler takes a `Uint8Array` as an argument and is supposed to place "
+"the data into this buffer and return the number of bytes read. This is "
+"useful in Node. For example, the following class can be used to read from a "
+"Node file descriptor:"
+msgstr ""
+
+#: ../../../usage/streams.md:133
+msgid ""
+"const fs = require(\"fs\");\n"
+"const tty = require(\"tty\");\n"
+"class NodeReader {\n"
+"  constructor(fd) {\n"
+"    this.fd = fd;\n"
+"    this.isatty = tty.isatty(fd);\n"
+"  }\n"
+"\n"
+"  read(buffer) {\n"
+"    return fs.readSync(this.fd, buffer);\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/streams.md:148
+msgid ""
+"For instance to set stdin to read from a file called `input.txt`, we can do "
+"the following:"
+msgstr ""
+
+#: ../../../usage/streams.md:151
+msgid ""
+"const fd = fs.openSync(\"input.txt\", \"r\");\n"
+"py.setStdin(new NodeReader(fd));\n"
+msgstr ""
+
+#: ../../../usage/streams.md:156
+msgid "Or we can read from node's stdin (the default behavior) as follows:"
+msgstr ""
+
+#: ../../../usage/streams.md:158
+msgid ""
+"fd = fs.openSync(\"/dev/stdin\", \"r\");\n"
+"py.setStdin(new NodeReader(fd));\n"
+msgstr ""
+
+#: ../../../usage/streams.md:163 ../../../usage/streams.md:353
+msgid "isatty"
+msgstr ""
+
+#: ../../../usage/streams.md:165
+msgid ""
+"It is possible to control whether or not {py:meth}`sys.stdin.isatty() <io."
+"IOBase.isatty>` returns true with the `isatty` option:"
+msgstr ""
+
+#: ../../../usage/streams.md:168
+msgid ""
+"pyodide.setStdin(new StdinHandler([], {isatty: true}));\n"
+"pyodide.runPython(`\n"
+"    import sys\n"
+"    assert sys.stdin.isatty() # returns true as we requested\n"
+"`);\n"
+"pyodide.setStdin(new StdinHandler([], {isatty: false}));\n"
+"pyodide.runPython(`\n"
+"  assert not sys.stdin.isatty() # returns false as we requested\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:180
+msgid ""
+"This will change the behavior of cli applications that behave differently in "
+"an interactive terminal, for example pytest does this."
+msgstr ""
+
+#: ../../../usage/streams.md:183
+msgid "Raising IO errors"
+msgstr ""
+
+#: ../../../usage/streams.md:185
+msgid ""
+"To raise an IO error in either a `stdin` or `read` handler, you should throw "
+"an IO error as follows:"
+msgstr ""
+
+#: ../../../usage/streams.md:188
+msgid "throw new pyodide.FS.ErrnoError(pyodide.ERRNO_CODES.EIO);\n"
+msgstr ""
+
+#: ../../../usage/streams.md:192
+msgid "for instance, saying:"
+msgstr ""
+
+#: ../../../usage/streams.md:194
+msgid ""
+"pyodide.setStdin({\n"
+"  read(buf) {\n"
+"    throw new pyodide.FS.ErrnoError(pyodide.ERRNO_CODES.EIO);\n"
+"  },\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/streams.md:202
+msgid "is the same as `pyodide.setStdin({error: true})`."
+msgstr ""
+
+#: ../../../usage/streams.md:204
+msgid "Handling Keyboard interrupts"
+msgstr ""
+
+#: ../../../usage/streams.md:206
+msgid ""
+"To handle a keyboard interrupt in an input handler, you should periodically "
+"call {js:func}`pyodide.checkInterrupt`. For example, the following stdin "
+"handler always raises a keyboard interrupt:"
+msgstr ""
+
+#: ../../../usage/streams.md:210
+msgid ""
+"const interruptBuffer = new Int32Array(new SharedArrayBuffer(4));\n"
+"pyodide.setInterruptBuffer(interruptBuffer);\n"
+"pyodide.setStdin({\n"
+"  read(buf) {\n"
+"    // Put signal into interrupt buffer\n"
+"    interruptBuffer[0] = 2;\n"
+"    // Call checkInterrupt to raise an error\n"
+"    pyodide.checkInterrupt();\n"
+"    console.log(\n"
+"      \"This code won't ever be executed because pyodide.checkInterrupt "
+"raises an error!\",\n"
+"    );\n"
+"  },\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/streams.md:226
+msgid ""
+"For a more realistic example that handles reading stdin in a worker and also "
+"keyboard interrupts, you might something like the following code:"
+msgstr ""
+
+#: ../../../usage/streams.md:229
+msgid ""
+"pyodide.setStdin({read(buf) {\n"
+"  const timeoutMilliseconds = 100;\n"
+"  while(true) {\n"
+"    switch(Atomics.wait(stdinSharedBuffer, 0, 0, timeoutMilliseconds) {\n"
+"      case \"timed-out\":\n"
+"        // 100 ms passed but got no data, check for keyboard interrupt then "
+"return to waiting on data.\n"
+"        pyodide.checkInterrupt();\n"
+"        break;\n"
+"      case \"ok\":\n"
+"        // ... handle the data somehow\n"
+"        break;\n"
+"    }\n"
+"  }\n"
+"}});\n"
+msgstr ""
+
+#: ../../../usage/streams.md:246
+msgid "See also {ref}`interrupting_execution`."
+msgstr ""
+
+#: ../../../usage/streams.md:248
+msgid "Standard Out / Standard Error"
+msgstr ""
+
+#: ../../../usage/streams.md:252
+msgid ""
+"{js:func}`pyodide.setStdout` and {js:func}`pyodide.setStderr` respectively "
+"set the standard output and standard error handlers. These APIs are "
+"identical except in their defaults, so we will only discuss the `pyodide."
+"setStdout` except in cases where they differ."
+msgstr ""
+
+#: ../../../usage/streams.md:257
+msgid ""
+"As with {js:func}`pyodide.setStdin`, there are quite a few different ways to "
+"set the standard output handlers."
+msgstr ""
+
+#: ../../../usage/streams.md:262
+msgid ""
+"As with stdin, `pyodide.setStdout()` sets the default behavior. In node, "
+"this is to write directly to `process.stdout`. In the browser, the default "
+"is as if you wrote `setStdout({batched: (str) => console.log(str)})` see "
+"below."
+msgstr ""
+
+#: ../../../usage/streams.md:268
+msgid "A batched handler"
+msgstr ""
+
+#: ../../../usage/streams.md:270
+msgid ""
+"A batched handler is the easiest standard out handler to implement but it is "
+"also the coarsest. It is intended to use with APIs like `console.log` that "
+"don't understand partial lines of text or for quick and dirty code."
+msgstr ""
+
+#: ../../../usage/streams.md:274
+msgid "The batched handler receives a string which is either:"
+msgstr ""
+
+#: ../../../usage/streams.md:276
+msgid "a complete line of text with the newline removed or"
+msgstr ""
+
+#: ../../../usage/streams.md:277
+msgid "a partial line of text that was flushed."
+msgstr ""
+
+#: ../../../usage/streams.md:279
+msgid "For instance after:"
+msgstr ""
+
+#: ../../../usage/streams.md:281
+msgid ""
+"print(\"hello!\")\n"
+"import sys\n"
+"print(\"partial line\", end=\"\")\n"
+"sys.stdout.flush()\n"
+msgstr ""
+
+#: ../../../usage/streams.md:288
+msgid ""
+"the batched handler is called with `\"hello!\"` and then with `\"partial "
+"line\"`. Note that there is no indication that `\"hello!\"` was a complete "
+"line of text and `\"partial line\"` was not."
+msgstr ""
+
+#: ../../../usage/streams.md:292
+msgid "A raw handler"
+msgstr ""
+
+#: ../../../usage/streams.md:294
+msgid ""
+"A raw handler receives the output one character code at a time. This is "
+"neither very convenient nor very efficient. It is present primarily for "
+"backwards compatibility reasons."
+msgstr ""
+
+#: ../../../usage/streams.md:298
+msgid "For example, the following code:"
+msgstr ""
+
+#: ../../../usage/streams.md:300
+msgid ""
+"print(\"h\")\n"
+"import sys\n"
+"print(\"p \", end=\"\")\n"
+"print(\"l\", end=\"\")\n"
+"sys.stdout.flush()\n"
+msgstr ""
+
+#: ../../../usage/streams.md:308
+msgid "will call the raw handler with the sequence of bytes:"
+msgstr ""
+
+#: ../../../usage/streams.md:310
+msgid ""
+"0x68 - h\n"
+"0x0A - newline\n"
+"0x70 - p\n"
+"0x20 - space\n"
+"0x6c - l\n"
+msgstr ""
+
+#: ../../../usage/streams.md:318
+msgid "A write handler"
+msgstr ""
+
+#: ../../../usage/streams.md:320
+msgid ""
+"A write handler takes a `Uint8Array` as an argument and is supposed to write "
+"the data in this buffer to standard output and return the number of bytes "
+"written. For example, the following class can be used to write to a Node "
+"file descriptor:"
+msgstr ""
+
+#: ../../../usage/streams.md:324
+msgid ""
+"const fs = require(\"fs\");\n"
+"const tty = require(\"tty\");\n"
+"class NodeWriter {\n"
+"  constructor(fd) {\n"
+"    this.fd = fd;\n"
+"    this.isatty = tty.isatty(fd);\n"
+"  }\n"
+"\n"
+"  write(buffer) {\n"
+"    return fs.writeSync(this.fd, buffer);\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/streams.md:339
+msgid "Using it as follows redirects output from Pyodide to `out.txt`:"
+msgstr ""
+
+#: ../../../usage/streams.md:341
+msgid ""
+"const fd = fs.openSync(\"out.txt\", \"w\");\n"
+"py.setStdout(new NodeWriter(fd));\n"
+msgstr ""
+
+#: ../../../usage/streams.md:346
+msgid "Or the following gives the default behavior:"
+msgstr ""
+
+#: ../../../usage/streams.md:348
+msgid ""
+"const fd = fs.openSync(\"out.txt\", \"w\");\n"
+"py.setStdout(new NodeWriter(process.stdout.fd));\n"
+msgstr ""
+
+#: ../../../usage/streams.md:355
+msgid ""
+"As with `stdin`, is possible to control whether or not {py:meth}`sys.stdout."
+"isatty() <io.IOBase.isatty>` returns true with the `isatty` option. You "
+"cannot combine `isatty: true` with a batched handler."
+msgstr ""
