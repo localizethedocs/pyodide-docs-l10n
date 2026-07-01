@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/python-api/code.md:1
+msgid "pyodide.code"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code:1
+msgid "**Classes:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: pyodide.code:1:<autosummary>:1
+msgid ""
+":py:obj:`CodeRunner <pyodide.code.CodeRunner>`\\ \\(source\\, \\*\\[\\, "
+"return\\_mode\\, mode\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1 ../../../../src/py/pyodide/code.py:docstring
+#: pyodide.code:1:<autosummary>:1
+msgid "This class allows fine control over the execution of a code block."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code:1
+msgid "**Functions:**"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ""
+":py:obj:`eval_code <pyodide.code.eval_code>`\\ \\(source\\[\\, globals\\, "
+"locals\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.eval_code:1
+msgid "Runs a string as Python source code."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ""
+":py:obj:`eval_code_async <pyodide.code.eval_code_async>`\\ \\(source\\[\\, "
+"globals\\, locals\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code_async:1
+msgid "Runs a code string asynchronously."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ":py:obj:`find_imports <pyodide.code.find_imports>`\\ \\(source\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.find_imports:1
+msgid "Finds the imports in a Python source code string"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ""
+":py:obj:`relaxed_call <pyodide.code.relaxed_call>`\\ \\(func\\, \\*args\\, "
+"\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring pyodide.code.relaxed_call:1
+msgid "Call the function ignoring extra arguments"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ":py:obj:`relaxed_wrap <pyodide.code.relaxed_wrap>`\\ \\(func\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring pyodide.code.relaxed_wrap:1
+msgid "Decorator which creates a function that ignores extra arguments"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ":py:obj:`run_js <pyodide.code.run_js>`\\ \\(code\\, \\/\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring pyodide.code.run_js:1
+msgid "A wrapper for the :js:func:`eval` function."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+msgid ""
+":py:obj:`should_quiet <pyodide.code.should_quiet>`\\ \\(source\\, \\/\\)"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:1:<autosummary>:1
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.should_quiet:1
+msgid "Should we suppress output?"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:3
+msgid ""
+"It is primarily intended for REPLs and other sophisticated consumers that "
+"may wish to add their own AST transformations, separately signal to the user "
+"when parsing is complete, etc. The simpler :py:func:`eval_code` and :py:func:"
+"`eval_code_async` apis should be preferred when their flexibility suffices."
+msgstr ""
+
+#: ../../../usage/api/python-api/code.md:0
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:10 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:4 _pyodide._base.eval_code_async:6
+msgid "The Python source code to run."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:12 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:14 _pyodide._base.eval_code_async:16
+msgid ""
+"Specifies what should be returned. The options are:  :'last_expr': return "
+"the last expression :'last_expr_or_assign': return the last expression or "
+"the last                         assignment.  :'none': always return "
+"``None``."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:12 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:14 _pyodide._base.eval_code_async:16
+msgid "Specifies what should be returned. The options are:"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
+msgid "'last_expr'"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:14 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:16 _pyodide._base.eval_code_async:18
+msgid "return the last expression"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
+msgid "'last_expr_or_assign'"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:15 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:17 _pyodide._base.eval_code_async:19
+msgid "return the last expression or the last assignment."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
+msgid "'none'"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:18 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:20 _pyodide._base.eval_code_async:22
+msgid "always return ``None``."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:20
+msgid ""
+"Specifies whether a trailing semicolon should suppress the result or not. "
+"When this is ``True`` executing ``\"1+1;\"`` returns ``None``, when it is "
+"``False``, executing ``\"1+1;\"`` return ``2``. ``True`` by default."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:24 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:27 _pyodide._base.eval_code_async:29
+msgid ""
+"The file name to use in error messages and stack traces. ``'<exec>'`` by "
+"default."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:27
+msgid ""
+"The \"mode\" to compile in. One of ``\"exec\"``, ``\"single\"``, or "
+"``\"eval\"``. Defaults to ``\"exec\"``. For most purposes it's unnecessary "
+"to use this argument. See the documentation for the built-in :external:py:"
+"func:`compile` function."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:32 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:30 _pyodide._base.eval_code_async:32
+msgid ""
+"The flags to compile with. See the documentation for the built-in :external:"
+"py:func:`compile` function."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:35
+msgid ""
+"Whether to inherit ``__future__`` imports from the outer code. See the "
+"documentation for the built-in :external:py:func:`compile` function."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:38
+msgid ""
+"Specifies the optimization level of the compiler. See the documentation for "
+"the built-in :external:py:func:`compile` function."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner:42 ../../../../src/py/pyodide/code.py:docstring
+#: _pyodide._base.eval_code:40 _pyodide._base.find_imports:15
+#: _pyodide._base.should_quiet:7
+msgid "Examples"
+msgstr ""
+
+#: ../../../docstring of pyodide.code.CodeRunner.ast:1
+msgid ""
+"The ast from parsing ``source``. If you wish to do an ast transform, modify "
+"this variable before calling :py:meth:`CodeRunner.compile`."
+msgstr ""
+
+#: ../../../docstring of pyodide.code.CodeRunner.code:1
+msgid ""
+"Once you call :py:meth:`CodeRunner.compile` the compiled code will be "
+"available in the code field. You can modify this variable before calling :py:"
+"meth:`CodeRunner.run` to do a code transform."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.compile:1
+msgid ""
+"Compile the current value of ``self.ast`` and store the result in ``self."
+"code``."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.compile:3
+msgid "Can only be used once. Returns ``self`` (chainable)."
+msgstr ""
+
+#: ../../../usage/api/python-api/code.md:0
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.compile:6
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~\\_pyodide.\\_base."
+"CodeRunner\\``"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:1
+msgid "Executes ``self.code``."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:3
+msgid ""
+"Can only be used after calling compile. The code may not use top level "
+"await, use :py:meth:`CodeRunner.run_async` for code that uses top level "
+"await."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:8 _pyodide._base.CodeRunner.run_async:8
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.eval_code:6
+#: _pyodide._base.eval_code_async:8
+msgid ""
+"The global scope in which to execute code. This is used as the ``globals`` "
+"parameter for :py:func:`exec`. If ``globals`` is absent, a new empty "
+"dictionary is used."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:11 _pyodide._base.CodeRunner.run_async:11
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.eval_code:10
+#: _pyodide._base.eval_code_async:12
+msgid ""
+"The local scope in which to execute code. This is used as the ``locals`` "
+"parameter for :py:func:`exec`. If ``locals`` is absent, the value of "
+"``globals`` is used."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:15 _pyodide._base.CodeRunner.run_async:15
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.eval_code:33
+#: _pyodide._base.eval_code_async:35 pyodide.code.run_js:8
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:data\\:\\`\\~typing.Any\\``"
+msgstr ""
+
+#: ../../../usage/api/python-api/code.md:0
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run:16 _pyodide._base.CodeRunner.run_async:16
+#: ../../../../src/py/pyodide/code.py:docstring _pyodide._base.eval_code:34
+#: _pyodide._base.eval_code_async:36
+msgid ""
+"If the last nonwhitespace character of ``source`` is a semicolon, return "
+"``None``. If the last statement is an expression, return the result of the "
+"expression. Use the ``return_mode`` and ``quiet_trailing_semicolon`` "
+"parameters to modify this default behavior."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run_async:1
+msgid "Runs ``self.code`` which may use top level await."
+msgstr ""
+
+#: ../../../../src/py/_pyodide/_base.py:docstring of
+#: _pyodide._base.CodeRunner.run_async:3
+msgid ""
+"Can only be used after calling :py:meth:`CodeRunner.compile`. If ``self."
+"code`` uses top level await, automatically awaits the resulting coroutine."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of _pyodide._base.eval_code:22
+#: _pyodide._base.eval_code_async:24
+msgid ""
+"Specifies whether a trailing semicolon should suppress the result or not. "
+"When this is ``True`` executing ``\"1+1 ;\"`` returns ``None``, when it is "
+"``False``, executing ``\"1+1 ;\"`` return ``2``. ``True`` by default."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.eval_code_async:3
+msgid "Uses :py:data:`ast.PyCF_ALLOW_TOP_LEVEL_AWAIT` to compile the code."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:4
+msgid "The Python source code to inspect for imports."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:6
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:"
+"py\\:class\\:\\`str\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:7
+msgid ""
+"A list of module names that are imported in ``source``. If ``source`` is not "
+"syntactically correct Python code (after dedenting), returns an empty list.  "
+"Given `import package.module`, `find_imports` will include both "
+"`\"package\"` and `\"package.module\"` in the result."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:7
+msgid ""
+"A list of module names that are imported in ``source``. If ``source`` is not "
+"syntactically correct Python code (after dedenting), returns an empty list."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.find_imports:11
+msgid ""
+"Given `import package.module`, `find_imports` will include both "
+"`\"package\"` and `\"package.module\"` in the result."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.relaxed_call:3
+#: pyodide.code.relaxed_wrap:3
+msgid ""
+"If extra positional or keyword arguments are provided they will be discarded."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.relaxed_call:12
+msgid ":sphinx_autodoc_typehints_type:`\\`\\`RetType\\`\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.relaxed_wrap:8
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
+"Callable\\`\\\\ \\\\\\[\\:py\\:data\\:\\`...\\<Ellipsis\\>\\`\\, "
+"\\`\\`RetType\\`\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.run_js:3
+msgid ""
+"Runs ``code`` as a Javascript code string and returns the result. Unlike :js:"
+"func:`eval`, if ``code`` is not a string we raise a :py:exc:`TypeError`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.should_quiet:3
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/code.py:docstring of
+#: _pyodide._base.should_quiet:4
+msgid ""
+"``True`` if the last nonwhitespace character of ``source`` is a semicolon."
+msgstr ""

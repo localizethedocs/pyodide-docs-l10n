@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/testing.md:3
+msgid "Testing and benchmarking"
+msgstr ""
+
+#: ../../../development/testing.md:5
+msgid "Testing"
+msgstr ""
+
+#: ../../../development/testing.md:7
+msgid "Running the Python test suite"
+msgstr ""
+
+#: ../../../development/testing.md:9
+msgid ""
+"Install the following dependencies into the default Python installation:"
+msgstr ""
+
+#: ../../../development/testing.md:11
+msgid "pip install pytest-pyodide pytest-httpserver\n"
+msgstr ""
+
+#: ../../../development/testing.md:15
+msgid ""
+"`pytest-pyodide` is a pytest plugin for testing Pyodide and third-party "
+"applications that use Pyodide."
+msgstr ""
+
+#: ../../../development/testing.md:18
+msgid ""
+"See: [pytest-pyodide](https://github.com/pyodide/pytest-pyodide) for more "
+"information."
+msgstr ""
+
+#: ../../../development/testing.md:20
+msgid ""
+"Install [geckodriver](https://github.com/mozilla/geckodriver/releases) or "
+"[chromedriver](https://developer.chrome.com/docs/chromedriver/downloads) and "
+"check that they are in your `PATH`."
+msgstr ""
+
+#: ../../../development/testing.md:24
+msgid "To run the test suite, run `pytest` from the root directory of Pyodide:"
+msgstr ""
+
+#: ../../../development/testing.md:26
+msgid "pytest\n"
+msgstr ""
+
+#: ../../../development/testing.md:30
+msgid "There are 2 test locations that are collected by pytest,"
+msgstr ""
+
+#: ../../../development/testing.md:32
+msgid ""
+"`src/tests/`: general Pyodide tests and tests running the CPython test suite"
+msgstr ""
+
+#: ../../../development/testing.md:33
+msgid "`packages/*/test_*`: package specific tests."
+msgstr ""
+
+#: ../../../development/testing.md:35
+msgid "You can run the tests from a specific file with:"
+msgstr ""
+
+#: ../../../development/testing.md:37
+msgid "pytest path/to/test/file.py\n"
+msgstr ""
+
+#: ../../../development/testing.md:41
+msgid ""
+"Some browsers sometimes produce informative errors than others so if you are "
+"getting confusing errors it is worth rerunning the test on each browser. You "
+"can use `--runtime` commandline option to specify the browser runtime."
+msgstr ""
+
+#: ../../../development/testing.md:45
+msgid ""
+"pytest --runtime firefox\n"
+"pytest --runtime chrome\n"
+"pytest --runtime node\n"
+msgstr ""
+
+#: ../../../development/testing.md:51
+msgid "Custom test marks"
+msgstr ""
+
+#: ../../../development/testing.md:53
+msgid "We support custom test marks:"
+msgstr ""
+
+#: ../../../development/testing.md:55
+msgid ""
+"`@pytest.mark.skip_refcount_check` and `pytest.mark.skip_pyproxy_check` "
+"disable respectively the check for JavaScript references and the check for "
+"PyProxies. If a test creates JavaScript references or PyProxies and does not "
+"clean them up, by default the tests will fail. If a test is known to leak "
+"objects, it is possible to disable these checks with these markers."
+msgstr ""
+
+#: ../../../development/testing.md:61
+msgid "Running the JavaScript test suite"
+msgstr ""
+
+#: ../../../development/testing.md:63
+msgid ""
+"To run tests on the JavaScript Pyodide package using Mocha, run the "
+"following commands,"
+msgstr ""
+
+#: ../../../development/testing.md:66
+msgid ""
+"cd src/js\n"
+"npm test\n"
+msgstr ""
+
+#: ../../../development/testing.md:71
+msgid "To check TypeScript type definitions run,"
+msgstr ""
+
+#: ../../../development/testing.md:73
+msgid "npx tsd\n"
+msgstr ""
+
+#: ../../../development/testing.md:79
+msgid "Manual interactive testing"
+msgstr ""
+
+#: ../../../development/testing.md:81
+msgid "To run tests manually:"
+msgstr ""
+
+#: ../../../development/testing.md:83
+msgid "Build Pyodide, perhaps in the docker image"
+msgstr ""
+
+#: ../../../development/testing.md:85
+msgid ""
+"From outside of the docker image, `cd` into the `dist` directory and run "
+"`python -m http.server`."
+msgstr ""
+
+#: ../../../development/testing.md:88
+msgid ""
+"Once the webserver is running, simple interactive testing can be run by "
+"visiting the URL: `http://localhost:<PORT>/console.html`. It's recommended "
+"to use `pyodide.runPython` in the browser console rather than using the repl."
+msgstr ""
+
+#: ../../../development/testing.md:92
+msgid "Benchmarking"
+msgstr ""
+
+#: ../../../development/testing.md:94
+msgid ""
+"To run common benchmarks to understand Pyodide's performance, begin by "
+"installing the same prerequisites as for testing. Then run:"
+msgstr ""
+
+#: ../../../development/testing.md:97
+msgid "PYODIDE_PACKAGES=\"numpy,matplotlib\" make benchmark\n"
+msgstr ""
+
+#: ../../../development/testing.md:101
+msgid "Linting"
+msgstr ""
+
+#: ../../../development/testing.md:103
+msgid "We lint with `pre-commit`."
+msgstr ""
+
+#: ../../../development/testing.md:105
+msgid ""
+"Python is linted with `ruff`, `black` and `mypy`. JavaScript, markdown, "
+"yaml, and html are linted with `prettier`. C is linted with `clang-format`."
+msgstr ""
+
+#: ../../../development/testing.md:109
+msgid "To lint the code, run:"
+msgstr ""
+
+#: ../../../development/testing.md:111
+msgid "pre-commit run -a\n"
+msgstr ""
+
+#: ../../../development/testing.md:115
+msgid ""
+"You can have the linter automatically run whenever you commit by running"
+msgstr ""
+
+#: ../../../development/testing.md:117
+msgid ""
+"pip install pre-commit\n"
+"pre-commit install\n"
+msgstr ""
+
+#: ../../../development/testing.md:122
+msgid "and this can later be disabled with"
+msgstr ""
+
+#: ../../../development/testing.md:124
+msgid "pre-commit uninstall\n"
+msgstr ""
+
+#: ../../../development/testing.md:128
+msgid ""
+"If you don't lint your code, certain lint errors will be fixed automatically "
+"by `pre-commit.ci` which will push fixes to your branch. If you want to push "
+"more commits, you will either have to pull in the remote changes or force "
+"push."
+msgstr ""

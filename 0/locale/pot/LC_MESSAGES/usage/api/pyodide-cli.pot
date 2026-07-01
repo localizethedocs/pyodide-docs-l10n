@@ -1,0 +1,861 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/pyodide-cli.md:3
+msgid "pyodide CLI"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:5
+msgid ""
+"This page documents the Pyodide Command Line Interface (CLI) interface. In "
+"addition to the commands defined by `pyodide-build`, documented below, other "
+"subcommands are defined in external packages (which can be installed with "
+"pip):"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:7
+msgid ""
+"`pyodide pack`, defined in [pyodide-pack](https://github.com/pyodide/pyodide-"
+"pack) is a package bundler for Pyodide"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "pyodide"
+msgstr ""
+
+#: ../../../pyodide:1
+msgid "A command line interface for Pyodide."
+msgstr ""
+
+#: ../../../pyodide:1
+msgid ""
+"Other CLI subcommands are registered via the plugin system by installing "
+"Pyodide ecosystem packages (e.g. pyodide-build, pyodide-pack, auditwheel-"
+"emscripten, etc.)"
+msgstr ""
+
+#: ../../../pyodide:1
+msgid "pyodide [OPTIONS] COMMAND [ARGS]..."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Options"
+msgstr ""
+
+#: ../../../pyodide:1
+msgid "Show the version of the Pyodide CLI"
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Clean build artifacts."
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "pyodide app [OPTIONS] COMMAND [ARGS]..."
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid "Remove build artifacts for recipe packages."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Arguments:"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid ""
+"TARGETS: Packages or tags (tag:<name>) to clean. Defaults to all packages."
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid "pyodide app recipes [OPTIONS] [TARGETS]..."
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid ""
+"Directory containing package recipes. Defaults to <pyodide root>/packages."
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid ""
+"Directory where package build artifacts are stored. Defaults to recipe "
+"directory."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Arguments"
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid "Optional argument(s)"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Environment variables"
+msgstr ""
+
+#: ../../../pyodide app recipes:1 build-recipes:1 build-recipes-no-deps:1
+msgid "Provide a default for :option:`--build-dir`"
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Manage config variables used in pyodide."
+msgstr ""
+
+#: ../../../pyodide app get:1
+msgid "Get a value of a single config variable used in pyodide."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid ""
+"CONFIG_VAR: A config variable to get. Use `list` to see all possible values."
+msgstr ""
+
+#: ../../../pyodide app get:1
+msgid "pyodide app get [OPTIONS] CONFIG_VAR"
+msgstr ""
+
+#: ../../../pyodide app copy:1 exports:1 get:1 imports:1 pypi:1 repair:1 show:1
+#: use:1 main:1
+msgid "Required argument"
+msgstr ""
+
+#: ../../../pyodide app list:1
+msgid "List config variables used in pyodide."
+msgstr ""
+
+#: ../../../pyodide app list:1
+msgid "pyodide app list [OPTIONS]"
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Add a new package build recipe or update an existing recipe."
+msgstr ""
+
+#: ../../../pyodide app disable:1
+msgid "Disable packages."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "NAMES: Package names to disable."
+msgstr ""
+
+#: ../../../pyodide app disable:1
+msgid "pyodide app disable [OPTIONS] NAMES..."
+msgstr ""
+
+#: ../../../pyodide app disable:1
+msgid "Comment to explain why it was disabled."
+msgstr ""
+
+#: ../../../pyodide app disable:1 enable:1 pin:1 pypi:1
+msgid ""
+"The directory containing the recipe of packages. If not specified, the "
+"default is ``<cwd>/packages``."
+msgstr ""
+
+#: ../../../pyodide app disable:1 enable:1 pin:1 build-recipes:1
+#: build-recipes-no-deps:1 main add-wheels:1
+msgid "Required argument(s)"
+msgstr ""
+
+#: ../../../pyodide app enable:1
+msgid "Enable packages."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "NAMES: Package names to enable."
+msgstr ""
+
+#: ../../../pyodide app enable:1
+msgid "pyodide app enable [OPTIONS] NAMES..."
+msgstr ""
+
+#: ../../../pyodide app pin:1
+msgid "Pin packages."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "NAMES: Package names to pin."
+msgstr ""
+
+#: ../../../pyodide app pin:1
+msgid "pyodide app pin [OPTIONS] NAMES..."
+msgstr ""
+
+#: ../../../pyodide app pin:1
+msgid "Comment to explain why it was pinned."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "Create a new package recipe from PyPI or update an existing recipe."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "NAME: Package name on PyPI."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "pyodide app pypi [OPTIONS] NAME"
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "Update an existing recipe instead of creating a new one."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "Force update the package even if it contains patches."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "Force update the package even if is pinned."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid ""
+"The version of the package, if not specified, latest version will be used."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid ""
+"Which source format is preferred. Options are wheel or sdist. If not "
+"specified, then either a wheel or an sdist will be used."
+msgstr ""
+
+#: ../../../pyodide app pypi:0
+msgid "options"
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "wheel | sdist"
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "The github username to use as the maintainer."
+msgstr ""
+
+#: ../../../pyodide app pypi:1
+msgid "Set the maintainer from 'gh auth status'. Requires gh cli."
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Manage cross-build environment for building packages for Pyodide."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "Install cross-build environment."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid ""
+"The installed environment is the same as the one that would result from "
+"`PYODIDE_PACKAGES='scipy' make` except that it is much faster. The goal is "
+"to enable out-of-tree builds for binary packages that depend on numpy or "
+"scipy."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "VERSION: version of cross-build environment to install (optional)"
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "pyodide app install [OPTIONS] [VERSION]"
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "destination to download cross-build environment directory to."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "URL to download cross-build environment from."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "force installation even if the version is not compatible."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid ""
+"Deprecated, no-op. Cross-build packages are installed lazily when required "
+"by build dependencies."
+msgstr ""
+
+#: ../../../pyodide app install:1 uninstall:1 main:1
+msgid "Optional argument"
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "Provide a default for :option:`--path`"
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "Provide a default for :option:`--skip-cross-build-packages`"
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid "Install Emscripten SDK into the cross-build environment."
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid ""
+"This command clones the emsdk repository, installs and activates the "
+"specified Emscripten version, and applies Pyodide-specific patches."
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid ""
+"If the requested version is already installed, the command is a no-op unless "
+"--force is passed."
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid "pyodide app install-emscripten [OPTIONS]"
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid "Emscripten version corresponding to the target Pyodide version"
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid "Pyodide cross-env path"
+msgstr ""
+
+#: ../../../pyodide app install-emscripten:1
+msgid "force reinstallation even if the same version is already installed."
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid "Search for available versions of cross-build environment."
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid "pyodide app search [OPTIONS]"
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid ""
+"path to cross-build environment metadata file. It can be a URL or a local "
+"file. If not given, the default metadata file is used."
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid "search all versions, without filtering out incompatible ones."
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid "output results in JSON format."
+msgstr ""
+
+#: ../../../pyodide app uninstall:1
+msgid "Uninstall cross-build environment."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "VERSION: version of cross-build environment to uninstall (optional)"
+msgstr ""
+
+#: ../../../pyodide app uninstall:1
+msgid "pyodide app uninstall [OPTIONS] [VERSION]"
+msgstr ""
+
+#: ../../../pyodide app uninstall:1 use:1 version:1 versions:1
+msgid "path to cross-build environment directory."
+msgstr ""
+
+#: ../../../pyodide app use:1
+msgid "Select a version of cross-build environment to use."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "VERSION: version of cross-build environment to use (required)"
+msgstr ""
+
+#: ../../../pyodide app use:1
+msgid "pyodide app use [OPTIONS] VERSION"
+msgstr ""
+
+#: ../../../pyodide app version:1
+msgid "Print current version of cross-build environment."
+msgstr ""
+
+#: ../../../pyodide app version:1
+msgid "pyodide app version [OPTIONS]"
+msgstr ""
+
+#: ../../../pyodide app versions:1
+msgid "Print all installed versions of cross-build environment."
+msgstr ""
+
+#: ../../../pyodide app versions:1
+msgid "pyodide app versions [OPTIONS]"
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
+msgstr ""
+
+#: ../../../pyodide app copy:1
+msgid ""
+"[Deprecated] Copy shared libraries to the wheel directory. Works same as "
+"`repair`. Use `repair` instead."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_FILE: Path to wheel file. (required)"
+msgstr ""
+
+#: ../../../pyodide app copy:1
+msgid "pyodide app copy [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "Path to the directory containing the shared libraries."
+msgstr ""
+
+#: ../../../pyodide app copy:0 exports:0 imports:0 repair:0 build-recipes:0
+#: main:0
+msgid "default"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "``'lib'``"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid ""
+"Directory to output repaired wheel or shared library. (default: overwrite "
+"the input file)"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "Show exports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "pyodide app exports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "Show function type."
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "``False``"
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "Show imports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "Repair a wheel file: copy shared libraries to the wheel directory."
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1 show:1
+msgid "Show runtime paths."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "Show shared library dependencies of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid "Build packages using yaml recipes."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid ""
+"PACKAGES: Packages to build, or ``*`` for all packages in recipe directory."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid "pyodide build-recipes [OPTIONS] PACKAGES..."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid ""
+"The directory containing the recipe of packages. If not specified, the "
+"default is ``./packages``"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid ""
+"The directory where build directories for packages are created. Default: "
+"recipe_dir."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid ""
+"If true, install the built packages into the install_dir. If false, build "
+"packages without installing."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid ""
+"Path to install built packages and pyodide-lock.json. If not specified, the "
+"default is ``./dist``."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid ""
+"If true, extract the METADATA file from the built wheels to a matching ``*."
+"whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid "Removed, use `pyodide build-recipes-no-deps` instead."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "Extra compiling flags. Default: SIDE_MODULE_CFLAGS"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "Extra compiling flags. Default: SIDE_MODULE_CXXFLAGS"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "Extra linking flags. Default: SIDE_MODULE_LDFLAGS"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "The path to the target Python installation. Default: TARGETINSTALLDIR"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "Directory for installing built host packages. Default: HOSTINSTALLDIR"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid "Directory to place log files"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid ""
+"Force rebuild of all packages regardless of whether they appear to have been "
+"updated"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid ""
+"Number of packages to build in parallel (default: # of cores in the system)"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid ""
+"Level of zip compression to apply when installing. 0 means no compression."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 main:1
+msgid "``6``"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1
+msgid "Remove the build directory after a successful build of each package."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1 main:1
+msgid "Skip automatic installation of Emscripten if not found."
+msgstr ""
+
+#: ../../../pyodide build-recipes:1
+msgid "Provide a default for :option:`--compression-level`"
+msgstr ""
+
+#: ../../../pyodide build-recipes:1 build-recipes-no-deps:1 main:1
+msgid "Provide a default for :option:`--skip-emscripten-install`"
+msgstr ""
+
+#: ../../../pyodide build-recipes-no-deps:1
+msgid ""
+"Build packages using yaml recipes but don't try to resolve dependencies."
+msgstr ""
+
+#: ../../../pyodide build-recipes-no-deps:1
+msgid "pyodide build-recipes-no-deps [OPTIONS] PACKAGES..."
+msgstr ""
+
+#: ../../../pyodide build-recipes-no-deps:1
+msgid ""
+"Continue a build from the middle. For debugging. Implies '--force-rebuild'"
+msgstr ""
+
+#: ../../../pyodide build-recipes-no-deps:1
+msgid "Don't setup rust environment when building a rust package"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Use pypa/build to build a Python package from source, pypi or url."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid ""
+"SOURCE_LOCATION: Build source, can be source folder, pypi version "
+"specification,"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "or url to a source dist archive or wheel file. If this is blank, it"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "will build the current directory."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] [SOURCE_LOCATION]"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "which directory should the output be placed into?"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Build a list of package requirements from a requirements.txt file"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Which symbols should be exported when linking .so files?"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Fetch dependencies from pypi and build them too."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Output list of resolved dependencies to a file in requirements.txt format"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Skip building or resolving a single dependency, or a pyodide-lock.json file. "
+"Use multiple times or provide a comma separated list to skip multiple "
+"dependencies."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Don't build dependencies that are built into the pyodide distribution."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Compression level to use for the created zip file"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Disable building the project in an isolated virtual environment. Build "
+"dependencies must be installed separately when this option is used"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Do not check that the build dependencies are installed. This option is only "
+"useful when used with --no-isolation."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Settings to pass to the backend. Works same as the --config-setting option "
+"of pypa/build."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Path to the cross-build environment directory."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Provide a default for :option:`--exports`"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Provide a default for :option:`--xbuildenv-path`"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Compile .py files to .pyc in a wheel, a zip file, or a folder with wheels or "
+"zip files."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"If the provided folder contains the `pyodide-lock.json` file, it will be "
+"rewritten with the updated wheel / zip file paths and sha256 checksums."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "PATH: Path to the input wheel or a folder with wheels or zip files."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] PATH"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Silent mode, do not print anything."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Keep the original wheel / zip file."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Compression level to use for the created zip file."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"List of files to exclude from compilation, works only for directories. "
+"Defaults to no files."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Create a Pyodide virtual environment."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Additionally, this interface supports a subset of the arguments that "
+"`virtualenv` supports, with some minor differences for Pyodide "
+"compatibility. Please note that passing extra options is experimental and "
+"may be subject to change."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "DEST: directory to create virtualenv at"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] DEST"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Remove the destination directory if it exists."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Don't create VCS ignore directive in the destination directory."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Disable download of the latest pip/setuptools from PyPI."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Enable download of the latest pip/setuptools from PyPI."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "A path containing wheels to extend the internal wheel list."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Version of pip to install as seed: embed, bundle, or exact version."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "``'bundle'``"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Version of setuptools to install as seed: embed, bundle, none or exact "
+"version."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Do not install setuptools."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Disable the periodic update of the embedded wheels."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Manipulate pyodide-lock.json lockfiles."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] COMMAND [ARGS]..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Add a set of package wheels to an existing pyodide-lock.json and write it "
+"out to pyodide-lock-new.json"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Each package in the wheel will be added to the output lockfile, including "
+"resolution of dependencies in the lock file. By default this will fail if a "
+"dependency isn't available in either the existing lock file, or in the set "
+"of new wheels."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEELS: List of paths to wheel files. (required)"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "pyodide main add-wheels [OPTIONS] WHEELS..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"If this is true, dependencies which are not in the original lockfile or the "
+"added wheels will be added to the lockfile. Warning: This will allow a "
+"broken lockfile to be created."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Source lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Updated lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base path for wheels - wheel file names will be created relative to this "
+"path."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base url which will be appended to the wheel location. Use this if you are "
+"hosting these wheels on a different server to core pyodide packages"
+msgstr ""

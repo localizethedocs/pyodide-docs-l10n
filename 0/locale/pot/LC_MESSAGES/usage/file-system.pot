@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/file-system.md:3
+msgid "Dealing with the file system"
+msgstr ""
+
+#: ../../../usage/file-system.md:5
+msgid ""
+"Pyodide includes a file system provided by Emscripten. In JavaScript, the "
+"Pyodide file system can be accessed through {js:attr}`pyodide.FS` which re-"
+"exports the [Emscripten File System API](https://emscripten.org/docs/"
+"api_reference/Filesystem-API.html#filesystem-api)"
+msgstr ""
+
+#: ../../../usage/file-system.md:10
+msgid "**Example: Reading from the file system**"
+msgstr ""
+
+#: ../../../usage/file-system.md:12
+msgid ""
+"pyodide.runPython(`\n"
+"  from pathlib import Path\n"
+"\n"
+"  Path(\"/hello.txt\").write_text(\"hello world!\")\n"
+"`);\n"
+"\n"
+"let file = pyodide.FS.readFile(\"/hello.txt\", { encoding: \"utf8\" });\n"
+"console.log(file); // ==> \"hello world!\"\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:23
+msgid "**Example: Writing to the file system**"
+msgstr ""
+
+#: ../../../usage/file-system.md:25
+msgid ""
+"let data = \"hello world!\";\n"
+"pyodide.FS.writeFile(\"/hello.txt\", data, { encoding: \"utf8\" });\n"
+"pyodide.runPython(`\n"
+"  from pathlib import Path\n"
+"\n"
+"  print(Path(\"/hello.txt\").read_text())\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:35
+msgid "Mounting a file system"
+msgstr ""
+
+#: ../../../usage/file-system.md:37
+msgid ""
+"The default file system used in Pyodide is [MEMFS](https://emscripten.org/"
+"docs/api_reference/Filesystem-API.html#memfs), which is a virtual in-memory "
+"file system. The data stored in MEMFS will be lost when the page is reloaded."
+msgstr ""
+
+#: ../../../usage/file-system.md:40
+msgid ""
+"If you wish for files to persist, you can mount other file systems. Other "
+"file systems provided by Emscripten are `IDBFS`, `NODEFS`, `PROXYFS`, "
+"`WORKERFS`. Note that some filesystems can only be used in specific runtime "
+"environments. See [Emscripten File System API](https://emscripten.org/docs/"
+"api_reference/Filesystem-API.html#filesystem-api) for more details. For "
+"instance, to store data persistently between page reloads, one could mount a "
+"folder with the [IDBFS file system](https://emscripten.org/docs/"
+"api_reference/Filesystem-API.html#filesystem-api-idbfs)"
+msgstr ""
+
+#: ../../../usage/file-system.md:48
+msgid ""
+"let mountDir = \"/mnt\";\n"
+"pyodide.FS.mkdirTree(mountDir);\n"
+"pyodide.FS.mount(pyodide.FS.filesystems.IDBFS, {}, mountDir);\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:54
+msgid ""
+"If you are using Node.js you can access the native file system by mounting "
+"`NODEFS`."
+msgstr ""
+
+#: ../../../usage/file-system.md:56
+msgid ""
+"let mountDir = \"/mnt\";\n"
+"pyodide.FS.mkdirTree(mountDir);\n"
+"pyodide.FS.mount(pyodide.FS.filesystems.NODEFS, { root: \".\" }, mountDir);\n"
+"pyodide.runPython(\"import os; print(os.listdir('/mnt'))\");\n"
+"// ==> The list of files in the Node working directory\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:66
+msgid "(Experimental) Using the native file system in the browser"
+msgstr ""
+
+#: ../../../usage/file-system.md:68
+msgid ""
+"You can access the native file system from the browser using the [File "
+"System Access API](https://developer.mozilla.org/en-US/docs/Web/API/"
+"File_System_Access_API)."
+msgstr ""
+
+#: ../../../usage/file-system.md:71
+msgid "This is experimental"
+msgstr ""
+
+#: ../../../usage/file-system.md:74
+msgid ""
+"The File System Access API is only supported in Chromium based browsers: "
+"Chrome and Edge (as of 2022/08/18)."
+msgstr ""
+
+#: ../../../usage/file-system.md:77
+msgid "Mounting a directory"
+msgstr ""
+
+#: ../../../usage/file-system.md:79
+msgid ""
+"Pyodide provides an API {js:func}`pyodide.mountNativeFS` which mounts a {js:"
+"class}`FileSystemDirectoryHandle` into the Pyodide Python file system."
+msgstr ""
+
+#: ../../../usage/file-system.md:82
+msgid ""
+"const dirHandle = await showDirectoryPicker();\n"
+"const permissionStatus = await dirHandle.requestPermission({\n"
+"  mode: \"readwrite\",\n"
+"});\n"
+"\n"
+"if (permissionStatus !== \"granted\") {\n"
+"  throw new Error(\"readwrite access to directory not granted\");\n"
+"}\n"
+"\n"
+"const nativefs = await pyodide.mountNativeFS(\"/mount_dir\", dirHandle);\n"
+"\n"
+"pyodide.runPython(`\n"
+"  import os\n"
+"  print(os.listdir('/mount_dir'))\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:100
+msgid "Synchronizing changes to native file system"
+msgstr ""
+
+#: ../../../usage/file-system.md:102
+msgid ""
+"Due to browser limitations, the changes in the mounted file system is not "
+"synchronized by default. In order to persist any operations to an native "
+"file system, you must call"
+msgstr ""
+
+#: ../../../usage/file-system.md:106
+msgid ""
+"// nativefs is the returned from: await pyodide.mountNativeFS('/mount_dir', "
+"dirHandle)\n"
+"pyodide.runPython(`\n"
+"  with open('/mount_dir/new_file.txt', 'w') as f:\n"
+"    f.write(\"hello\");\n"
+"`);\n"
+"\n"
+"// new_file.txt does not exist in native file system\n"
+"\n"
+"await nativefs.syncfs();\n"
+"\n"
+"// new_file.txt will now exist in native file system\n"
+msgstr ""
+
+#: ../../../usage/file-system.md:120
+msgid "or"
+msgstr ""
+
+#: ../../../usage/file-system.md:122
+msgid "pyodide.FS.syncfs(false, callback_func);\n"
+msgstr ""

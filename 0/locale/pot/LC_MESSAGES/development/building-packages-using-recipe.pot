@@ -1,0 +1,477 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/building-packages-using-recipe.md:3
+msgid "Building Packages Using Recipe"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:5
+msgid ""
+"While you can build Python packages from source, we provide a `conda`-style "
+"recipe system to build multiple packages at once."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:8
+msgid ""
+"Using a recipe is also required to include the package in the Pyodide "
+"distribution. See {ref}`adding-packages-into-pyodide-distribution` for more "
+"information."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:11
+msgid "Creating the `meta.yaml` file"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:13
+msgid ""
+"To build a Python package in tree, you need to create a `meta.yaml` file "
+"that defines a recipe which includes build commands and patches (source code "
+"edits), amongst other things."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:17
+msgid ""
+"If your package is on PyPI, the easiest place to start is with the `pyodide "
+"skeleton pypi` command. Run"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:20
+msgid "pyodide skeleton pypi <package-name>\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:24
+msgid ""
+"This will generate a `meta.yaml` file under `packages/<package-name>/` (see "
+"{ref}`meta-yaml-spec`). The `pyodide` cli tool will populate the latest "
+"version, the download link and the sha256 hash by querying PyPI."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:28
+msgid ""
+"It doesn't currently handle package dependencies, so you will need to "
+"specify those yourself in the `requirements` section of the `meta.yaml` file."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:31
+msgid ""
+"requirements:\n"
+"  host:\n"
+"    # Dependencies that are needed to build the package\n"
+"    - numpy\n"
+"  run:\n"
+"    # Dependencies that are needed to run the package\n"
+"    - numpy\n"
+"    - scikit-learn\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:43
+msgid ""
+"To determine build and runtime dependencies, including for non Python "
+"libraries, it is often useful to check if the package was already built on "
+"[conda-forge](https://conda-forge.org/) look at the corresponding `meta."
+"yaml` file. This can be done either by checking if the URL `https://github."
+"com/conda-forge/<package-name>-feedstock/blob/master/recipe/meta.yaml` "
+"exists, or by searching the [conda-forge GitHub org](https://github.com/"
+"conda-forge/) for the package name."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:51
+msgid ""
+"The Pyodide `meta.yaml` file format was inspired by the one in conda, "
+"however it is not strictly compatible."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:55
+msgid "Building Recipes"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:57
+msgid ""
+"Once the `meta.yaml` file is ready, build the package with the following "
+"command and see if there are any errors."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:60
+msgid "pyodide build-recipes <package-name> --install\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:64
+msgid ""
+"This command will build the package and all its dependencies. The `--"
+"install` The `--install` flag will install the built package into the `/"
+"dist` directory."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:67
+msgid "Testing"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:69
+msgid ""
+"If the build succeeds you can try to load the package in the Pyodide "
+"environment."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:71
+msgid ""
+"Visit Build Pyodide or download the latest release from the GitHub "
+"repository."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:72
+msgid ""
+"Copy everything built in the `/dist` directory to the downloaded Pyodide "
+"directory. This should include the `pyodide-lock.json` file and the wheel "
+"files that were built."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:75
+msgid ""
+"Serve the Pyodide directory with `python -m http.server --directory ./dist`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:76
+msgid "Open `localhost:8000/console.html` and try to import the package."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:77
+msgid "You can test the package in the repl."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:79
+msgid "Modifying Build Process"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:81
+msgid ""
+"If you need to modify the build process (e.g. to fix build issues) you can "
+"do this by modifying the `meta.yaml` file. The `build` section of the `meta."
+"yaml` is where you can run scripts, set environment variables, and add extra "
+"compile and link flags."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:86
+msgid ""
+"build:\n"
+"  # You can add any shell scripts you want to run before invoking the "
+"build.\n"
+"  # For instance, setting environment variables or downloading files, or "
+"modifying the source can be done here.\n"
+"  script: |\n"
+"    wget https://example.com/file.tar.gz\n"
+"    export MY_ENV_VARIABLE=FOO\n"
+"  # You can pass extra compile and link flags to the compiler by adding them "
+"here.\n"
+"  cflags: |\n"
+"    -O3\n"
+"  cxxflags: |\n"
+"    -O3\n"
+"  ldflags: |\n"
+"    -lm\n"
+"  # This is the command that is passed to the build backend. For example, if "
+"you\n"
+"  # need to pass extra flags to setuptools, you can pass them here.\n"
+"  backend-flags: |\n"
+"    setup-args=-Dallow-noblas=true\n"
+"  # post is a script that is run after the build. This is useful for\n"
+"  # post-processing the wheel file.\n"
+"  post: |\n"
+"    rm unnecessary-file-in-the-wheel.txt\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:110
+msgid "Patching the package source"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:112
+msgid ""
+"If the package has a bug that needs to be fixed, you can apply `.patch` "
+"files to the package source. This is commonly done when the package requires "
+"special handling for Emscripten or Pyodide environment."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:116
+msgid ""
+"Place the patch files in the `patches` directory of the package, and specify "
+"them in the `source.patches` section of the `meta.yaml` file. The patches "
+"will be applied in the order they are listed."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:120
+msgid ""
+"source:\n"
+"  patches:\n"
+"    - patches/0001-Add-Wno-return-type-flag.patch\n"
+"    - patches/0002-Align-xerbla_array-signature-with-scipy-expectation."
+"patch\n"
+"    - patches/0003-Skip-linktest.patch\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:130
+msgid "Generating patches"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:132
+msgid ""
+"If the package has a git repository, the easiest way to make a patch is "
+"usually:"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:134
+msgid ""
+"Clone the git repository of the package. You might want to use the options "
+"`git clone --depth 1 --branch <version>`. Find the appropriate tag given the "
+"version of the package you are trying to modify."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:137
+msgid ""
+"Make a new branch with `git checkout -b pyodide-version` (e.g., "
+"`pyodide-1.21.4`)."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:139
+msgid ""
+"Make whatever changes you want. Commit them. Please split your changes up "
+"into focused commits. Write detailed commit messages! People will read them "
+"in the future, particularly when migrating patches or trying to decide if "
+"they are no longer needed. The first line of each commit message will also "
+"be used in the patch file name."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:144
+msgid ""
+"Use `git format-patch <version> -o packages/<package-name>/patches/` to "
+"generate a patch file for your changes and store it directly into the "
+"patches folder."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:148
+msgid "Upstream your patches!"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:150
+msgid ""
+"Please create PRs or issues to discuss with the package maintainers to try "
+"to find ways to include your patches into the package. Many package "
+"maintainers are very receptive to including Pyodide-related patches and they "
+"reduce future maintenance work for us."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:155
+msgid "Upgrading a package"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:157
+msgid "To upgrade a package's version to the latest one available on PyPI, do"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:159
+msgid "pyodide skeleton pypi <package-name> --update\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:163
+msgid ""
+"Because this does not handle package dependencies, you have to manually "
+"check whether the `requirements` section of the `meta.yaml` file needs to be "
+"updated for updated dependencies."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:167
+msgid ""
+"Upgrading a package's version may lead to new build issues that need to be "
+"resolved (see above) and any patches need to be checked and potentially "
+"migrated (see below)."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:170
+msgid "Migrating Patches"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:172
+msgid ""
+"When you want to upgrade the version of a package, you will need to migrate "
+"the patches. To do this:"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:175
+msgid ""
+"Clone the git repository of the package. You might want to use the options "
+"`git clone --depth 1 --branch <version-tag>`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:177
+msgid ""
+"Make a new branch with `git checkout -b pyodide-old-version` (e.g., "
+"`pyodide-1.21.4`)."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:179
+msgid ""
+"Apply the current patches with `git am packages/<package-name>/patches/*`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:180
+msgid ""
+"Make a new branch `git checkout -b pyodide-new-version` (e.g., "
+"`pyodide-1.22.0`)"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:182
+msgid ""
+"Rebase the patches with `git rebase old-version --onto new-version` (e.g., "
+"`git rebase pyodide-1.21.4 --onto pyodide-1.22.0`). Resolve any rebase "
+"conflicts. If a patch has been upstreamed, you can drop it with `git rebase "
+"--skip`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:185
+msgid "Remove old patches with `rm packages/<package-name>/patches/*`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:186
+msgid ""
+"Use `git format-patch <version-tag> -o packages/<package-name>/patches/` to "
+"generate new patch files."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:189
+msgid "Appendix"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:191
+msgid "C library dependencies"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:193
+msgid ""
+"Some Python packages depend on certain C libraries, e.g. `lxml` depends on "
+"`libxml`. Pyodide recipes can also be used to build C libraries."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:196
+msgid ""
+"To package a C library, create a directory for it and add `meta.yaml` file "
+"similar to the one for Python packages. However, unlike the Python package, "
+"you need to specify a build script that builds the C library. See {ref}`meta-"
+"yaml-spec` for more details."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:201
+msgid ""
+"The minimal example of `meta.yaml` for a C library that uses `configure` and "
+"`make` is:"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:204
+msgid ""
+"package:\n"
+"  name: <name>\n"
+"  version: <version>\n"
+"\n"
+"source:\n"
+"  url: <url>\n"
+"  sha256: <sha256>\n"
+"\n"
+"requirements:\n"
+"  run:\n"
+"    - <requirement>\n"
+"\n"
+"build:\n"
+"  type: static_library\n"
+"  script: |\n"
+"    emconfigure ./configure\n"
+"    emmake make\n"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:224
+msgid ""
+"You can use the `meta.yaml` of other C libraries such as [libxml](https://"
+"github.com/pyodide/pyodide-recipes/blob/main/packages/libxml/meta.yaml) as a "
+"starting point."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:228
+msgid ""
+"After packaging a C library, it can be added as a dependency of a Python "
+"package like a normal dependency. See `lxml` and `libxml` for an example "
+"(and also `scipy` and `OpenBLAS`)."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:232
+msgid ""
+"_Remark:_ Certain C libraries come as emscripten ports, and do not have to "
+"be built manually. They can be used by adding e.g. `-s USE_ZLIB` in the "
+"`cflags` of the Python package. See e.g. `matplotlib` for an example. [The "
+"full list of libraries with Emscripten ports is here.](https://github.com/"
+"orgs/emscripten-ports/repositories?type=all)"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:238
+msgid "Rust/PyO3 Packages"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:240
+msgid ""
+"We currently build `cryptography` which is a Rust extension built with PyO3 "
+"and `setuptools-rust`. It should be reasonably easy to build other Rust "
+"extensions. If you want to build a package with Rust extension, you will "
+"need Rust >= 1.41, and you need to set the rustup toolchain to `nightly`, "
+"and the target to `wasm32-unknown-emscripten` in the build script [as shown "
+"here](https://github.com/pyodide/pyodide-recipes/blob/main/packages/"
+"cryptography/meta.yaml), but other than that there may be no other issues if "
+"you are lucky."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:248
+msgid ""
+"As mentioned [here](https://github.com/pyodide/pyodide/"
+"issues/2706#issuecomment-1154655224), by default certain wasm-related "
+"`RUSTFLAGS` are set during `build.script` and can be removed with `export "
+"RUSTFLAGS=\"\"`."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:252
+msgid ""
+"If your project builds using maturin, you need to use maturin 0.14.14 or "
+"later. It is pretty easy to patch an existing project (see `projects/"
+"fastparquet/meta.yaml` for an example)"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:255
+msgid "Partial Rebuilds"
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:257
+msgid ""
+"By default, each time you run `pyodide build-recipes`, it will delete the "
+"entire source directory and replace it with a fresh copy from the download "
+"url. This is to ensure build repeatability. For debugging purposes, this is "
+"likely to be undesirable. If you want to try out a modified source tree, you "
+"can pass the flag `--continue` and `build-recipes` will try to build from "
+"the existing source tree. This can cause various issues, but if it works it "
+"is much more convenient."
+msgstr ""
+
+#: ../../../development/building-packages-using-recipe.md:264
+msgid ""
+"Using the `--continue` flag, you can modify the sources in tree to fix the "
+"build, then when it works, copy the modified sources into your checked out "
+"copy of the package source repository and use `git format-patch` to generate "
+"the patch."
+msgstr ""
