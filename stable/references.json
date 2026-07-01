@@ -13,22 +13,22 @@
     },
     "zh_CN" : 
     {
-      "branch" : "",
+      "branch" : "stable",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-06-30 20:16:25 +0900",
+        "hash" : "c19a36f44fcaed828331f2536672b3e0934ddd7f",
+        "title" : "314.0.2"
       }
     },
     "zh_TW" : 
     {
-      "branch" : "",
+      "branch" : "stable",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-06-30 20:16:25 +0900",
+        "hash" : "c19a36f44fcaed828331f2536672b3e0934ddd7f",
+        "title" : "314.0.2"
       }
     }
   },
