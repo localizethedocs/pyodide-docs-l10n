@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/examples.md:1
 msgid "Community Examples"
-msgstr ""
+msgstr "社群範例"
 
 #: ../../../usage/examples.md:5
 msgid ""

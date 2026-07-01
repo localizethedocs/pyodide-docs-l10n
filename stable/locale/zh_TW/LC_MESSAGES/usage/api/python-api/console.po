@@ -229,7 +229,7 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.complete:16 pyodide.console.repr_shorten:8
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: ../../../docstring of
 #: pyodide.console.Console.completer_word_break_characters:1
@@ -367,7 +367,7 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.ConsoleFuture:4 pyodide.console.PyodideConsole:5
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: ../../../docstring of pyodide.console.ConsoleFuture.formatted_error:1
 msgid ""

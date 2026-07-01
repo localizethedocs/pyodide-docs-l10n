@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:3
 msgid "Downloading and deploying Pyodide"
-msgstr ""
+msgstr "下載與部署 Pyodide"
 
 #: ../../../usage/downloading-and-deploying.md:5
 msgid "Downloading Pyodide"
-msgstr ""
+msgstr "下載 Pyodide"
 
 #: ../../../usage/downloading-and-deploying.md:7
 msgid "CDN"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:0
 msgid "`https://cdn.jsdelivr.net/pyodide/dev/full/`"
-msgstr ""
+msgstr "`https://cdn.jsdelivr.net/pyodide/dev/full/`"
 
 #: ../../../usage/downloading-and-deploying.md:0
 msgid ""

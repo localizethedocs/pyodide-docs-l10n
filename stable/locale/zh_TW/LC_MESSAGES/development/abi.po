@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../development/abi.md:1
 msgid "The PyEmscripten Platform"
-msgstr ""
+msgstr "PyEmscripten 平臺"
 
 #: ../../../development/abi.md:5
 msgid "What is the PyEmscripten Platform?"
-msgstr ""
+msgstr "什麼是 PyEmscripten 平臺？"
 
 #: ../../../development/abi.md:7
 msgid ""
