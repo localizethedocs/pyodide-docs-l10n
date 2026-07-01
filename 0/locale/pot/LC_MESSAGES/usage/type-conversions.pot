@@ -1,0 +1,1404 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/type-conversions.md:3
+msgid "Type translations"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:5
+msgid ""
+"In order to communicate between Python and JavaScript, we \"translate\" "
+"objects between the two languages. Depending on the type of the object we "
+"either translate the object by implicitly converting it or by proxying it. "
+"By \"converting\" an object we mean producing a new object in the target "
+"language which is the equivalent of the object from the source language, for "
+"example converting a Python string to the equivalent a JavaScript string. By "
+"\"proxying\" an object we mean producing a special object in the target "
+"language that forwards requests to the source language. When we proxy a "
+"JavaScript object into Python, the result is a {py:class}`~pyodide.ffi."
+"JsProxy` object. When we proxy a Python object into JavaScript, the result "
+"is a {js:class}`~pyodide.ffi.PyProxy` object. A proxied object can be "
+"explicitly converted using the explicit conversion methods {py:meth}`JsProxy."
+"to_py() <pyodide.ffi.JsProxy.to_py>` and {js:func}`PyProxy.toJs() <pyodide."
+"ffi.PyProxy.toJs>`."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:19
+msgid "Python to JavaScript translations occur:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:21
+msgid ""
+"when returning the final expression from a {js:func}`pyodide.runPython` call,"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:22
+msgid ""
+"when [importing Python objects into JavaScript](type-translations_using-py-"
+"obj-from-js)"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:23
+msgid "when passing arguments to a JavaScript function called from Python,"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:24
+msgid "when returning the results of a Python function called from JavaScript,"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:25
+msgid "when accessing an attribute of a {js:class}`~pyodide.ffi.PyProxy`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:27
+msgid "JavaScript to Python translations occur:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:29
+msgid ""
+"when [importing from the `js` module](type-translations_using-js-obj-from-py)"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:30
+msgid "when passing arguments to a Python function called from JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:31
+msgid "when returning the result of a JavaScript function called from Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:32
+msgid "when accessing an attribute of a {py:class}`~pyodide.ffi.JsProxy`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "Memory Leaks and Python to JavaScript translations"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:37
+msgid ""
+"Any time a Python to JavaScript translation occurs, it may create a {js:"
+"class}`~pyodide.ffi.PyProxy`. To avoid memory leaks, you must store the {js:"
+"class}`~pyodide.ffi.PyProxy` and {js:func}`~pyodide.ffi.PyProxy.destroy` it "
+"when you are done with it. See {ref}`call-py-from-js` for more info."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:43
+msgid "Round trip conversions"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:45
+msgid ""
+"Translating an object from Python to JavaScript and then back to Python is "
+"guaranteed to give an object that is equal to the original object. "
+"Furthermore, if the object is proxied into JavaScript, then translation back "
+"unwraps the proxy, and the result of the round trip conversion `is` the "
+"original object (in the sense that they live at the same memory address)."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:51
+msgid ""
+"Translating an object from JavaScript to Python and then back to JavaScript "
+"gives an object that is `===` to the original object. Furthermore, if the "
+"object is proxied into Python, then translation back unwraps the proxy, and "
+"the result of the round trip conversion is the original object (in the sense "
+"that they live at the same memory address). There are a few exceptions:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:57
+msgid "`NaN` is converted to `NaN` after a round trip but `NaN !== NaN`,"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:58
+msgid ""
+"a {js:data}`BigInt` will be converted to a {js:data}`Number` after a round "
+"trip unless its absolute value is greater than {js:data}`Number."
+"MAX_SAFE_INTEGER` (i.e., 2^53)."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:62
+msgid "Implicit conversions"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:64
+msgid ""
+"We implicitly convert immutable types but not mutable types. This ensures "
+"that mutable Python objects can be modified from JavaScript and vice-versa. "
+"Python has immutable types such as {py:class}`tuple` and {py:class}`bytes` "
+"that have no equivalent in JavaScript. In order to ensure that round trip "
+"translations yield an object of the same type as the original object, we "
+"proxy {py:class}`tuple` and {py:class}`bytes` objects."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:73 ../../../usage/type-conversions.md:282
+msgid "Python to JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:75
+msgid ""
+"The following immutable types are implicitly converted from Python to "
+"JavaScript:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34 ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34 ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:class}`int`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`Number` or {js:data}`BigInt`\\*"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:class}`float`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`Number`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:class}`str`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`String`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:class}`bool`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`Boolean`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:data}`None`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`undefined`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:data}`pyodide.ffi.jsnull`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`null`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:87
+msgid ""
+"\\* An {py:class}`int` is converted to a {js:data}`Number` if the absolute "
+"value is less than or equal to {js:data}`Number.MAX_SAFE_INTEGER` otherwise "
+"it is converted to a {js:data}`BigInt`. (If the browser does not support {js:"
+"data}`BigInt` then a {js:data}`Number` will be used instead. In this case, "
+"conversion of large integers from Python to JavaScript is lossy.)"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:95 ../../../usage/type-conversions.md:345
+msgid "JavaScript to Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:97
+msgid ""
+"The following immutable types are implicitly converted from JavaScript to "
+"Python:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{py:class}`int` or {py:class}`float` as appropriate\\*"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{js:data}`BigInt`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:109
+msgid ""
+"\\* A {js:data}`Number` is converted to an {py:class}`int` if the absolute "
+"value is less than or equal to {js:data}`Number.MAX_SAFE_INTEGER` and its "
+"fractional part is zero. Otherwise, it is converted to a {py:class}`float`."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:113
+msgid "Proxying"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:115
+msgid ""
+"Any of the types not listed above are shared between languages using proxies "
+"that allow methods and some operations to be called on the object from the "
+"other language."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:121
+msgid "Proxying from JavaScript into Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:123
+msgid ""
+"When most JavaScript objects are translated into Python a {py:class}"
+"`~pyodide.ffi.JsProxy` is returned. The following operations are currently "
+"supported on a {py:class}`~pyodide.ffi.JsProxy`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`str(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.toString()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`repr(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.foo = bar`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.foo = bar`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`del proxy.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`delete x.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`hasattr(proxy, \"foo\")`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`\"foo\" in x`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy(...)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x(...)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.foo(...)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.foo(...)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "{any}`proxy.new(...)<JsProxy.new>`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`new X(...)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`len(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.length` or `x.size`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`foo in proxy`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.has(foo)` or `x.includes(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[foo]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.get(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[foo] = bar`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.set(foo, bar)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`del proxy[foo]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.delete(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy1 == proxy2`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x === y`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.typeof`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`typeof x`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`iter(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x[Symbol.iterator]()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`aiter(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x[Symbol.asyncIterator]()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`next(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x.next()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`anext(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`await proxy`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`await x`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:150
+msgid ""
+"Note that each of these operations is only supported if the proxied "
+"JavaScript object supports the corresponding operation. See {py:class}`the "
+"JsProxy API docs <pyodide.ffi.JsProxy>` for the rest of the methods "
+"supported on {py:class}`~pyodide.ffi.JsProxy`. Some other code snippets:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:155
+msgid ""
+"for v in proxy:\n"
+"    # do something\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:160
+msgid "is equivalent to:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:162
+msgid ""
+"for (let v of x) {\n"
+"  // do something\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:168
+msgid ""
+"The {py:func}`dir` method has been overloaded to return all keys on the "
+"prototype chain of `x`, so `dir(x)` roughly translates to:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:171
+msgid ""
+"function dir(x) {\n"
+"  let result = [];\n"
+"  do {\n"
+"    result.push(...Object.getOwnPropertyNames(x));\n"
+"  } while ((x = Object.getPrototypeOf(x)));\n"
+"  return result;\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:181
+msgid ""
+"As a special case, JavaScript {js:class}`Array`, {js:class}`HTMLCollection`, "
+"and {js:class}`NodeList` are container types, but instead of using `array."
+"get(7)` to get the 7th element, JavaScript uses `array[7]`. For these cases, "
+"we translate:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[idx]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`array[idx]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[idx] = val`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`array[idx] = val`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`idx in proxy`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`idx in array`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`del proxy[idx]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`array.splice(idx)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:192
+msgid ""
+"If you need to access the fields in a JavaScript object, you must use `obj."
+"field_name` or if the name of the field is not a valid Python identifier, "
+"`getattr(obj, \"field name\")`. If you want to access the fields of the "
+"object like `obj[\"field name\"]` you can use {py:meth}`~pyodide.ffi.JsProxy."
+"as_py_json`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:198
+msgid ""
+"from pyodide.code import run_js\n"
+"\n"
+"obj = run_js(\n"
+"    \"\"\"\n"
+"    ({\n"
+"      a: 7,\n"
+"      b: 9,\n"
+"      $c: 11\n"
+"    })\n"
+"    \"\"\"\n"
+")\n"
+"obj_map = obj.as_py_json()\n"
+"assert obj_map[\"$c\"] == 11\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:214
+msgid ""
+"Another special case comes from the fact that Python reserved words cannot "
+"be used as attributes. For instance, {js:func}`Array.from` and {js:meth}"
+"`Promise.finally` cannot be directly accessed because they are Python "
+"`SyntaxError`s. Instead we access these attributes with `Array.from_` and "
+"`Promise.finally_`. Similarly, to access from Python, `o.from_` you have to "
+"use `o.from__` with two underscores (since a single underscore is used for "
+"`o.from`). This is reflected in the `dir` of a `JsProxy`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:222
+msgid ""
+"from pyodide.code import run_js\n"
+"o = run_js(\"({finally: 1, return: 2, from: 3, from_: 4})\")\n"
+"assert set(dir(o)) == {\"finally_\", \"return_\", \"from_\", \"from__\"}\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:230
+msgid "Proxying from Python into JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:232
+msgid ""
+"When most Python objects are translated to JavaScript a {js:class}`~pyodide."
+"ffi.PyProxy` is produced."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:235
+msgid ""
+"Fewer operations can be overloaded in JavaScript than in Python, so some "
+"operations are more cumbersome on a {js:class}`~pyodide.ffi.PyProxy` than on "
+"a {py:class}`~pyodide.ffi.JsProxy`. The following operations are supported:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.toString()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`str(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`hasattr(x, 'foo')`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`delete proxy.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`del x.foo`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`Object.getOwnPropertyNames(proxy)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`dir(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.length`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`len(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.has(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`foo in x`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.get(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x[foo]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.set(foo, bar)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`x[foo] = bar`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.delete(foo)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`del x[foo]`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.type`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`type(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[Symbol.iterator]()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`iter(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy[Symbol.asyncIterator]()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`aiter(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`proxy.next()`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:34
+msgid "`next(x)` or `anext(x)`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:260
+msgid ""
+"As a special case, if a PyProxy is created of a dictionary, then "
+"`proxy[key]` will fall back to checking for an item in the dictionary if "
+"there is no attribute called key. Both PyProxy properties and dictionary "
+"attributes take precedence over dictionary keys."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+msgid "Memory Leaks and PyProxy"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:268
+msgid ""
+"Make sure to destroy PyProxies when you are done with them to avoid memory "
+"leaks."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:270
+msgid ""
+"let foo = pyodide.globals.get('foo');\n"
+"foo();\n"
+"foo.destroy();\n"
+"foo(); // throws Error: Object has already been destroyed\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:278
+msgid "Explicit Conversion of Proxies"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:284
+msgid ""
+"Explicit conversion of a {js:class}`~pyodide.ffi.PyProxy` into a native "
+"JavaScript object is done with the {js:func}`~pyodide.ffi.PyProxy.toJs` "
+"method. You can also perform such a conversion in Python using {py:func}"
+"`~pyodide.ffi.to_js` which behaves in much the same way. By default, the {js:"
+"func}`~pyodide.ffi.PyProxy.toJs` method does a recursive \"deep\" "
+"conversion, to do a shallow conversion use `proxy.toJs({depth : 1})`. In "
+"addition to [the normal type conversion](type-translations_py2js-table), the "
+"{js:func}`~pyodide.ffi.PyProxy.toJs` method performs the following explicit "
+"conversions:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+msgid "{py:class}`list`, {py:class}`tuple`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "{js:class}`Array`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "{py:class}`dict`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+msgid "{js:data}`Object`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "{py:class}`set`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+#: ../../../usage/type-conversions.md:319
+msgid "{js:class}`Set`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+msgid "{external:doc}`a buffer <c-api/buffer>`\\*"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:265
+msgid "{js:class}`TypedArray`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:301
+msgid ""
+"\\* Examples of buffers include {py:class}`bytes` objects and numpy "
+"{external+numpy:ref}`arrays`."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:304
+msgid ""
+"If you need to convert {py:class}`dict` instead to {js:data}`Object`, you "
+"can pass {js:func}`Object.fromEntries` as the `dict_converter` argument: "
+"`proxy.toJs({dict_converter : Object.fromEntries})`."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:308
+msgid ""
+"In JavaScript, {js:class}`Set` keys are compared using object identity "
+"unless the key is an immutable type (meaning a {js:data}`String`, a {js:data}"
+"`Number`, a {js:data}`BigInt`, a {js:data}`Boolean`, {js:data}`undefined`, "
+"or {js:data}`null`). {js:data}`Object` keys are all treated as strings. On "
+"the other hand, in Python, {py:class}`dict` and {py:class}`set` keys are "
+"compared using deep equality. If a key is encountered in a {py:class}`dict` "
+"or {py:class}`set` that would have different semantics in JavaScript than in "
+"Python, then a {py:exc}`~pyodide.ffi.ConversionError` will be thrown."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:317
+msgid ""
+"See {ref}`buffer_tojs` for the behavior of {js:func}`~pyodide.ffi.PyProxy."
+"toJs` on buffers."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:319
+msgid "Memory Leaks and toJs"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:322
+msgid ""
+"The {js:func}`~pyodide.ffi.PyProxy.toJs` method can create many proxies at "
+"arbitrary depth. It is your responsibility to manually {js:meth}`~pyodide."
+"ffi.PyProxy.destroy` these proxies if you wish to avoid memory leaks. The "
+"`pyproxies` argument to {js:meth}`~pyodide.ffi.PyProxy.toJs` is designed to "
+"help with this:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:326
+msgid ""
+"let pyproxies = [];\n"
+"proxy.toJs({pyproxies});\n"
+"// Do stuff\n"
+"// pyproxies contains the list of proxies created by `toJs`. We can destroy "
+"them\n"
+"// when we are done with them\n"
+"for(let px of pyproxies){\n"
+"    px.destroy();\n"
+"}\n"
+"proxy.destroy();\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:337
+msgid ""
+"As an alternative, if you wish to assert that the object should be fully "
+"converted and no proxies should be created, you can use `proxy."
+"toJs({create_pyproxies : false})`. If a proxy would be created, a {py:exc}"
+"`~pyodide.ffi.ConversionError` is raised instead."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:347
+msgid ""
+"Explicit conversion of a {py:class}`~pyodide.ffi.JsProxy` into a native "
+"Python object is done with the {py:meth}`JsProxy.to_py() <pyodide.ffi."
+"JsProxy.to_py>` method. By default, the {py:meth}`~pyodide.ffi.JsProxy."
+"to_py` method does a recursive \"deep\" conversion, to do a shallow "
+"conversion use `proxy.to_py(depth=1)`. The {py:meth}`~pyodide.ffi.JsProxy."
+"to_py` method performs the following explicit conversions:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:319
+msgid "{py:class}`list`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:319
+msgid "{js:data}`Object`\\*"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:319
+msgid "{js:class}`Map`"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:361
+msgid ""
+"\\* {py:meth}`~pyodide.ffi.JsProxy.to_py` will only convert an {js:data}"
+"`Object` into a dictionary if its constructor is {js:data}`Object`, "
+"otherwise the object will be left alone. Example:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:365
+msgid ""
+"class Test {};\n"
+"window.x = { \"a\" : 7, \"b\" : 2};\n"
+"window.y = { \"a\" : 7, \"b\" : 2};\n"
+"Object.setPrototypeOf(y, Test.prototype);\n"
+"pyodide.runPython(`\n"
+"    from js import x, y\n"
+"    # x is converted to a dictionary\n"
+"    assert x.to_py() == { \"a\" : 7, \"b\" : 2}\n"
+"    # y is not a \"Plain Old JavaScript Object\", it's an instance of type "
+"Test so it's not converted\n"
+"    assert y.to_py() == y\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:379
+msgid ""
+"In JavaScript, {js:class}`Map` and {js:class}`Set` keys are compared using "
+"object identity unless the key is an immutable type (meaning a {js:data}"
+"`String`, a {js:data}`Number`, a {js:data}`BigInt`, a {js:data}`Boolean`, "
+"{js:data}`undefined`, or {js:data}`null`). On the other hand, in Python, {py:"
+"class}`dict` and {py:class}`set` keys are compared using deep equality. If a "
+"key is encountered in a {js:class}`Map` or {js:class}`Set` that would have "
+"different semantics in Python than in JavaScript, then a {py:exc}`~pyodide."
+"ffi.ConversionError` will be thrown. Also, in JavaScript, `true !== 1` and "
+"`false !== 0`, but in Python, `True == 1` and `False == 0`. This has the "
+"result that a JavaScript map can use `true` and `1` as distinct keys but a "
+"Python {py:class}`dict` cannot. If the JavaScript map contains both `true` "
+"and `1` a {py:exc}`~pyodide.ffi.ConversionError` will be thrown."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:392
+msgid "Functions"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:396
+msgid "Calling Python objects from JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:398
+msgid ""
+"If a Python object is callable, the proxy will be callable too. The "
+"arguments will be translated from JavaScript to Python as appropriate, and "
+"the return value will be translated from JavaScript back to Python. If the "
+"return value is a {js:class}`~pyodide.ffi.PyProxy`, you must explicitly "
+"destroy it or else it will be leaked."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:403
+msgid "An example:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:405
+msgid ""
+"let test = pyodide.runPython(`\n"
+"    def test(x):\n"
+"        return [n*n for n in x]\n"
+"    test\n"
+"`);\n"
+"let result_py = test([1,2,3,4]);\n"
+"// result_py is a PyProxy of a list.\n"
+"let result_js = result_py.toJs();\n"
+"// result_js is the array [1, 4, 9, 16]\n"
+"result_py.destroy();\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:418
+msgid ""
+"If a function is intended to be used from JavaScript, you can use {py:func}"
+"`~pyodide.ffi.to_js` on the return value. This prevents the return value "
+"from leaking without requiring the JavaScript code to explicitly destroy it. "
+"This is particularly important for callbacks."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:423
+msgid ""
+"let test = pyodide.runPython(`\n"
+"    from pyodide.ffi import to_js\n"
+"    def test(x):\n"
+"        return to_js([n*n for n in x])\n"
+"    test\n"
+"`);\n"
+"let result = test([1,2,3,4]);\n"
+"// result is the array [1, 4, 9, 16], nothing needs to be destroyed.\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:434
+msgid ""
+"If you need to use a key word argument, use {js:func}`~pyodide.ffi."
+"PyCallable.callKwargs`. The last argument should be a JavaScript object with "
+"the key value arguments."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:437
+msgid ""
+"let test = pyodide.runPython(`\n"
+"    from pyodide.ffi import to_js\n"
+"    def test(x, *, offset):\n"
+"        return to_js([n*n + offset for n in x])\n"
+"    to_js(test)\n"
+"`);\n"
+"let result = test.callKwargs([1,2,3,4], { offset : 7});\n"
+"// result is the array [8, 12, 16, 23]\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:450
+msgid "Calling JavaScript functions from Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:452
+msgid ""
+"What happens when calling a JavaScript function from Python is a bit more "
+"complicated than calling a Python function from JavaScript. If there are any "
+"keyword arguments, they are combined into a JavaScript object and used as "
+"the final argument. Thus, if you call:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:457
+msgid "f(a=2, b=3)\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:461
+msgid ""
+"then the JavaScript function receives one argument which is a JavaScript "
+"object `{a : 2, b : 3}`."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:464
+msgid ""
+"When a JavaScript function is called, if the return value not a {js:class}"
+"`Promise`, a {js:class}`Generator`, or an {js:class}`AsyncGenerator`, any "
+"arguments that are PyProxies that were created in the process of argument "
+"conversion are also destroyed. If the result is a {js:class}`~pyodide.ffi."
+"PyProxy` it is also destroyed."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:470
+msgid ""
+"As a result of this, if a {js:class}`~pyodide.ffi.PyProxy` is persisted to "
+"be used later, then it must either be copied using {js:meth}`~pyodide.ffi."
+"PyProxy.copy` in JavaScript, or it must be created with {py:func}`~pyodide."
+"ffi.create_proxy` or {py:func}`~pyodide.ffi.create_once_callable`. If it's "
+"only going to be called once use {py:func}`~pyodide.ffi."
+"create_once_callable`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:476
+msgid ""
+"from pyodide.ffi import create_once_callable\n"
+"from js import setTimeout\n"
+"def my_callback():\n"
+"    print(\"hi\")\n"
+"setTimeout(create_once_callable(my_callback), 1000)\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:484
+msgid ""
+"If it's going to be called many times use {py:func}`~pyodide.ffi."
+"create_proxy`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:486
+msgid ""
+"from pyodide.ffi import create_proxy\n"
+"from js import document\n"
+"def my_callback():\n"
+"    print(\"hi\")\n"
+"proxy = create_proxy(my_callback)\n"
+"document.body.addEventListener(\"click\", proxy)\n"
+"# ...\n"
+"# make sure to hold on to proxy\n"
+"document.body.removeEventListener(\"click\", proxy)\n"
+"proxy.destroy()\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:499
+msgid ""
+"When a JavaScript function returns a {js:class}`Promise` (for example, if "
+"the function is an {ref}`async function`), it is assumed that the {js:class}"
+"`Promise` is going to do some work that uses the arguments of the function, "
+"so it is not safe to destroy them until the {js:class}`Promise` resolves. In "
+"this case, the proxied function returns a Python {py:class}`~asyncio.Future` "
+"instead of the original {js:class}`Promise`. When the {js:class}`Promise` "
+"resolves, the result is converted to Python and the converted value is used "
+"to resolve the {py:class}`~asyncio.Future`. Then if the result is a {js:"
+"class}`~pyodide.ffi.PyProxy` it is destroyed. Any PyProxies created in "
+"converting the arguments are also destroyed at this point."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:510
+msgid ""
+"Similarly, if the return value is a {js:class}`Generator` or {js:class}"
+"`AsyncGenerator`, then the arguments (and all values sent to the generator) "
+"are kept alive until it is exhausted, or until {py:meth}`~pyodide.ffi."
+"JsGenerator.close` is called."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:515
+msgid "Buffers"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:517
+msgid "Using JavaScript Typed Arrays from Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:519
+msgid ""
+"JavaScript {js:class}`ArrayBuffer` and {js:class}`TypedArray` objects are "
+"proxied into Python. Python can't directly access arrays if they are outside "
+"the WASM heap, so it's impossible to directly use these proxied buffers as "
+"Python buffers. You can convert such a proxy to a Python {py:class}"
+"`memoryview` using the {py:meth}`~pyodide.ffi.JsProxy.to_py` api. This makes "
+"it easy to correctly convert the array to a Numpy array using {py:func}"
+"`numpy.asarray`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:526
+msgid ""
+"self.jsarray = new Float32Array([1,2,3, 4, 5, 6]);\n"
+"pyodide.runPython(`\n"
+"    from js import jsarray\n"
+"    array = jsarray.to_py()\n"
+"    import numpy as np\n"
+"    numpy_array = np.asarray(array).reshape((2,3))\n"
+"    print(numpy_array)\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:537
+msgid ""
+"After manipulating `numpy_array` you can assign the value back to `jsarray` "
+"using {py:meth}`~pyodide.ffi.JsBuffer.assign`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:540
+msgid ""
+"pyodide.runPython(`\n"
+"    numpy_array[1,1] = 77\n"
+"    jsarray.assign(a)\n"
+"`);\n"
+"console.log(jsarray); // [1, 2, 3, 4, 77, 6]\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:548
+msgid ""
+"The {py:meth}`~pyodide.ffi.JsBuffer.assign` and {py:meth}`~pyodide.ffi."
+"JsBuffer.assign_to` methods can be used to assign a JavaScript buffer from / "
+"to a Python buffer which is appropriately sized and contiguous. The "
+"assignment methods will only work if the data types match, the total length "
+"of the buffers match, and the Python buffer is contiguous."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:556
+msgid "Using Python Buffer objects from JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:558
+msgid ""
+"Python objects supporting the [Python Buffer protocol](https://docs.python."
+"org/3/c-api/buffer.html) are proxied into JavaScript. The data inside the "
+"buffer can be accessed via the {js:func}`~pyodide.ffi.PyProxy.toJs` method "
+"or the {js:func}`~pyodide.ffi.PyBuffer.getBuffer` method. The {js:func}"
+"`~pyodide.ffi.PyProxy.toJs` API copies the buffer into JavaScript, whereas "
+"the {js:func}`~pyodide.ffi.PyBuffer.getBuffer` method allows low level "
+"access to the WASM memory backing the buffer. The {js:func}`~pyodide.ffi."
+"PyBuffer.getBuffer` API is more powerful but requires care to use correctly. "
+"For simple use cases the {js:func}`~pyodide.ffi.PyProxy.toJs` API should be "
+"preferred."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:570
+msgid ""
+"If the buffer is zero or one-dimensional, then {js:func}`~pyodide.ffi."
+"PyProxy.toJs` will in most cases convert it to a single {js:class}"
+"`TypedArray`. However, in the case that the format of the buffer is `'s'`, "
+"we will convert the buffer to a string and if the format is `'?'` we will "
+"convert it to an {js:class}`Array` of booleans."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:576
+msgid ""
+"If the dimension is greater than one, we will convert it to a nested "
+"JavaScript array, with the innermost dimension handled in the same way we "
+"would handle a 1d array."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:580
+msgid ""
+"An example of a case where you would not want to use the {js:func}`~pyodide."
+"ffi.PyProxy.toJs` method is when the buffer is bitmapped image data. If for "
+"instance you have a 3d buffer shaped 1920 x 1080 x 4, then {js:func}"
+"`~pyodide.ffi.PyProxy.toJs` will be extremely slow. In this case you could "
+"use {js:func}`~pyodide.ffi.PyBuffer.getBuffer`. On the other hand, if you "
+"have a 3d buffer shaped 1920 x 4 x 1080, the performance of {js:func}"
+"`~pyodide.ffi.PyProxy.toJs` will most likely be satisfactory. Typically, the "
+"innermost dimension won't matter for performance."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:589
+msgid ""
+"The {js:func}`~pyodide.ffi.PyBuffer.getBuffer` method can be used to "
+"retrieve a reference to a JavaScript typed array that points to the data "
+"backing the Python object, combined with other metadata about the buffer "
+"format. The metadata is suitable for use with a JavaScript ndarray library "
+"if one is present. For instance, if you load the JavaScript [ndarray]"
+"(https://github.com/scijs/ndarray) package, you can do:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:596
+msgid ""
+"let proxy = pyodide.globals.get(\"some_numpy_ndarray\");\n"
+"let buffer = proxy.getBuffer();\n"
+"proxy.destroy();\n"
+"try {\n"
+"  if (buffer.readonly) {\n"
+"    // We can't stop you from changing a readonly buffer, but it can cause "
+"undefined behavior.\n"
+"    throw new Error(\"Uh-oh, we were planning to change the buffer\");\n"
+"  }\n"
+"  let array = new ndarray(\n"
+"    buffer.data,\n"
+"    buffer.shape,\n"
+"    buffer.strides,\n"
+"    buffer.offset,\n"
+"  );\n"
+"  // manipulate array here\n"
+"  // changes will be reflected in the Python ndarray!\n"
+"} finally {\n"
+"  buffer.release(); // Release the memory when we're done\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:620
+msgid "Errors"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:622
+msgid ""
+"All entrypoints and exit points from Python code are wrapped in JavaScript "
+"`try` blocks. At the boundary between Python and JavaScript, errors are "
+"caught, converted between languages, and rethrown."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:626
+msgid ""
+"JavaScript errors are wrapped in a {py:class}`~pyodide.ffi.JsException`. "
+"Python exceptions are converted to a {js:class}`~pyodide.ffi.PythonError`. "
+"At present if an exception crosses between Python and JavaScript several "
+"times, the resulting error message won't be as useful as one might hope."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:631
+msgid ""
+"In order to reduce memory leaks, the {js:class}`~pyodide.ffi.PythonError` "
+"has a formatted traceback, but no reference to the original Python "
+"exception. The original exception has references to the stack frame and "
+"leaking it will leak all the local variables from that stack frame. The "
+"actual Python exception will be stored in {py:data}`sys.last_value` so if "
+"you need access to it (for instance to produce a traceback with certain "
+"functions filtered out), use that."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:638
+msgid "Be careful Proxying Stack Frames"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:640
+msgid ""
+"If you make a {js:class}`~pyodide.ffi.PyProxy` of {py:data}`sys.last_value`, "
+"you should be especially careful to {js:meth}`~pyodide.ffi.PyProxy.destroy` "
+"it when you are done with it, or you may leak a large amount of memory if "
+"you don't."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:645
+msgid "The easiest way is to only handle the exception in Python:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:647
+msgid ""
+"pyodide.runPython(`\n"
+"def reformat_exception():\n"
+"    from traceback import format_exception\n"
+"    # Format a modified exception here\n"
+"    # this just prints it normally but you could for instance filter some "
+"frames\n"
+"    return \"\".join(\n"
+"        format_exception(sys.last_type, sys.last_value, sys.last_traceback)\n"
+"    )\n"
+"`);\n"
+"let reformat_exception = pyodide.globals.get(\"reformat_exception\");\n"
+"try {\n"
+"    pyodide.runPython(some_code);\n"
+"} catch(e){\n"
+"    // replace error message\n"
+"    e.message = reformat_exception();\n"
+"    throw e;\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:667
+msgid "Importing Objects"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:669
+msgid ""
+"It is possible to access objects in one language from the global scope in "
+"the other language. It is also possible to create custom namespaces and "
+"access objects on the custom namespaces."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:675
+msgid "Importing Python objects into JavaScript"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:677
+msgid ""
+"A Python global variable in the `__main__` global scope can be imported into "
+"JavaScript using the {js:meth}`pyodide.globals.get() <pyodide.ffi."
+"PyProxyWithGet.get>` method. Given the name of the Python global variable, "
+"it returns the value of the variable translated to JavaScript."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:682
+msgid "let x = pyodide.globals.get(\"x\");\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:686
+msgid ""
+"As always, if the result is a {js:class}`~pyodide.ffi.PyProxy` and you care "
+"about not leaking the Python object, you must destroy it when you are done. "
+"It's also possible to set values in the Python global scope with {js:meth}"
+"`pyodide.globals.set() <pyodide.ffi.PyProxyWithSet.set>` or remove them with "
+"{js:meth}`pyodide.globals.delete() <pyodide.ffi.PyProxyWithSet.delete>`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:691
+msgid ""
+"pyodide.globals.set(\"x\", 2);\n"
+"pyodide.runPython(\"print(x)\"); // Prints 2\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:696
+msgid ""
+"If you execute code with a custom globals dictionary, you can use a similar "
+"approach:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:699
+msgid ""
+"let my_py_namespace = pyodide.globals.get(\"dict\")();\n"
+"pyodide.runPython(\"x=2\", my_py_namespace);\n"
+"let x = my_py_namespace.get(\"x\");\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:705
+msgid ""
+"To access a Python module from JavaScript, use {js:func}`~pyodide.pyimport`:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:707
+msgid "let sys = pyodide.pyimport(\"sys\");\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:713
+msgid "Importing JavaScript objects into Python"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:715
+msgid ""
+"JavaScript objects in the {js:data}`globalThis` global scope can be imported "
+"into Python using the `js` module."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:718
+msgid ""
+"When importing a name from the `js` module, the `js` module looks up "
+"JavaScript attributes of the {js:data}`globalThis` scope and translates the "
+"JavaScript objects into Python."
+msgstr ""
+
+#: ../../../usage/type-conversions.md:722
+msgid ""
+"import js\n"
+"js.document.title = 'New window title'\n"
+"from js.document.location import reload as reload_page\n"
+"reload_page()\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:729
+msgid "You can also assign to JavaScript global variables in this way:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:731
+msgid ""
+"pyodide.runPython(\"js.x = 2\");\n"
+"console.log(window.x); // 2\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:736
+msgid ""
+"You can create your own custom JavaScript modules using {js:func}`pyodide."
+"registerJsModule` and they will behave like the `js` module except with a "
+"custom scope:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:740
+msgid ""
+"let my_js_namespace = { x : 3 };\n"
+"pyodide.registerJsModule(\"my_js_namespace\", my_js_namespace);\n"
+"pyodide.runPython(`\n"
+"    from my_js_namespace import x\n"
+"    print(x) # 3\n"
+"    my_js_namespace.y = 7\n"
+"`);\n"
+"console.log(my_js_namespace.y); // 7\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:751
+msgid ""
+"If the JavaScript object's name is a reserved Python keyword, the {py:func}"
+"`getattr` function can be used to access the object by name within the js "
+"module::"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:753
+msgid ""
+"lambda = (x) => {return x + 1};\n"
+"// 'from js import lambda' will cause a Syntax Error, since 'lambda' is a "
+"Python reserved keyword. Instead:\n"
+"pyodide.runPython(`\n"
+"    import js\n"
+"    js_lambda = getattr(js, 'lambda')\n"
+"    print(js_lambda(1))\n"
+"    `);\n"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:763
+msgid ""
+"If a JavaScript object has a property that is a reserved Python keyword, the "
+"{py:func}`setattr` and {py:func}`getattr` function can be used to access "
+"that property by name:"
+msgstr ""
+
+#: ../../../usage/type-conversions.md:765
+msgid ""
+"people = {global: \"lots and lots\"};\n"
+"// Trying to access 'people.global' will raise a Syntax Error, since "
+"'global' is a Python reserved keyword. Instead:\n"
+"pyodide.runPython(`\n"
+"    from js import people\n"
+"    setattr(people, 'global', 'even more')\n"
+"    print(getattr(people, 'global'))\n"
+"    `);\n"
+msgstr ""
