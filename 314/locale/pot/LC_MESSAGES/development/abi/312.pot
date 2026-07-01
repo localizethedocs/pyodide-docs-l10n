@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/abi/312.md:1
+msgid "pyemscripten_2024_0"
+msgstr ""
+
+#: ../../../development/abi/312.md:3
+msgid ""
+"By default, all builds of the Pyodide runtime with Python 3.12 will use the "
+"`pyemscripten_2024_0` platform."
+msgstr ""
+
+#: ../../../development/abi/312.md:7
+msgid "Prior to {pep}`783`, the platform was referenced as `pyodide_2024_0`."
+msgstr ""
+
+#: ../../../development/abi/312.md:10
+msgid "ABI Specification"
+msgstr ""
+
+#: ../../../development/abi/312.md:12
+msgid "CPython and Emscripten Version"
+msgstr ""
+
+#: ../../../development/abi/312.md:14
+msgid "**CPython**: 3.12"
+msgstr ""
+
+#: ../../../development/abi/312.md:15
+msgid "**Emscripten**: 3.1.58"
+msgstr ""
+
+#: ../../../development/abi/312.md:17
+msgid "WASM_BIGINT"
+msgstr ""
+
+#: ../../../development/abi/312.md:19
+msgid "All shared libraries must be linked with `-sWASM_BIGINT`."
+msgstr ""
+
+#: ../../../development/abi/312.md:21
+msgid ""
+"Since Rust 1.84.0 or nightly 2024-11-05, Rust will automatically pass `-"
+"Clink-arg=-sWASM_BIGINT`. In earlier versions of Rust it was required to "
+"pass `-Clink-arg=-sWASM_BIGINT` explicitly. Passing it explicitly will work "
+"in all cases."
+msgstr ""
+
+#: ../../../development/abi/312.md:26
+msgid "Unwinding ABIs"
+msgstr ""
+
+#: ../../../development/abi/312.md:28
+msgid ""
+"By default, C++ libraries are built with exceptions disabled, and `throw` is "
+"an abort. The same is true for `setjmp`/`longjmp`. To enable exceptions and "
+"`setjmp`/`longjmp`, `-fexceptions` must be passed at compile time and link "
+"time."
+msgstr ""
+
+#: ../../../development/abi/312.md:32
+msgid "Rust will automatically enable unwinding."
+msgstr ""
+
+#: ../../../development/abi/312.md:34
+msgid "Rust Toolchain"
+msgstr ""
+
+#: ../../../development/abi/312.md:36
+msgid ""
+"The Rust toolchain used must be a nightly released prior to October 1st 2025."
+msgstr ""
+
+#: ../../../development/abi/312.md:38
+msgid "Runtime Library Loading Path"
+msgstr ""
+
+#: ../../../development/abi/312.md:40
+msgid ""
+"Specifying an RPATH is not supported, `emcc` will warn and ignore it. The "
+"dynamic loader has been patched so that all dynamic libraries in a wheel "
+"named `wheel_name-<tag>.whl` will be loaded as if `/lib/python3.12/site-"
+"packages/wheel_name.libs` is on the `RPATH`, so any dynamic library "
+"dependencies should be placed in the wheel in a folder called `wheel_name."
+"libs`."
+msgstr ""
+
+#: ../../../development/abi/312.md:47
+msgid "Libraries Linked to the Main Binary"
+msgstr ""
+
+#: ../../../development/abi/312.md:49
+msgid "The following libraries are statically linked to the binary:"
+msgstr ""
+
+#: ../../../development/abi/312.md:51
+msgid "`libegl.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:52
+msgid "`libeventloop.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:53
+msgid "`libGL`"
+msgstr ""
+
+#: ../../../development/abi/312.md:54
+msgid "`libhtml5_webgl.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:55
+msgid "`libhtml5.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:56
+msgid "`liblz4`"
+msgstr ""
+
+#: ../../../development/abi/312.md:57
+msgid "`libsdl.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:58
+msgid "`libwebgl.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:59
+msgid "`libwebsocket.js`"
+msgstr ""
+
+#: ../../../development/abi/312.md:60
+msgid "`bzip2`"
+msgstr ""
+
+#: ../../../development/abi/312.md:61
+msgid "`zlib`"
+msgstr ""
+
+#: ../../../development/abi/312.md:63
+msgid ""
+"All of these come from Emscripten ports and the versions of these libraries "
+"are determined by the version of Emscripten we build with. Any symbols from "
+"these static libraries may be used by shared libraries."
+msgstr ""
