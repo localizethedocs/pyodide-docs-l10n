@@ -1,0 +1,728 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/faq.md:1
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../../usage/faq.md:5
+msgid "How can I load external files in Pyodide?"
+msgstr ""
+
+#: ../../../usage/faq.md:7
+msgid "See {ref}`accessing_files_quickref`."
+msgstr ""
+
+#: ../../../usage/faq.md:9
+msgid "Why can't I load files from the local file system?"
+msgstr ""
+
+#: ../../../usage/faq.md:11
+msgid ""
+"For security reasons JavaScript in the browser is not allowed to load local "
+"data files (for example, `file:///path/to/local/file.data`). You will run "
+"into Network Errors, due to the [Same Origin Policy](https://en.wikipedia."
+"org/wiki/Same-origin_policy). There is a [File System API](https://wicg."
+"github.io/file-system-access/) supported in Chrome but not in Firefox or "
+"Safari. See {ref}`nativefs-api` for experimental local file system support."
+msgstr ""
+
+#: ../../../usage/faq.md:19
+msgid ""
+"For development purposes, you can serve your files with a [web server]"
+"(https://developer.mozilla.org/en-US/docs/Learn/Common_questions/"
+"set_up_a_local_testing_server)."
+msgstr ""
+
+#: ../../../usage/faq.md:22
+msgid "How can I execute code in a custom namespace?"
+msgstr ""
+
+#: ../../../usage/faq.md:24
+msgid ""
+"The second argument to {js:func}`pyodide.runPython` is an options object "
+"which may include a `globals` element which is a namespace for code to read "
+"from and write to. The provided namespace must be a Python dictionary."
+msgstr ""
+
+#: ../../../usage/faq.md:28
+msgid ""
+"let my_namespace = pyodide.globals.get(\"dict\")();\n"
+"pyodide.runPython(`x = 1 + 1`, { globals: my_namespace });\n"
+"pyodide.runPython(`y = x ** x`, { globals: my_namespace });\n"
+"my_namespace.get(\"y\"); // ==> 4\n"
+msgstr ""
+
+#: ../../../usage/faq.md:35
+msgid ""
+"You can also use this approach to inject variables from JavaScript into the "
+"Python namespace, for example:"
+msgstr ""
+
+#: ../../../usage/faq.md:38
+msgid ""
+"let my_namespace = pyodide.toPy({ x: 2, y: [1, 2, 3] });\n"
+"pyodide.runPython(\n"
+"  `\n"
+"  assert x == y[1]\n"
+"  z = x ** x\n"
+"  `,\n"
+"  { globals: my_namespace }\n"
+");\n"
+"my_namespace.get(\"z\"); // ==> 4\n"
+msgstr ""
+
+#: ../../../usage/faq.md:50
+msgid "How to detect that code is run with Pyodide?"
+msgstr ""
+
+#: ../../../usage/faq.md:52
+msgid ""
+"**At run time**, you can check if Python is built with Emscripten (which is "
+"the case for Pyodide) with,"
+msgstr ""
+
+#: ../../../usage/faq.md:55
+msgid ""
+"import sys\n"
+"\n"
+"if sys.platform == 'emscripten':\n"
+"    # running in Pyodide or other Emscripten based build\n"
+msgstr ""
+
+#: ../../../usage/faq.md:62
+msgid ""
+"To detect that a code is running with Pyodide specifically, you can check "
+"for the loaded `pyodide` module,"
+msgstr ""
+
+#: ../../../usage/faq.md:65
+msgid ""
+"import sys\n"
+"\n"
+"if \"pyodide\" in sys.modules:\n"
+"   # running in Pyodide\n"
+msgstr ""
+
+#: ../../../usage/faq.md:72
+msgid ""
+"This however will not work at build time (i.e. in a `setup.py`) due to the "
+"way the Pyodide build system works. It first compiles packages with the host "
+"compiler (e.g. gcc) and then re-runs the compilation commands with emsdk. So "
+"the `setup.py` is never run inside the Pyodide environment."
+msgstr ""
+
+#: ../../../usage/faq.md:77
+msgid "To detect Pyodide, **at build time** use,"
+msgstr ""
+
+#: ../../../usage/faq.md:79
+msgid ""
+"import os\n"
+"\n"
+"if \"PYODIDE\" in os.environ:\n"
+"    # building for Pyodide\n"
+msgstr ""
+
+#: ../../../usage/faq.md:86
+msgid "How do I create custom Python packages from JavaScript?"
+msgstr ""
+
+#: ../../../usage/faq.md:88
+msgid ""
+"Put a collection of functions into a JavaScript object and use {js:func}"
+"`pyodide.registerJsModule`: JavaScript:"
+msgstr ""
+
+#: ../../../usage/faq.md:92
+msgid ""
+"let my_module = {\n"
+"  f: function (x) {\n"
+"    return x * x + 1;\n"
+"  },\n"
+"  g: function (x) {\n"
+"    console.log(`Calling g on argument ${x}`);\n"
+"    return x;\n"
+"  },\n"
+"  submodule: {\n"
+"    h: function (x) {\n"
+"      return x * x - 1;\n"
+"    },\n"
+"    c: 2,\n"
+"  },\n"
+"};\n"
+"pyodide.registerJsModule(\"my_js_module\", my_module);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:111
+msgid "You can import your package like a normal Python package:"
+msgstr ""
+
+#: ../../../usage/faq.md:113
+msgid ""
+"import my_js_module\n"
+"from my_js_module.submodule import h, c\n"
+"assert my_js_module.f(7) == 50\n"
+"assert h(9) == 80\n"
+"assert c == 2\n"
+msgstr ""
+
+#: ../../../usage/faq.md:121
+msgid "How can I send a Python object from my server to Pyodide?"
+msgstr ""
+
+#: ../../../usage/faq.md:123
+msgid ""
+"The best way to do this is with pickle. If the version of Python used in the "
+"server exactly matches the version of Python used in the client, then "
+"objects that can be successfully pickled can be sent to the client and "
+"unpickled in Pyodide. If the versions of Python are different then for "
+"instance sending AST is unlikely to work since there are breaking changes to "
+"Python AST in most Python minor versions."
+msgstr ""
+
+#: ../../../usage/faq.md:130
+msgid ""
+"Similarly when pickling Python objects defined in a Python package, the "
+"package version needs to match exactly between the server and pyodide."
+msgstr ""
+
+#: ../../../usage/faq.md:133
+msgid ""
+"Generally, pickles are portable between architectures (here amd64 and "
+"wasm32). The rare cases when they are not portable, for instance currently "
+"tree based models in scikit-learn, can be considered as a bug in the "
+"upstream library."
+msgstr ""
+
+#: ../../../usage/faq.md:137
+msgid "Security Issues with pickle"
+msgstr ""
+
+#: ../../../usage/faq.md:140
+msgid ""
+"Unpickling data is similar to `eval`. On any public-facing server it is a "
+"really bad idea to unpickle any data sent from the client. For sending data "
+"from client to server, try some other serialization format like JSON."
+msgstr ""
+
+#: ../../../usage/faq.md:145
+msgid "How can I use a Python function as an event handler?"
+msgstr ""
+
+#: ../../../usage/faq.md:147
+msgid "Note that the most straight forward way of doing this will not work:"
+msgstr ""
+
+#: ../../../usage/faq.md:149
+msgid ""
+"from js import document\n"
+"def f(*args):\n"
+"    document.querySelector(\"h1\").innerHTML += \"(>.<)\"\n"
+"\n"
+"document.body.addEventListener('click', f)\n"
+msgstr ""
+
+#: ../../../usage/faq.md:157
+msgid ""
+"Now every time you click, an error will be raised (see {ref}`call-js-from-"
+"py`)."
+msgstr ""
+
+#: ../../../usage/faq.md:159
+msgid ""
+"To do this correctly use {py:func}`~pyodide.ffi.create_proxy` as follows:"
+msgstr ""
+
+#: ../../../usage/faq.md:161
+msgid ""
+"from js import document\n"
+"from pyodide.ffi import create_proxy\n"
+"def f(*args):\n"
+"    document.querySelector(\"h1\").innerHTML += \"(>.<)\"\n"
+"\n"
+"proxy_f = create_proxy(f)\n"
+"document.body.addEventListener('click', proxy_f)\n"
+"# Store proxy_f in Python then later:\n"
+"document.body.removeEventListener('click', proxy_f)\n"
+"proxy_f.destroy()\n"
+msgstr ""
+
+#: ../../../usage/faq.md:174
+msgid "How can I use fetch with optional arguments from Python?"
+msgstr ""
+
+#: ../../../usage/faq.md:176
+msgid "The most obvious translation of the JavaScript code won't work:"
+msgstr ""
+
+#: ../../../usage/faq.md:178
+msgid ""
+"import json\n"
+"resp = await js.fetch('/someurl', {\n"
+"  \"method\": \"POST\",\n"
+"  \"body\": json.dumps({ \"some\" : \"json\" }),\n"
+"  \"credentials\": \"same-origin\",\n"
+"  \"headers\": { \"Content-Type\": \"application/json\" }\n"
+"})\n"
+msgstr ""
+
+#: ../../../usage/faq.md:188
+msgid ""
+"The {js:func}`fetch` API ignores the options that we attempted to provide. "
+"You can do this correctly in one of two ways:"
+msgstr ""
+
+#: ../../../usage/faq.md:191
+msgid ""
+"import json\n"
+"from pyodide.ffi import to_js\n"
+"from js import Object\n"
+"resp = await js.fetch('example.com/some_api',\n"
+"  method= \"POST\",\n"
+"  body= json.dumps({ \"some\" : \"json\" }),\n"
+"  credentials= \"same-origin\",\n"
+"  headers= Object.fromEntries(to_js({ \"Content-Type\": \"application/"
+"json\" })),\n"
+")\n"
+msgstr ""
+
+#: ../../../usage/faq.md:203
+msgid "or:"
+msgstr ""
+
+#: ../../../usage/faq.md:205
+msgid ""
+"import json\n"
+"from pyodide.ffi import to_js\n"
+"from js import Object\n"
+"resp = await js.fetch('example.com/some_api', to_js({\n"
+"  \"method\": \"POST\",\n"
+"  \"body\": json.dumps({ \"some\" : \"json\" }),\n"
+"  \"credentials\": \"same-origin\",\n"
+"  \"headers\": { \"Content-Type\": \"application/json\" }\n"
+"}, dict_converter=Object.fromEntries)\n"
+msgstr ""
+
+#: ../../../usage/faq.md:217
+msgid "How can I control the behavior of stdin / stdout / stderr?"
+msgstr ""
+
+#: ../../../usage/faq.md:219
+msgid ""
+"If you wish to override `stdin`, `stdout` or `stderr` for the entire Pyodide "
+"runtime, you can pass options to {js:func}`~exports.loadPyodide`: If you say"
+msgstr ""
+
+#: ../../../usage/faq.md:223
+msgid ""
+"loadPyodide({\n"
+"  stdin: stdin_func,\n"
+"  stdout: stdout_func,\n"
+"  stderr: stderr_func,\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/faq.md:231
+msgid ""
+"then every time a line is written to `stdout` (resp. `stderr`), "
+"`stdout_func` (resp `stderr_func`) will be called on the line. Every time "
+"`stdin` is read, `stdin_func` will be called with zero arguments. It is "
+"expected to return a string which is interpreted as a line of text."
+msgstr ""
+
+#: ../../../usage/faq.md:236
+msgid ""
+"You can also use the functions {js:func}`pyodide.setStdin`, {js:func}"
+"`pyodide.setStdout`, and {js:func}`pyodide.setStderr`."
+msgstr ""
+
+#: ../../../usage/faq.md:239
+msgid ""
+"Temporary redirection works much the same as it does in native Python: you "
+"can overwrite {py:data}`sys.stdin`, {py:data}`sys.stdout`, and {py:data}`sys."
+"stderr` respectively. If you want to do it temporarily, it's recommended to "
+"use {py:func}`contextlib.redirect_stdout` and {py:func}`contextlib."
+"redirect_stderr` There is no `contextlib.redirect_stdin()` but it is easy to "
+"make your own as follows:"
+msgstr ""
+
+#: ../../../usage/faq.md:246
+msgid ""
+"from contextlib import _RedirectStream\n"
+"class redirect_stdin(_RedirectStream):\n"
+"    _stream = \"stdin\"\n"
+msgstr ""
+
+#: ../../../usage/faq.md:252
+msgid "For example, if you do:"
+msgstr ""
+
+#: ../../../usage/faq.md:254
+msgid ""
+"from io import StringIO\n"
+"with redirect_stdin(StringIO(\"\\n\".join([\"eval\", \"asyncio."
+"ensure_future\", \"functools.reduce\", \"quit\"]))):\n"
+"  help()\n"
+msgstr ""
+
+#: ../../../usage/faq.md:260
+msgid "it will print:"
+msgstr ""
+
+#: ../../../usage/faq.md:262
+msgid ""
+"Welcome to Python 3.14's help utility!\n"
+"<...OMITTED LINES>\n"
+"Help on built-in function eval in module builtins:\n"
+"eval(source, globals=None, locals=None, /)\n"
+"    Evaluate the given source in the context of globals and locals.\n"
+"<...OMITTED LINES>\n"
+"Help on function ensure_future in asyncio:\n"
+"asyncio.ensure_future = ensure_future(coro_or_future, *, loop=None)\n"
+"    Wrap a coroutine or an awaitable in a future.\n"
+"<...OMITTED LINES>\n"
+"Help on built-in function reduce in functools:\n"
+"functools.reduce = reduce(...)\n"
+"    reduce(function, sequence[, initial]) -> value\n"
+"    Apply a function of two arguments cumulatively to the items of a "
+"sequence,\n"
+"<...OMITTED LINES>\n"
+"You are now leaving help and returning to the Python interpreter.\n"
+msgstr ""
+
+#: ../../../usage/faq.md:281
+msgid "Why can't Micropip find a \"pure Python wheel\" for a package?"
+msgstr ""
+
+#: ../../../usage/faq.md:283
+msgid ""
+"When installing a Python package from PyPI, micropip will produce an error "
+"if it cannot find a pure Python wheel. To determine if a package has a pure "
+"Python wheel manually, you can open its PyPi page (for instance https://pypi."
+"org/project/snowballstemmer/) and go to the \"Download files\" tab. If this "
+"tab doesn't contain a file `*py3-none-any.whl` then the pure Python wheel is "
+"missing."
+msgstr ""
+
+#: ../../../usage/faq.md:290
+msgid "This can happen for two reasons,"
+msgstr ""
+
+#: ../../../usage/faq.md:292
+msgid ""
+"either the package is pure Python (you can check language composition for a "
+"package on Github), and its maintainers didn't upload a wheel. In this case, "
+"you can report this issue to the package issue tracker. As a temporary "
+"solution, you can also [build the wheel](https://packaging.python.org/en/"
+"latest/tutorials/packaging-projects/#generating-distribution-archives) "
+"yourself, upload it to some temporary location and install it with micropip "
+"from the corresponding URL."
+msgstr ""
+
+#: ../../../usage/faq.md:299
+msgid ""
+"or the package has binary extensions (e.g. C, Fortran or Rust), in which "
+"case it needs to be cross-compiled for Pyodide. Please make a request to the "
+"package maintainers to add Pyodide support."
+msgstr ""
+
+#: ../../../usage/faq.md:303
+msgid ""
+"How can I change the behavior of {js:func}`~pyodide.runPython` and {js:func}"
+"`~pyodide.runPythonAsync`?"
+msgstr ""
+
+#: ../../../usage/faq.md:305
+msgid ""
+"You can directly call Python functions from JavaScript. For most purposes it "
+"makes sense to make your own Python function as an entrypoint and call that "
+"instead of redefining `runPython`. The definitions of {js:func}`~pyodide."
+"runPython` and {js:func}`~pyodide.runPythonAsync` are very simple:"
+msgstr ""
+
+#: ../../../usage/faq.md:311
+msgid ""
+"function runPython(code) {\n"
+"  pyodide.pyodide_py.code.eval_code(code, pyodide.globals);\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/faq.md:317
+msgid ""
+"async function runPythonAsync(code) {\n"
+"  return await pyodide.pyodide_py.code.eval_code_async(code, pyodide."
+"globals);\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/faq.md:323
+msgid "To make your own version of {js:func}`~pyodide.runPython` you could do:"
+msgstr ""
+
+#: ../../../usage/faq.md:325
+msgid ""
+"const my_eval_code = pyodide.runPython(`\n"
+"  from pyodide.code import eval_code\n"
+"  def my_eval_code(code, globals=None, locals=None):\n"
+"    extra_info = None\n"
+"    result = eval_code(code, globals, locals)\n"
+"    return globals[\"extra_info\"], result\n"
+"  my_eval_code\n"
+"`)\n"
+"\n"
+"function myRunPython(code){\n"
+"  return my_eval_code(code, pyodide.globals);\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/faq.md:340
+msgid ""
+"Then `myRunPython(\"2+7\")` returns `[None, 9]` and "
+"`myRunPython(\"extra_info='hello' ; 2 + 2\")` returns `['hello', 4]`. If you "
+"want to change which packages {js:func}`pyodide.loadPackagesFromImports` "
+"loads, you can monkey patch {py:func}`pyodide.code.find_imports` which takes "
+"`code` as an argument and returns a list of packages imported."
+msgstr ""
+
+#: ../../../usage/faq.md:346
+msgid "Why can't I import a file I just wrote to the file system?"
+msgstr ""
+
+#: ../../../usage/faq.md:348
+msgid "For example:"
+msgstr ""
+
+#: ../../../usage/faq.md:350
+msgid ""
+"from pathlib import Path\n"
+"Path(\"mymodule.py\").write_text(\"\"\"\\\n"
+"def hello():\n"
+"  print(\"hello world!\")\n"
+"\"\"\"\n"
+")\n"
+"from mymodule import hello # may raise \"ModuleNotFoundError: No module "
+"named 'mymodule'\"\n"
+"hello()\n"
+msgstr ""
+
+#: ../../../usage/faq.md:361
+msgid ""
+"If you see this error, call {py:func}`importlib.invalidate_caches` before "
+"importing the module:"
+msgstr ""
+
+#: ../../../usage/faq.md:364
+msgid ""
+"import importlib\n"
+"from pathlib import Path\n"
+"Path(\"mymodule.py\").write_text(\"\"\"\\\n"
+"def hello():\n"
+"  print(\"hello world!\")\n"
+"\"\"\"\n"
+")\n"
+"importlib.invalidate_caches() # Make sure Python notices the new .py file\n"
+"from mymodule import hello\n"
+"hello()\n"
+msgstr ""
+
+#: ../../../usage/faq.md:377
+msgid "Why changes made to IndexedDB don't persist?"
+msgstr ""
+
+#: ../../../usage/faq.md:379
+msgid ""
+"Unlike other filesystems, IndexedDB (pyodide.FS.filesystem.IDBFS) is an "
+"asynchronous filesystem. This is because browsers offer only asynchronous "
+"interfaces for IndexedDB. So in order to persist changes, you have to call "
+"[`pyodide.FS.syncfs()`](https://emscripten.org/docs/api_reference/Filesystem-"
+"API.html#FS.syncfs). See [Emscripten File System API](https://emscripten.org/"
+"docs/api_reference/Filesystem-API.html#persistent-data) for more details."
+msgstr ""
+
+#: ../../../usage/faq.md:386
+msgid ""
+"How can I access JavaScript objects/attributes in Python if their names are "
+"Python keywords?"
+msgstr ""
+
+#: ../../../usage/faq.md:388
+msgid ""
+"Some JavaScript objects may have names or attributes which are also [Python "
+"Keywords](https://docs.python.org/3/reference/lexical_analysis."
+"html#keywords), making them difficult to interact with when importing them "
+"into Python. For example, all three of the following uses of `runPython` "
+"will throw a SyntaxError:"
+msgstr ""
+
+#: ../../../usage/faq.md:390
+msgid ""
+"//The built-in method Array.from() overlaps with Python's \"from\"\n"
+"pyodide.runPython(`from js import Array; print(Array.from([1,2,3]))`);\n"
+"\n"
+"//\"global\" is a valid attribute name in JS, but a reserved keyword in "
+"Python\n"
+"people = {global: \"lots and lots\"};\n"
+"pyodide.runPython(`from js import people; print(people.global)`);\n"
+"\n"
+"//\"lambda\" is a valid object name in JS, but a reserved keyword in Python\n"
+"lambda = (x) => {return x + 1};\n"
+"pyodide.runPython(`from js import lambda; print(lambda(1))`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:403
+msgid ""
+"If you try to access a Python reserved word followed by one or more "
+"underscores on a `JsProxy`, Pyodide will remove a single underscore:"
+msgstr ""
+
+#: ../../../usage/faq.md:406
+msgid ""
+"pyodide.runPython(`\n"
+"    from js import Array\n"
+"    print(Array.from_([1,2,3]))\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:413
+msgid ""
+"If you meant to access the keyword with an underscore at the end, you'll "
+"have to add an extra one:"
+msgstr ""
+
+#: ../../../usage/faq.md:416
+msgid ""
+"globalThis.lambda = 7;\n"
+"globalThis.lambda_ = 8;\n"
+"pyodide.runPython(`\n"
+"    from js import lambda_, lambda__\n"
+"    print(lambda_, lambda__) # 7, 8\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:425
+msgid "Another example:"
+msgstr ""
+
+#: ../../../usage/faq.md:427
+msgid ""
+"people = {global: \"lots and lots\"};\n"
+"pyodide.runPython(`\n"
+"    from js import people\n"
+"    # the dir contains global_ but not global:\n"
+"    assert \"global_\" in dir(people)\n"
+"    assert \"global\" not in dir(people)\n"
+"    people.global_ = 'even more'\n"
+"    print(people.global_)\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:439
+msgid ""
+"You can also use `getattr`, `setattr`, and `delattr` to access the attribute:"
+msgstr ""
+
+#: ../../../usage/faq.md:441
+msgid ""
+"pyodide.runPython(`\n"
+"    from js import Array\n"
+"    fromFunc = getattr(Array, 'from')\n"
+"    print(fromFunc([1,2,3]))\n"
+"`);\n"
+"\n"
+"people = {global: \"lots and lots\"};\n"
+"pyodide.runPython(`\n"
+"    from js import people\n"
+"    setattr(people, 'global', 'even more')\n"
+"    print(getattr(people, 'global'))\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:456
+msgid ""
+"For JavaScript globals whose names are keywords, one can similarly use {py:"
+"func}`getattr` on the `js` module itself:"
+msgstr ""
+
+#: ../../../usage/faq.md:459
+msgid ""
+"globalThis.lambda = 7;\n"
+"globalThis.lambda_ = 8;\n"
+"pyodide.runPython(`\n"
+"    import js\n"
+"    js_lambda = getattr(js, 'lambda')\n"
+"    js_lambda_ = getattr(js, 'lambda_')\n"
+"    js_lambda__ = getattr(js, 'lambda__')\n"
+"    print(js_lambda, js_lambda_, js_lambda__) # 7, 7, 8\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/faq.md:471
+msgid "Can I use threading/multiprocessing/subprocess?"
+msgstr ""
+
+#: ../../../usage/faq.md:473
+msgid ""
+"No, fork and pthreads do not work in Pyodide (see more [here](https://"
+"pyodide.org/en/stable/usage/wasm-constraints.html)). Attempts to use "
+"`threading`, `multiprocessing`, or `subprocess` will raise a `RuntimeError`. "
+"You may be able to work around this by setting the number of threads to 1:"
+msgstr ""
+
+#: ../../../usage/faq.md:477
+msgid ""
+"def _can_start_thread() -> bool:\n"
+"    if sys.platform == \"emscripten\":\n"
+"        return sys._emscripten_info.pthreads\n"
+"    return platform.machine() not in (\"wasm32\", \"wasm64\")\n"
+"\n"
+"can_start_thread = _can_start_thread()\n"
+"\n"
+"if not can_start_thread:\n"
+"  n_threads = 1\n"
+msgstr ""
+
+#: ../../../usage/faq.md:489
+msgid ""
+"You can still import the packages and use the general info API, but you "
+"cannot start any asynchronous work without receiving a `RuntimeError`."
+msgstr ""
+
+#: ../../../usage/faq.md:492
+msgid ""
+">>> import threading\n"
+">>> current = threading.current_thread()\n"
+">>> current.name\n"
+"'MainThread'\n"
+">>> current.daemon\n"
+"False\n"
+">>> current.is_alive()\n"
+"True\n"
+">>> def target(nums):\n"
+"...     print(sum(nums))\n"
+"...\n"
+">>> t = threading.Thread(target=target, args=([1, 2, 3], ))\n"
+">>> t.run()\n"
+"6\n"
+">>> t.start()\n"
+"Traceback (most recent call last):\n"
+"  File \"<console>\", line 1, in <module>\n"
+"  File \"/lib/python312.zip/threading.py\", line 994, in start\n"
+"    _start_new_thread(self._bootstrap, ())\n"
+"RuntimeError: can't start new thread\n"
+msgstr ""

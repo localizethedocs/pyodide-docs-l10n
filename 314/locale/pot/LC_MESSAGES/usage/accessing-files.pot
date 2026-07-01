@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/accessing-files.md:3
+msgid "Accessing Files Quick Reference"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:5
+msgid ""
+"For development of modules to use in Pyodide, the best experience comes from "
+"using Pyodide in Node and mounting the development directory into Pyodide "
+"using the NodeFS. In the NodeFS, all changes to your native file system are "
+"immediately reflected in Pyodide and vice versa."
+msgstr ""
+
+#: ../../../usage/accessing-files.md:10
+msgid ""
+"If your code is browser-only, you can use the Chrome `NativeFS` for "
+"development. This will not automatically sync up with your native file "
+"system, but it is still quite convenient."
+msgstr ""
+
+#: ../../../usage/accessing-files.md:14
+msgid "In Node.js"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:16
+msgid ""
+"It's recommended to use {js:func}`pyodide.mountNodeFS` to mount the host "
+"file system so that it is accessible from inside of Pyodide. For example if "
+"you have a Python package in a folder called `my_package`, you can do:"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:20
+msgid ""
+"pyodide.mountNodeFS(\"my_package\", \"/path/to/my_package\");\n"
+"pyodide.runPython(`\n"
+"import my_package\n"
+"# ... use it\n"
+"`);\n"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:28
+msgid "In the browser"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:30
+msgid ""
+"To access local files in Chrome, you can use the File System Access API to "
+"acquire a directory handle and then mount the directory into the Pyodide "
+"file system with {js:func}`pyodide.mountNativeFS`. To acquire the directory "
+"handle, you have to fill out a folder picker the first time. The handle can "
+"subsequently be stored in the `IndexedDB`. You will still be prompted for "
+"read and write access, but you don't have to deal with the folder picker "
+"again."
+msgstr ""
+
+#: ../../../usage/accessing-files.md:37
+msgid "The following code is a good starting point:"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:39
+msgid ""
+"const { get, set } = await import(\n"
+"  \"https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js\"\n"
+");\n"
+"\n"
+"/**\n"
+" * Mount a folder from your native filesystem as the directory\n"
+" * `pyodideDirectory`. If `directoryKey` was used previously, then it will "
+"reuse\n"
+" * the same folder as last time. Otherwise, it will show a directory "
+"picker.\n"
+" */\n"
+"async function mountDirectory(pyodideDirectory, directoryKey) {\n"
+"  let directoryHandle = await get(directoryKey);\n"
+"  const opts = {\n"
+"    id: \"mountdirid\",\n"
+"    mode: \"readwrite\",\n"
+"  };\n"
+"  if (!directoryHandle) {\n"
+"    directoryHandle = await showDirectoryPicker(opts);\n"
+"    await set(directoryKey, directoryHandle);\n"
+"  }\n"
+"  const permissionStatus = await directoryHandle.requestPermission(opts);\n"
+"  if (permissionStatus !== \"granted\") {\n"
+"    throw new Error(\"readwrite access to directory not granted\");\n"
+"  }\n"
+"  const { syncfs } = await pyodide.mountNativeFS(\n"
+"    pyodideDirectory,\n"
+"    directoryHandle,\n"
+"  );\n"
+"  return syncfs;\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:71
+msgid "See {ref}`nativefs-api` for more information."
+msgstr ""
+
+#: ../../../usage/accessing-files.md:73
+msgid "Downloading external archives"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:75
+msgid ""
+"If you are using Pyodide in the browser, you should download external files "
+"and save them to the virtual file system. The recommended way to do this is "
+"to zip the files and unpack them into the file system with {js:func}`pyodide."
+"unpackArchive`:"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:80
+msgid ""
+"let zipResponse = await fetch(\"myfiles.zip\");\n"
+"let zipBinary = await zipResponse.arrayBuffer();\n"
+"pyodide.unpackArchive(zipBinary, \"zip\");\n"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:86
+msgid ""
+"You can also download the files from Python using {py:func}`~pyodide.http."
+"pyfetch`, which is a convenient wrapper of JavaScript {js:func}`fetch`:"
+msgstr ""
+
+#: ../../../usage/accessing-files.md:90
+msgid ""
+"await pyodide.runPythonAsync(`\n"
+"  from pyodide.http import pyfetch\n"
+"  response = await pyfetch(\"https://some_url/myfiles.zip\")\n"
+"  await response.unpack_archive()\n"
+"`)\n"
+msgstr ""
