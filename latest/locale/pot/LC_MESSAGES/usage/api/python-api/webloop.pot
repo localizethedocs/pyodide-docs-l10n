@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/python-api/webloop.md:1
+msgid "pyodide.webloop"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of pyodide.webloop:1
+msgid "**Classes:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+msgid ""
+":py:obj:`PyodideFuture <pyodide.webloop.PyodideFuture>`\\ \\(\\*\\[\\, "
+"loop\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+msgid ""
+"A :py:class:`~asyncio.Future` with extra :js:meth:`~Promise.then`, :js:meth:"
+"`~Promise.catch`, and :js:meth:`finally_() <Promise.finally>` methods based "
+"on the Javascript promise API."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+msgid ""
+":py:obj:`PyodideTask <pyodide.webloop.PyodideTask>`\\ \\(\\*args\\, "
+"\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+#: pyodide.webloop.PyodideTask:1
+msgid ""
+"Inherits from both :py:class:`~asyncio.Task` and :py:class:`~pyodide.webloop."
+"PyodideFuture`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+msgid ":py:obj:`WebLoop <pyodide.webloop.WebLoop>`\\ \\(\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1 pyodide.webloop.WebLoop:1
+msgid "A custom event loop for use in Pyodide."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+msgid ":py:obj:`WebLoopPolicy <pyodide.webloop.WebLoopPolicy>`\\ \\(\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1:<autosummary>:1
+#: pyodide.webloop.WebLoopPolicy:1
+msgid ""
+"A simple event loop policy for managing :py:class:`WebLoop`-based event "
+"loops."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture:1
+msgid ""
+"A :py:class:`~asyncio.Future` with extra :js:meth:`~Promise.then`, :js:meth:"
+"`~Promise.catch`, and :js:meth:`finally_() <Promise.finally>` methods based "
+"on the Javascript promise API. :py:meth:`~asyncio.loop.create_future` "
+"returns these so in practice all futures encountered in Pyodide should be an "
+"instance of :py:class:`~pyodide.webloop.PyodideFuture`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.catch:1
+msgid "Equivalent to ``then(None, onrejected)``"
+msgstr ""
+
+#: ../../../usage/api/python-api/webloop.md:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../usage/api/python-api/webloop.md:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.catch:5
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.webloop."
+"PyodideFuture\\`\\\\ \\\\\\[\\:py\\:data\\:\\`\\~typing.Any\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.finally_:1
+msgid ""
+"When the future is either resolved or rejected, call ``onfinally`` with no "
+"arguments."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.finally_:6
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.webloop."
+"PyodideFuture\\`\\\\ \\\\\\[\\`\\`T\\`\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:1
+msgid ""
+"When the Future is done, either execute onfulfilled with the result or "
+"execute onrejected with the exception."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:4
+msgid ""
+"Returns a new Future which will be marked done when either the onfulfilled "
+"or onrejected callback is completed. If the return value of the executed "
+"callback is awaitable it will be awaited repeatedly until a nonawaitable "
+"value is received. The returned Future will be resolved with that value. If "
+"an error is raised, the returned Future will be rejected with the error."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:12
+msgid ""
+"A function called if the Future is fulfilled. This function receives one "
+"argument, the fulfillment value."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:15
+msgid ""
+"A function called if the Future is rejected. This function receives one "
+"argument, the rejection value."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:18
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.webloop."
+"PyodideFuture\\`\\\\ \\\\\\[\\`\\`S\\`\\`\\]`"
+msgstr ""
+
+#: ../../../usage/api/python-api/webloop.md:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideFuture.then:19
+msgid ""
+"A new future to be resolved when the original future is done and the "
+"appropriate callback is also done."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideTask:4
+msgid ""
+"Instantiation is discouraged unless you are writing your own event loop."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideTask.add_done_callback:1
+msgid "Add a callback to be run when the future becomes done."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.PyodideTask.add_done_callback:3
+msgid ""
+"The callback is called with a single argument - the future object. If the "
+"future is already done when this is called, the callback is scheduled with "
+"call_soon."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of pyodide.webloop.WebLoop:3
+msgid ""
+"Schedules tasks on the browser event loop. Does no lifecycle management and "
+"runs forever."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of pyodide.webloop.WebLoop:6
+msgid ""
+":py:meth:`~asyncio.loop.run_forever` and :py:meth:`~asyncio.loop."
+"run_until_complete` cannot block like a normal event loop would because we "
+"only have one thread so blocking would stall the browser event loop and "
+"prevent anything from ever happening."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.WebLoop:11
+msgid ""
+"We defer all work to the browser event loop using the :js:func:`setTimeout` "
+"function. To ensure that this event loop doesn't stall out UI and other "
+"browser handling, we want to make sure that each task is scheduled on the "
+"browser event loop as a task not as a microtask. ``setTimeout(callback, 0)`` "
+"enqueues the callback as a task so it works well for our purposes."
+msgstr ""
+
+#: ../../../../src/py/pyodide/webloop.py:docstring of
+#: pyodide.webloop.WebLoop:17
+msgid "See the Python :external:doc:`library/asyncio-eventloop` documentation."
+msgstr ""
