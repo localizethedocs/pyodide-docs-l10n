@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../project/about.md:1
 msgid "What is Pyodide?"
-msgstr ""
+msgstr "什麼是 Pyodide？"
 
 #: ../../../project/about.md:3
 msgid ""
@@ -48,7 +48,7 @@ msgstr ""
 
 #: ../../../project/about.md:17
 msgid "When used inside a browser, Python has full access to the Web APIs."
-msgstr ""
+msgstr "在瀏覽器中使用時，Python 具有存取 Web API 的完整權限。"
 
 #: ../../../project/about.md:19
 msgid "History"

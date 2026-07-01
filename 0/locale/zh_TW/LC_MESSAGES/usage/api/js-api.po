@@ -340,7 +340,7 @@ msgstr ""
 #: ../../../usage/api/js-api.md:269 ../../../usage/api/js-api.md:405
 #: ../../../usage/api/js-api.md:478 ../../../usage/api/js-api.md:663
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: ../../../usage/api/js-api.md:271
 msgid ""

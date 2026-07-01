@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../project/governance.md:3
 msgid "Governance and Decision-making"
-msgstr ""
+msgstr "治理與決策"
 
 #: ../../../project/governance.md:5
 msgid ""

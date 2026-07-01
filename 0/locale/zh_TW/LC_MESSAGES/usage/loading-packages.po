@@ -204,7 +204,7 @@ msgstr ""
 
 #: ../../../usage/loading-packages.md:119
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: ../../../usage/loading-packages.md:121
 msgid ""

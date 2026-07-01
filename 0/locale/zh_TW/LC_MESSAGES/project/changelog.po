@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:16
 msgid "Change Log"
-msgstr ""
+msgstr "變更日誌"
 
 #: ../../../project/changelog.md:18
 msgid "Version 0.29.4"

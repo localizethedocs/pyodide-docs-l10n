@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../../development/contributing.md:60
 msgid "Code of Conduct"
-msgstr ""
+msgstr "行為守則"
 
 #: ../../../development/contributing.md:62
 msgid ""
@@ -154,7 +154,7 @@ msgstr ""
 
 #: ../../../development/contributing.md:65
 msgid "Development"
-msgstr ""
+msgstr "開發"
 
 #: ../../../development/contributing.md:67
 msgid ""
@@ -354,7 +354,7 @@ msgstr ""
 
 #: ../../../development/contributing.md:185
 msgid "Maintainer information"
-msgstr ""
+msgstr "維護者資訊"
 
 #: ../../../development/contributing.md:187
 msgid ""
