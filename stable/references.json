@@ -1,0 +1,47 @@
+{
+  "po" : 
+  {
+    "en_US" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_CN" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_TW" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    }
+  },
+  "pot" : 
+  {
+    "branch" : "stable",
+    "commit" : 
+    {
+      "date" : "2026-06-30 20:16:25 +0900",
+      "hash" : "c19a36f44fcaed828331f2536672b3e0934ddd7f",
+      "title" : "314.0.2"
+    }
+  },
+  "type" : "branch",
+  "version" : "stable"
+}
