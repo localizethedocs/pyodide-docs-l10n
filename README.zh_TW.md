@@ -1,4 +1,12 @@
 <div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/localizethedocs/static/logo/pyodide-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/localizethedocs/static/logo/pyodide-light.svg">
+  <img height="150" src="https://cdn.jsdelivr.net/gh/localizethedocs/static/logo/pyodide-dark.svg">
+</picture>
+</div>
+
+<div align="center">
 <h1 id="localization-of-the-pyodide-documentation">Localization of The Pyodide Documentation</h1>
 </div>
 
