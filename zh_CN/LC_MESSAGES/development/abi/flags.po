@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/abi/flags.md:1
+msgid "ABI-sensitive flags"
+msgstr ""
+
+#: ../../../development/abi/flags.md:3
+msgid "`-pthread`"
+msgstr ""
+
+#: ../../../development/abi/flags.md:5
+msgid ""
+"Pyodide has no support for pthreads. The interaction between pthreads and "
+"dynamic linking is slow and buggy, more work upstream would be required to "
+"support them together. It's possible to build the Python interpreter with "
+"dynamic linking disabled and pthreads enabled, but of course there would be "
+"no need to specify the ABI of such an interpreter."
+msgstr ""
+
+#: ../../../development/abi/flags.md:11
+msgid "`-sWASM_BIGINT`"
+msgstr ""
+
+#: ../../../development/abi/flags.md:13
+msgid ""
+"When WebAssembly was first introduced, the JS/WebAssembly interface had to "
+"support for functions with 64 bit integer arguments or return values. Such "
+"functions were impossible to call from JavaScript. Every exported function "
+"with any 64 bit integer types needed to get a legalizer wrapper that split "
+"the 64 bit types into two 32 bit integers. This meant also that each "
+"function had a pair of function pointers, one to the original function and a "
+"second one to the legalizer. A table had to be maintained to allow "
+"conversion between the legalizer wrapper and the original function. Numerous "
+"Emscripten bugs exist due to code paths that fail to correctly handle this "
+"distinction."
+msgstr ""
+
+#: ../../../development/abi/flags.md:23
+msgid ""
+"The [JS BigInt Integration](https://github.com/WebAssembly/JS-BigInt-"
+"integration) proposal added support for calling such functions directly, "
+"using `BigInt` for the 64 bit integer types. It has been fully supported in "
+"all browsers since Safari 15 was released on September 20, 2021."
+msgstr ""
+
+#: ../../../development/abi/flags.md:28
+msgid ""
+"The `-sWASM_BIGINT` linker setting makes Emscripten assume that the JS "
+"runtime supports JS BigInt Integration and so it will not export legalizers. "
+"This option must match between the main executable and dynamic libraries or "
+"the dynamic libraries will fail to load."
+msgstr ""
+
+#: ../../../development/abi/flags.md:33
+msgid ""
+"The `-sWASM_BIGINT` linker setting is applied by default since Emscripten "
+"4.0.0. As a result, it is applied by default on `pyemscripten_2025_0` and "
+"above."
+msgstr ""
+
+#: ../../../development/abi/flags.md:36
+msgid "`-fexceptions` vs `-fwasm-exceptions`"
+msgstr ""
+
+#: ../../../development/abi/flags.md:38
+msgid ""
+"When WebAssembly was first introduced, it had no intrinsics for unwinding "
+"the stack, as is required for C++ exceptions, Rust panics, and `setjmp`/"
+"`longjmp`. Emscripten offered support for \"JavaScript Exception handling\" "
+"via the `-fexceptions` flag. Emscripten used JavaScript `throw` to throw "
+"exceptions and replaced the bodies of all try blocks with a separate "
+"function which is called via a JavaScript trampoline that calls the try body "
+"in a try catch block. So the following code:"
+msgstr ""
+
+#: ../../../development/abi/flags.md:46
+msgid ""
+"int f() {\n"
+"    int x;\n"
+"    int y;\n"
+"    try {\n"
+"        x = g();\n"
+"        y = h();\n"
+"    } catch(...) {\n"
+"        // ...\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#: ../../../development/abi/flags.md:59
+msgid "is roughly transformed by the compiler to:"
+msgstr ""
+
+#: ../../../development/abi/flags.md:61
+msgid ""
+"void try_body(int *x, int *y) {\n"
+"    *x = g();\n"
+"    *y = h();\n"
+"}\n"
+"\n"
+"thread_local uintptr_t __THREW__ = 0;\n"
+"thread_local int __threwValue = 0;\n"
+"\n"
+"int f() {\n"
+"    int x;\n"
+"    int y;\n"
+"    invoke_vii(&try_body, x, y);\n"
+"    if (__THREW__) {\n"
+"        // inspect __threwValue and execute appropriate catch body here\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#: ../../../development/abi/flags.md:80
+msgid "And `invoke_vii` is defined as a JavaScript function roughly like:"
+msgstr ""
+
+#: ../../../development/abi/flags.md:82
+msgid ""
+"function invoke_vii(fptr, a1, a2) {\n"
+"  var sp = stackSave();\n"
+"  try {\n"
+"    getWasmTableEntry(fptr)(a1, a2);\n"
+"  } catch (e) {\n"
+"    stackRestore(sp);\n"
+"    _setThrew();\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../development/abi/flags.md:94
+msgid ""
+"All of this is complicated and is a common source of bugs and "
+"incompatibility. [The WebAssembly Exception Handling proposal](https://"
+"github.com/WebAssembly/exception-handling/) added WebAssembly intrinsics for "
+"exception handling which has been universally supported since Safari 15.2 "
+"was released on December 13, 2021. Stack unwinding with WebAssembly "
+"Exception handling is faster, has smaller code sizes, and has fewer bugs."
+msgstr ""
+
+#: ../../../development/abi/flags.md:101
+msgid ""
+"However, Rust did not support WebAssembly Exception handling so we were "
+"unable to use it. Stack switching does not work through JavaScript "
+"trampolines, and JavaScript Exception handling normally uses JavaScript "
+"exception handling. To work around this, we wrote [rather elaborate code]"
+"(https://github.com/pyodide/pyodide/blob/0.27.4/src/core/stack_switching/"
+"create_invokes.mjs) to implement the JavaScript exception handling ABI using "
+"WebAssembly exceptions."
+msgstr ""
+
+#: ../../../development/abi/flags.md:108
+msgid ""
+"Thankfully, nowadays [Rust does support WebAssembly exception handling]"
+"(https://github.com/rust-lang/compiler-team/issues/801) and the "
+"`pyemscripten_2025_0` ABI and later will rely on it."
+msgstr ""
