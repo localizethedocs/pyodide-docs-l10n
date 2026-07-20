@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../index.rst:73 ../../../index.rst:78
+msgid "Development"
+msgstr "開發"
+
+#: ../../../index.rst:92 ../../../index.rst:97
+msgid "Project"
+msgstr "專案"
+
+#: ../../../index.rst:2
+msgid "Pyodide"
+msgstr "Pyodide"
+
+#: ../../../index.rst:5
+msgid ""
+"Pyodide is a Python distribution for the browser and Node.js based on "
+"WebAssembly."
+msgstr ""
+"Pyodide 是一個基於 WebAssembly，適用於瀏覽器和 Node.js 的 Python 散佈版。"
+
+#: ../../../index.rst:8
+msgid "What is Pyodide?"
+msgstr "什麼是 Pyodide？"
+
+#: ../../../index.rst:10
+msgid ""
+"Pyodide is a port of CPython to WebAssembly/`Emscripten <https://emscripten."
+"org/>`_."
+msgstr ""
+"Pyodide 是將 CPython 移植到 WebAssembly/`Emscripten <https://emscripten.org/"
+">`_ 的產物。"
+
+#: ../../../index.rst:12
+msgid ""
+"Pyodide makes it possible to install and run Python packages in the browser "
+"with `micropip <https://pyodide.org/en/stable/usage/api/micropip-api."
+"html>`_. Any pure Python package with a wheel available on PyPi is "
+"supported. Many packages with C, C++, and Rust extensions have also been "
+"ported for use with Pyodide. These include many general-purpose packages "
+"such as regex, PyYAML, and cryptography, and scientific Python packages "
+"including NumPy, pandas, SciPy, Matplotlib, and scikit-learn."
+msgstr ""
+"Pyodide 讓開發者能透過 `micropip <https://pyodide.org/en/stable/usage/api/"
+"micropip-api.html>`_ 在瀏覽器中安裝並執行 Python 軟體包。任何在 PyPi 上提供 "
+"wheel 檔的純 Python 軟體包皆受支援。許多包含 C、C++ 和 Rust 擴充功能的軟體包"
+"也已移植至 Pyodide 使用，其中包括 regex、PyYAML 和 cryptography 等多種通用軟"
+"體包，以及 NumPy、pandas、SciPy、Matplotlib 和 scikit-learn 等科學運算 "
+"Python 套件。"
+
+#: ../../../index.rst:20
+msgid ""
+"Pyodide comes with a robust Javascript ⟺ Python foreign function interface "
+"so that you can freely mix these two languages in your code with minimal "
+"friction. This includes full support for error handling (throw an error in "
+"one language, catch it in the other), async/await, and much more."
+msgstr ""
+"Pyodide 附帶了強大的 Javascript ⟺ Python 外部函數介面，讓您可以在程式碼中自由"
+"混合這兩種語言，且摩擦極小。這包括對錯誤處理（在一種語言中拋出錯誤，在另一種"
+"語言中擷取）、async/await 等功能的完整支援。"
+
+#: ../../../index.rst:25
+msgid "When used inside a browser, Python has full access to the Web APIs."
+msgstr "在瀏覽器中使用時，Python 具有存取 Web API 的完整權限。"
+
+#: ../../../index.rst:28
+msgid "Try Pyodide"
+msgstr ""
+
+#: ../../../index.rst:30
+msgid ""
+"Try Pyodide in a `REPL <./console.html>`_ directly in your browser (no "
+"installation needed)."
+msgstr ""
+
+#: ../../../index.rst:35
+msgid "What should I look at first?"
+msgstr ""
+
+#: ../../../index.rst:37
+msgid ""
+"If you wish to use a hosted distribution of Pyodide: see the :ref:"
+"`quickstart` documentation."
+msgstr ""
+
+#: ../../../index.rst:39
+msgid ""
+"If you wish to host Pyodide yourself, you can download Pyodide from the "
+"`releases page <https://github.com/pyodide/pyodide/releases/>`_ and serve it "
+"with a web server."
+msgstr ""
+
+#: ../../../index.rst:41
+msgid ""
+"If you wish to use Pyodide with a bundler, see the documentation on :ref:"
+"`working-with-bundlers`."
+msgstr ""
+
+#: ../../../index.rst:43
+msgid ""
+"If you are a Python package maintainer, see the `pyodide-build documentation "
+"<https://pyodide-build.readthedocs.io/en/latest/>`_."
+msgstr ""
+
+#: ../../../index.rst:44
+msgid ""
+"If you want to add a package to the Pyodide distribution, see the `pyodide-"
+"build documentation <https://pyodide-build.readthedocs.io/en/latest/>`_."
+msgstr ""
+
+#: ../../../index.rst:45
+msgid ""
+"If you wish to experiment or contribute back to the Pyodide runtime, see the "
+"documentation on :ref:`building_from_source`."
+msgstr ""
+
+#: ../../../index.rst:51
+msgid "Table of contents"
+msgstr "目次表"
+
+#: ../../../index.rst:54
+msgid "Using Pyodide"
+msgstr "使用 Pyodide"
+
+#: ../../../index.rst:75
+msgid ""
+"The Development section helps Pyodide contributors to find information about "
+"the development process including making packages to support third party "
+"libraries."
+msgstr ""
+
+#: ../../../index.rst:94
+msgid ""
+"The Project section gives additional information about the project's "
+"organization and latest releases."
+msgstr ""
+
+#: ../../../index.rst:110
+msgid "Communication"
+msgstr ""
+
+#: ../../../index.rst:112
+msgid "Blog: `blog.pyodide.org <https://blog.pyodide.org/>`_"
+msgstr "網誌：\\ `blog.pyodide.org <https://blog.pyodide.org/>`_"
+
+#: ../../../index.rst:113
+msgid ""
+"Mailing list: `mail.python.org/mailman3/lists/pyodide.python.org/ <https://"
+"mail.python.org/mailman3/lists/pyodide.python.org/>`_"
+msgstr ""
+"郵件列表：\\ `mail.python.org/mailman3/lists/pyodide.python.org/ <https://"
+"mail.python.org/mailman3/lists/pyodide.python.org/>`_"
+
+#: ../../../index.rst:114
+msgid "Discord: `discord.gg/cRxMCG5kJQ <https://discord.gg/cRxMCG5kJQ>`_"
+msgstr "Discord：\\ `discord.gg/cRxMCG5kJQ <https://discord.gg/cRxMCG5kJQ>`_"
+
+#: ../../../index.rst:115
+msgid "Twitter: `twitter.com/pyodide <https://twitter.com/pyodide>`_"
+msgstr ""
+
+#: ../../../index.rst:116
+msgid ""
+"Stack Overflow: `stackoverflow.com/questions/tagged/pyodide <https://"
+"stackoverflow.com/questions/tagged/pyodide>`_"
+msgstr ""
+"Stack Overflow：\\ `stackoverflow.com/questions/tagged/pyodide <https://"
+"stackoverflow.com/questions/tagged/pyodide>`_"

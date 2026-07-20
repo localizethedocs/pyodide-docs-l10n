@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/webworker.md:3
+msgid "Using Pyodide in a web worker"
+msgstr ""
+
+#: ../../../usage/webworker.md:6
+msgid ""
+"Pyodide requires a module-type worker because `pyodide.asm.mjs` is an ES "
+"module. Classic workers using `importScripts()` are not supported."
+msgstr ""
+
+#: ../../../usage/webworker.md:10
+msgid ""
+"This document includes an example demonstrating how to use Pyodide to "
+"execute Python scripts asynchronously in a web worker."
+msgstr ""
+
+#: ../../../usage/webworker.md:13
+msgid "Let's start with [the definition of a worker][worker api]."
+msgstr ""
+
+#: ../../../usage/webworker.md:15
+msgid ""
+"A worker is an object created using a constructor (e.g. [Worker()][worker "
+"constructor]) that runs a named JavaScript file — this file contains the "
+"code that will run in the worker thread; workers run in another global "
+"context that is different from the current window."
+msgstr ""
+
+#: ../../../usage/webworker.md:20
+msgid ""
+"A lot of Python programs do long-running synchronous computations. Running "
+"them in the main thread blocks the UI. Using a web worker is advantageous "
+"because the Python code runs in a separate thread from your UI and does not "
+"impact your application's responsiveness."
+msgstr ""
+
+#: ../../../usage/webworker.md:25
+msgid ""
+"On the other hand, since workers run in a separate global context, you "
+"cannot directly share globals between a worker and the main thread. In "
+"particular, a worker cannot directly manipulate the DOM."
+msgstr ""
+
+#: ../../../usage/webworker.md:29
+msgid "Detailed example"
+msgstr ""
+
+#: ../../../usage/webworker.md:31
+msgid "In this example process we will have three parties involved:"
+msgstr ""
+
+#: ../../../usage/webworker.md:33
+msgid ""
+"The **web worker** is responsible for running scripts in its own separate "
+"thread."
+msgstr ""
+
+#: ../../../usage/webworker.md:34
+msgid ""
+"The **worker API** exposes a consumer-to-provider communication interface."
+msgstr ""
+
+#: ../../../usage/webworker.md:35
+msgid ""
+"The **consumer**s want to run some scripts outside the main thread, so they "
+"don't block the main thread."
+msgstr ""
+
+#: ../../../usage/webworker.md:38
+msgid "Consumers"
+msgstr ""
+
+#: ../../../usage/webworker.md:40
+msgid ""
+"Our goal is to run some Python code in another thread. This other thread "
+"will not have access to the main thread objects. Therefore, we will need an "
+"API that takes as input both the Python `script` we want to run and the "
+"`context` on which it relies (some JavaScript variables that our code needs "
+"access to). Let's first describe what API we would like to have."
+msgstr ""
+
+#: ../../../usage/webworker.md:46
+msgid ""
+"Here is an example of consumer that will exchange with the web worker, via "
+"`workerApi.mjs`. It runs the following Python `script` using the provided "
+"`context` and a function called `asyncRun()`."
+msgstr ""
+
+#: ../../../usage/webworker.md:50
+msgid ""
+"import { asyncRun } from \"./workerApi.js\";\n"
+"\n"
+"const script = `\n"
+"    import statistics\n"
+"    statistics.stdev(A_rank)\n"
+"`;\n"
+"\n"
+"const context = {\n"
+"  A_rank: [0.8, 0.4, 1.2, 3.7, 2.6, 5.8],\n"
+"};\n"
+"\n"
+"async function main() {\n"
+"  const { result, error } = await asyncRun(script, context);\n"
+"  if (result) {\n"
+"    console.log(\"pyodideWorker result:\", result);\n"
+"  } else if (error) {\n"
+"    console.log(\"pyodideWorker error:\", error);\n"
+"  }\n"
+"}\n"
+"\n"
+"main();\n"
+msgstr ""
+
+#: ../../../usage/webworker.md:74
+msgid ""
+"Before writing the API, let's first have a look at how the worker runs the "
+"`script` using a given `context`."
+msgstr ""
+
+#: ../../../usage/webworker.md:77
+msgid "Web worker"
+msgstr ""
+
+#: ../../../usage/webworker.md:79
+msgid "Here is the worker code:"
+msgstr ""
+
+#: ../../../usage/webworker.md:81
+msgid ""
+"// webworker.mjs\n"
+"import { loadPyodide } from \"https://cdn.jsdelivr.net/pyodide/dev/full/"
+"pyodide.mjs\";\n"
+"\n"
+"let pyodideReadyPromise = loadPyodide();\n"
+"\n"
+"self.onmessage = async (event) => {\n"
+"  // make sure loading is done\n"
+"  const pyodide = await pyodideReadyPromise;\n"
+"  const { id, python, context } = event.data;\n"
+"  // Now load any packages we need, run the code, and send the result back.\n"
+"  await pyodide.loadPackagesFromImports(python);\n"
+"  // make a Python dictionary with the data from `context`\n"
+"  const dict = pyodide.globals.get(\"dict\");\n"
+"  const globals = dict(Object.entries(context));\n"
+"  try {\n"
+"    // Execute the python code in this context\n"
+"    const result = await pyodide.runPythonAsync(python, { globals });\n"
+"    self.postMessage({ result, id });\n"
+"  } catch (error) {\n"
+"    self.postMessage({ error: error.message, id });\n"
+"  }\n"
+"};\n"
+msgstr ""
+
+#: ../../../usage/webworker.md:106
+msgid "The worker API"
+msgstr ""
+
+#: ../../../usage/webworker.md:108
+msgid ""
+"Now that we established what the two sides need and how they operate, let's "
+"connect them using an API that wraps the message passing code into an "
+"asynchronous function."
+msgstr ""
+
+#: ../../../usage/webworker.md:112
+msgid ""
+"// workerApi.mjs\n"
+"function getPromiseAndResolve() {\n"
+"  let resolve;\n"
+"  let promise = new Promise((res) => {\n"
+"    resolve = res;\n"
+"  });\n"
+"  return { promise, resolve };\n"
+"}\n"
+"\n"
+"// Each message needs a unique id to identify the response. In a real "
+"example,\n"
+"// we might use a real uuid package\n"
+"let lastId = 1;\n"
+"function getId() {\n"
+"  return lastId++;\n"
+"}\n"
+"\n"
+"// Add an id to msg, send it to worker, then wait for a response with the "
+"same id.\n"
+"// When we get such a response, use it to resolve the promise.\n"
+"function requestResponse(worker, msg) {\n"
+"  const { promise, resolve } = getPromiseAndResolve();\n"
+"  const idWorker = getId();\n"
+"  worker.addEventListener(\"message\", function listener(event) {\n"
+"    if (event.data?.id !== idWorker) {\n"
+"      return;\n"
+"    }\n"
+"    // This listener is done so remove it.\n"
+"    worker.removeEventListener(\"message\", listener);\n"
+"    // Filter the id out of the result\n"
+"    const { id, ...rest } = event.data;\n"
+"    resolve(rest);\n"
+"  });\n"
+"  worker.postMessage({ id: idWorker, ...msg });\n"
+"  return promise;\n"
+"}\n"
+"\n"
+"const pyodideWorker = new Worker(\"./webworker.mjs\", { type: "
+"\"module\" });\n"
+"\n"
+"export function asyncRun(script, context) {\n"
+"  return requestResponse(pyodideWorker, {\n"
+"    context,\n"
+"    python: script,\n"
+"  });\n"
+"}\n"
+msgstr ""
