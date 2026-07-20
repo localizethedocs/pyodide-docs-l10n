@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-US" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contributing to the “core” C Code &#8212; Version 314.1.0.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=dfc2c8a3"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/core';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/core.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Maintainer information" href="maintainers.html" />
+    <link rel="prev" title="How to Contribute" href="contributing.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-US"/>
+  <meta name="docsearch:version" content="314.1.0.dev0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.1.0.dev0 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.1.0.dev0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="contributing.html">How to Contribute</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Contributing to the “core” C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/core.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contributing to the “core” C Code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-files-do">What the files do</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backend-utilities">Backend utilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion-from-javascript-to-python">Type conversion from JavaScript to Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion-from-python-to-javascript">Type conversion from Python to JavaScript</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpython-apis">CPython APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-indicating-errors">Conventions for indicating errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-apis-to-avoid">Python APIs to avoid:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-macros">Error Handling Macros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-propagation-macros">Error Propagation Macros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-to-cpython-calling-convention-adaptors">JavaScript to CPython calling convention adaptors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-functions">Structure of functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-to-the-core-c-code">
+<span id="contributing-core"></span><h1>Contributing to the “core” C Code<a class="headerlink" href="#contributing-to-the-core-c-code" title="Link to this heading">#</a></h1>
+<p>This file is intended as guidelines to help contributors trying to modify the C source files in <code class="docutils literal notranslate"><span class="pre">src/core</span></code>.</p>
+<section id="what-the-files-do">
+<h2>What the files do<a class="headerlink" href="#what-the-files-do" title="Link to this heading">#</a></h2>
+<p>The primary purpose of <code class="docutils literal notranslate"><span class="pre">core</span></code> is to implement <a class="reference internal" href="../usage/type-conversions.html#type-translations"><span class="std std-ref">type translations</span></a> between Python and JavaScript. Here is a breakdown of the purposes of the files.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> – responsible for configuring and initializing the Python interpreter, initializing the other source files, and creating the <code class="docutils literal notranslate"><span class="pre">_pyodide_core</span></code> module which is used to expose Python objects to <code class="docutils literal notranslate"><span class="pre">pyodide_py</span></code>. <code class="docutils literal notranslate"><span class="pre">main.c</span></code> also tries to generate fatal initialization error messages to help with debugging when there is a mistake in the initialization code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyboard_interrupt</span></code> – This sets up the keyboard interrupts system for using Pyodide with a webworker.</p></li>
+</ul>
+<section id="backend-utilities">
+<h3>Backend utilities<a class="headerlink" href="#backend-utilities" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hiwire</span></code> – A helper framework. It is impossible for wasm to directly hold owning references to JavaScript objects. The primary purpose of hiwire is to act as a surrogate owner for JavaScript references by holding the references in a JavaScript <code class="docutils literal notranslate"><span class="pre">Map</span></code>. <code class="docutils literal notranslate"><span class="pre">hiwire</span></code> also defines a wide variety of <code class="docutils literal notranslate"><span class="pre">EM_JS</span></code> helper functions to do JavaScript operations on the held objects. The primary type that hiwire exports is <code class="docutils literal notranslate"><span class="pre">JsRef</span></code>. References are created with <code class="docutils literal notranslate"><span class="pre">Hiwire.new_value</span></code> (only can be done from JavaScript) and must be destroyed from C with <code class="docutils literal notranslate"><span class="pre">hiwire_decref</span></code> or <code class="docutils literal notranslate"><span class="pre">hiwire_CLEAR</span></code>, or from JavaScript with <code class="docutils literal notranslate"><span class="pre">Hiwire.decref</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error_handling</span></code> – defines macros useful for error propagation and for adapting JavaScript functions to the CPython calling convention. See more in the <a class="reference internal" href="#error-handling-macros"><span class="std std-ref">Error Handling Macros</span></a> section.</p></li>
+</ul>
+</section>
+<section id="type-conversion-from-javascript-to-python">
+<h3>Type conversion from JavaScript to Python<a class="headerlink" href="#type-conversion-from-javascript-to-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">js2python</span></code> – Translates basic types from JavaScript to Python, leaves more complicated stuff to jsproxy.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jsproxy</span></code> – Defines Python classes to proxy complex JavaScript types into Python. A complex file responsible for many of the core behaviors of Pyodide.</p></li>
+</ul>
+</section>
+<section id="type-conversion-from-python-to-javascript">
+<h3>Type conversion from Python to JavaScript<a class="headerlink" href="#type-conversion-from-python-to-javascript" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python2js</span></code> – Translates types from Python to JavaScript, implicitly converting basic types and creating pyproxies for others. It also implements explicit conversion from Python to JavaScript (the <code class="docutils literal notranslate"><span class="pre">toJs</span></code> method).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python2js_buffer</span></code> – Attempts to convert Python objects that implement the Python <a class="reference external" href="https://docs.python.org/3/c-api/buffer.html">Buffer Protocol</a>. This includes <code class="docutils literal notranslate"><span class="pre">bytes</span></code> objects, <code class="docutils literal notranslate"><span class="pre">memoryview</span></code>s, <code class="docutils literal notranslate"><span class="pre">array.array</span></code> and a wide variety of types exposed by extension modules like <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. If the data is a 1d array in a contiguous block it can be sliced directly out of the wasm heap to produce a JavaScript <code class="docutils literal notranslate"><span class="pre">TypedArray</span></code>, but JavaScript does not have native support for pointers, so higher dimensional arrays are more complicated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproxy</span></code> – Defines a JavaScript <code class="docutils literal notranslate"><span class="pre">Proxy</span></code> object that passes calls through to a Python object. Another important core file, <code class="docutils literal notranslate"><span class="pre">PyProxy.apply</span></code> is the primary entrypoint into Python code. <code class="docutils literal notranslate"><span class="pre">pyproxy.c</span></code> is much simpler than <code class="docutils literal notranslate"><span class="pre">jsproxy.c</span></code> though.</p></li>
+</ul>
+</section>
+</section>
+<section id="cpython-apis">
+<h2>CPython APIs<a class="headerlink" href="#cpython-apis" title="Link to this heading">#</a></h2>
+<section id="conventions-for-indicating-errors">
+<h3>Conventions for indicating errors<a class="headerlink" href="#conventions-for-indicating-errors" title="Link to this heading">#</a></h3>
+<p>The two main ways to indicate errors:</p>
+<ol class="arabic simple">
+<li><p>If the function returns a pointer, (most often <code class="docutils literal notranslate"><span class="pre">PyObject*</span></code>, <code class="docutils literal notranslate"><span class="pre">char*</span></code>, or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>) then to indicate an error set an exception and return <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p>If the function returns <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> and a correct output must be nonnegative, to indicate an error set an exception and return <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p></li>
+</ol>
+<p>Certain functions have “successful errors” like <code class="docutils literal notranslate"><span class="pre">PyIter_Next</span></code> (successful error is <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>) and <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemWithError</span></code> (successful error is <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>). These functions will return <code class="docutils literal notranslate"><span class="pre">NULL</span></code> without setting an exception to indicate the “successful error” occurred. Check what happened with <code class="docutils literal notranslate"><span class="pre">PyErr_Occurred</span></code>. Also, functions that return <code class="docutils literal notranslate"><span class="pre">int</span></code> for which <code class="docutils literal notranslate"><span class="pre">-1</span></code> is a valid return value will return <code class="docutils literal notranslate"><span class="pre">-1</span></code> with no error set to indicate that the result is <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">-1</span></code> with an error set if an error did occur. The simplest way to handle this is to always check <code class="docutils literal notranslate"><span class="pre">PyErr_Occurred</span></code>.</p>
+<p>Lastly, the argument parsing functions <code class="docutils literal notranslate"><span class="pre">PyArg_ParseTuple</span></code>, <code class="docutils literal notranslate"><span class="pre">PyArg_Parse</span></code>, etc are edge cases. These return <code class="docutils literal notranslate"><span class="pre">true</span></code> on success and return <code class="docutils literal notranslate"><span class="pre">false</span></code> and set an error on failure.</p>
+</section>
+<section id="python-apis-to-avoid">
+<h3>Python APIs to avoid:<a class="headerlink" href="#python-apis-to-avoid" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PyDict_GetItem</span></code>, <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemString</span></code>, and <code class="docutils literal notranslate"><span class="pre">_PyDict_GetItemId</span></code>
+These APIs do not do correct error reporting and there is talk in the Python community of deprecating them going forward. Instead, use <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemWithError</span></code> and <code class="docutils literal notranslate"><span class="pre">_PyDict_GetItemIdWithError</span></code> (there is no <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemStringWithError</span></code> API because use of <code class="docutils literal notranslate"><span class="pre">GetXString</span></code> APIs is also discouraged).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyObject_HasAttrString</span></code>, <code class="docutils literal notranslate"><span class="pre">PyObject_GetAttrString</span></code>, <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemString</span></code>, <code class="docutils literal notranslate"><span class="pre">PyDict_SetItemString</span></code>, <code class="docutils literal notranslate"><span class="pre">PyMapping_HasKeyString</span></code> etc, etc.
+These APIs cause wasteful repeated string conversion.
+If the string you are using is a constant, e.g., <code class="docutils literal notranslate"><span class="pre">PyDict_GetItemString(dict,</span> <span class="pre">&quot;identifier&quot;)</span></code>, then make an id with <code class="docutils literal notranslate"><span class="pre">Py_Identifier(identifier)</span></code> and then use <code class="docutils literal notranslate"><span class="pre">_PyDict_GetItemId(&amp;PyId_identifier)</span></code>. If the string is not constant, convert it to a Python object with <code class="docutils literal notranslate"><span class="pre">PyUnicode_FromString()</span></code> and then use e.g., <code class="docutils literal notranslate"><span class="pre">PyDict_GetItem</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyModule_AddObject</span></code>. This steals a reference on success but not on failure and requires unique cleanup code. Instead, use <code class="docutils literal notranslate"><span class="pre">PyObject_SetAttr</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="error-handling-macros">
+<span id="id1"></span><h2>Error Handling Macros<a class="headerlink" href="#error-handling-macros" title="Link to this heading">#</a></h2>
+<p>The file <code class="docutils literal notranslate"><span class="pre">error_handling.h</span></code> defines several macros to help make error handling as simple and uniform as possible.</p>
+<section id="error-propagation-macros">
+<h3>Error Propagation Macros<a class="headerlink" href="#error-propagation-macros" title="Link to this heading">#</a></h3>
+<p>In a language with exception handling as a feature, error propagation requires no explicit code, it is only if you want to prevent an error from propagating that you use a <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">catch</span></code> block. On the other hand, in C all error propagation must be done explicitly.</p>
+<p>We define macros to help make error propagation look as simple and uniform as possible.
+They can only be used in a function that begins with a <code class="docutils literal notranslate"><span class="pre">FAIL_RETURN_VALUE(sentinel)</span></code> statement, which declares the error sentinel <code class="docutils literal notranslate"><span class="pre">fail_return</span></code> and a <code class="docutils literal notranslate"><span class="pre">success</span></code> flag. On failure the macros return <code class="docutils literal notranslate"><span class="pre">fail_return</span></code> directly; resource cleanup is handled by <code class="docutils literal notranslate"><span class="pre">_Defer</span></code> blocks that run on every return (see structure of functions section below). When compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG_F</span></code>, these commands will write a message to <code class="docutils literal notranslate"><span class="pre">console.error</span></code> reporting the line, function, and file where the error occurred.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_RETURN_VALUE(sentinel)</span></code> – declare <code class="docutils literal notranslate"><span class="pre">fail_return</span> <span class="pre">=</span> <span class="pre">sentinel</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, or <code class="docutils literal notranslate"><span class="pre">JS_ERROR</span></code>) and <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">success</span> <span class="pre">=</span> <span class="pre">true</span></code>. Must be the first statement of the function body, before any <code class="docutils literal notranslate"><span class="pre">DECLARE_PY_OBJECT</span></code> / <code class="docutils literal notranslate"><span class="pre">_Defer</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> – unconditionally set <code class="docutils literal notranslate"><span class="pre">success</span> <span class="pre">=</span> <span class="pre">false</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">fail_return;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_IF_NULL(ptr)</span></code> – <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> if <code class="docutils literal notranslate"><span class="pre">ptr</span> <span class="pre">==</span> <span class="pre">NULL</span></code>. This should be used with any function that returns a pointer and follows the standard Python calling convention.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_IF_MINUS_ONE(num)</span></code> – <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> if <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">==</span> <span class="pre">-1</span></code>. This should be used with any function that returns a number and follows the standard Python calling convention.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_IF_NONZERO(num)</span></code> – <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> if <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">!=</span> <span class="pre">0</span></code>. Can be used with functions that return any nonzero error code on failure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_IF_ERR_OCCURRED()</span></code> – <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> if the Python error indicator is set (in other words if <code class="docutils literal notranslate"><span class="pre">PyErr_Occurred()</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL_IF_JS_ERROR(val)</span></code> – <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> if the <code class="docutils literal notranslate"><span class="pre">JsVal</span></code> is a JavaScript error sentinel.</p></li>
+</ul>
+</section>
+<section id="javascript-to-cpython-calling-convention-adaptors">
+<h3>JavaScript to CPython calling convention adaptors<a class="headerlink" href="#javascript-to-cpython-calling-convention-adaptors" title="Link to this heading">#</a></h3>
+<p>If we call a JavaScript function from C and that JavaScript function throws an error, it is impossible to catch it in C. We define two <code class="docutils literal notranslate"><span class="pre">EM_JS</span></code> adaptors to convert from the JavaScript calling convention to the CPython calling convention. The point of this is to ensure that errors that occur in <code class="docutils literal notranslate"><span class="pre">EM_JS</span></code> functions can be handled in C code using the <code class="docutils literal notranslate"><span class="pre">FAIL_*``</span> <span class="pre">macros.</span> <span class="pre">When</span> <span class="pre">compiled</span> <span class="pre">with</span> </code>DEBUG_F<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">when</span> <span class="pre">a</span> <span class="pre">JavaScript</span> <span class="pre">error</span> <span class="pre">is</span> <span class="pre">thrown</span> <span class="pre">a</span> <span class="pre">message</span> <span class="pre">will</span> <span class="pre">also</span> <span class="pre">be</span> <span class="pre">written</span> <span class="pre">to</span> </code>console.error`. The wrappers do roughly the following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// body of function here</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// wrap e in a Python exception and set the Python error indicator</span>
+<span class="w">  </span><span class="c1">// return error code</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There are two variants: <code class="docutils literal notranslate"><span class="pre">EM_JS_NUM</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> as the error code, <code class="docutils literal notranslate"><span class="pre">EM_JS_REF</span></code> returns <code class="docutils literal notranslate"><span class="pre">NULL</span> <span class="pre">==</span> <span class="pre">0</span></code> as the error code. A couple of simple examples:
+Use <code class="docutils literal notranslate"><span class="pre">EM_JS_REF</span></code> when return value is a <code class="docutils literal notranslate"><span class="pre">JsRef</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">EM_JS_REF</span><span class="p">(</span><span class="nx">JsRef</span><span class="p">,</span><span class="w"> </span><span class="nx">hiwire_call</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">idfunc</span><span class="p">,</span><span class="w"> </span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">idargs</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">jsfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">get_value</span><span class="p">(</span><span class="nx">idfunc</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">jsargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">get_value</span><span class="p">(</span><span class="nx">idargs</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">new_value</span><span class="p">(</span><span class="nx">jsfunc</span><span class="p">(...</span><span class="w"> </span><span class="nx">jsargs</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">EM_JS_REF</span></code> when return value is a <code class="docutils literal notranslate"><span class="pre">PyObject</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">EM_JS_REF</span><span class="p">(</span><span class="nx">PyObject</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="nx">__js2python</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">id</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// body here</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If the function returns <code class="docutils literal notranslate"><span class="pre">void</span></code>, use <code class="docutils literal notranslate"><span class="pre">EM_JS_NUM</span></code> with return type <code class="docutils literal notranslate"><span class="pre">errcode</span></code>. <code class="docutils literal notranslate"><span class="pre">errcode</span></code> is a typedef for <code class="docutils literal notranslate"><span class="pre">int</span></code>. <code class="docutils literal notranslate"><span class="pre">EM_JS_NUM</span></code> will automatically return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if an error occurs and <code class="docutils literal notranslate"><span class="pre">0</span></code> if not:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">EM_JS_NUM</span><span class="p">(</span><span class="nx">errcode</span><span class="p">,</span><span class="w"> </span><span class="nx">hiwire_set_member_int</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">idobj</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">idx</span><span class="p">,</span><span class="w"> </span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">idval</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">get_value</span><span class="p">(</span><span class="nx">idobj</span><span class="p">)[</span><span class="nx">idx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">get_value</span><span class="p">(</span><span class="nx">idval</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If the function returns <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">bool</span></code> use <code class="docutils literal notranslate"><span class="pre">EM_JS_NUM</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">EM_JS_NUM</span><span class="p">(</span><span class="kr">int</span><span class="p">,</span><span class="w"> </span><span class="nx">hiwire_get_length</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">JsRef</span><span class="w"> </span><span class="nx">idobj</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">Hiwire</span><span class="p">.</span><span class="nx">get_value</span><span class="p">(</span><span class="nx">idobj</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>These wrappers enable the following sort of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+  <span class="n">jsfunc</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">JsException</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caught an exception thrown in JavaScript!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="structure-of-functions">
+<h2>Structure of functions<a class="headerlink" href="#structure-of-functions" title="Link to this heading">#</a></h2>
+<p>In C it takes special care to correctly and cleanly handle both reference counting and exception propagation. In Python (or other higher level languages), all references are released in an implicit finally block at the end of the function. Implicitly, it is as if you wrote:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">():</span>
+  <span class="k">try</span><span class="p">:</span> <span class="c1"># implicit</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">do_something_else</span><span class="p">()</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">some_func</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+  <span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># implicit, free references both on successful exit and on exception</span>
+    <span class="n">decref</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">decref</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">decref</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Freeing all references at the end of the function allows us to separate reference counting boilerplate from the “actual logic” of the function definition. When a function does correct error propagation, there will be many different execution paths, roughly linearly many in the length of the function. For example, the above pseudocode could exit in five different ways: <code class="docutils literal notranslate"><span class="pre">do_something</span></code> could raise an exception, <code class="docutils literal notranslate"><span class="pre">do_something_else</span></code> could raise an exception, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> could raise an exception, <code class="docutils literal notranslate"><span class="pre">some_func</span></code> could raise an exception, or the function could return successfully. (Even a Python function like <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(a,b,c,d):</span> <span class="pre">return</span> <span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b)</span> <span class="pre">*</span> <span class="pre">c</span> <span class="pre">-</span> <span class="pre">d</span></code> has four execution paths.) The point of the <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">finally</span></code> block is that we know the resources are freed correctly without checking once for each execution path.</p>
+<p>To do this, we divide any function that produces more than a couple of owned <code class="docutils literal notranslate"><span class="pre">PyObject*</span></code>s or <code class="docutils literal notranslate"><span class="pre">JsRef</span></code>s into several “segments”.
+The more owned references there are in a function and the longer it is, the more important it becomes to follow this style carefully.
+By being as consistent as possible, we reduce the burden on people reading the code to double-check that you are not leaking memory or errors. In short functions it is fine to do something ad hoc.</p>
+<ol class="arabic simple">
+<li><p>The guard block. The first block of a function does sanity checks on the inputs and argument parsing, but only to the extent possible without creating any owned references. If you check more complicated invariants on the inputs in a way that requires creating owned references, this logic belongs in the body block.</p></li>
+</ol>
+<p>Here’s an example of a <code class="docutils literal notranslate"><span class="pre">METH_VARARGS</span></code> function:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">PyObject</span><span class="o">*</span>
+<span class="nf">JsImport_CreateModule</span><span class="p">(</span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="c1">// Guard</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">jsproxy</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// PyArg_UnpackTuple uses an unusual calling convention:</span>
+<span class="w">  </span><span class="c1">// It returns `false` on failure...</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PyArg_UnpackTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;create_module&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spec</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsproxy</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">JsProxy_Check</span><span class="p">(</span><span class="n">jsproxy</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PyErr_SetString</span><span class="p">(</span><span class="n">PyExc_TypeError</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;package is not an instance of jsproxy&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Forward declaration of owned references. This starts by declaring the error sentinel and <code class="docutils literal notranslate"><span class="pre">success</span></code> flag with <code class="docutils literal notranslate"><span class="pre">FAIL_RETURN_VALUE(NULL)</span></code> (use <code class="docutils literal notranslate"><span class="pre">-1</span></code> for functions returning an <code class="docutils literal notranslate"><span class="pre">int</span></code> error code). <code class="docutils literal notranslate"><span class="pre">FAIL()</span></code> returns this sentinel and sets <code class="docutils literal notranslate"><span class="pre">success</span> <span class="pre">=</span> <span class="pre">false</span></code>, which <code class="docutils literal notranslate"><span class="pre">ON_FAIL</span></code> cleanup blocks use to decide whether to clear the result. Then declare every reference counted variable that we will create during execution of the function, attaching a <code class="docutils literal notranslate"><span class="pre">_Defer</span></code> block to release it (<code class="docutils literal notranslate"><span class="pre">DECLARE_PY_OBJECT(x)</span></code> does this in one step). Finally, declare the variable that we are planning to return.
+Typically, this will be called <code class="docutils literal notranslate"><span class="pre">result</span></code>, but in this case the function is named <code class="docutils literal notranslate"><span class="pre">CreateModule</span></code> so we name the return variable <code class="docutils literal notranslate"><span class="pre">module</span></code>.</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">FAIL_RETURN_VALUE</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Note: these are all the objects that we will own. If a function returns</span>
+<span class="w">  </span><span class="c1">// a borrow, we XINCREF the result so that the _Defer block can CLEAR it.</span>
+<span class="w">  </span><span class="c1">// Reference counting is hard, so it&#39;s good to be as explicit and consistent</span>
+<span class="w">  </span><span class="c1">// as possible!</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">sys_modules</span><span class="p">);</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">importlib_machinery</span><span class="p">);</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">ModuleSpec</span><span class="p">);</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">__dir__</span><span class="p">);</span>
+<span class="w">  </span><span class="n">DECLARE_PY_OBJECT</span><span class="p">(</span><span class="n">module_dict</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// result</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="n">ON_FAIL</span><span class="p">({</span><span class="w"> </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">module</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>The body of the function. The vast majority of API calls can return error codes. You MUST check every fallible API for an error. Also, as you are writing the code, you should look up every Python API you use that returns a reference to determine whether it returns a borrowed reference or a new one. If it returns a borrowed reference, immediately <code class="docutils literal notranslate"><span class="pre">Py_XINCREF()</span></code> the result to convert it into an owned reference (before <code class="docutils literal notranslate"><span class="pre">FAIL_IF_NULL</span></code>, to be consistent with the case where you use custom error handling).</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyUnicode_FromString</span><span class="p">(</span><span class="n">name_utf8</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FAIL_IF_NULL</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sys_modules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyImport_GetModuleDict</span><span class="p">();</span><span class="w"> </span><span class="c1">// returns borrow</span>
+<span class="w">  </span><span class="n">Py_XINCREF</span><span class="p">(</span><span class="n">sys_modules</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FAIL_IF_NULL</span><span class="p">(</span><span class="n">sys_modules</span><span class="p">);</span>
+<span class="w">  </span><span class="n">module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyDict_GetItemWithError</span><span class="p">(</span><span class="n">sys_modules</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns borrow</span>
+<span class="w">  </span><span class="n">Py_XINCREF</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FAIL_IF_NULL</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">module</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">JsImport_Check</span><span class="p">(</span><span class="n">module</span><span class="p">)){</span>
+<span class="w">    </span><span class="n">PyErr_Format</span><span class="p">(</span><span class="n">PyExc_KeyError</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&quot;Cannot mount with name &#39;%s&#39;: there is an existing module by this name that was not mounted with &#39;pyodide.mountPackage&#39;.&quot;</span>
+<span class="w">      </span><span class="p">,</span><span class="w"> </span><span class="n">name</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="n">FAIL</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="c1">// ... [SNIP]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">finally</span></code> block. Here we will clear all the variables we declared at the top in exactly the same order. Do not clear the arguments! They are borrowed. According to the standard Python function calling convention, they are the responsibility of the calling code.</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="nl">finally</span><span class="p">:</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">sys_modules</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">importlib_machinery</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">ModuleSpec</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">__dir__</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">module_dict</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">){</span>
+<span class="w">    </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>One case where you do need to <code class="docutils literal notranslate"><span class="pre">Py_CLEAR</span></code> a variable in the body of a function is if that variable is allocated in a loop:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// refcounted variable declarations</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">pyentry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// ... other stuff</span>
+<span class="w">  </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PySequence_Length</span><span class="p">(</span><span class="n">pylist</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pyentry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PySequence_GetItem</span><span class="p">(</span><span class="n">pydir</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="n">FAIL_IF_MINUS_ONE</span><span class="p">(</span><span class="n">do_something</span><span class="p">(</span><span class="n">pyentry</span><span class="p">));</span>
+<span class="w">    </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">pyentry</span><span class="p">);</span><span class="w"> </span><span class="c1">// important to use Py_CLEAR and not Py_decref.</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nl">finally</span><span class="p">:</span>
+<span class="w">  </span><span class="c1">// have to clear pyentry at end too in case do_something failed in the loop body</span>
+<span class="w">  </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">pyentry</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
+<p>Any nonstatic C function called <code class="docutils literal notranslate"><span class="pre">some_name</span></code> defined not using <code class="docutils literal notranslate"><span class="pre">EM_JS</span></code> will be exposed as <code class="docutils literal notranslate"><span class="pre">pyodide._module._some_name</span></code>, and this can be used in tests to good effect. If the arguments / return value are not just numbers and booleans, it may take some effort to set up the function call.</p>
+<p>If you want to test an <code class="docutils literal notranslate"><span class="pre">EM_JS</span></code> function, consider moving the body of the function to an API defined on <code class="docutils literal notranslate"><span class="pre">Module</span></code>. You should still wrap the function with <code class="docutils literal notranslate"><span class="pre">EM_JS_REF</span></code> or <code class="docutils literal notranslate"><span class="pre">EM_JS_NUM</span></code> in order to get a function with the CPython calling convention.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="contributing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to Contribute</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="maintainers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Maintainer information</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-files-do">What the files do</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backend-utilities">Backend utilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion-from-javascript-to-python">Type conversion from JavaScript to Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion-from-python-to-javascript">Type conversion from Python to JavaScript</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpython-apis">CPython APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-indicating-errors">Conventions for indicating errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-apis-to-avoid">Python APIs to avoid:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-macros">Error Handling Macros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-propagation-macros">Error Propagation Macros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-to-cpython-calling-convention-adaptors">JavaScript to CPython calling convention adaptors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-functions">Structure of functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-US" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How to Contribute &#8212; Version 314.1.0.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=dfc2c8a3"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/contributing';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/contributing.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing to the “core” C Code" href="core.html" />
+    <link rel="prev" title="Debugging tips" href="debugging.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-US"/>
+  <meta name="docsearch:version" content="314.1.0.dev0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.1.0.dev0 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.1.0.dev0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">How to Contribute</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Contributing to the “core” C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/contributing.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How to Contribute</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-workflow">Development Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bugs-issues">Bugs &amp; Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to Contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-the-core-c-code">Contributing to the “core” C Code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docs">Building the docs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migrating-patches">Migrating patches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintainer-information">Maintainer information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="how-to-contribute">
+<span id="id1"></span><h1>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Link to this heading">#</a></h1>
+<p>Thank you for your interest in contributing to Pyodide! There are many ways to
+contribute, and we appreciate all of them. Here are some guidelines &amp; pointers
+for diving into it.</p>
+<section id="development-workflow">
+<h2>Development Workflow<a class="headerlink" href="#development-workflow" title="Link to this heading">#</a></h2>
+<p>To contribute code, see the following steps,</p>
+<ol class="arabic">
+<li><p>Fork the Pyodide repository <a class="github reference external" href="https://github.com/pyodide/pyodide">pyodide/pyodide</a> on Github.</p></li>
+<li><p>If you are on Linux, you can skip this step. On Windows and MacOS you have a
+choice. The first option is to manually install Docker:</p>
+<ul class="simple">
+<li><p>on MacOS follow <a class="reference external" href="https://docs.docker.com/desktop/mac/install/">these instructions</a></p></li>
+<li><p>on Windows, <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install">install WSL
+2</a>, then Docker.
+Note that Windows filesystem access from WSL2 is very slow and should
+be avoided when building Pyodide.</p></li>
+</ul>
+<p>The second option is to use a service that provides a Linux
+development environment, such as</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/features/codespaces">Github Codespaces</a></p></li>
+<li><p><a class="reference external" href="https://gitpod.io">gitpod.io</a></p></li>
+<li><p>or a remote Linux VM with SSH connection.</p></li>
+</ul>
+</li>
+<li><p>Clone your fork of Pyodide</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">recursive</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">pyodide</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>and add the upstream remote,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyodide</span><span class="o">/</span><span class="n">pyodide</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>While the build will happen inside Docker you still need a development
+environment with Python 3.14 and ideally Node.js. These can be installed
+for instance with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pyodide</span><span class="o">-</span><span class="n">env</span>
+</pre></div>
+</div>
+<p>or via your system package manager.</p>
+</li>
+<li><p>Install requirements (it’s recommended to use a virtualenv or a conda env),</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Enable <a class="reference external" href="https://prek.j178.dev/">prek</a> for code style,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prek</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>This will run a set of linters for each commit.</p>
+</li>
+<li><p>Follow <a class="reference internal" href="building-from-sources.html#building-from-source"><span class="std std-ref">Building from source</span></a> instructions.</p></li>
+<li><p>See <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing and benchmarking</span></a> documentation.</p></li>
+</ol>
+</section>
+<section id="code-of-conduct">
+<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">#</a></h2>
+<p>Pyodide has adopted a <a class="reference internal" href="../project/code-of-conduct.html#code-of-conduct"><span class="std std-ref">Code of Conduct</span></a> that we expect all contributors and
+core members to adhere to.</p>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
+<p>Work on Pyodide happens on GitHub. Core members and contributors can make Pull
+Requests to fix issues and add features, which all go through the same review
+process. We’ll detail how you can start making PRs below.</p>
+<p>We’ll do our best to keep <code class="docutils literal notranslate"><span class="pre">main</span></code> in a non-breaking state, ideally with tests
+always passing. The unfortunate reality of software development is sometimes
+things break. As such, <code class="docutils literal notranslate"><span class="pre">main</span></code> cannot be expected to remain reliable at all
+times. We recommend using the latest stable version of Pyodide.</p>
+<p>Pyodide follows <a class="reference external" href="http://semver.org/">semantic versioning</a> - major versions for
+breaking changes (x.0.0), minor versions for new features (0.x.0), and patches
+for bug fixes (0.0.x).</p>
+<p>We keep a file, <a class="reference internal" href="../project/changelog.html#changelog"><span class="std std-ref">docs/project/changelog.md</span></a>, outlining changes
+to Pyodide in each release. We like to think of the audience for changelogs
+as non-developers who primarily run the latest stable. So the change log will
+primarily outline user-visible changes such as new features and deprecations,
+and will exclude things that might otherwise be inconsequential to the end user
+experience, such as infrastructure or refactoring.</p>
+</section>
+<section id="bugs-issues">
+<h2>Bugs &amp; Issues<a class="headerlink" href="#bugs-issues" title="Link to this heading">#</a></h2>
+<p>We use <a class="reference external" href="https://github.com/pyodide/pyodide/issues">Github Issues</a> for
+announcing and discussing bugs and features. Use
+<a class="reference external" href="https://github.com/pyodide/pyodide/issues/new">this link</a> to report a
+bug or issue. We provide a template to give you a guide for how to file
+optimally. If you have the chance, please search the existing issues before
+reporting a bug. It’s possible that someone else has already reported your
+error. This doesn’t always work, and sometimes it’s hard to know what to search
+for, so consider this extra credit. We won’t mind if you accidentally file a
+duplicate report.</p>
+<p>Core contributors are monitoring new issues &amp; comments all the time, and will
+label &amp; organize issues to align with development priorities.</p>
+</section>
+<section id="id2">
+<h2>How to Contribute<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Pull requests are the primary mechanism we use to change Pyodide. GitHub itself
+has some
+<a class="reference external" href="https://help.github.com/articles/about-pull-requests/">great documentation</a>
+on using the Pull Request feature. We use the “fork and pull” model
+<a class="reference external" href="https://help.github.com/articles/about-pull-requests/">described here</a>,
+where contributors push changes to their personal fork and create pull requests
+to bring those changes into the source repository.</p>
+<p>Please make pull requests against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<p>If you’re looking for a way to jump in and contribute, our list of
+<a class="reference external" href="https://github.com/pyodide/pyodide/labels/good%20first%20issue">good first issues</a>
+is a great place to start.</p>
+<p>If you’d like to fix a currently-filed issue, please take a look at the comment
+thread on the issue to ensure no one is already working on it. If no one has
+claimed the issue, make a comment stating you’d like to tackle it in a PR. If
+someone has claimed the issue but has not worked on it in a few weeks, make a
+comment asking if you can take over, and we’ll figure it out from there.</p>
+<p>We use <a class="reference external" href="https://pytest.org">pytest</a>, driving
+<a class="reference external" href="https://www.seleniumhq.org">Selenium</a> as our testing framework. Every PR will
+automatically run through our tests, and our test framework will alert you on
+GitHub if your PR doesn’t pass all of them. If your PR fails a test, try to
+figure out whether or not you can update your code to make the test pass again,
+or ask for help. As a policy we will not accept a PR that fails any of our
+tests, and will likely ask you to add tests if your PR adds new functionality.
+Writing tests can be scary, but they make open-source contributions easier for
+everyone to assess. Take a moment and look through how we’ve written our tests,
+and try to make your tests match. If you are having trouble, we can help you get
+started on our test-writing journey.</p>
+<p>All code submissions should pass <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code>. Python is checked with <code class="docutils literal notranslate"><span class="pre">ruff</span></code> (for
+linting and formatting) and <code class="docutils literal notranslate"><span class="pre">mypy</span></code>. JavaScript and TypeScript are checked with
+<code class="docutils literal notranslate"><span class="pre">biome</span></code>. C is checked with <code class="docutils literal notranslate"><span class="pre">clang-format</span></code>.</p>
+<section id="contributing-to-the-core-c-code">
+<h3>Contributing to the “core” C Code<a class="headerlink" href="#contributing-to-the-core-c-code" title="Link to this heading">#</a></h3>
+<p>See <a class="reference internal" href="core.html#contributing-core"><span class="std std-ref">Contributing to the “core” C Code</span></a>.</p>
+</section>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Documentation is a critical part of any open source project, and we are very
+welcome to any documentation improvements. Pyodide has a documentation written
+in Markdown in the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder. We use the
+<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/using/syntax.html#targets-and-cross-referencing">MyST</a>
+for parsing Markdown in sphinx. You may want to have a look at the
+<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/using/syntax.html#the-myst-syntax-guide">MyST syntax guide</a>
+when contributing, in particular regarding
+<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/using/syntax.html#targets-and-cross-referencing">cross-referencing sections</a>.</p>
+<section id="building-the-docs">
+<h3>Building the docs<a class="headerlink" href="#building-the-docs" title="Link to this heading">#</a></h3>
+<p>From the directory <code class="docutils literal notranslate"><span class="pre">docs</span></code>, first install the Python dependencies with
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements-doc.txt</span></code>. You also need to install JsDoc, which is a
+<code class="docutils literal notranslate"><span class="pre">node</span></code> dependency. Install it with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">jsdoc</span></code>. Then to
+build the docs run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. The built documentation will be in the
+subdirectory <code class="docutils literal notranslate"><span class="pre">docs/_build/html</span></code>. To view them, cd into <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> and
+start a file server, for instance <code class="docutils literal notranslate"><span class="pre">http-server</span></code>.</p>
+</section>
+</section>
+<section id="migrating-patches">
+<h2>Migrating patches<a class="headerlink" href="#migrating-patches" title="Link to this heading">#</a></h2>
+<p>It often happens that patches need to be migrated between different versions of
+upstream packages.</p>
+<p>If patches fail to apply automatically, one solution can be to</p>
+<ol class="arabic">
+<li><p>Checkout the initial version of the upstream package in a separate repo, and
+create a branch from it.</p></li>
+<li><p>Add existing patches with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">apply</span> <span class="pre">&lt;path.path&gt;</span></code></p></li>
+<li><p>Checkout the new version of the upstream package and create a branch from it.</p></li>
+<li><p>Cherry-pick patches to the new version,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="o">&lt;</span><span class="n">commit</span><span class="o">-</span><span class="nb">hash</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and resolve conflicts.</p>
+</li>
+<li><p>Re-export last <code class="docutils literal notranslate"><span class="pre">N</span></code> commits as patches e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">format</span><span class="o">-</span><span class="n">patch</span> <span class="o">-&lt;</span><span class="n">N</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">N</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">stat</span> <span class="n">HEAD</span> <span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">out_dir</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="maintainer-information">
+<h2>Maintainer information<a class="headerlink" href="#maintainer-information" title="Link to this heading">#</a></h2>
+<p>For information about making releases see <a class="reference internal" href="maintainers.html#maintainer-information"><span class="std std-ref">Maintainer information</span></a>.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>All contributions to Pyodide will be licensed under the
+<a class="reference external" href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License 2.0 (MPL 2.0)</a>.
+This is considered a “weak copyleft” license. Check out the <a class="reference external" href="https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)">tl;drLegal entry</a> for more
+information, as well as Mozilla’s
+<a class="reference external" href="https://www.mozilla.org/en-US/MPL/2.0/FAQ/">MPL 2.0 FAQ</a> if you need further
+clarification on what is and isn’t permitted.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="debugging.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Debugging tips</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="core.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing to the “core” C Code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-workflow">Development Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bugs-issues">Bugs &amp; Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How to Contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-the-core-c-code">Contributing to the “core” C Code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docs">Building the docs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migrating-patches">Migrating patches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintainer-information">Maintainer information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

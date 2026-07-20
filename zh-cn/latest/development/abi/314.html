@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyemscripten_2026_0 &#8212; Version 314.1.0.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=a8337cbd"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/abi/314';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/abi/314.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="pyemscripten_2025_0" href="313.html" />
+    <link rel="prev" title="The PyEmscripten Platform" href="../abi.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="314.1.0.dev0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.1.0.dev0 - Home"/>
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.1.0.dev0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../abi.html">The PyEmscripten Platform</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/development/abi/314.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyemscripten_2026_0</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specification">Platform Specification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpython-and-emscripten-version">CPython and Emscripten Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unwinding-abis">Unwinding ABIs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-toolchain">Rust Toolchain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runtime-library-loading-path">Runtime Library Loading Path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries-linked-to-the-main-binary">Libraries Linked to the Main Binary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-from-pyemscripten-2025-0">Changes from pyemscripten_2025_0</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-name">Platform Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emscripten-version">Emscripten version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-toolchain-simplified">Rust toolchain simplified</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-statically-linked-libraries">Additional statically linked libraries</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyemscripten-2026-0">
+<h1>pyemscripten_2026_0<a class="headerlink" href="#pyemscripten-2026-0" title="Link to this heading">#</a></h1>
+<p>By default, all builds of the Pyodide runtime with Python 3.14 use the
+<code class="docutils literal notranslate"><span class="pre">pyemscripten_2026_0</span></code> platform.</p>
+<p>This section reflects the planned definition for the <code class="docutils literal notranslate"><span class="pre">pyemscripten_2026_0</span></code>
+platform.</p>
+<section id="platform-specification">
+<h2>Platform Specification<a class="headerlink" href="#platform-specification" title="Link to this heading">#</a></h2>
+<section id="cpython-and-emscripten-version">
+<h3>CPython and Emscripten Version<a class="headerlink" href="#cpython-and-emscripten-version" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>CPython</strong>: 3.14</p></li>
+<li><p><strong>Emscripten</strong>: 5.0.3</p></li>
+</ul>
+</section>
+<section id="unwinding-abis">
+<h3>Unwinding ABIs<a class="headerlink" href="#unwinding-abis" title="Link to this heading">#</a></h3>
+<p>C++ libraries are built with WebAssembly exception handling (<code class="docutils literal notranslate"><span class="pre">-fwasm-exceptions</span></code>)
+and WebAssembly-based <code class="docutils literal notranslate"><span class="pre">setjmp</span></code>/<code class="docutils literal notranslate"><span class="pre">longjmp</span></code> (<code class="docutils literal notranslate"><span class="pre">-sSUPPORT_LONGJMP=wasm</span></code>). To enable
+exceptions and <code class="docutils literal notranslate"><span class="pre">setjmp</span></code>/<code class="docutils literal notranslate"><span class="pre">longjmp</span></code>, <code class="docutils literal notranslate"><span class="pre">-fwasm-exceptions</span></code> must be passed at compile
+time and link time.</p>
+</section>
+<section id="rust-toolchain">
+<h3>Rust Toolchain<a class="headerlink" href="#rust-toolchain" title="Link to this heading">#</a></h3>
+<p>When building Rust packages to target the <code class="docutils literal notranslate"><span class="pre">pyemscripten_2026_0</span></code> platform, use
+Rust version 1.93.0 or later.</p>
+</section>
+<section id="runtime-library-loading-path">
+<h3>Runtime Library Loading Path<a class="headerlink" href="#runtime-library-loading-path" title="Link to this heading">#</a></h3>
+<p>There is full support for <code class="docutils literal notranslate"><span class="pre">RPATH</span></code>. The dynamic loader will only load
+dependencies that are properly specified on the <code class="docutils literal notranslate"><span class="pre">RPATH</span></code>, just being in
+<code class="docutils literal notranslate"><span class="pre">/lib/python3.14/site-packages/wheel_name.libs</span></code> is not sufficient.</p>
+</section>
+<section id="libraries-linked-to-the-main-binary">
+<h3>Libraries Linked to the Main Binary<a class="headerlink" href="#libraries-linked-to-the-main-binary" title="Link to this heading">#</a></h3>
+<p>The following libraries are statically linked to the binary:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">libegl.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libeventloop.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libGL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libhtml5_webgl.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libhtml5.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">liblz4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libsdl.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libwebgl.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libwebsocket.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bzip2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> version 3.39.0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lzma</span></code> (xz) version 5.2.2</p></li>
+</ul>
+<p>Aside from <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> and <code class="docutils literal notranslate"><span class="pre">lzma</span></code>, these libraries come from Emscripten ports and
+the versions of the libraries are determined by the version of Emscripten we
+build with. Any symbols from these static libraries may be used by shared
+libraries.</p>
+</section>
+</section>
+<section id="changes-from-pyemscripten-2025-0">
+<h2>Changes from pyemscripten_2025_0<a class="headerlink" href="#changes-from-pyemscripten-2025-0" title="Link to this heading">#</a></h2>
+<section id="platform-name">
+<h3>Platform Name<a class="headerlink" href="#platform-name" title="Link to this heading">#</a></h3>
+<p>The platform name was changed from <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> to <code class="docutils literal notranslate"><span class="pre">pyemscripten</span></code>.</p>
+</section>
+<section id="emscripten-version">
+<h3>Emscripten version<a class="headerlink" href="#emscripten-version" title="Link to this heading">#</a></h3>
+<p>Emscripten was upgraded from <strong>4.0.9</strong> to <strong>5.0.3</strong>.</p>
+</section>
+<section id="rust-toolchain-simplified">
+<h3>Rust toolchain simplified<a class="headerlink" href="#rust-toolchain-simplified" title="Link to this heading">#</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">pyemscripten_2025_0</span></code>, a Rust nightly was required with the unstable
+<code class="docutils literal notranslate"><span class="pre">-Z</span> <span class="pre">emscripten-wasm-eh</span></code> flag and a custom sysroot. In <code class="docutils literal notranslate"><span class="pre">pyemscripten_2026_0</span></code>, Rust
+1.93.0 or later is sufficient — no custom sysroot or nightly-only flags are
+needed.</p>
+<p>Technically speaking, this is not a change to the platform. <code class="docutils literal notranslate"><span class="pre">pyemscripten_2025_0</span></code>
+also works with stable Rust 1.93.0.</p>
+</section>
+<section id="additional-statically-linked-libraries">
+<h3>Additional statically linked libraries<a class="headerlink" href="#additional-statically-linked-libraries" title="Link to this heading">#</a></h3>
+<p>The following libraries are now statically linked to the interpreter in addition
+to the Emscripten port libraries:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> (3.39.0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lzma</span></code> (xz) (5.2.2)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../abi.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">The PyEmscripten Platform</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="313.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">pyemscripten_2025_0</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specification">Platform Specification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpython-and-emscripten-version">CPython and Emscripten Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unwinding-abis">Unwinding ABIs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-toolchain">Rust Toolchain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runtime-library-loading-path">Runtime Library Loading Path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries-linked-to-the-main-binary">Libraries Linked to the Main Binary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-from-pyemscripten-2025-0">Changes from pyemscripten_2025_0</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-name">Platform Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emscripten-version">Emscripten version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-toolchain-simplified">Rust toolchain simplified</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-statically-linked-libraries">Additional statically linked libraries</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

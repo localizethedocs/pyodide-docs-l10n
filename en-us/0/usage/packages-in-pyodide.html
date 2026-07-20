@@ -1,0 +1,1428 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-US" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Packages built in Pyodide &#8212; Version 0.29.4</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=b93e38c4"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/packages-in-pyodide';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/usage/packages-in-pyodide.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using SDL-based packages in Pyodide" href="sdl.html" />
+    <link rel="prev" title="Loading packages" href="loading-packages.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-US"/>
+  <meta name="docsearch:version" content="0.29.4" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 0.29.4 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 0.29.4 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">The Pyodide Python CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="loading-packages.html">Loading packages</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/building-packages.html">Building packages for Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/building-packages-from-source.html">Building Python Packages from Source</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../development/adding-packages-into-pyodide-distribution.html">Adding Packages into Pyodide Distribution</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development/building-packages-using-recipe.html">Building Packages Using Recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/meta-yaml.html">The meta.yaml specification</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/core.html">Contributing to the “core” C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/314.html">pyemscripten_2026_0 (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/313.html">pyodide_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/312.html">pyodide_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/usage/packages-in-pyodide.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Packages built in Pyodide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="packages-built-in-pyodide">
+<span id="packages-in-pyodide"></span><h1>Packages built in Pyodide<a class="headerlink" href="#packages-built-in-pyodide" title="Link to this heading">#</a></h1>
+<p>This is the list of Python packages included with the current version of
+Pyodide. These packages can be loaded with <a class="reference internal" href="api/js-api.html#pyodide.loadPackage" title="pyodide.loadPackage"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.loadPackage()</span></code></a> or
+<a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html#micropip.install" title="(in micropip v0.11.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">micropip.install()</span></code></a>. See <a class="reference internal" href="loading-packages.html#loading-packages"><span class="std std-ref">Loading packages</span></a> for information about
+loading packages. Pure Python packages with wheels on PyPI can be loaded
+directly from PyPI with <a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html#micropip.install" title="(in micropip v0.11.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">micropip.install()</span></code></a>.</p>
+<div class="pst-scrollable-table-container"><table class="longtable table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>affine</p></td>
+<td><p>2.4.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>aiohappyeyeballs</p></td>
+<td><p>2.6.1</p></td>
+</tr>
+<tr class="row-even"><td><p>aiohttp</p></td>
+<td><p>3.11.13</p></td>
+</tr>
+<tr class="row-odd"><td><p>aiosignal</p></td>
+<td><p>1.3.2</p></td>
+</tr>
+<tr class="row-even"><td><p>altair</p></td>
+<td><p>6.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>annotated-types</p></td>
+<td><p>0.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>anyio</p></td>
+<td><p>4.9.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>apsw</p></td>
+<td><p>3.50.4.0</p></td>
+</tr>
+<tr class="row-even"><td><p>argon2-cffi</p></td>
+<td><p>23.1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>argon2-cffi-bindings</p></td>
+<td><p>21.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>asciitree</p></td>
+<td><p>0.3.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>astropy</p></td>
+<td><p>7.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>astropy_iers_data</p></td>
+<td><p>0.2025.3.10.0.29.26</p></td>
+</tr>
+<tr class="row-odd"><td><p>asttokens</p></td>
+<td><p>3.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>async-timeout</p></td>
+<td><p>5.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>atomicwrites</p></td>
+<td><p>1.4.1</p></td>
+</tr>
+<tr class="row-even"><td><p>attrs</p></td>
+<td><p>25.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>audioop-lts</p></td>
+<td><p>0.2.1</p></td>
+</tr>
+<tr class="row-even"><td><p>autograd</p></td>
+<td><p>1.7.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>awkward-cpp</p></td>
+<td><p>47</p></td>
+</tr>
+<tr class="row-even"><td><p>b2d</p></td>
+<td><p>0.7.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>bcrypt</p></td>
+<td><p>4.3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>beautifulsoup4</p></td>
+<td><p>4.13.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>bilby.cython</p></td>
+<td><p>0.5.3</p></td>
+</tr>
+<tr class="row-even"><td><p>biopython</p></td>
+<td><p>1.85</p></td>
+</tr>
+<tr class="row-odd"><td><p>bitarray</p></td>
+<td><p>3.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>bitstring</p></td>
+<td><p>4.3.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>bleach</p></td>
+<td><p>6.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>blosc2</p></td>
+<td><p>3.5.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>bokeh</p></td>
+<td><p>3.6.3</p></td>
+</tr>
+<tr class="row-even"><td><p>boost-histogram</p></td>
+<td><p>1.7.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bottleneck</p></td>
+<td><p>1.6.0</p></td>
+</tr>
+<tr class="row-even"><td><p>brotli</p></td>
+<td><p>1.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>cachetools</p></td>
+<td><p>5.5.2</p></td>
+</tr>
+<tr class="row-even"><td><p>Cartopy</p></td>
+<td><p>0.25.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>casadi</p></td>
+<td><p>3.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>cbor-diag</p></td>
+<td><p>1.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>certifi</p></td>
+<td><p>2026.1.4</p></td>
+</tr>
+<tr class="row-even"><td><p>cffi</p></td>
+<td><p>1.17.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>cffi_example</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>cftime</p></td>
+<td><p>1.6.4.post1</p></td>
+</tr>
+<tr class="row-odd"><td><p>charset-normalizer</p></td>
+<td><p>3.4.4</p></td>
+</tr>
+<tr class="row-even"><td><p>clarabel</p></td>
+<td><p>0.11.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>click</p></td>
+<td><p>8.3.1</p></td>
+</tr>
+<tr class="row-even"><td><p>cligj</p></td>
+<td><p>0.7.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>clingo</p></td>
+<td><p>5.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>cloudpickle</p></td>
+<td><p>3.1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>cmyt</p></td>
+<td><p>2.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>cobs</p></td>
+<td><p>1.2.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>colorspacious</p></td>
+<td><p>1.1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>contourpy</p></td>
+<td><p>1.3.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>coolprop</p></td>
+<td><p>7.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>coverage</p></td>
+<td><p>7.6.12</p></td>
+</tr>
+<tr class="row-odd"><td><p>cramjam</p></td>
+<td><p>2.10.0rc1</p></td>
+</tr>
+<tr class="row-even"><td><p>crc32c</p></td>
+<td><p>2.7.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>cryptography</p></td>
+<td><p>46.0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>css-inline</p></td>
+<td><p>0.16.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>cssselect</p></td>
+<td><p>1.3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>cvxpy-base</p></td>
+<td><p>1.6.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>cycler</p></td>
+<td><p>0.12.1</p></td>
+</tr>
+<tr class="row-even"><td><p>cysignals</p></td>
+<td><p>1.12.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>cytoolz</p></td>
+<td><p>1.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>decorator</p></td>
+<td><p>5.2.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>demes</p></td>
+<td><p>0.2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>deprecated</p></td>
+<td><p>1.3.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>deprecation</p></td>
+<td><p>2.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>diskcache</p></td>
+<td><p>5.6.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>distlib</p></td>
+<td><p>0.3.9</p></td>
+</tr>
+<tr class="row-even"><td><p>distro</p></td>
+<td><p>1.9.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>docutils</p></td>
+<td><p>0.21.2</p></td>
+</tr>
+<tr class="row-even"><td><p>donfig</p></td>
+<td><p>0.8.1.post1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ewah_bool_utils</p></td>
+<td><p>1.2.2</p></td>
+</tr>
+<tr class="row-even"><td><p>exceptiongroup</p></td>
+<td><p>1.2.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>executing</p></td>
+<td><p>2.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>fastapi</p></td>
+<td><p>0.116.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>fastcan</p></td>
+<td><p>0.5.0</p></td>
+</tr>
+<tr class="row-even"><td><p>fastparquet</p></td>
+<td><p>2024.11.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>fiona</p></td>
+<td><p>1.9.5</p></td>
+</tr>
+<tr class="row-even"><td><p>fonttools</p></td>
+<td><p>4.56.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>freesasa</p></td>
+<td><p>2.2.1</p></td>
+</tr>
+<tr class="row-even"><td><p>frozenlist</p></td>
+<td><p>1.6.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>fsspec</p></td>
+<td><p>2025.3.2</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>galpy</p></td>
+<td><p>1.10.2</p></td>
+</tr>
+<tr class="row-even"><td><p>geopandas</p></td>
+<td><p>1.1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>gmpy2</p></td>
+<td><p>2.1.5</p></td>
+</tr>
+<tr class="row-even"><td><p>google-crc32c</p></td>
+<td><p>1.8.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>gsw</p></td>
+<td><p>3.6.19</p></td>
+</tr>
+<tr class="row-even"><td><p>h11</p></td>
+<td><p>0.14.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>h3</p></td>
+<td><p>4.2.2</p></td>
+</tr>
+<tr class="row-even"><td><p>h5py</p></td>
+<td><p>3.13.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>healpy</p></td>
+<td><p>1.19.0</p></td>
+</tr>
+<tr class="row-even"><td><p>highspy</p></td>
+<td><p>1.11.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>html5lib</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>httpcore</p></td>
+<td><p>1.0.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>httpx</p></td>
+<td><p>0.28.1</p></td>
+</tr>
+<tr class="row-even"><td><p>idna</p></td>
+<td><p>3.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>igraph</p></td>
+<td><p>0.11.8</p></td>
+</tr>
+<tr class="row-even"><td><p>imageio</p></td>
+<td><p>2.37.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>imgui-bundle</p></td>
+<td><p>1.92.4</p></td>
+</tr>
+<tr class="row-even"><td><p>iminuit</p></td>
+<td><p>2.30.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>iniconfig</p></td>
+<td><p>2.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>inspice</p></td>
+<td><p>1.6.4.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ipython</p></td>
+<td><p>9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>jedi</p></td>
+<td><p>0.19.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jinja2</p></td>
+<td><p>3.1.6</p></td>
+</tr>
+<tr class="row-even"><td><p>jiter</p></td>
+<td><p>0.9.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>joblib</p></td>
+<td><p>1.4.2</p></td>
+</tr>
+<tr class="row-even"><td><p>jsonpatch</p></td>
+<td><p>1.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>jsonpointer</p></td>
+<td><p>3.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>jsonschema</p></td>
+<td><p>4.23.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>jsonschema_specifications</p></td>
+<td><p>2024.10.1</p></td>
+</tr>
+<tr class="row-even"><td><p>kiwisolver</p></td>
+<td><p>1.4.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>lakers-python</p></td>
+<td><p>0.6.0</p></td>
+</tr>
+<tr class="row-even"><td><p>lazy_loader</p></td>
+<td><p>0.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>lazy-object-proxy</p></td>
+<td><p>1.10.0</p></td>
+</tr>
+<tr class="row-even"><td><p>libcst</p></td>
+<td><p>1.6.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>lightgbm</p></td>
+<td><p>4.6.0</p></td>
+</tr>
+<tr class="row-even"><td><p>logbook</p></td>
+<td><p>1.8.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>lxml</p></td>
+<td><p>6.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>lz4</p></td>
+<td><p>4.4.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MarkupSafe</p></td>
+<td><p>3.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>matplotlib</p></td>
+<td><p>3.8.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>matplotlib-inline</p></td>
+<td><p>0.2.1</p></td>
+</tr>
+<tr class="row-even"><td><p>memory-allocator</p></td>
+<td><p>0.1.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>micropip</p></td>
+<td><p>0.11.1</p></td>
+</tr>
+<tr class="row-even"><td><p>ml_dtypes</p></td>
+<td><p>0.5.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>mmh3</p></td>
+<td><p>5.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>more-itertools</p></td>
+<td><p>10.6.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>mpmath</p></td>
+<td><p>1.3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>msgpack</p></td>
+<td><p>1.1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>msgspec</p></td>
+<td><p>0.19.0</p></td>
+</tr>
+<tr class="row-even"><td><p>msprime</p></td>
+<td><p>1.4.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>multidict</p></td>
+<td><p>6.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>munch</p></td>
+<td><p>4.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>mypy</p></td>
+<td><p>1.15.0</p></td>
+</tr>
+<tr class="row-even"><td><p>narwhals</p></td>
+<td><p>2.15.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ndindex</p></td>
+<td><p>1.9.2</p></td>
+</tr>
+<tr class="row-even"><td><p>netcdf4</p></td>
+<td><p>1.7.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>networkx</p></td>
+<td><p>3.4.2</p></td>
+</tr>
+<tr class="row-even"><td><p>newick</p></td>
+<td><p>1.9.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>nh3</p></td>
+<td><p>0.2.21</p></td>
+</tr>
+<tr class="row-even"><td><p>nlopt</p></td>
+<td><p>2.9.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>nltk</p></td>
+<td><p>3.9.1</p></td>
+</tr>
+<tr class="row-even"><td><p>numcodecs</p></td>
+<td><p>0.15.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>numpy</p></td>
+<td><p>2.2.5</p></td>
+</tr>
+<tr class="row-even"><td><p>openai</p></td>
+<td><p>1.68.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>opencv-python</p></td>
+<td><p>4.11.0.86</p></td>
+</tr>
+<tr class="row-even"><td><p>optlang</p></td>
+<td><p>1.8.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>orjson</p></td>
+<td><p>3.10.16</p></td>
+</tr>
+<tr class="row-even"><td><p>packaging</p></td>
+<td><p>26.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>pandas</p></td>
+<td><p>2.3.3</p></td>
+</tr>
+<tr class="row-even"><td><p>parso</p></td>
+<td><p>0.8.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>patsy</p></td>
+<td><p>1.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>pcodec</p></td>
+<td><p>0.3.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>peewee</p></td>
+<td><p>3.17.9</p></td>
+</tr>
+<tr class="row-even"><td><p>phispy</p></td>
+<td><p>5.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>pi-heif</p></td>
+<td><p>0.21.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Pillow</p></td>
+<td><p>11.3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pillow-heif</p></td>
+<td><p>1.1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>pkgconfig</p></td>
+<td><p>1.5.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>platformdirs</p></td>
+<td><p>4.3.6</p></td>
+</tr>
+<tr class="row-even"><td><p>pluggy</p></td>
+<td><p>1.5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ply</p></td>
+<td><p>3.11</p></td>
+</tr>
+<tr class="row-even"><td><p>pplpy</p></td>
+<td><p>0.8.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>primecountpy</p></td>
+<td><p>0.1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>prompt_toolkit</p></td>
+<td><p>3.0.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>propcache</p></td>
+<td><p>0.3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>protobuf</p></td>
+<td><p>6.31.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>pure-eval</p></td>
+<td><p>0.2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>py</p></td>
+<td><p>1.11.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyarrow</p></td>
+<td><p>22.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pycdfpp</p></td>
+<td><p>0.8.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyclipper</p></td>
+<td><p>1.3.0.post6</p></td>
+</tr>
+<tr class="row-even"><td><p>pycparser</p></td>
+<td><p>2.22</p></td>
+</tr>
+<tr class="row-odd"><td><p>pycryptodome</p></td>
+<td><p>3.21.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pydantic</p></td>
+<td><p>2.12.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>pydantic_core</p></td>
+<td><p>2.41.5</p></td>
+</tr>
+<tr class="row-even"><td><p>pyerfa</p></td>
+<td><p>2.0.1.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>pygame-ce</p></td>
+<td><p>2.5.6.dev2</p></td>
+</tr>
+<tr class="row-even"><td><p>Pygments</p></td>
+<td><p>2.19.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyheif</p></td>
+<td><p>0.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pyiceberg</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyinstrument</p></td>
+<td><p>5.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>pylimer-tools</p></td>
+<td><p>0.3.13</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyMuPDF</p></td>
+<td><p>1.26.3</p></td>
+</tr>
+<tr class="row-even"><td><p>pynacl</p></td>
+<td><p>1.6.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyodide-http</p></td>
+<td><p>0.2.2</p></td>
+</tr>
+<tr class="row-even"><td><p>pyodide-unix-timezones</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyparsing</p></td>
+<td><p>3.2.1</p></td>
+</tr>
+<tr class="row-even"><td><p>pyproj</p></td>
+<td><p>3.7.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyroaring</p></td>
+<td><p>1.0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>pyrodigal</p></td>
+<td><p>3.7.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyrsistent</p></td>
+<td><p>0.20.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pysam</p></td>
+<td><p>0.23.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyshp</p></td>
+<td><p>2.3.1</p></td>
+</tr>
+<tr class="row-even"><td><p>pytaglib</p></td>
+<td><p>3.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>pytest</p></td>
+<td><p>8.3.5</p></td>
+</tr>
+<tr class="row-even"><td><p>pytest-asyncio</p></td>
+<td><p>0.25.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>pytest-benchmark</p></td>
+<td><p>4.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pytest_httpx</p></td>
+<td><p>0.30.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>python-calamine</p></td>
+<td><p>0.5.3</p></td>
+</tr>
+<tr class="row-even"><td><p>python-dateutil</p></td>
+<td><p>2.9.0.post0</p></td>
+</tr>
+<tr class="row-odd"><td><p>python-flint</p></td>
+<td><p>0.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>python-flirt</p></td>
+<td><p>0.9.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>python-magic</p></td>
+<td><p>0.4.27</p></td>
+</tr>
+<tr class="row-even"><td><p>python-sat</p></td>
+<td><p>1.8.dev26</p></td>
+</tr>
+<tr class="row-odd"><td><p>python-solvespace</p></td>
+<td><p>3.0.8</p></td>
+</tr>
+<tr class="row-even"><td><p>pytz</p></td>
+<td><p>2025.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>pywavelets</p></td>
+<td><p>1.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>pyxirr</p></td>
+<td><p>0.10.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>pyyaml</p></td>
+<td><p>6.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>rasterio</p></td>
+<td><p>1.4.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>rateslib</p></td>
+<td><p>2.5.1</p></td>
+</tr>
+<tr class="row-even"><td><p>rebound</p></td>
+<td><p>4.4.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>reboundx</p></td>
+<td><p>4.4.1</p></td>
+</tr>
+<tr class="row-even"><td><p>referencing</p></td>
+<td><p>0.36.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>regex</p></td>
+<td><p>2024.11.6</p></td>
+</tr>
+<tr class="row-even"><td><p>requests</p></td>
+<td><p>2.32.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>retrying</p></td>
+<td><p>1.3.4</p></td>
+</tr>
+<tr class="row-even"><td><p>rich</p></td>
+<td><p>13.9.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>river</p></td>
+<td><p>0.22.0</p></td>
+</tr>
+<tr class="row-even"><td><p>RobotRaconteur</p></td>
+<td><p>1.2.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>rpds-py</p></td>
+<td><p>0.30.0</p></td>
+</tr>
+<tr class="row-even"><td><p>ruamel.yaml</p></td>
+<td><p>0.18.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>rustworkx</p></td>
+<td><p>0.17.1</p></td>
+</tr>
+<tr class="row-even"><td><p>scikit-image</p></td>
+<td><p>0.25.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>scikit-learn</p></td>
+<td><p>1.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>scipy</p></td>
+<td><p>1.14.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>screed</p></td>
+<td><p>1.1.3</p></td>
+</tr>
+<tr class="row-even"><td><p>setuptools</p></td>
+<td><p>76.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>shapely</p></td>
+<td><p>2.0.7</p></td>
+</tr>
+<tr class="row-even"><td><p>simplejson</p></td>
+<td><p>3.20.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>sisl</p></td>
+<td><p>0.16.2</p></td>
+</tr>
+<tr class="row-even"><td><p>six</p></td>
+<td><p>1.17.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>smart-open</p></td>
+<td><p>7.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>sniffio</p></td>
+<td><p>1.3.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>sortedcontainers</p></td>
+<td><p>2.4.0</p></td>
+</tr>
+<tr class="row-even"><td><p>soundfile</p></td>
+<td><p>0.12.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>soupsieve</p></td>
+<td><p>2.6</p></td>
+</tr>
+<tr class="row-even"><td><p>sourmash</p></td>
+<td><p>4.8.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>soxr</p></td>
+<td><p>0.5.0.post1</p></td>
+</tr>
+<tr class="row-even"><td><p>sparseqr</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>sqlalchemy</p></td>
+<td><p>2.0.39</p></td>
+</tr>
+<tr class="row-even"><td><p>stack-data</p></td>
+<td><p>0.6.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>starlette</p></td>
+<td><p>0.47.2</p></td>
+</tr>
+<tr class="row-even"><td><p>statsmodels</p></td>
+<td><p>0.14.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>strictyaml</p></td>
+<td><p>1.7.3</p></td>
+</tr>
+<tr class="row-even"><td><p>svgwrite</p></td>
+<td><p>1.4.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>swiglpk</p></td>
+<td><p>5.0.12</p></td>
+</tr>
+<tr class="row-even"><td><p>sympy</p></td>
+<td><p>1.13.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>tblib</p></td>
+<td><p>3.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>termcolor</p></td>
+<td><p>2.5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>texttable</p></td>
+<td><p>1.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>texture2ddecoder</p></td>
+<td><p>1.0.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>threadpoolctl</p></td>
+<td><p>3.5.0</p></td>
+</tr>
+<tr class="row-even"><td><p>tiktoken</p></td>
+<td><p>0.9.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>tomli</p></td>
+<td><p>2.2.1</p></td>
+</tr>
+<tr class="row-even"><td><p>tomli-w</p></td>
+<td><p>1.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>toolz</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>tqdm</p></td>
+<td><p>4.67.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>traitlets</p></td>
+<td><p>5.14.3</p></td>
+</tr>
+<tr class="row-even"><td><p>traits</p></td>
+<td><p>7.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>tree-sitter</p></td>
+<td><p>0.23.2</p></td>
+</tr>
+<tr class="row-even"><td><p>tree-sitter-go</p></td>
+<td><p>0.23.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>tree-sitter-java</p></td>
+<td><p>0.23.4</p></td>
+</tr>
+<tr class="row-even"><td><p>tree-sitter-python</p></td>
+<td><p>0.23.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>tskit</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>typing-extensions</p></td>
+<td><p>4.15.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>typing-inspection</p></td>
+<td><p>0.4.2</p></td>
+</tr>
+<tr class="row-even"><td><p>tzdata</p></td>
+<td><p>2025.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>ujson</p></td>
+<td><p>5.11.0</p></td>
+</tr>
+<tr class="row-even"><td><p>uncertainties</p></td>
+<td><p>3.2.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>unyt</p></td>
+<td><p>3.0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>urllib3</p></td>
+<td><p>2.5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>vega-datasets</p></td>
+<td><p>0.9.0</p></td>
+</tr>
+<tr class="row-even"><td><p>vrplib</p></td>
+<td><p>2.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>wcwidth</p></td>
+<td><p>0.2.13</p></td>
+</tr>
+<tr class="row-even"><td><p>webencodings</p></td>
+<td><p>0.5.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>wordcloud</p></td>
+<td><p>1.9.4</p></td>
+</tr>
+<tr class="row-even"><td><p>wrapt</p></td>
+<td><p>1.17.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>xarray</p></td>
+<td><p>2025.12.0</p></td>
+</tr>
+<tr class="row-even"><td><p>xgboost</p></td>
+<td><p>2.1.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>xlrd</p></td>
+<td><p>2.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>xxhash</p></td>
+<td><p>3.5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>xyzservices</p></td>
+<td><p>2025.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>yarl</p></td>
+<td><p>1.18.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>yt</p></td>
+<td><p>4.4.0</p></td>
+</tr>
+<tr class="row-even"><td><p>zengl</p></td>
+<td><p>2.7.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>zfpy</p></td>
+<td><p>1.0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>zstandard</p></td>
+<td><p>0.23.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="loading-packages.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Loading packages</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sdl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using SDL-based packages in Pyodide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

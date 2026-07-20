@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-US" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building from source &#8212; Version 314.1.0.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=dfc2c8a3"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/building-from-sources';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/building-from-sources.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing and benchmarking" href="testing.html" />
+    <link rel="prev" title="Building packages for Pyodide" href="building-packages.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-US"/>
+  <meta name="docsearch:version" content="314.1.0.dev0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.1.0.dev0 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.1.0.dev0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Contributing to the “core” C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/building-from-sources.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building from source</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-instructions">Build instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-docker">Using Docker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-docker-dev-container">Using the “Docker” dev container</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-conda-dev-container">Using the “Conda” dev container</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-make">Using <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-full-pyodide-distribution">Building a full Pyodide distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment variables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="building-from-source">
+<span id="id1"></span><h1>Building from source<a class="headerlink" href="#building-from-source" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are building the latest development version of Pyodide from the <code class="docutils literal notranslate"><span class="pre">main</span></code>
+branch, please make sure to follow the build instructions from the dev
+version of the documentation at
+<a class="reference external" href="https://pyodide.org/en/latest/development/building-from-sources.html">pyodide.org/en/latest/</a></p>
+</div>
+<p>Pyodide can be built from sources on different platforms,</p>
+<ul class="simple">
+<li><p>on <strong>Linux</strong> it is easiest using the Pyodide Docker image. This approach
+works with any native operating system as long as Docker is installed. You
+can also build on your native Linux OS if the correct build prerequisites
+are installed.</p></li>
+<li><p>on <strong>MacOS</strong> it is recommended to install dependencies via conda-forge or
+using Homebrew, particularly with the M1 ARM CPU. Building with Docker is
+possible but very slow.</p></li>
+<li><p>It is not possible to build on <strong>Windows</strong>, but you can use <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem
+for Linux</a> to
+create a Linux build environment.</p></li>
+</ul>
+<section id="build-instructions">
+<h2>Build instructions<a class="headerlink" href="#build-instructions" title="Link to this heading">#</a></h2>
+<p>The Pyodide repository has a git submodule called <code class="docutils literal notranslate"><span class="pre">pyodide-build</span></code>. Make sure to
+do a recursive clone:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/pyodide/pyodide
+</pre></div>
+</div>
+<p>or if you have already cloned the Pyodide repository without the <code class="docutils literal notranslate"><span class="pre">--recursive</span></code>
+flag, you may initialize the submodule with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+</pre></div>
+</div>
+<p>If you change git branches, make sure you update <code class="docutils literal notranslate"><span class="pre">pyodide-build</span></code> with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span></code>.</p>
+<section id="using-docker">
+<h3>Using Docker<a class="headerlink" href="#using-docker" title="Link to this heading">#</a></h3>
+<p>We provide a Debian-based x86_64 Docker image
+(<a class="reference external" href="https://hub.docker.com/r/pyodide/pyodide-env"><code class="docutils literal notranslate"><span class="pre">pyodide/pyodide-env</span></code></a>) on
+Docker Hub with the dependencies already installed to make it easier to build
+Pyodide.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These Docker images are also available from the Github packages at
+<a class="reference external" href="https://github.com/orgs/pyodide/packages"><code class="docutils literal notranslate"><span class="pre">github.com/orgs/pyodide/packages</span></code></a>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Install Docker</p></li>
+<li><p>From a git checkout of Pyodide, run <code class="docutils literal notranslate"><span class="pre">./run_docker</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span></code> to build.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can control the resources allocated to the build by setting the env
+vars <code class="docutils literal notranslate"><span class="pre">EMSDK_NUM_CORE</span></code>, <code class="docutils literal notranslate"><span class="pre">EMCC_CORES</span></code> and <code class="docutils literal notranslate"><span class="pre">PYODIDE_JOBS</span></code> (the default for each is
+4).</p>
+</div>
+<p>If running <code class="docutils literal notranslate"><span class="pre">make</span></code> deterministically stops at some point,
+increasing the maximum RAM usage available to the docker container might help.
+(The RAM available to the container is different from the physical RAM capacity of the machine.)
+Ideally,
+at least 3 GB of RAM should be available to the docker container to build
+Pyodide smoothly. These settings can be changed via Docker preferences (see
+<a class="reference external" href="https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container">here</a>).</p>
+<p>You can edit the files in the shared <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> source folder on your host
+machine (outside of Docker), and then repeatedly run <code class="docutils literal notranslate"><span class="pre">make</span></code> inside the Docker
+environment to test your changes.</p>
+</section>
+<section id="using-the-docker-dev-container">
+<h3>Using the “Docker” dev container<a class="headerlink" href="#using-the-docker-dev-container" title="Link to this heading">#</a></h3>
+<p>We provide a dev container configuration that is equivalent to the use of
+<code class="docutils literal notranslate"><span class="pre">./run_docker</span></code> script. It can be used in <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Visual Studio Code</a> and
+on <a class="reference external" href="https://docs.github.com/en/codespaces/overview">GitHub Codespaces</a>.
+When prompted, select “Docker”.</p>
+</section>
+<section id="using-the-conda-dev-container">
+<h3>Using the “Conda” dev container<a class="headerlink" href="#using-the-conda-dev-container" title="Link to this heading">#</a></h3>
+<p>We provide another dev container configuration that corresponds to
+the “Linux with conda” method described below. When <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Visual Studio Code</a> or
+<a class="reference external" href="https://docs.github.com/en/codespaces/overview">GitHub Codespaces</a>
+prompts for the dev container configuration, select “Conda”.</p>
+</section>
+</section>
+<section id="using-make">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">make</span></code><a class="headerlink" href="#using-make" title="Link to this heading">#</a></h2>
+<p>Make sure the prerequisites for
+<a class="reference external" href="https://github.com/emscripten-core/emsdk">emsdk</a> are installed. Pyodide will
+build a custom, patched version of emsdk, so there is no need to build it
+yourself prior.</p>
+<p>You need Python 3.14.2 to run the build scripts. To make sure that the correct
+Python is used during the build it is recommended to use a <a class="reference external" href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">virtual
+environment</a>
+or a conda environment.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Linux</label><div class="sd-tab-content docutils">
+<p>To build on Linux, you need:</p>
+<ul class="simple">
+<li><p>A working native compiler toolchain, enough to build
+<a class="reference external" href="https://devguide.python.org/getting-started/setup-building/index.html#linux">CPython</a>.</p></li>
+<li><p>CMake (required to install Emscripten)</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Linux with conda</label><div class="sd-tab-content docutils">
+<p>You would need a working native compiler toolchain, enough to build
+<a class="reference external" href="https://devguide.python.org/getting-started/setup-building/index.html#linux">CPython</a>, for example,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code> on Debian based systems.</p></li>
+<li><p>Conda which can be installed from <a class="reference external" href="https://github.com/conda-forge/miniforge">MiniForge</a></p></li>
+</ul>
+<p>Then install the required Python version and other build dependencies in a separate conda environment,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
+conda activate pyodide-env
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+macOS with conda</label><div class="sd-tab-content docutils">
+<p>You would need,</p>
+<ul class="simple">
+<li><p>System libraries in the root directory:
+<code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code></p></li>
+<li><p>Conda which can be installed using <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a> (both for Intel and M1 CPU)</p></li>
+</ul>
+<p>Then install the required Python version and other build dependencies in a separate conda environment,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
+conda activate pyodide-env
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+macOS with Homebrew</label><div class="sd-tab-content docutils">
+<p>To build on macOS with Homebrew, you need:</p>
+<ul class="simple">
+<li><p>System command line tools:
+<code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code></p></li>
+<li><p><a class="reference external" href="https://brew.sh/">Homebrew</a> for installing dependencies</p></li>
+<li><p>Pyodide requires CMake3 but Homebrew installs CMake4.
+Use pip for cmake <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cmake==3.31</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">coreutils</span> <span class="pre">cmake</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool</span> <span class="pre">libffi</span> <span class="pre">ccache</span> <span class="pre">wget</span> <span class="pre">rustup-init</span></code></p></li>
+<li><p>Initialize Rust (needed for building test-rust-* packages): <code class="docutils literal notranslate"><span class="pre">rustup-init</span></code></p></li>
+<li><p>Install the GNU patch and
+GNU sed (<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">gpatch</span> <span class="pre">gnu-sed</span></code>)
+and re-defining them temporarily as <a class="reference external" href="https://formulae.brew.sh/formula/gpatch"><code class="docutils literal notranslate"><span class="pre">patch</span></code></a> and
+<a class="reference external" href="https://formulae.brew.sh/formula/gnu-sed"><code class="docutils literal notranslate"><span class="pre">sed</span></code></a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you encounter issues with the requirements, it is useful to check the exact
+list in the
+<a class="reference external" href="https://github.com/pyodide/pyodide/blob/main/Dockerfile">Dockerfile</a> which is
+tested in the CI.</p>
+</div>
+<p>You can install the Python dependencies from the requirement file at the root of Pyodide folder:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
+<p>After installing the build prerequisites, run from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+</section>
+<section id="building-a-full-pyodide-distribution">
+<span id="building-full-distribution"></span><h2>Building a full Pyodide distribution<a class="headerlink" href="#building-a-full-pyodide-distribution" title="Link to this heading">#</a></h2>
+<p>By running <code class="docutils literal notranslate"><span class="pre">make</span></code>, you build a minimal Pyodide distribution that includes only
+the core packages. Pyodide contains a large number of packages, and building
+all of them takes a long time. If you want to build a full distribution, or make a custom
+distribution with a subset of packages, there are two options:</p>
+<ol class="arabic simple">
+<li><p>Use pre-built packages from the <code class="docutils literal notranslate"><span class="pre">pyodide-recipes</span></code> repository.</p></li>
+</ol>
+<p>Packages included in the Pyodide distribution are built separately and stored in
+the <a class="reference external" href="https://github.com/pyodide/pyodide-recipes"><code class="docutils literal notranslate"><span class="pre">pyodide-recipes</span></code></a> repository.</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">ENABLE_PREBUILT_PACKAGES</span></code> environment variable to <code class="docutils literal notranslate"><span class="pre">1</span></code> will download
+and install pre-built packages from the <code class="docutils literal notranslate"><span class="pre">pyodide-recipes</span></code> repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ENABLE_PREBUILT_PACKAGES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>make
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Build a subset of packages from the <code class="docutils literal notranslate"><span class="pre">pyodide-recipes</span></code> repository.</p></li>
+</ol>
+<p>If you want to build a subset of packages, you can clone the
+<code class="docutils literal notranslate"><span class="pre">pyodide-recipes</span></code> repository and build the packages you need.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pyodide/pyodide-recipes
+
+<span class="c1"># Build the packages you need</span>
+pyodide<span class="w"> </span>build-recipes<span class="w"> </span><span class="s2">&quot;numpy, scipy, toolz, attrs&quot;</span><span class="w"> </span>--recipe-dir<span class="w"> </span>pyodide-recipes/packages<span class="w"> </span>--install
+</pre></div>
+</div>
+<p>Dependencies of the listed packages will be built automatically as well. The
+package names must match the folder names in <code class="docutils literal notranslate"><span class="pre">pyodide-recipes/packages</span></code> exactly; in particular
+they are case-sensitive.</p>
+<p>There are also some meta-packages that can be used to build a subset of packages:</p>
+<ul class="simple">
+<li><p>“tag:min-scipy-stack”: includes the “core” meta-package as well as some
+core packages from the Scientific Python stack and their dependencies:
+“numpy”, “scipy”, “pandas”, “matplotlib”, “scikit-learn”, “joblib”,
+“pytest”. This option is non exhaustive and is mainly intended to make build
+faster while testing a diverse set of scientific packages.</p></li>
+<li><p>“tag:library”: includes all shared and static libraries.</p></li>
+<li><p>“tag:shared_library”: includes all shared libraries. Added in conjunction with
+the “library” tag.</p></li>
+<li><p>“tag:static_library”: includes all static libraries. Added in conjunction with
+the “library” tag.</p></li>
+<li><p>“tag:pyodide-test”: includes all packages built to test the Pyodide build
+system’s behaviour.</p></li>
+<li><p>“tag:rust”: includes all packages that require a Rust toolchain to build,
+and their dependencies.</p></li>
+<li><p>“*” builds all packages</p></li>
+<li><p>You can exclude a package by prefixing it with “!”.</p></li>
+</ul>
+<p>micropip is always automatically included.</p>
+</section>
+<section id="environment-variables">
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<p>The following environment variables additionally impact the build:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PYODIDE_JOBS</span></code>: the <code class="docutils literal notranslate"><span class="pre">-j</span></code> option passed to the <code class="docutils literal notranslate"><span class="pre">emmake</span> <span class="pre">make</span></code> command when
+applicable for parallel compilation. Default: 3.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYODIDE_BASE_URL</span></code>: Base URL where Pyodide packages are deployed. It must end
+with a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">./</span></code> to load Pyodide packages from the same
+base URL path as where <code class="docutils literal notranslate"><span class="pre">pyodide.js</span></code> is located. Example:
+<code class="docutils literal notranslate"><span class="pre">https://cdn.jsdelivr.net/pyodide/dev/full/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXTRA_CFLAGS</span></code>: Add extra compilation flags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXTRA_LDFLAGS</span></code>: Add extra linker flags.</p></li>
+</ul>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">EXTRA_CFLAGS=&quot;-D</span> <span class="pre">DEBUG_F&quot;</span></code> provides detailed diagnostic information
+whenever error branches are taken inside the Pyodide core code. These error
+messages are frequently helpful even when the problem is a fatal configuration
+problem and Pyodide cannot even be initialized. These error branches occur also
+in correctly working code, but they are relatively uncommon so in practice the
+amount of noise generated isn’t too large. The shorthand <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">debug</span></code>
+automatically sets this flag.</p>
+<p>In certain cases, setting <code class="docutils literal notranslate"><span class="pre">EXTRA_LDFLAGS=&quot;-s</span> <span class="pre">ASSERTIONS=1</span></code> or <code class="docutils literal notranslate"><span class="pre">ASSERTIONS=2</span></code> can
+also be helpful, but this slows down the linking and the runtime speed of
+Pyodide a lot and generates a large amount of noise in the console.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="building-packages.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building packages for Pyodide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="testing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Testing and benchmarking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-instructions">Build instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-docker">Using Docker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-docker-dev-container">Using the “Docker” dev container</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-conda-dev-container">Using the “Conda” dev container</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-make">Using <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-full-pyodide-distribution">Building a full Pyodide distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment variables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

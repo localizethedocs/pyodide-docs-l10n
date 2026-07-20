@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>維護者資訊 &#8212; Version 314.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=d9936058"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/maintainers';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/maintainers.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="PyEmscripten 平臺" href="abi.html" />
+    <link rel="prev" title="Contributing to the &#34;core&#34; C Code" href="core.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  <meta name="docsearch:version" content="314.0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.0.2 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.0.2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">下載與部署 Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python 相容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">中斷執行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">重新導向標準串流</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API 參考</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">社群範例</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">開發</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">測試與基準測試</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="contributing.html">How to Contribute</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">維護者資訊</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">PyEmscripten 平臺</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">什麼是 Pyodide？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">行為守則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">治理與決策</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">變更日誌</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/maintainers.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>維護者資訊</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-release">Making a release</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-major-release">Making a major release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#releasing">Releasing</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-minor-release">Making a minor release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Releasing</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-alpha-release">Making an alpha release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#release-instructions">Release instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-documentation-for-a-released-version">Fixing documentation for a released version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-docker-image">Updating the Docker image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-packages">Updating packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-pyodide-build">Updating pyodide-build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-the-abi">Upgrading the ABI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilize-and-freeze-the-abi">0. Stabilize and freeze the ABI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-use-prebuilt-packages">1. Disable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-emscripten-and-cpython-version">2. Upgrade Emscripten and CPython version</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-the-emscripten-version">2.1. Upgrade the Emscripten version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-cpython-version">2.2. Upgrade CPython version</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#old-major-python-upgrades">Old major Python upgrades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-a-new-pyodide-alpha-version">3. Release a new Pyodide alpha version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-packages-and-release-new-package-set">4. Update packages and release new package set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-enable-use-prebuilt-packages-and-upgrade-the-abi-in-the-main-branch">5. Re-enable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code> and upgrade the ABI in the main branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-a-new-pyodide-version">6. Release a new Pyodide version</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="maintainer-information">
+<span id="id1"></span><h1>維護者資訊<a class="headerlink" href="#maintainer-information" title="連結到這個標頭">#</a></h1>
+<section id="making-a-release">
+<h2>Making a release<a class="headerlink" href="#making-a-release" title="連結到這個標頭">#</a></h2>
+<p>For branch organization we use a variation of the <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub
+Flow</a> with
+the latest release branch named <code class="docutils literal notranslate"><span class="pre">stable</span></code> (due to ReadTheDocs constraints).</p>
+<section id="making-a-major-release">
+<h3>Making a major release<a class="headerlink" href="#making-a-major-release" title="連結到這個標頭">#</a></h3>
+<p>Assume for concreteness that we are releasing version 0.20.0.</p>
+<section id="preparation">
+<h4>Preparation<a class="headerlink" href="#preparation" title="連結到這個標頭">#</a></h4>
+<ol class="arabic">
+<li><p>Make a tracking issue with a title like &quot;0.20.0 release planning&quot;. Add the
+checklist:</p>
+<ul class="simple">
+<li><p>[ ] Update packages</p></li>
+<li><p>[ ] Look for open PRs to add to the release milestone</p></li>
+<li><p>[ ] Make sure all PRs in the release milestone are merged</p></li>
+<li><p>[ ] Write release notes</p></li>
+<li><p>[ ] Tidy changelog</p></li>
+</ul>
+</li>
+<li><p>Make a release notes blog post at pyodide-blog:
+https://github.com/pyodide/pyodide-blog</p></li>
+<li><p>Generate the list of contributors for the release at the end of the release
+notes blog post with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>shortlog<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span>.19.0..<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f2-<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;\[bot\]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>--ignore-case<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="s1">&#39;;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/;/, /g;s/, $//&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fold<span class="w"> </span>-s
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">0.19.0</span></code> is the tag for the last major release.</p>
+</li>
+<li><p>Read the changelog and tidy it up by adding subsections, organizing, and proof
+reading it. Make a pull request with these changes titled &quot;Rearrange changelog
+for 0.20.0 release&quot; and merge it.</p></li>
+<li><p>Make sure all the PRs that we want to release are merged and that the release notes are ready.</p></li>
+</ol>
+</section>
+<section id="releasing">
+<h4>Releasing<a class="headerlink" href="#releasing" title="連結到這個標頭">#</a></h4>
+<ol class="arabic">
+<li><p>Switch to the main branch</p></li>
+<li><p>From the root of the repository run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">bump_version</span><span class="o">.</span><span class="n">py</span> <span class="mf">0.20.0</span> <span class="o">--</span><span class="n">tag</span>
+</pre></div>
+</div>
+<p>This makes a release commit and tags it.</p>
+</li>
+<li><p>Push the release commit and tag to upstream. This triggers the release CI.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">upstream</span> <span class="n">main</span> <span class="mf">0.20.0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Wait for CI to pass and release to be created.</p></li>
+<li><p>Rename the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch to a release branch for the previous major
+version. For instance if last release was, <code class="docutils literal notranslate"><span class="pre">0.20.0</span></code>, the corresponding
+release branch would be <code class="docutils literal notranslate"><span class="pre">0.20.X</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w"> </span>stable:stable
+git<span class="w"> </span>branch<span class="w"> </span><span class="m">0</span>.20.X<span class="w"> </span>stable
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>upstream<span class="w"> </span><span class="m">0</span>.20.X
+</pre></div>
+</div>
+</li>
+<li><p>Create a new <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>switch<span class="w"> </span>-C<span class="w"> </span>stable
+git<span class="w"> </span>push<span class="w"> </span>upstream<span class="w"> </span>stable<span class="w"> </span>--force
+</pre></div>
+</div>
+</li>
+<li><p>Set the version back to next development version with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+./tools/bump_version.py<span class="w"> </span><span class="m">0</span>.21.0<span class="w"> </span>--dev
+git<span class="w"> </span>push<span class="w"> </span>upstream<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="making-a-minor-release">
+<h3>Making a minor release<a class="headerlink" href="#making-a-minor-release" title="連結到這個標頭">#</a></h3>
+<p>Assume for concreteness that we are releasing version 0.27.2.</p>
+<section id="id2">
+<h4>Preparation<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h4>
+<ol class="arabic">
+<li><p>Go through the commits on the main branch since the last release, find ones
+you want to backport and add the &quot;needs backport&quot; label to the pull requests.
+You can do this manually in the web interface on the GitHub PR or you can use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./tools/backport.py<span class="w"> </span>add-pr<span class="w"> </span>&lt;pr-number&gt;
+</pre></div>
+</div>
+</li>
+<li><p>List out the <code class="docutils literal notranslate"><span class="pre">needs</span> <span class="pre">backport</span></code> PRs that are missing changelog entries with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./tools/backport.py<span class="w"> </span>missing-changelogs
+</pre></div>
+</div>
+<p>and double check that every PR that should have a changelog does have one.</p>
+</li>
+<li><p>Read the changelog and tidy it up by adding subsections, organizing, and
+proof reading it. Make a pull request with these changes titled e.g.,
+&quot;Rearrange changelog for 0.27.2 release&quot; and merge it.</p></li>
+<li><p>Make the backport branch (on top of stable):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="n">backport</span><span class="o">-</span><span class="n">branch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make the update-changelog branch (on top of main) with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="n">changelog</span><span class="o">-</span><span class="n">branch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open PRs for these two branches with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="nb">open</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="n">prs</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use the backport branch PR as the release tracker.</p></li>
+<li><p>Make sure that the CI passes on the backports branch and it is approved. When
+it does pass, set the date for the release in the changelog with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="nb">set</span><span class="o">-</span><span class="n">date</span>
+<span class="n">git</span> <span class="n">switch</span> <span class="n">backports</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="mf">0.27.2</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">git</span> <span class="n">switch</span> <span class="n">changelog</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="mf">0.27.2</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>Then merge the two PRs.</p>
+</li>
+<li><p>Run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="n">clear</span><span class="o">-</span><span class="n">prs</span>
+</pre></div>
+</div>
+<p>to clear all the &quot;needs backport&quot; labels.</p>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h4>Releasing<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h4>
+<ol class="arabic">
+<li><p>Switch to the stable branch and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p></li>
+<li><p>From the root of the repository run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">backport</span><span class="o">.</span><span class="n">py</span> <span class="n">bump</span><span class="o">-</span><span class="n">version</span> <span class="o">--</span><span class="n">tag</span>
+</pre></div>
+</div>
+<p>This makes a release commit and tags it.</p>
+</li>
+<li><p>Push the release commit and tag to <code class="docutils literal notranslate"><span class="pre">upstream/stable</span></code>. This triggers the release
+CI.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">upstream</span> <span class="n">stable</span> <span class="mf">0.27.2</span>
+</pre></div>
+</div>
+</li>
+<li><p>Wait for CI to pass and the release to be created.</p></li>
+</ol>
+</section>
+</section>
+<section id="making-an-alpha-release">
+<h3>Making an alpha release<a class="headerlink" href="#making-an-alpha-release" title="連結到這個標頭">#</a></h3>
+<p>Assume for concreteness that we are releasing 0.28.0a1.</p>
+<section id="id4">
+<h4>Preparation<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h4>
+<p>Any single maintainer can decide on their own to make an alpha release, it is
+not required to discuss it with other maintainers.</p>
+<p>Name the first alpha release <code class="docutils literal notranslate"><span class="pre">x.x.xa1</span></code> and in subsequent alphas increment the
+final number. No preparation is necessary. Do not make any changes to the
+changelog.</p>
+</section>
+<section id="release-instructions">
+<h4>Release instructions<a class="headerlink" href="#release-instructions" title="連結到這個標頭">#</a></h4>
+<ol class="arabic">
+<li><p>Switch to the main branch and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p></li>
+<li><p>From the root of the repository run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">bump_version</span><span class="o">.</span><span class="n">py</span> <span class="mf">0.28.0</span><span class="n">a1</span> <span class="o">--</span><span class="n">tag</span>
+</pre></div>
+</div>
+<p>This makes a release commit and tags it.</p>
+</li>
+<li><p>Push the release commit and tag to <code class="docutils literal notranslate"><span class="pre">upstream/main</span></code>. This triggers the release
+CI.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">upstream</span> <span class="n">main</span> <span class="mf">0.28.0</span><span class="n">a1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Put the version back with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">revert</span> <span class="mf">0.28.0</span><span class="n">a1</span> <span class="o">-</span><span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Back to development version&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">upstream</span> <span class="n">main</span>
+</pre></div>
+</div>
+</li>
+<li><p>Wait for CI to pass and the release to be created.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="fixing-documentation-for-a-released-version">
+<h2>Fixing documentation for a released version<a class="headerlink" href="#fixing-documentation-for-a-released-version" title="連結到這個標頭">#</a></h2>
+<p>Cherry pick the corresponding documentation commits to the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch. Use
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> to add <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> to the commit message.</p>
+</section>
+<section id="updating-the-docker-image">
+<h2>Updating the Docker image<a class="headerlink" href="#updating-the-docker-image" title="連結到這個標頭">#</a></h2>
+<p>Anyone with an account on hub.docker.com can follow the following steps:</p>
+<ol class="arabic">
+<li><p>Make whatever changes are needed to the Dockerfile.</p></li>
+<li><p>Build the docker image with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">.</span></code> in the Pyodide root directory.
+If the build succeeds, docker will give you a hash for the built image.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">./tools/docker_image_tag.py</span></code> to find out what the new image tag
+should be. Tag the image with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>image<span class="w"> </span>tag<span class="w"> </span>&lt;image-hash&gt;<span class="w"> </span>&lt;your-docker-username&gt;/pyodide-env:&lt;image-tag&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Push the image with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>image<span class="w"> </span>push<span class="w"> </span>&lt;your-docker-username&gt;/pyodide-env:&lt;image-tag&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Replace the image in <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> with your newly created image.
+Open a pull request with your changes to <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> and <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code>.</p></li>
+<li><p>When the tests pass and the pull request is approved, a maintainer must copy
+the new image into the <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> dockerhub account.</p></li>
+<li><p>Then replace the image tag in <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code>, and <code class="docutils literal notranslate"><span class="pre">run_docker</span></code> with the new image under
+the <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> dockerhub account.</p></li>
+</ol>
+<p>It's also possible to update the docker image by pushing your changes to the
+<code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> to a branch in the <code class="docutils literal notranslate"><span class="pre">pyodide/pyodide</span></code> repo (not on a fork) and
+clicking <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">workflow</span></code> on
+https://github.com/pyodide/pyodide/actions/workflows/docker_image.yml.</p>
+</section>
+<section id="updating-packages">
+<span id="id5"></span><h2>Updating packages<a class="headerlink" href="#updating-packages" title="連結到這個標頭">#</a></h2>
+<p>Before updating the Python version and before making a major Pyodide release, we
+try to update all packages that are not too much trouble. Run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-C<span class="w"> </span>packages<span class="w"> </span>update-all
+</pre></div>
+</div>
+<p>to update all packages and make a pull request with these changes. There will be
+build/test failures, revert the packages that fail the build or tests and make a
+note to update them independently.</p>
+</section>
+<section id="updating-pyodide-build">
+<h2>Updating pyodide-build<a class="headerlink" href="#updating-pyodide-build" title="連結到這個標頭">#</a></h2>
+<p>To change the version of pyodide-build, change the commit of the pyodide-build submodule.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pyodide-build
+git<span class="w"> </span>checkout<span class="w"> </span><span class="s2">&quot;&lt;COMMIT HASH&gt;&quot;</span>
+</pre></div>
+</div>
+<p>To test with a fork of pyodide-build, change the <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> file to point to your fork and update the commit hash</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># .gitmodules</span>
+<span class="k">[submodule &quot;pyodide-build&quot;]</span>
+<span class="w">	</span><span class="na">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pyodide-build</span>
+<span class="w">	</span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://github.com/&lt;yourfork&gt;/pyodide-build</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>sync
+<span class="nb">cd</span><span class="w"> </span>pyodide-build
+git<span class="w"> </span>checkout<span class="w"> </span><span class="s2">&quot;&lt;COMMIT HASH&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="upgrading-the-abi">
+<h2>Upgrading the ABI<a class="headerlink" href="#upgrading-the-abi" title="連結到這個標頭">#</a></h2>
+<p>Each year, we aim to release a new Pyodide ABI version with a new CPython and
+Emscripten version.</p>
+<p>Similar to the CPython alpha release, we stabilize the ABI early before
+releasing the new Pyodide version so that package maintainers can update their
+packages to use the new ABI (<a class="reference external" href="https://github.com/pyodide/pyodide/issues/5580">#5580</a>).</p>
+<section id="stabilize-and-freeze-the-abi">
+<h3>0. Stabilize and freeze the ABI<a class="headerlink" href="#stabilize-and-freeze-the-abi" title="連結到這個標頭">#</a></h3>
+<p>Discuss with the maintainers to decide what ABI changes to make before the
+release.</p>
+<p>Once the ABI changes are decided, create a <code class="docutils literal notranslate"><span class="pre">20XX_0</span></code> branch (targeting year) from
+the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. All PRs that change the ABI should be merged to the <code class="docutils literal notranslate"><span class="pre">20XX_0</span></code>
+branch.</p>
+</section>
+<section id="disable-use-prebuilt-packages">
+<h3>1. Disable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code><a class="headerlink" href="#disable-use-prebuilt-packages" title="連結到這個標頭">#</a></h3>
+<p>Pyodide CI uses prebuilt packages built with the ABI of the last release. To
+upgrade the ABI, you need to disable them, otherwise the CI will fail.</p>
+<ul class="simple">
+<li><p>Find the <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code> environment variable in
+<a class="reference external" href="https://github.com/ryanking13/pyodide/blob/unvendor-recipes/.circleci/config.yml">.circleci/config.yml</a>
+and set it to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+</ul>
+</section>
+<section id="upgrade-emscripten-and-cpython-version">
+<h3>2. Upgrade Emscripten and CPython version<a class="headerlink" href="#upgrade-emscripten-and-cpython-version" title="連結到這個標頭">#</a></h3>
+<p>Update the Emscripten and CPython versions respectively.</p>
+<p>Updating the Emscripten version is not mandatory, but it is recommended to
+benefit from the latest features and bug fixes.</p>
+<p>Updating Emscripten and CPython separately is often easier than updating them
+together.</p>
+<section id="upgrade-the-emscripten-version">
+<h4>2.1. Upgrade the Emscripten version<a class="headerlink" href="#upgrade-the-emscripten-version" title="連結到這個標頭">#</a></h4>
+<p>Updating Emscripten requires the following three steps:</p>
+<ol class="arabic simple">
+<li><p>Rebase the patches in <code class="docutils literal notranslate"><span class="pre">emsdk/patches</span></code> onto the new Emscripten version.</p></li>
+<li><p>Update the Emscripten version in <code class="docutils literal notranslate"><span class="pre">Makefile.envs</span></code>.</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">struct_info</span></code> JSON file in <code class="docutils literal notranslate"><span class="pre">src/js/</span></code> to match the version of the
+file in Emscripten.</p></li>
+</ol>
+<p>All three steps are automated by <code class="docutils literal notranslate"><span class="pre">tools/update_emscripten.py</span></code>. To update, run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./tools/update_emscripten.py<span class="w"> </span>new_version
+</pre></div>
+</div>
+<p>If there are rebase conflicts, you will have to manually finish the rebase. Once
+the rebase is completed, rerun <code class="docutils literal notranslate"><span class="pre">update_emscripten.py</span></code>. It will start over the
+rebase from scratch but reuse your conflict resolutions using the git rerere
+feature.</p>
+<p>After this is done, commit all the changes and open a PR. There are frequently
+complicated CI failures.</p>
+</section>
+<section id="upgrade-cpython-version">
+<h4>2.2. Upgrade CPython version<a class="headerlink" href="#upgrade-cpython-version" title="連結到這個標頭">#</a></h4>
+<section id="prerequisites">
+<h5>Prerequisites<a class="headerlink" href="#prerequisites" title="連結到這個標頭">#</a></h5>
+<p>The desired version of CPython must be available at:</p>
+<ol class="arabic simple">
+<li><p>The &quot;specific release&quot; section of https://www.python.org/downloads</p></li>
+<li><p>https://hub.docker.com/_/python</p></li>
+<li><p>https://github.com/actions/python-versions/releases</p></li>
+</ol>
+</section>
+<section id="steps">
+<h5>Steps<a class="headerlink" href="#steps" title="連結到這個標頭">#</a></h5>
+<ol class="arabic">
+<li><p>Follow the steps in &quot;Updating the Docker image&quot; to create a Docker image for
+the new Python version.</p></li>
+<li><p>Make sure you are in a Python virtual environment with the new version of
+Python and with <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> installed. (It is also possible to work in
+the Docker image as an alternative.)</p></li>
+<li><p>Update the Python version in <code class="docutils literal notranslate"><span class="pre">Makefile.envs</span></code>.</p></li>
+<li><p>Update the Python version in the following locations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/main.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/development/contributing.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/development/building-and-testing-packages.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+</ul>
+<p>(TODO: make this list shorter.)</p>
+</li>
+<li><p>Check <a class="reference external" href="https://github.com/python/cpython-source-deps">python/cpython-source-deps</a> for
+updated versions of bundled C libraries. Pyodide bundles <code class="docutils literal notranslate"><span class="pre">zstd</span></code> from this repository
+(see <code class="docutils literal notranslate"><span class="pre">ZSTDTARBALL</span></code> in <code class="docutils literal notranslate"><span class="pre">cpython/Makefile</span></code>). Update the tag and URL if a newer version
+is available, and verify the build still works.</p></li>
+<li><p>Rebase the patches:</p>
+<ul>
+<li><p>Clone CPython and cd into it. Checkout the Python version you are upgrading
+from. For instance, if the old version is 3.13.2, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">v3.13.2</span></code>
+(Python tags have a leading <code class="docutils literal notranslate"><span class="pre">v</span></code>). Run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>am<span class="w"> </span>~/path/to/pyodide/cpython/patches/*
+</pre></div>
+</div>
+</li>
+<li><p>Rebase the patches onto the new version of Python. For instance, if updating
+from Python v3.13.2 to Python 3.14.1:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rebase<span class="w"> </span>v3.13.2<span class="w"> </span>--onto<span class="w"> </span>v3.14.1
+</pre></div>
+</div>
+</li>
+<li><p>Resolve conflicts and drop patches that have been upstreamed. If you have
+conflicts, make sure you are using diff3:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.conflictstyle<span class="w"> </span>diff3
+</pre></div>
+</div>
+</li>
+<li><p>Generate the new patches:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>~/path/to/pyodide/cpython/patches/*
+git<span class="w"> </span>format-patch<span class="w"> </span>v3.14.1<span class="w"> </span>-o<span class="w"> </span>~/path/to/pyodide/cpython/patches/
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Try to build Python with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-C</span> <span class="pre">cpython</span></code>. Fix any build errors. If you
+modify the Python source in-tree after a failed build, it may be useful to
+run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">rebuild</span></code>.</p></li>
+<li><p>Try to finish the build with a top-level <code class="docutils literal notranslate"><span class="pre">make</span></code>. Fix compile errors in
+<code class="docutils literal notranslate"><span class="pre">src/core</span></code> and any link errors. It may be useful to apply
+<a class="reference external" href="https://github.com/python/pythoncapi-compat/blob/main/upgrade_pythoncapi.py"><code class="docutils literal notranslate"><span class="pre">upgrade_pythoncapi.py</span> <span class="pre">--no-compat</span></code></a>
+to the C extension in <code class="docutils literal notranslate"><span class="pre">src/core</span></code>.</p>
+<p>The file most tightly coupled to the CPython version is
+<code class="docutils literal notranslate"><span class="pre">src/core/stack_switching/pystate.c</span></code>. Consult the
+<a class="reference external" href="https://github.com/python-greenlet/greenlet/blob/master/src/greenlet/TPythonState.cpp">greenlet TPythonState.cpp</a>
+to figure out how to fix it.</p>
+</li>
+<li><p>Run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>tools/make_test_list.py
+</pre></div>
+</div>
+<p>Then run the core tests with <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">src/tests/test_core_python.py</span></code> and
+either fix the failures or update <code class="docutils literal notranslate"><span class="pre">src/tests/python_tests.yaml</span></code> to skip or
+xfail them.</p>
+</li>
+<li><p>Try to build packages with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>build-recipes<span class="w"> </span><span class="s1">&#39;*&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Fix failing package tests.</p></li>
+<li><p>Update standard library stubs in <code class="docutils literal notranslate"><span class="pre">src/templates</span></code>. We currently have
+<code class="docutils literal notranslate"><span class="pre">webbrowser.py</span></code> and <code class="docutils literal notranslate"><span class="pre">ssl.py</span></code> that we implement ourselves. If you are
+updating the Python version, you may need to update these stubs. Review the
+Python docs for the standard library modules and check if the APIs have
+changed. Search for &quot;in version 3.XX&quot; to find the relevant changes.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="old-major-python-upgrades">
+<h3>Old major Python upgrades<a class="headerlink" href="#old-major-python-upgrades" title="連結到這個標頭">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>version</p></th>
+<th class="head"><p>pr</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.13</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/5498">#5498</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3.12</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/4435">#4435</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3.11</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/3252">#3252</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3.10</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/2225">#2225</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3.9</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/1637">#1637</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3.8</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/712">#712</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3.7</p></td>
+<td><p><a class="reference external" href="https://github.com/pyodide/pyodide/pull/77">#77</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="release-a-new-pyodide-alpha-version">
+<h3>3. Release a new Pyodide alpha version<a class="headerlink" href="#release-a-new-pyodide-alpha-version" title="連結到這個標頭">#</a></h3>
+<p>After all the changes are merged, release a new Pyodide alpha version so that
+people can build packages with the new ABI.</p>
+</section>
+<section id="update-packages-and-release-new-package-set">
+<h3>4. Update packages and release new package set<a class="headerlink" href="#update-packages-and-release-new-package-set" title="連結到這個標頭">#</a></h3>
+<p>TODO: Update the process after <a class="reference external" href="https://peps.python.org/pep-0783/">PEP 783</a> is accepted.</p>
+<p>Go to <a class="reference external" href="https://github.com/pyodide/pyodide-recipes">pyodide/pyodide-recipes</a> and
+follow the guidelines in
+<a class="reference external" href="https://github.com/pyodide/pyodide-recipes/blob/main/docs/MAINTAINERS.md">MAINTAINERS.md</a>.
+You'll need to create a tag for the existing package sets and update
+<code class="docutils literal notranslate"><span class="pre">default_cross_build_env_url</span></code> in the main branch.</p>
+<p>If you updated the Python version, also update the <code class="docutils literal notranslate"><span class="pre">python</span></code> version used in the
+CI. When opening the PR, include the <code class="docutils literal notranslate"><span class="pre">full</span> <span class="pre">build</span></code> label to trigger a full build
+of all packages; otherwise, only a small set of packages will be built.</p>
+<p>Most likely, some packages will fail to build. You can disable them by adding
+<code class="docutils literal notranslate"><span class="pre">_disabled:</span> <span class="pre">true</span></code> to the recipes of the failing packages. You don't need to
+handle all the build failures in the same PR—you can open multiple PRs to fix
+the build failures or let the package maintainers handle them.</p>
+<p>Create a new tag for the new package set when the build is successful. This will
+create a new release with the new package set.</p>
+</section>
+<section id="re-enable-use-prebuilt-packages-and-upgrade-the-abi-in-the-main-branch">
+<h3>5. Re-enable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code> and upgrade the ABI in the main branch<a class="headerlink" href="#re-enable-use-prebuilt-packages-and-upgrade-the-abi-in-the-main-branch" title="連結到這個標頭">#</a></h3>
+<p>Go back to <code class="docutils literal notranslate"><span class="pre">pyodide/pyodide</span></code> and update the <code class="docutils literal notranslate"><span class="pre">PYODIDE_PREBUILT_PACKAGES_BASE</span></code>
+variable in <code class="docutils literal notranslate"><span class="pre">Makefile.envs</span></code> to the new package set you created in the previous
+step.</p>
+<p>Then re-enable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code> in <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> and open a PR
+to merge it into the main branch.</p>
+</section>
+<section id="release-a-new-pyodide-version">
+<h3>6. Release a new Pyodide version<a class="headerlink" href="#release-a-new-pyodide-version" title="連結到這個標頭">#</a></h3>
+<p>After enabling most of the packages that were available in the previous ABI
+version, we are ready to release a new Pyodide version with the new ABI.</p>
+<p>Update <a class="reference internal" href="abi.html#pyodide-platform-abi"><span class="std std-ref">什麼是 PyEmscripten 平臺？</span></a> to match the new ABI.</p>
+<p>Merge the <code class="docutils literal notranslate"><span class="pre">20XX_0</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code> and open a PR, then release a new Pyodide
+version with the new ABI.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="core.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Contributing to the &quot;core&quot; C Code</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="abi.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">PyEmscripten 平臺</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-release">Making a release</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-major-release">Making a major release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#releasing">Releasing</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-minor-release">Making a minor release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Releasing</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-alpha-release">Making an alpha release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Preparation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#release-instructions">Release instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-documentation-for-a-released-version">Fixing documentation for a released version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-docker-image">Updating the Docker image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-packages">Updating packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-pyodide-build">Updating pyodide-build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-the-abi">Upgrading the ABI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilize-and-freeze-the-abi">0. Stabilize and freeze the ABI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-use-prebuilt-packages">1. Disable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-emscripten-and-cpython-version">2. Upgrade Emscripten and CPython version</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-the-emscripten-version">2.1. Upgrade the Emscripten version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-cpython-version">2.2. Upgrade CPython version</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#old-major-python-upgrades">Old major Python upgrades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-a-new-pyodide-alpha-version">3. Release a new Pyodide alpha version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-packages-and-release-new-package-set">4. Update packages and release new package set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-enable-use-prebuilt-packages-and-upgrade-the-abi-in-the-main-branch">5. Re-enable <code class="docutils literal notranslate"><span class="pre">USE_PREBUILT_PACKAGES</span></code> and upgrade the ABI in the main branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-a-new-pyodide-version">6. Release a new Pyodide version</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

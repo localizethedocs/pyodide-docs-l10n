@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building Packages Using Recipe &#8212; Version 0.29.4</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=cecf8cda"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/building-packages-using-recipe';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/building-packages-using-recipe.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="The meta.yaml specification" href="meta-yaml.html" />
+    <link rel="prev" title="Adding Packages into Pyodide Distribution" href="adding-packages-into-pyodide-distribution.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="0.29.4" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 0.29.4 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 0.29.4 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="building-packages-from-source.html">Building Python Packages from Source</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="adding-packages-into-pyodide-distribution.html">Adding Packages into Pyodide Distribution</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Building Packages Using Recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-yaml.html">The meta.yaml specification</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0 (under development)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyodide_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyodide_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/building-packages-using-recipe.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building Packages Using Recipe</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-meta-yaml-file">Creating the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-recipes">Building Recipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-build-process">Modifying Build Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patching-the-package-source">Patching the package source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-patches">Generating patches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upstream-your-patches">Upstream your patches!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-a-package">Upgrading a package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migrating-patches">Migrating Patches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-library-dependencies">C library dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-pyo3-packages">Rust/PyO3 Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-rebuilds">Partial Rebuilds</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="building-packages-using-recipe">
+<span id="id1"></span><h1>Building Packages Using Recipe<a class="headerlink" href="#building-packages-using-recipe" title="Link to this heading">#</a></h1>
+<p>While you can build Python packages from source,
+we provide a <code class="docutils literal notranslate"><span class="pre">conda</span></code>-style recipe system to build multiple packages at once.</p>
+<p>Using a recipe is also required to include the package in the Pyodide distribution.
+See <a class="reference internal" href="adding-packages-into-pyodide-distribution.html#adding-packages-into-pyodide-distribution"><span class="std std-ref">Adding Packages into Pyodide Distribution</span></a> for more information.</p>
+<section id="creating-the-meta-yaml-file">
+<h2>Creating the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file<a class="headerlink" href="#creating-the-meta-yaml-file" title="Link to this heading">#</a></h2>
+<p>To build a Python package in tree, you need to create a <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file that
+defines a recipe which includes build commands and patches (source code
+edits), amongst other things.</p>
+<p>If your package is on PyPI, the easiest place to start is with the
+<code class="docutils literal notranslate"><span class="pre">pyodide</span> <span class="pre">skeleton</span> <span class="pre">pypi</span></code> command. Run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>skeleton<span class="w"> </span>pypi<span class="w"> </span>&lt;package-name&gt;
+</pre></div>
+</div>
+<p>This will generate a <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file under <code class="docutils literal notranslate"><span class="pre">packages/&lt;package-name&gt;/</span></code> (see
+<a class="reference internal" href="meta-yaml.html#meta-yaml-spec"><span class="std std-ref">The meta.yaml specification</span></a>). The <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> cli tool will populate the latest version,
+the download link and the sha256 hash by querying PyPI.</p>
+<p>It doesn't currently handle package dependencies, so you will need to specify
+those yourself in the <code class="docutils literal notranslate"><span class="pre">requirements</span></code> section of the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">requirements</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Dependencies that are needed to build the package</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Dependencies that are needed to run the package</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scikit-learn</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>To determine build and runtime dependencies, including for non Python
+libraries, it is often useful to check if the package was already built on
+<a class="reference external" href="https://conda-forge.org/">conda-forge</a> look at the corresponding <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>
+file. This can be done either by checking if the URL
+<code class="docutils literal notranslate"><span class="pre">https://github.com/conda-forge/&lt;package-name&gt;-feedstock/blob/master/recipe/meta.yaml</span></code>
+exists, or by searching the <a class="reference external" href="https://github.com/conda-forge/">conda-forge GitHub
+org</a> for the package name.</p>
+<p>The Pyodide <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file format was inspired by the one in conda, however it is
+not strictly compatible.</p>
+</div>
+</section>
+<section id="building-recipes">
+<h2>Building Recipes<a class="headerlink" href="#building-recipes" title="Link to this heading">#</a></h2>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file is ready, build the package with the following
+command and see if there are any errors.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>build-recipes<span class="w"> </span>&lt;package-name&gt;<span class="w"> </span>--install
+</pre></div>
+</div>
+<p>This command will build the package and all its dependencies. The <code class="docutils literal notranslate"><span class="pre">--install</span></code>
+The <code class="docutils literal notranslate"><span class="pre">--install</span></code> flag will install the built package into the <code class="docutils literal notranslate"><span class="pre">/dist</span></code> directory.</p>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
+<p>If the build succeeds you can try to load the package in the Pyodide environment.</p>
+<ol class="arabic simple">
+<li><p>Visit Build Pyodide or download the latest release from the GitHub repository.</p></li>
+<li><p>Copy everything built in the <code class="docutils literal notranslate"><span class="pre">/dist</span></code> directory to the downloaded Pyodide
+directory. This should include the <code class="docutils literal notranslate"><span class="pre">pyodide-lock.json</span></code> file and the
+wheel files that were built.</p></li>
+<li><p>Serve the Pyodide directory with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">--directory</span> <span class="pre">./dist</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">localhost:8000/console.html</span></code> and try to import the package.</p></li>
+<li><p>You can test the package in the repl.</p></li>
+</ol>
+</section>
+<section id="modifying-build-process">
+<h2>Modifying Build Process<a class="headerlink" href="#modifying-build-process" title="Link to this heading">#</a></h2>
+<p>If you need to modify the build process (e.g. to fix build issues) you can do
+this by modifying the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file. The <code class="docutils literal notranslate"><span class="pre">build</span></code> section of the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>
+is where you can run scripts, set environment variables, and add extra compile
+and link flags.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># You can add any shell scripts you want to run before invoking the build.</span>
+<span class="w">  </span><span class="c1"># For instance, setting environment variables or downloading files, or modifying the source can be done here.</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">wget https://example.com/file.tar.gz</span>
+<span class="w">    </span><span class="no">export MY_ENV_VARIABLE=FOO</span>
+<span class="w">  </span><span class="c1"># You can pass extra compile and link flags to the compiler by adding them here.</span>
+<span class="w">  </span><span class="nt">cflags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">-O3</span>
+<span class="w">  </span><span class="nt">cxxflags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">-O3</span>
+<span class="w">  </span><span class="nt">ldflags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">-lm</span>
+<span class="w">  </span><span class="c1"># This is the command that is passed to the build backend. For example, if you</span>
+<span class="w">  </span><span class="c1"># need to pass extra flags to setuptools, you can pass them here.</span>
+<span class="w">  </span><span class="nt">backend-flags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">setup-args=-Dallow-noblas=true</span>
+<span class="w">  </span><span class="c1"># post is a script that is run after the build. This is useful for</span>
+<span class="w">  </span><span class="c1"># post-processing the wheel file.</span>
+<span class="w">  </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">rm unnecessary-file-in-the-wheel.txt</span>
+</pre></div>
+</div>
+</section>
+<section id="patching-the-package-source">
+<h2>Patching the package source<a class="headerlink" href="#patching-the-package-source" title="Link to this heading">#</a></h2>
+<p>If the package has a bug that needs to be fixed, you can apply <code class="docutils literal notranslate"><span class="pre">.patch</span></code> files
+to the package source. This is commonly done when the package requires special handling
+for Emscripten or Pyodide environment.</p>
+<p>Place the patch files in the <code class="docutils literal notranslate"><span class="pre">patches</span></code> directory of the package, and specify
+them in the <code class="docutils literal notranslate"><span class="pre">source.patches</span></code> section of the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file. The patches will be
+applied in the order they are listed.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">source</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">patches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">patches/0001-Add-Wno-return-type-flag.patch</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">patches/0002-Align-xerbla_array-signature-with-scipy-expectation.patch</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">patches/0003-Skip-linktest.patch</span>
+</pre></div>
+</div>
+<section id="generating-patches">
+<span id="id2"></span><h3>Generating patches<a class="headerlink" href="#generating-patches" title="Link to this heading">#</a></h3>
+<p>If the package has a git repository, the easiest way to make a patch is usually:</p>
+<ol class="arabic simple">
+<li><p>Clone the git repository of the package. You might want to use the options
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--depth</span> <span class="pre">1</span> <span class="pre">--branch</span> <span class="pre">&lt;version&gt;</span></code>. Find the appropriate tag given the
+version of the package you are trying to modify.</p></li>
+<li><p>Make a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">pyodide-version</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">pyodide-1.21.4</span></code>).</p></li>
+<li><p>Make whatever changes you want. Commit them. Please split your changes up
+into focused commits. Write detailed commit messages! People will read them
+in the future, particularly when migrating patches or trying to decide if
+they are no longer needed. The first line of each commit message will also be
+used in the patch file name.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">format-patch</span> <span class="pre">&lt;version&gt;</span> <span class="pre">-o</span> <span class="pre">packages/&lt;package-name&gt;/patches/</span></code>
+to generate a patch file for your changes and store it directly into the
+patches folder.</p></li>
+</ol>
+</section>
+<section id="upstream-your-patches">
+<h3>Upstream your patches!<a class="headerlink" href="#upstream-your-patches" title="Link to this heading">#</a></h3>
+<p>Please create PRs or issues to discuss with the package maintainers to try to
+find ways to include your patches into the package. Many package maintainers are
+very receptive to including Pyodide-related patches and they reduce future
+maintenance work for us.</p>
+</section>
+</section>
+<section id="upgrading-a-package">
+<h2>Upgrading a package<a class="headerlink" href="#upgrading-a-package" title="Link to this heading">#</a></h2>
+<p>To upgrade a package's version to the latest one available on PyPI, do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyodide</span> <span class="n">skeleton</span> <span class="n">pypi</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">update</span>
+</pre></div>
+</div>
+<p>Because this does not handle package dependencies, you have to manually check
+whether the <code class="docutils literal notranslate"><span class="pre">requirements</span></code> section of the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file needs to be updated
+for updated dependencies.</p>
+<p>Upgrading a package's version may lead to new build issues that need to be resolved
+(see above) and any patches need to be checked and potentially migrated (see below).</p>
+<section id="migrating-patches">
+<h3>Migrating Patches<a class="headerlink" href="#migrating-patches" title="Link to this heading">#</a></h3>
+<p>When you want to upgrade the version of a package, you will need to migrate the
+patches. To do this:</p>
+<ol class="arabic simple">
+<li><p>Clone the git repository of the package. You might want to use the options
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--depth</span> <span class="pre">1</span> <span class="pre">--branch</span> <span class="pre">&lt;version-tag&gt;</span></code>.</p></li>
+<li><p>Make a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">pyodide-old-version</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">pyodide-1.21.4</span></code>).</p></li>
+<li><p>Apply the current patches with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">am</span> <span class="pre">packages/&lt;package-name&gt;/patches/*</span></code>.</p></li>
+<li><p>Make a new branch <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">pyodide-new-version</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">pyodide-1.22.0</span></code>)</p></li>
+<li><p>Rebase the patches with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">old-version</span> <span class="pre">--onto</span> <span class="pre">new-version</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">pyodide-1.21.4</span> <span class="pre">--onto</span> <span class="pre">pyodide-1.22.0</span></code>). Resolve any rebase
+conflicts. If a patch has been upstreamed, you can drop it with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--skip</span></code>.</p></li>
+<li><p>Remove old patches with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">packages/&lt;package-name&gt;/patches/*</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">format-patch</span> <span class="pre">&lt;version-tag&gt;</span> <span class="pre">-o</span> <span class="pre">packages/&lt;package-name&gt;/patches/</span></code>
+to generate new patch files.</p></li>
+</ol>
+</section>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h2>
+<section id="c-library-dependencies">
+<h3>C library dependencies<a class="headerlink" href="#c-library-dependencies" title="Link to this heading">#</a></h3>
+<p>Some Python packages depend on certain C libraries, e.g. <code class="docutils literal notranslate"><span class="pre">lxml</span></code> depends on
+<code class="docutils literal notranslate"><span class="pre">libxml</span></code>. Pyodide recipes can also be used to build C libraries.</p>
+<p>To package a C library, create a directory for it and add <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file
+similar to the one for Python packages. However, unlike the Python package, you
+need to specify a build script that builds the C library.
+See <a class="reference internal" href="meta-yaml.html#meta-yaml-spec"><span class="std std-ref">The meta.yaml specification</span></a> for more details.</p>
+<p>The minimal example of <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> for a C library that uses <code class="docutils literal notranslate"><span class="pre">configure</span></code> and
+<code class="docutils literal notranslate"><span class="pre">make</span></code> is:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">package</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;name&gt;</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;version&gt;</span>
+
+<span class="nt">source</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;url&gt;</span>
+<span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;sha256&gt;</span>
+
+<span class="nt">requirements</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;requirement&gt;</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">static_library</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">emconfigure ./configure</span>
+<span class="w">    </span><span class="no">emmake make</span>
+</pre></div>
+</div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> of other C libraries such as
+<a class="reference external" href="https://github.com/pyodide/pyodide-recipes/blob/main/packages/libxml/meta.yaml">libxml</a>
+as a starting point.</p>
+<p>After packaging a C library, it can be added as a dependency of a Python package
+like a normal dependency. See <code class="docutils literal notranslate"><span class="pre">lxml</span></code> and <code class="docutils literal notranslate"><span class="pre">libxml</span></code> for an example (and also
+<code class="docutils literal notranslate"><span class="pre">scipy</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenBLAS</span></code>).</p>
+<p><em>Remark:</em> Certain C libraries come as emscripten ports, and do not have to be
+built manually. They can be used by adding e.g. <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">USE_ZLIB</span></code> in the <code class="docutils literal notranslate"><span class="pre">cflags</span></code> of
+the Python package. See e.g. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for an example. <a class="reference external" href="https://github.com/orgs/emscripten-ports/repositories?type=all">The full list of
+libraries with Emscripten ports is
+here.</a></p>
+</section>
+<section id="rust-pyo3-packages">
+<h3>Rust/PyO3 Packages<a class="headerlink" href="#rust-pyo3-packages" title="Link to this heading">#</a></h3>
+<p>We currently build <code class="docutils literal notranslate"><span class="pre">cryptography</span></code> which is a Rust extension built with PyO3 and
+<code class="docutils literal notranslate"><span class="pre">setuptools-rust</span></code>. It should be reasonably easy to build other Rust extensions.
+If you want to build a package with Rust extension, you will need Rust &gt;= 1.41,
+and you need to set the rustup toolchain to <code class="docutils literal notranslate"><span class="pre">nightly</span></code>, and the target to
+<code class="docutils literal notranslate"><span class="pre">wasm32-unknown-emscripten</span></code> in the build script
+<a class="reference external" href="https://github.com/pyodide/pyodide-recipes/blob/main/packages/cryptography/meta.yaml">as shown here</a>,
+but other than that there may be no other issues if you are lucky.</p>
+<p>As mentioned <a class="reference external" href="https://github.com/pyodide/pyodide/issues/2706#issuecomment-1154655224">here</a>,
+by default certain wasm-related <code class="docutils literal notranslate"><span class="pre">RUSTFLAGS</span></code> are set during <code class="docutils literal notranslate"><span class="pre">build.script</span></code>
+and can be removed with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">RUSTFLAGS=&quot;&quot;</span></code>.</p>
+<p>If your project builds using maturin, you need to use maturin 0.14.14 or later.
+It is pretty easy to patch an existing project (see <code class="docutils literal notranslate"><span class="pre">projects/fastparquet/meta.yaml</span></code> for an example)</p>
+</section>
+<section id="partial-rebuilds">
+<h3>Partial Rebuilds<a class="headerlink" href="#partial-rebuilds" title="Link to this heading">#</a></h3>
+<p>By default, each time you run <code class="docutils literal notranslate"><span class="pre">pyodide</span> <span class="pre">build-recipes</span></code>, it will delete the entire
+source directory and replace it with a fresh copy from the download url. This is
+to ensure build repeatability. For debugging purposes, this is likely to be
+undesirable. If you want to try out a modified source tree, you can pass the
+flag <code class="docutils literal notranslate"><span class="pre">--continue</span></code> and <code class="docutils literal notranslate"><span class="pre">build-recipes</span></code> will try to build from the existing source
+tree. This can cause various issues, but if it works it is much more convenient.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">--continue</span></code> flag, you can modify the sources in tree to fix the
+build, then when it works, copy the modified sources into your checked out copy
+of the package source repository and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">format-patch</span></code> to generate the
+patch.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="adding-packages-into-pyodide-distribution.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Adding Packages into Pyodide Distribution</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="meta-yaml.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">The meta.yaml specification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-meta-yaml-file">Creating the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-recipes">Building Recipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-build-process">Modifying Build Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patching-the-package-source">Patching the package source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-patches">Generating patches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upstream-your-patches">Upstream your patches!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-a-package">Upgrading a package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migrating-patches">Migrating Patches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-library-dependencies">C library dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rust-pyo3-packages">Rust/PyO3 Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-rebuilds">Partial Rebuilds</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

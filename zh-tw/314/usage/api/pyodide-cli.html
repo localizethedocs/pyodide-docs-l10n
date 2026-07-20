@@ -1,0 +1,1953 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyodide CLI &#8212; Version 314.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=d9936058"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/api/pyodide-cli';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/usage/api/pyodide-cli.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="常見問題" href="../faq.html" />
+    <link rel="prev" title="pyodide.webloop" href="python-api/webloop.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  <meta name="docsearch:version" content="314.0.2" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.0.2 - Home"/>
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.0.2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../downloading-and-deploying.html">下載與部署 Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../wasm-constraints.html">Pyodide Python 相容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keyboard-interrupts.html">中斷執行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../streams.html">重新導向標準串流</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../api-reference.html">API 參考</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">社群範例</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">開發</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../development/building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testing.html">測試與基準測試</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development/contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development/core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/maintainers.html">維護者資訊</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development/abi.html">PyEmscripten 平臺</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project/about.html">什麼是 Pyodide？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/code-of-conduct.html">行為守則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/governance.html">治理與決策</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/changelog.html">變更日誌</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/usage/api/pyodide-cli.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyodide CLI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide">pyodide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-recipes">recipes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-get">get</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-list">list</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-disable">disable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-enable">enable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-pin">pin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-pypi">pypi</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-install">install</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-install-emscripten">install-emscripten</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-search">search</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-uninstall">uninstall</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-use">use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-version">version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-versions">versions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-copy">copy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-exports">exports</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-imports">imports</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-repair">repair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-show">show</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-build-recipes">build-recipes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-build-recipes-no-deps">build-recipes-no-deps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main-add-wheels">add-wheels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyodide-cli">
+<span id="id1"></span><h1>pyodide CLI<a class="headerlink" href="#pyodide-cli" title="連結到這個標頭">#</a></h1>
+<p>This page documents the Pyodide Command Line Interface (CLI) interface. In addition to the commands defined by <code class="docutils literal notranslate"><span class="pre">pyodide-build</span></code>, documented below, other subcommands are defined in external packages (which can be installed with pip):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyodide</span> <span class="pre">pack</span></code>, defined in <a class="reference external" href="https://github.com/pyodide/pyodide-pack">pyodide-pack</a> is a package bundler for Pyodide</p></li>
+</ul>
+<section id="pyodide">
+<h2>pyodide<a class="headerlink" href="#pyodide" title="連結到這個標頭">#</a></h2>
+<p>A command line interface for Pyodide.</p>
+<p>Other CLI subcommands are registered via the plugin system by installing
+Pyodide ecosystem packages (e.g. pyodide-build, pyodide-pack,
+auditwheel-emscripten, etc.)</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-version" title="連結到這個定義">#</a></dt>
+<dd><p>Show the version of the Pyodide CLI</p>
+</dd></dl>
+
+<section id="pyodide-app">
+<h3>app<a class="headerlink" href="#pyodide-app" title="連結到這個標頭">#</a></h3>
+<p>Clean build artifacts.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-app-recipes">
+<h4>recipes<a class="headerlink" href="#pyodide-app-recipes" title="連結到這個標頭">#</a></h4>
+<p>Remove build artifacts for recipe packages.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">TARGETS: Packages or tags (tag:&lt;name&gt;) to clean. Defaults to all packages.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>recipes<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>TARGETS<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-recipes-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-recipes-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory containing package recipes. Defaults to &lt;pyodide root&gt;/packages.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-recipes-build-dir">
+<span class="sig-name descname"><span class="pre">--build-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;build_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-recipes-build-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory where package build artifacts are stored. Defaults to recipe directory.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-recipes-arg-TARGETS">
+<span class="sig-name descname"><span class="pre">TARGETS</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-recipes-arg-TARGETS" title="連結到這個定義">#</a></dt>
+<dd><p>Optional argument(s)</p>
+</dd></dl>
+
+<p class="rubric">Environment variables</p>
+<dl class="std envvar" id="pyodide-app-recipes-build-dir-pyodide-recipe-build-dir">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_RECIPE_BUILD_DIR</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-app-recipes-build-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--build-dir</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+<section id="pyodide-app">
+<h3>app<a class="headerlink" href="#pyodide-app" title="連結到這個標頭">#</a></h3>
+<p>Manage config variables used in pyodide.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-app-get">
+<h4>get<a class="headerlink" href="#pyodide-app-get" title="連結到這個標頭">#</a></h4>
+<p>Get a value of a single config variable used in pyodide.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">CONFIG_VAR: A config variable to get. Use <cite>list</cite> to see all possible values.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONFIG_VAR
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-get-arg-CONFIG_VAR">
+<span class="sig-name descname"><span class="pre">CONFIG_VAR</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-get-arg-CONFIG_VAR" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-list">
+<h4>list<a class="headerlink" href="#pyodide-app-list" title="連結到這個標頭">#</a></h4>
+<p>List config variables used in pyodide.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>list<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pyodide-app">
+<h3>app<a class="headerlink" href="#pyodide-app" title="連結到這個標頭">#</a></h3>
+<p>Add a new package build recipe or update an existing recipe.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-app-disable">
+<h4>disable<a class="headerlink" href="#pyodide-app-disable" title="連結到這個標頭">#</a></h4>
+<p>Disable packages.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">NAMES: Package names to disable.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>disable<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAMES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-disable-m">
+<span id="cmdoption-pyodide-app-disable-message"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--message</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;message&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-disable-m" title="連結到這個定義">#</a></dt>
+<dd><p>Comment to explain why it was disabled.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-disable-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-disable-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">&lt;cwd&gt;/packages</span></code>.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-disable-arg-NAMES">
+<span class="sig-name descname"><span class="pre">NAMES</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-disable-arg-NAMES" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-enable">
+<h4>enable<a class="headerlink" href="#pyodide-app-enable" title="連結到這個標頭">#</a></h4>
+<p>Enable packages.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">NAMES: Package names to enable.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAMES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-enable-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-enable-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">&lt;cwd&gt;/packages</span></code>.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-enable-arg-NAMES">
+<span class="sig-name descname"><span class="pre">NAMES</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-enable-arg-NAMES" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-pin">
+<h4>pin<a class="headerlink" href="#pyodide-app-pin" title="連結到這個標頭">#</a></h4>
+<p>Pin packages.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">NAMES: Package names to pin.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>pin<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAMES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pin-m">
+<span id="cmdoption-pyodide-app-pin-message"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--message</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;message&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pin-m" title="連結到這個定義">#</a></dt>
+<dd><p>Comment to explain why it was pinned.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pin-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pin-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">&lt;cwd&gt;/packages</span></code>.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pin-arg-NAMES">
+<span class="sig-name descname"><span class="pre">NAMES</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pin-arg-NAMES" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-pypi">
+<h4>pypi<a class="headerlink" href="#pyodide-app-pypi" title="連結到這個標頭">#</a></h4>
+<p>Create a new package recipe from PyPI or update an existing recipe.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">NAME: Package name on PyPI.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>pypi<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-u">
+<span id="cmdoption-pyodide-app-pypi-update"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--update</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-u" title="連結到這個定義">#</a></dt>
+<dd><p>Update an existing recipe instead of creating a new one.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-update-patched">
+<span class="sig-name descname"><span class="pre">--update-patched</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-update-patched" title="連結到這個定義">#</a></dt>
+<dd><p>Force update the package even if it contains patches.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-update-pinned">
+<span class="sig-name descname"><span class="pre">--update-pinned</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-update-pinned" title="連結到這個定義">#</a></dt>
+<dd><p>Force update the package even if is pinned.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;version&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-version" title="連結到這個定義">#</a></dt>
+<dd><p>The version of the package, if not specified, latest version will be used.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-source-format">
+<span class="sig-name descname"><span class="pre">--source-format</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;source_format&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-source-format" title="連結到這個定義">#</a></dt>
+<dd><p>Which source format is preferred. Options are wheel or sdist. If not specified, then either a wheel or an sdist will be used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options<span class="colon">:</span></dt>
+<dd class="field-odd"><p>wheel | sdist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">&lt;cwd&gt;/packages</span></code>.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-m">
+<span id="cmdoption-pyodide-app-pypi-maintainer"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--maintainer</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;maintainer&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-m" title="連結到這個定義">#</a></dt>
+<dd><p>The github username to use as the maintainer.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-gh-maintainer">
+<span id="cmdoption-pyodide-app-pypi-ghm"></span><span class="sig-name descname"><span class="pre">--gh-maintainer</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--ghm</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-gh-maintainer" title="連結到這個定義">#</a></dt>
+<dd><p>Set the maintainer from 'gh auth status'. Requires gh cli.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-pypi-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-pypi-arg-NAME" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="pyodide-app">
+<h3>app<a class="headerlink" href="#pyodide-app" title="連結到這個標頭">#</a></h3>
+<p>Manage cross-build environment for building packages for Pyodide.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-app-install">
+<h4>install<a class="headerlink" href="#pyodide-app-install" title="連結到這個標頭">#</a></h4>
+<p>Install cross-build environment.</p>
+<p>The installed environment is the same as the one that would result from
+<cite>PYODIDE_PACKAGES='scipy' make</cite> except that it is much faster.
+The goal is to enable out-of-tree builds for binary packages that depend
+on numpy or scipy.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">VERSION: version of cross-build environment to install (optional)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>VERSION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-install-path" title="連結到這個定義">#</a></dt>
+<dd><p>destination to download cross-build environment directory to.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-url">
+<span class="sig-name descname"><span class="pre">--url</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;url&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-install-url" title="連結到這個定義">#</a></dt>
+<dd><p>URL to download cross-build environment from.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-f">
+<span id="cmdoption-pyodide-app-install-force"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--force</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-install-f" title="連結到這個定義">#</a></dt>
+<dd><p>force installation even if the version is not compatible.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-skip-cross-build-packages">
+<span class="sig-name descname"><span class="pre">--skip-cross-build-packages</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-install-skip-cross-build-packages" title="連結到這個定義">#</a></dt>
+<dd><p>Deprecated, no-op. Cross-build packages are installed lazily when required by build dependencies.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-arg-VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-install-arg-VERSION" title="連結到這個定義">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+<p class="rubric">Environment variables</p>
+<dl class="std envvar" id="pyodide-app-install-path-pyodide-xbuildenv-path">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_XBUILDENV_PATH</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-app-install-path"><code class="xref std std-option docutils literal notranslate"><span class="pre">--path</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-app-install-skip-cross-build-packages-pyodide-skip-cross-build-packages">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_SKIP_CROSS_BUILD_PACKAGES</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-app-install-skip-cross-build-packages"><code class="xref std std-option docutils literal notranslate"><span class="pre">--skip-cross-build-packages</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-install-emscripten">
+<h4>install-emscripten<a class="headerlink" href="#pyodide-app-install-emscripten" title="連結到這個標頭">#</a></h4>
+<p>Install Emscripten SDK into the cross-build environment.</p>
+<p>This command clones the emsdk repository, installs and activates the specified
+Emscripten version, and applies Pyodide-specific patches.</p>
+<p>If the requested version is already installed, the command is a no-op unless
+--force is passed.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>install-emscripten<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-emscripten-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;version&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-install-emscripten-version" title="連結到這個定義">#</a></dt>
+<dd><p>Emscripten version corresponding to the target Pyodide version</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-emscripten-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-install-emscripten-path" title="連結到這個定義">#</a></dt>
+<dd><p>Pyodide cross-env path</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-install-emscripten-f">
+<span id="cmdoption-pyodide-app-install-emscripten-force"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--force</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-install-emscripten-f" title="連結到這個定義">#</a></dt>
+<dd><p>force reinstallation even if the same version is already installed.</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-search">
+<h4>search<a class="headerlink" href="#pyodide-app-search" title="連結到這個標頭">#</a></h4>
+<p>Search for available versions of cross-build environment.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>search<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-search-metadata">
+<span class="sig-name descname"><span class="pre">--metadata</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;metadata_path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-search-metadata" title="連結到這個定義">#</a></dt>
+<dd><p>path to cross-build environment metadata file. It can be a URL or a local file. If not given, the default metadata file is used.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-search-a">
+<span id="cmdoption-pyodide-app-search-all"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-search-a" title="連結到這個定義">#</a></dt>
+<dd><p>search all versions, without filtering out incompatible ones.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-search-json">
+<span class="sig-name descname"><span class="pre">--json</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-search-json" title="連結到這個定義">#</a></dt>
+<dd><p>output results in JSON format.</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-uninstall">
+<h4>uninstall<a class="headerlink" href="#pyodide-app-uninstall" title="連結到這個標頭">#</a></h4>
+<p>Uninstall cross-build environment.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">VERSION: version of cross-build environment to uninstall (optional)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>uninstall<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>VERSION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-uninstall-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-uninstall-path" title="連結到這個定義">#</a></dt>
+<dd><p>path to cross-build environment directory.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-uninstall-arg-VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-uninstall-arg-VERSION" title="連結到這個定義">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-use">
+<h4>use<a class="headerlink" href="#pyodide-app-use" title="連結到這個標頭">#</a></h4>
+<p>Select a version of cross-build environment to use.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">VERSION: version of cross-build environment to use (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>use<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>VERSION
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-use-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-use-path" title="連結到這個定義">#</a></dt>
+<dd><p>path to cross-build environment directory.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-use-arg-VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-use-arg-VERSION" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-version">
+<h4>version<a class="headerlink" href="#pyodide-app-version" title="連結到這個標頭">#</a></h4>
+<p>Print current version of cross-build environment.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>version<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-version-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-version-path" title="連結到這個定義">#</a></dt>
+<dd><p>path to cross-build environment directory.</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-versions">
+<h4>versions<a class="headerlink" href="#pyodide-app-versions" title="連結到這個標頭">#</a></h4>
+<p>Print all installed versions of cross-build environment.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>versions<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-versions-path">
+<span class="sig-name descname"><span class="pre">--path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-versions-path" title="連結到這個定義">#</a></dt>
+<dd><p>path to cross-build environment directory.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="pyodide-app">
+<h3>app<a class="headerlink" href="#pyodide-app" title="連結到這個標頭">#</a></h3>
+<p>Auditwheel-like tool for emscripten wheels and shared libraries.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-app-copy">
+<h4>copy<a class="headerlink" href="#pyodide-app-copy" title="連結到這個標頭">#</a></h4>
+<p>[Deprecated] Copy shared libraries to the wheel directory. Works same as <cite>repair</cite>. Use <cite>repair</cite> instead.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEEL_FILE: Path to wheel file. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>copy<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEEL_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-copy-libdir">
+<span class="sig-name descname"><span class="pre">--libdir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;libdir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-copy-libdir" title="連結到這個定義">#</a></dt>
+<dd><p>Path to the directory containing the shared libraries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'lib'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-copy-output-dir">
+<span class="sig-name descname"><span class="pre">--output-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-copy-output-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory to output repaired wheel or shared library. (default: overwrite the input file)</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-copy-arg-WHEEL_FILE">
+<span class="sig-name descname"><span class="pre">WHEEL_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-copy-arg-WHEEL_FILE" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-exports">
+<h4>exports<a class="headerlink" href="#pyodide-app-exports" title="連結到這個標頭">#</a></h4>
+<p>Show exports of a wheel or a shared library file.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>exports<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEEL_OR_SO_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-exports-show-type">
+<span class="sig-name descname"><span class="pre">--show-type</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-exports-show-type" title="連結到這個定義">#</a></dt>
+<dd><p>Show function type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-exports-arg-WHEEL_OR_SO_FILE">
+<span class="sig-name descname"><span class="pre">WHEEL_OR_SO_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-exports-arg-WHEEL_OR_SO_FILE" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-imports">
+<h4>imports<a class="headerlink" href="#pyodide-app-imports" title="連結到這個標頭">#</a></h4>
+<p>Show imports of a wheel or a shared library file.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>imports<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEEL_OR_SO_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-imports-show-type">
+<span class="sig-name descname"><span class="pre">--show-type</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-imports-show-type" title="連結到這個定義">#</a></dt>
+<dd><p>Show function type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-imports-arg-WHEEL_OR_SO_FILE">
+<span class="sig-name descname"><span class="pre">WHEEL_OR_SO_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-imports-arg-WHEEL_OR_SO_FILE" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-repair">
+<h4>repair<a class="headerlink" href="#pyodide-app-repair" title="連結到這個標頭">#</a></h4>
+<p>Repair a wheel file: copy shared libraries to the wheel directory.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEEL_FILE: Path to wheel file. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>repair<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEEL_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-repair-libdir">
+<span class="sig-name descname"><span class="pre">--libdir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;libdir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-repair-libdir" title="連結到這個定義">#</a></dt>
+<dd><p>Path to the directory containing the shared libraries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'lib'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-repair-output-dir">
+<span class="sig-name descname"><span class="pre">--output-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-app-repair-output-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory to output repaired wheel or shared library. (default: overwrite the input file)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-repair-r">
+<span id="cmdoption-pyodide-app-repair-with-runtime-paths"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--with-runtime-paths</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-repair-r" title="連結到這個定義">#</a></dt>
+<dd><p>Show runtime paths.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-repair-arg-WHEEL_FILE">
+<span class="sig-name descname"><span class="pre">WHEEL_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-repair-arg-WHEEL_FILE" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-app-show">
+<h4>show<a class="headerlink" href="#pyodide-app-show" title="連結到這個標頭">#</a></h4>
+<p>Show shared library dependencies of a wheel or a shared library file.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>app<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEEL_OR_SO_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-show-r">
+<span id="cmdoption-pyodide-app-show-with-runtime-paths"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--with-runtime-paths</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-show-r" title="連結到這個定義">#</a></dt>
+<dd><p>Show runtime paths.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-app-show-arg-WHEEL_OR_SO_FILE">
+<span class="sig-name descname"><span class="pre">WHEEL_OR_SO_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-app-show-arg-WHEEL_OR_SO_FILE" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="pyodide-build-recipes">
+<h3>build-recipes<a class="headerlink" href="#pyodide-build-recipes" title="連結到這個標頭">#</a></h3>
+<p>Build packages using yaml recipes.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">PACKAGES: Packages to build, or <code class="docutils literal notranslate"><span class="pre">*</span></code> for all packages in recipe directory.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>build-recipes<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>PACKAGES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">./packages</span></code></p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-build-dir">
+<span class="sig-name descname"><span class="pre">--build-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;build_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-build-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory where build directories for packages are created. Default: recipe_dir.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-install">
+<span id="cmdoption-pyodide-build-recipes-no-install"></span><span class="sig-name descname"><span class="pre">--install</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-install</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-install" title="連結到這個定義">#</a></dt>
+<dd><p>If true, install the built packages into the install_dir. If false, build packages without installing.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-install-dir">
+<span class="sig-name descname"><span class="pre">--install-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;install_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-install-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Path to install built packages and pyodide-lock.json. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">./dist</span></code>.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-metadata-files">
+<span id="cmdoption-pyodide-build-recipes-no-metadata-files"></span><span class="sig-name descname"><span class="pre">--metadata-files</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-metadata-files</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-metadata-files" title="連結到這個定義">#</a></dt>
+<dd><p>If true, extract the METADATA file from the built wheels to a matching <code class="docutils literal notranslate"><span class="pre">*.whl.metadata</span></code> file. If false, no <code class="docutils literal notranslate"><span class="pre">*.whl.metadata</span></code> file is produced.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps">
+<span id="cmdoption-pyodide-build-recipes-no-no-deps"></span><span class="sig-name descname"><span class="pre">--no-deps</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-no-deps</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps" title="連結到這個定義">#</a></dt>
+<dd><p>Removed, use <cite>pyodide build-recipes-no-deps</cite> instead.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-cflags">
+<span class="sig-name descname"><span class="pre">--cflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-cflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra compiling flags. Default: SIDE_MODULE_CFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-cxxflags">
+<span class="sig-name descname"><span class="pre">--cxxflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cxxflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-cxxflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra compiling flags. Default: SIDE_MODULE_CXXFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-ldflags">
+<span class="sig-name descname"><span class="pre">--ldflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ldflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-ldflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra linking flags. Default: SIDE_MODULE_LDFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-target-install-dir">
+<span class="sig-name descname"><span class="pre">--target-install-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;target_install_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-target-install-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The path to the target Python installation. Default: TARGETINSTALLDIR</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-host-install-dir">
+<span class="sig-name descname"><span class="pre">--host-install-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;host_install_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-host-install-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory for installing built host packages. Default: HOSTINSTALLDIR</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-log-dir">
+<span class="sig-name descname"><span class="pre">--log-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;log_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-log-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory to place log files</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-force-rebuild">
+<span id="cmdoption-pyodide-build-recipes-no-force-rebuild"></span><span class="sig-name descname"><span class="pre">--force-rebuild</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-force-rebuild</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-force-rebuild" title="連結到這個定義">#</a></dt>
+<dd><p>Force rebuild of all packages regardless of whether they appear to have been updated</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-n-jobs">
+<span class="sig-name descname"><span class="pre">--n-jobs</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;n_jobs&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-n-jobs" title="連結到這個定義">#</a></dt>
+<dd><p>Number of packages to build in parallel (default: # of cores in the system)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-compression-level">
+<span class="sig-name descname"><span class="pre">--compression-level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;compression_level&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-compression-level" title="連結到這個定義">#</a></dt>
+<dd><p>Level of zip compression to apply when installing. 0 means no compression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-clean">
+<span class="sig-name descname"><span class="pre">--clean</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-clean" title="連結到這個定義">#</a></dt>
+<dd><p>Remove the build directory after a successful build of each package.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-skip-emscripten-install">
+<span class="sig-name descname"><span class="pre">--skip-emscripten-install</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-skip-emscripten-install" title="連結到這個定義">#</a></dt>
+<dd><p>Skip automatic installation of Emscripten if not found.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-arg-PACKAGES">
+<span class="sig-name descname"><span class="pre">PACKAGES</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-arg-PACKAGES" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+<p class="rubric">Environment variables</p>
+<dl class="std envvar" id="pyodide-build-recipes-build-dir-pyodide-recipe-build-dir">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_RECIPE_BUILD_DIR</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-build-recipes-build-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--build-dir</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-build-recipes-compression-level-pyodide-zip-compression-level">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_ZIP_COMPRESSION_LEVEL</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-build-recipes-compression-level"><code class="xref std std-option docutils literal notranslate"><span class="pre">--compression-level</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-build-recipes-skip-emscripten-install-pyodide-skip-emscripten-install">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_SKIP_EMSCRIPTEN_INSTALL</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-build-recipes-skip-emscripten-install"><code class="xref std std-option docutils literal notranslate"><span class="pre">--skip-emscripten-install</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="pyodide-build-recipes-no-deps">
+<h3>build-recipes-no-deps<a class="headerlink" href="#pyodide-build-recipes-no-deps" title="連結到這個標頭">#</a></h3>
+<p>Build packages using yaml recipes but don't try to resolve dependencies.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">PACKAGES: Packages to build, or <code class="docutils literal notranslate"><span class="pre">*</span></code> for all packages in recipe directory.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>build-recipes-no-deps<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>PACKAGES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-recipe-dir">
+<span class="sig-name descname"><span class="pre">--recipe-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;recipe_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-recipe-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory containing the recipe of packages. If not specified, the default is <code class="docutils literal notranslate"><span class="pre">./packages</span></code></p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-build-dir">
+<span class="sig-name descname"><span class="pre">--build-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;build_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-build-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The directory where build directories for packages are created. Default: recipe_dir.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-cflags">
+<span class="sig-name descname"><span class="pre">--cflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-cflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra compiling flags. Default: SIDE_MODULE_CFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-cxxflags">
+<span class="sig-name descname"><span class="pre">--cxxflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cxxflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-cxxflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra compiling flags. Default: SIDE_MODULE_CXXFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-ldflags">
+<span class="sig-name descname"><span class="pre">--ldflags</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ldflags&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-ldflags" title="連結到這個定義">#</a></dt>
+<dd><p>Extra linking flags. Default: SIDE_MODULE_LDFLAGS</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-target-install-dir">
+<span class="sig-name descname"><span class="pre">--target-install-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;target_install_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-target-install-dir" title="連結到這個定義">#</a></dt>
+<dd><p>The path to the target Python installation. Default: TARGETINSTALLDIR</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-host-install-dir">
+<span class="sig-name descname"><span class="pre">--host-install-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;host_install_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-host-install-dir" title="連結到這個定義">#</a></dt>
+<dd><p>Directory for installing built host packages. Default: HOSTINSTALLDIR</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-force-rebuild">
+<span id="cmdoption-pyodide-build-recipes-no-deps-no-force-rebuild"></span><span class="sig-name descname"><span class="pre">--force-rebuild</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-force-rebuild</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-force-rebuild" title="連結到這個定義">#</a></dt>
+<dd><p>Force rebuild of all packages regardless of whether they appear to have been updated</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-continue">
+<span class="sig-name descname"><span class="pre">--continue</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-continue" title="連結到這個定義">#</a></dt>
+<dd><p>Continue a build from the middle. For debugging. Implies '--force-rebuild'</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-skip-rust-setup">
+<span class="sig-name descname"><span class="pre">--skip-rust-setup</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-skip-rust-setup" title="連結到這個定義">#</a></dt>
+<dd><p>Don't setup rust environment when building a rust package</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-clean">
+<span class="sig-name descname"><span class="pre">--clean</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-clean" title="連結到這個定義">#</a></dt>
+<dd><p>Remove the build directory after a successful build of each package.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-skip-emscripten-install">
+<span class="sig-name descname"><span class="pre">--skip-emscripten-install</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-skip-emscripten-install" title="連結到這個定義">#</a></dt>
+<dd><p>Skip automatic installation of Emscripten if not found.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-build-recipes-no-deps-arg-PACKAGES">
+<span class="sig-name descname"><span class="pre">PACKAGES</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-build-recipes-no-deps-arg-PACKAGES" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+<p class="rubric">Environment variables</p>
+<dl class="std envvar" id="pyodide-build-recipes-no-deps-build-dir-pyodide-recipe-build-dir">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_RECIPE_BUILD_DIR</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-build-recipes-no-deps-build-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--build-dir</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-build-recipes-no-deps-skip-emscripten-install-pyodide-skip-emscripten-install">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_SKIP_EMSCRIPTEN_INSTALL</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-build-recipes-no-deps-skip-emscripten-install"><code class="xref std std-option docutils literal notranslate"><span class="pre">--skip-emscripten-install</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="pyodide-main">
+<h3>main<a class="headerlink" href="#pyodide-main" title="連結到這個標頭">#</a></h3>
+<p>Use pypa/build to build a Python package from source, pypi or url.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">SOURCE_LOCATION: Build source, can be source folder, pypi version specification,</div>
+<div class="line-block">
+<div class="line">or url to a source dist archive or wheel file. If this is blank, it</div>
+<div class="line">will build the current directory.</div>
+</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>main<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>SOURCE_LOCATION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-o">
+<span id="cmdoption-pyodide-main-outdir"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--outdir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_directory&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-o" title="連結到這個定義">#</a></dt>
+<dd><p>which directory should the output be placed into?</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-r">
+<span id="cmdoption-pyodide-main-requirements"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--requirements</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;requirements_txt&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-r" title="連結到這個定義">#</a></dt>
+<dd><p>Build a list of package requirements from a requirements.txt file</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-exports">
+<span class="sig-name descname"><span class="pre">--exports</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;exports&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-exports" title="連結到這個定義">#</a></dt>
+<dd><p>Which symbols should be exported when linking .so files?</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-build-dependencies">
+<span id="cmdoption-pyodide-main-no-build-dependencies"></span><span class="sig-name descname"><span class="pre">--build-dependencies</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-build-dependencies</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-build-dependencies" title="連結到這個定義">#</a></dt>
+<dd><p>Fetch dependencies from pypi and build them too.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-output-lockfile">
+<span class="sig-name descname"><span class="pre">--output-lockfile</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_lockfile&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-output-lockfile" title="連結到這個定義">#</a></dt>
+<dd><p>Output list of resolved dependencies to a file in requirements.txt format</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-skip-dependency">
+<span class="sig-name descname"><span class="pre">--skip-dependency</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;skip_dependency&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-skip-dependency" title="連結到這個定義">#</a></dt>
+<dd><p>Skip building or resolving a single dependency, or a pyodide-lock.json file. Use multiple times or provide a comma separated list to skip multiple dependencies.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-skip-built-in-packages">
+<span id="cmdoption-pyodide-main-no-skip-built-in-packages"></span><span class="sig-name descname"><span class="pre">--skip-built-in-packages</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-skip-built-in-packages</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-skip-built-in-packages" title="連結到這個定義">#</a></dt>
+<dd><p>Don't build dependencies that are built into the pyodide distribution.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-compression-level">
+<span class="sig-name descname"><span class="pre">--compression-level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;compression_level&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-compression-level" title="連結到這個定義">#</a></dt>
+<dd><p>Compression level to use for the created zip file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-n">
+<span id="cmdoption-pyodide-main-no-isolation"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-isolation</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-n" title="連結到這個定義">#</a></dt>
+<dd><p>Disable building the project in an isolated virtual environment. Build dependencies must be installed separately when this option is used</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-x">
+<span id="cmdoption-pyodide-main-skip-dependency-check"></span><span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--skip-dependency-check</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-x" title="連結到這個定義">#</a></dt>
+<dd><p>Do not check that the build dependencies are installed. This option is only useful when used with --no-isolation.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-C">
+<span id="cmdoption-pyodide-main-config-setting"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--config-setting</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;KEY[=VALUE&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-C" title="連結到這個定義">#</a></dt>
+<dd><p>Settings to pass to the backend. Works same as the --config-setting option of pypa/build.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-xbuildenv-path">
+<span class="sig-name descname"><span class="pre">--xbuildenv-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;xbuildenv_path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-xbuildenv-path" title="連結到這個定義">#</a></dt>
+<dd><p>Path to the cross-build environment directory.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-skip-emscripten-install">
+<span class="sig-name descname"><span class="pre">--skip-emscripten-install</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-skip-emscripten-install" title="連結到這個定義">#</a></dt>
+<dd><p>Skip automatic installation of Emscripten if not found.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-arg-SOURCE_LOCATION">
+<span class="sig-name descname"><span class="pre">SOURCE_LOCATION</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-arg-SOURCE_LOCATION" title="連結到這個定義">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+<p class="rubric">Environment variables</p>
+<dl class="std envvar" id="pyodide-main-exports-pyodide-build-exports">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_BUILD_EXPORTS</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-main-exports"><code class="xref std std-option docutils literal notranslate"><span class="pre">--exports</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-main-xbuildenv-path-pyodide-xbuildenv-path">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_XBUILDENV_PATH</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-main-xbuildenv-path"><code class="xref std std-option docutils literal notranslate"><span class="pre">--xbuildenv-path</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std envvar" id="pyodide-main-skip-emscripten-install-pyodide-skip-emscripten-install">
+<dt class="sig sig-object std">
+<span class="sig-name descname"><span class="pre">PYODIDE_SKIP_EMSCRIPTEN_INSTALL</span></span></dt>
+<dd><blockquote>
+<div><p>Provide a default for <a class="reference internal" href="#cmdoption-pyodide-main-skip-emscripten-install"><code class="xref std std-option docutils literal notranslate"><span class="pre">--skip-emscripten-install</span></code></a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="pyodide-main">
+<h3>main<a class="headerlink" href="#pyodide-main" title="連結到這個標頭">#</a></h3>
+<p>Compile .py files to .pyc in a wheel, a zip file, or a folder with wheels or zip files.</p>
+<p>If the provided folder contains the <cite>pyodide-lock.json</cite> file, it will be
+rewritten with the updated wheel / zip file paths and sha256 checksums.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">PATH: Path to the input wheel or a folder with wheels or zip files.</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>main<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>PATH
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-silent">
+<span id="cmdoption-pyodide-main-no-silent"></span><span class="sig-name descname"><span class="pre">--silent</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-silent</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-silent" title="連結到這個定義">#</a></dt>
+<dd><p>Silent mode, do not print anything.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-keep">
+<span id="cmdoption-pyodide-main-no-keep"></span><span class="sig-name descname"><span class="pre">--keep</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-keep</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-keep" title="連結到這個定義">#</a></dt>
+<dd><p>Keep the original wheel / zip file.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-0">
+<span class="sig-name descname"><span class="pre">--compression-level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;compression_level&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-0" title="連結到這個定義">#</a></dt>
+<dd><p>Compression level to use for the created zip file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-exclude">
+<span class="sig-name descname"><span class="pre">--exclude</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;exclude&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-exclude" title="連結到這個定義">#</a></dt>
+<dd><p>List of files to exclude from compilation, works only for directories. Defaults to no files.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-arg-PATH">
+<span class="sig-name descname"><span class="pre">PATH</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-arg-PATH" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-main">
+<h3>main<a class="headerlink" href="#pyodide-main" title="連結到這個標頭">#</a></h3>
+<p>Create a Pyodide virtual environment.</p>
+<p>Additionally, this interface supports a subset of the arguments that
+<cite>virtualenv</cite> supports, with some minor differences for Pyodide compatibility.
+Please note that passing extra options is experimental and may be subject to change.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">DEST: directory to create virtualenv at</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>main<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>DEST
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-clear">
+<span id="cmdoption-pyodide-main-no-clear"></span><span class="sig-name descname"><span class="pre">--clear</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-clear</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-clear" title="連結到這個定義">#</a></dt>
+<dd><p>Remove the destination directory if it exists.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-no-vcs-ignore">
+<span class="sig-name descname"><span class="pre">--no-vcs-ignore</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-no-vcs-ignore" title="連結到這個定義">#</a></dt>
+<dd><p>Don't create VCS ignore directive in the destination directory.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-no-download">
+<span id="cmdoption-pyodide-main-never-download"></span><span class="sig-name descname"><span class="pre">--no-download</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--never-download</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-no-download" title="連結到這個定義">#</a></dt>
+<dd><p>Disable download of the latest pip/setuptools from PyPI.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-download">
+<span id="cmdoption-pyodide-main-1"></span><span class="sig-name descname"><span class="pre">--download</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-download</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-download" title="連結到這個定義">#</a></dt>
+<dd><p>Enable download of the latest pip/setuptools from PyPI.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-extra-search-dir">
+<span class="sig-name descname"><span class="pre">--extra-search-dir</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;extra_search_dir&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-extra-search-dir" title="連結到這個定義">#</a></dt>
+<dd><p>A path containing wheels to extend the internal wheel list.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-pip">
+<span class="sig-name descname"><span class="pre">--pip</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pip&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-pip" title="連結到這個定義">#</a></dt>
+<dd><p>Version of pip to install as seed: embed, bundle, or exact version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'bundle'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-setuptools">
+<span class="sig-name descname"><span class="pre">--setuptools</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;setuptools&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-setuptools" title="連結到這個定義">#</a></dt>
+<dd><p>Version of setuptools to install as seed: embed, bundle, none or exact version.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-no-setuptools">
+<span class="sig-name descname"><span class="pre">--no-setuptools</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-no-setuptools" title="連結到這個定義">#</a></dt>
+<dd><p>Do not install setuptools.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-no-periodic-update">
+<span class="sig-name descname"><span class="pre">--no-periodic-update</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-no-periodic-update" title="連結到這個定義">#</a></dt>
+<dd><p>Disable the periodic update of the embedded wheels.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-arg-DEST">
+<span class="sig-name descname"><span class="pre">DEST</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-arg-DEST" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="pyodide-main">
+<h3>main<a class="headerlink" href="#pyodide-main" title="連結到這個標頭">#</a></h3>
+<p>Manipulate pyodide-lock.json lockfiles.</p>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>main<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="pyodide-main-add-wheels">
+<h4>add-wheels<a class="headerlink" href="#pyodide-main-add-wheels" title="連結到這個標頭">#</a></h4>
+<p>Add a set of package wheels to an existing pyodide-lock.json and
+write it out to pyodide-lock-new.json</p>
+<p>Each package in the wheel will be added to the output lockfile,
+including resolution of dependencies in the lock file. By default
+this will fail if a dependency isn't available in either the
+existing lock file, or in the set of new wheels.</p>
+<div class="line-block">
+<div class="line">Arguments:</div>
+<div class="line-block">
+<div class="line">WHEELS: List of paths to wheel files. (required)</div>
+</div>
+</div>
+<p class="rubric">Usage</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pyodide<span class="w"> </span>main<span class="w"> </span>add-wheels<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>WHEELS...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-ignore-missing-dependencies">
+<span class="sig-name descname"><span class="pre">--ignore-missing-dependencies</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-ignore-missing-dependencies" title="連結到這個定義">#</a></dt>
+<dd><p>If this is true, dependencies which are not in the original lockfile or the added wheels will be added to the lockfile. Warning: This will allow a broken lockfile to be created.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-input">
+<span class="sig-name descname"><span class="pre">--input</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;input&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-input" title="連結到這個定義">#</a></dt>
+<dd><p>Source lockfile</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-output">
+<span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-output" title="連結到這個定義">#</a></dt>
+<dd><p>Updated lockfile</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-base-path">
+<span class="sig-name descname"><span class="pre">--base-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;base_path&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-base-path" title="連結到這個定義">#</a></dt>
+<dd><p>Base path for wheels - wheel file names will be created relative to this path.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-wheel-url">
+<span class="sig-name descname"><span class="pre">--wheel-url</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;wheel_url&gt;</span></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-wheel-url" title="連結到這個定義">#</a></dt>
+<dd><p>Base url which will be appended to the wheel location. Use this if you are hosting these wheels on a different server to core pyodide packages</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyodide-main-add-wheels-arg-WHEELS">
+<span class="sig-name descname"><span class="pre">WHEELS</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyodide-main-add-wheels-arg-WHEELS" title="連結到這個定義">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-api/webloop.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">pyodide.webloop</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../faq.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">常見問題</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide">pyodide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-recipes">recipes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-get">get</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-list">list</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-disable">disable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-enable">enable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-pin">pin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-pypi">pypi</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-install">install</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-install-emscripten">install-emscripten</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-search">search</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-uninstall">uninstall</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-use">use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-version">version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-versions">versions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app">app</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-copy">copy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-exports">exports</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-imports">imports</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-repair">repair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-app-show">show</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-build-recipes">build-recipes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-build-recipes-no-deps">build-recipes-no-deps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main">main</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyodide-main-add-wheels">add-wheels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

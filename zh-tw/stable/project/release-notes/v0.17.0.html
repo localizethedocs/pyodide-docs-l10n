@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Version 0.17.0 Release Notes &#8212; Version 314.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=d9936058"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/release-notes/v0.17.0';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/project/release-notes/v0.17.0.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  <meta name="docsearch:version" content="314.0.2" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.0.2 - Home"/>
+    <img src="../../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.0.2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜尋</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/downloading-and-deploying.html">下載與部署 Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/wasm-constraints.html">Pyodide Python 相容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/keyboard-interrupts.html">中斷執行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/streams.html">重新導向標準串流</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/api-reference.html">API 參考</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/faq.html">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">社群範例</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">開發</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../development/building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testing.html">測試與基準測試</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development/contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development/core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/maintainers.html">維護者資訊</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development/abi.html">PyEmscripten 平臺</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">什麼是 Pyodide？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-of-conduct.html">行為守則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance.html">治理與決策</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../changelog.html">變更日誌</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/release-notes/v0.17.0.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Version 0.17.0 Release Notes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-features">New Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asyncio-support">Asyncio Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-builtin-modules-implemented-in-javascript">Python "builtin" Modules implemented in JavaScript</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-conversion-apis">New Conversion APIs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-changes">API Changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-type-translations">Changes to type translations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-buffer-translations">Changes to buffer translations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-bug-fixes">Maintenance and Bug fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upstream-emscripten">Upstream Emscripten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-c-code-maintenance">Core C Code maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatal-error-detection">Fatal error detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-error-leaks-and-memory-leaks">Fixed error leaks and memory leaks</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="version-0-17-0-release-notes">
+<span id="release-notes"></span><h1>Version 0.17.0 Release Notes<a class="headerlink" href="#version-0-17-0-release-notes" title="連結到這個標頭">#</a></h1>
+<p>Pyodide 0.17.0 is a major step forward from previous versions. It includes major
+maintenance improvements, a thorough redesign of the central APIs, and careful
+elimination of error leaks and memory leaks.</p>
+<p>There have been a large number of backwards incompatible changes due to these
+design improvements. Our hope is that we have fixed a significant portion of the
+issues and that future releases will have fewer breaking changes.</p>
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="連結到這個標頭">#</a></h2>
+<section id="asyncio-support">
+<h3>Asyncio Support<a class="headerlink" href="#asyncio-support" title="連結到這個標頭">#</a></h3>
+<p>We added full support for asyncio, including a new Python event loop that
+schedules tasks on the browser event loop, support for top level await in
+<a class="reference internal" href="../../usage/api/js-api.html#pyodide.runPythonAsync" title="pyodide.runPythonAsync"><code class="xref any js js-func docutils literal notranslate"><span class="pre">pyodide.runPythonAsync</span></code></a>, and implementations of <code class="docutils literal notranslate"><span class="pre">await</span></code> for <a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.JsProxy" title="pyodide.ffi.JsProxy"><code class="xref any py py-class docutils literal notranslate"><span class="pre">JsProxy</span></code></a>
+and <code class="docutils literal notranslate"><span class="pre">PyProxy</span></code>, so that it is possible to await a Python awaitable from
+JavaScript and a JavaScript thenable from Python. This allows seamless
+interoperability:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">():</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch</span>
+        <span class="c1"># Fetch the Pyodide packages list</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="k">await</span> <span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;packages.json&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="c1"># return all available packages</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">dependencies</span><span class="o">.</span><span class="n">object_keys</span><span class="p">()</span>
+<span class="s">`</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
+<span class="c1">// test returns a coroutine, we can await the coroutine</span>
+<span class="c1">// from JavaScript and it will schedule it on the Python event loop</span>
+<span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">test</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;asciitree&quot;, &quot;parso&quot;, &quot;scikit-learn&quot;, ...]</span>
+</pre></div>
+</div>
+<p>(Added in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/880">#880</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1158">#1158</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1170">#1170</a>)</p>
+</section>
+<section id="error-handling">
+<h3>Error Handling<a class="headerlink" href="#error-handling" title="連結到這個標頭">#</a></h3>
+<p>Errors can now be thrown in Python and caught in JavaScript or thrown in
+JavaScript and caught in Python.</p>
+<p>Support for this is integrated at the lowest level, so calls between JavaScript
+and C functions behave as expected. The error conversion code is generated by C
+macros which makes implementing and debugging new logic dramatically simpler.</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">jserror</span><span class="p">(){</span>
+<span class="w">   </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;ooops!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+   <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">jserror</span>
+   <span class="kn">from</span><span class="w"> </span><span class="nn">pyodide</span><span class="w"> </span><span class="kn">import</span> <span class="n">JsException</span>
+   <span class="k">try</span><span class="p">:</span>
+       <span class="n">jserror</span><span class="p">()</span>
+   <span class="k">except</span> <span class="n">JsException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># prints &quot;TypeError: ooops!&quot;</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>(Added in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1051">#1051</a> and <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1080">#1080</a>)</p>
+</section>
+<section id="python-builtin-modules-implemented-in-javascript">
+<h3>Python &quot;builtin&quot; Modules implemented in JavaScript<a class="headerlink" href="#python-builtin-modules-implemented-in-javascript" title="連結到這個標頭">#</a></h3>
+<p>It is now simple to add a Python module implemented in JavaScript using
+<a class="reference internal" href="../../usage/api/js-api.html#pyodide.registerJsModule" title="pyodide.registerJsModule"><code class="xref any js js-func docutils literal notranslate"><span class="pre">pyodide.registerJsModule</span></code></a>:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">my_module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">bar</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">y</span><span class="o">*</span><span class="nx">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">z</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">pyodide</span><span class="p">.</span><span class="nx">registerJsModule</span><span class="p">(</span><span class="s2">&quot;my_mod&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">my_module</span><span class="p">);</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">my_mod</span><span class="w"> </span><span class="kn">import</span> <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span>
+    <span class="n">foo</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># 50</span>
+    <span class="n">bar</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 59</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>(Added in PR <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1146">#1146</a>)</p>
+</section>
+<section id="new-conversion-apis">
+<h3>New Conversion APIs<a class="headerlink" href="#new-conversion-apis" title="連結到這個標頭">#</a></h3>
+<p>We added several new conversion APIs to give more explicit control over the
+foreign function interface. In particular, the goal was to make it easier for
+users to avoid leaking memory.</p>
+<p>For the basic use cases, we have <code class="docutils literal notranslate"><span class="pre">PyProxy.toJs</span></code> and <code class="docutils literal notranslate"><span class="pre">JsProxy.to_py</span></code>
+which respectively convert Python objects to JavaScript objects and JavaScript
+objects to Python objects. We also added also &quot;wrong-way&quot; conversion functions
+<a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.to_js" title="pyodide.ffi.to_js"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pyodide.to_js</span></code></a> and <a class="reference internal" href="../../usage/api/js-api.html#pyodide.toPy" title="pyodide.toPy"><code class="xref any js js-func docutils literal notranslate"><span class="pre">pyodide.toPy</span></code></a> which are particularly helpful for
+when returning values across languages or to give extra control over the
+behavior of called functions.</p>
+<p>The promise handler methods <code class="docutils literal notranslate"><span class="pre">JsProxy.then</span></code>, <code class="docutils literal notranslate"><span class="pre">JsProxy.catch</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">JsProxy.finally_</span></code> were particularly hard to use without leaking memory so
+they have been updated with internal magic to automatically manage the memory.</p>
+<p>For more advanced use cases where control over the life cycle of a <code class="docutils literal notranslate"><span class="pre">PyProxy</span></code> is
+needed, there are <a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.create_proxy" title="pyodide.ffi.create_proxy"><code class="xref any py py-func docutils literal notranslate"><span class="pre">create_proxy</span></code></a> and <a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.create_once_callable" title="pyodide.ffi.create_once_callable"><code class="xref any py py-func docutils literal notranslate"><span class="pre">create_once_callable</span></code></a>.</p>
+<p>(Added in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1186">#1186</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1244">#1244</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1344">#1344</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1436">#1436</a>)</p>
+</section>
+</section>
+<section id="api-changes">
+<h2>API Changes<a class="headerlink" href="#api-changes" title="連結到這個標頭">#</a></h2>
+<p>We removed <code class="docutils literal notranslate"><span class="pre">as_nested_list</span></code> and deprecated <code class="docutils literal notranslate"><span class="pre">pyimport</span></code>. The old loading method
+using <code class="docutils literal notranslate"><span class="pre">languagePluginURL</span></code> and <code class="docutils literal notranslate"><span class="pre">languagePluginLoader</span></code> is also deprecated, use
+instead :js:func:<code class="docutils literal notranslate"><span class="pre">~exports.loadPyodide</span></code>. Access to Python globals via
+<a class="reference internal" href="../../usage/api/js-api.html#pyodide.globals" title="pyodide.globals"><code class="xref any js js-attr docutils literal notranslate"><span class="pre">pyodide.globals</span></code></a> has also changed: <code class="docutils literal notranslate"><span class="pre">pyodide.globals.x</span></code> ==&gt;
+<code class="docutils literal notranslate"><span class="pre">pyodide.globals.get(&quot;x&quot;)</span></code> (<code class="docutils literal notranslate"><span class="pre">pyodide.globals.x</span></code> is still supported but is
+deprecated).</p>
+<section id="changes-to-type-translations">
+<h3>Changes to type translations<a class="headerlink" href="#changes-to-type-translations" title="連結到這個標頭">#</a></h3>
+<p>In the past we found that one of the major pain points in using Pyodide occurred
+when an object makes a round trip from Python to JavaScript and back to Python
+and comes back different. This violates the expectations of the user and forces
+inelegant workarounds (see <a class="reference external" href="https://github.com/pyodide/pyodide/issues/780">#780</a> and <a class="reference external" href="https://github.com/pyodide/pyodide/issues/892">#892</a> among others).</p>
+<p>The type conversion module has significantly reworked in v0.17 with the goal
+that round trip conversions of objects between Python and JavaScript produces an
+identical object. That is, Python -&gt; JS -&gt; Python conversion produces an object
+that's now equal to the original object, and JS -&gt; Python -&gt; JS conversion
+verifies the <code class="docutils literal notranslate"><span class="pre">===</span></code> equality operation.</p>
+<p>We also made extensive additions to the type conversions test suite and
+documentation, though gaps remain.</p>
+<p>See issue <a class="reference external" href="https://github.com/pyodide/pyodide/issues/900">#900</a> for some of the discussion.</p>
+<p>(Mostly implemented in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1152">#1152</a> and <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1167">#1167</a>, see also <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1186">#1186</a> which )</p>
+</section>
+<section id="changes-to-buffer-translations">
+<h3>Changes to buffer translations<a class="headerlink" href="#changes-to-buffer-translations" title="連結到這個標頭">#</a></h3>
+<p>The buffer translation code in previous versions was less flexible, leaked memory,
+and had serious bugs including use after free (<a class="reference external" href="https://github.com/pyodide/pyodide/issues/749">#749</a>) and buffer overflow errors.</p>
+<p>We completely reworked these: buffers are now proxied like most other objects.
+In simple use cases they can be converted with a copy using <code class="docutils literal notranslate"><span class="pre">PyProxy.toJs</span></code>
+and <code class="docutils literal notranslate"><span class="pre">JsProxy.to_py</span></code>. We added new APIs <code class="docutils literal notranslate"><span class="pre">PyProxy.getBuffer</span></code>,
+<code class="docutils literal notranslate"><span class="pre">JsProxy.assign</span></code>, and <code class="docutils literal notranslate"><span class="pre">JsProxy.assign_to</span></code> which give more fine-grained
+control, though they are not yet as ergonomic as they could be.</p>
+<p>(Implemented in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1215">#1215</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1376">#1376</a>, and <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1411">#1411</a>)</p>
+</section>
+</section>
+<section id="maintenance-and-bug-fixes">
+<h2>Maintenance and Bug fixes<a class="headerlink" href="#maintenance-and-bug-fixes" title="連結到這個標頭">#</a></h2>
+<p>Pyodide version 0.17.0 comes with an enormous amount of maintenance work. There
+is still a lot of work to do be done before Pyodide will be ready for a version
+1.0, but we made very significant headway. Significant improvements were made to
+every component of Pyodide, including the build system, the test suite and
+continuous integration, and the core Pyodide code.</p>
+<section id="upstream-emscripten">
+<h3>Upstream Emscripten<a class="headerlink" href="#upstream-emscripten" title="連結到這個標頭">#</a></h3>
+<p>We finally completed the migration to the latest version of Emscripten
+(https://emscripten.org/) compiler toolchain which uses the upstream LLVM
+backend. This allows us to take advantage of recent improvements to the
+toolchain reducing package size and execution time.</p>
+<p>For instance, the scipy package shrank dramatically from 92 MB to 15 MB. Scipy
+is now automatically cached in browsers, greatly improving the usability of
+scientific Python packages that depend on scipy, such as scikit-image and
+scikit-learn. The size of the base Pyodide environment with only the CPython
+standard library shrank from 8.1 MB to 6.4 MB.</p>
+<p>On the performance side, the latest toolchain comes with a 25% to 30% run time
+improvement for pure Python code.</p>
+<p>Because we are now using a very recent Emscripten version, we were able to
+upstream many of our patches to the compiler toolchain.</p>
+<p>(Implemented in PRs <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1102">#1102</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1184">#1184</a> and <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1193">#1193</a>.)</p>
+</section>
+<section id="core-c-code-maintenance">
+<h3>Core C Code maintenance<a class="headerlink" href="#core-c-code-maintenance" title="連結到這個標頭">#</a></h3>
+<p>The core C code base was improved with new macros that streamline the most
+common tasks and help with consistency, and in addition to the extensive
+additions to the test suite we performed a manual audit of the entire C codebase
+to locate leaks and logic errors.</p>
+<p>We fixed many of the long standing bugs caused by inconsistencies in the
+behavior of <a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.JsProxy" title="pyodide.ffi.JsProxy"><code class="xref any py py-class docutils literal notranslate"><span class="pre">JsProxy</span></code></a>. There used to be two different code paths for
+producing a <a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.JsProxy" title="pyodide.ffi.JsProxy"><code class="xref any py py-class docutils literal notranslate"><span class="pre">JsProxy</span></code></a> and two different code paths for calling a
+<a class="reference internal" href="../../usage/api/python-api/ffi.html#pyodide.ffi.JsProxy" title="pyodide.ffi.JsProxy"><code class="xref any py py-class docutils literal notranslate"><span class="pre">JsProxy</span></code></a> leading to four different behaviors, all of which were presented
+errors in some cases. This fixed numerous bugs, including issues <a class="reference external" href="https://github.com/pyodide/pyodide/issues/461">#461</a>,
+<a class="reference external" href="https://github.com/pyodide/pyodide/issues/768">#768</a>, <a class="reference external" href="https://github.com/pyodide/pyodide/issues/788">#788</a>, and <a class="reference external" href="https://github.com/pyodide/pyodide/issues/1123">#1123</a>. The number of surprises you can
+expect when using the foreign function interface has gone way down.</p>
+<p>Similarly, we consolidated the entrypoints and removed redundant APIs. Now every
+public entrypoint into C code has been consolidated into the file <code class="docutils literal notranslate"><span class="pre">pyproxy.js</span></code>.
+The number of places where C calls into JavaScript is much more diverse, but
+these call sites have all been wrapped in a special macro that automatically
+converts JavaScript functions to use the CPython calling convention. They can
+even be passed as function pointers to C functions from the Python standard
+library!</p>
+</section>
+<section id="fatal-error-detection">
+<h3>Fatal error detection<a class="headerlink" href="#fatal-error-detection" title="連結到這個標頭">#</a></h3>
+<p>Because we have wrappers on all the entrypoints to C code and all of the
+exitpoints, we can detect fatal errors: during normal execution we have careful
+control over how the stack unwinds and if an exception comes out of an
+unexpected place, we report a fatal error. This leads to faster, better bug
+reports and less confusion (using Pyodide after a fatal error occurs can lead to
+very strange behavior).</p>
+<p>(Implemented in <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1151">#1151</a>, tuned up in <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1390">#1390</a> and <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1478">#1478</a>.)</p>
+</section>
+<section id="fixed-error-leaks-and-memory-leaks">
+<h3>Fixed error leaks and memory leaks<a class="headerlink" href="#fixed-error-leaks-and-memory-leaks" title="連結到這個標頭">#</a></h3>
+<p>Errors in C code must be manually returned to the calling code, and memory must
+be manually released. We refactored all of the existing C code to apply a
+consistent approach to memory management and error handling, based on the try /
+finally idiom. As much as possible, references are only freed in the finally
+block at the end of the function to make it easier to check correctness.</p>
+<p>This allowed us to fix a large number of error leaks and memory leaks. We now
+have pretty complete test coverage for memory leaks. The error coverage is less
+complete, though we added fault injection tests for every entrypoint.</p>
+<p>(See for instance <a class="reference external" href="https://github.com/pyodide/pyodide/pull/1340">#1340</a>)</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-features">New Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asyncio-support">Asyncio Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-builtin-modules-implemented-in-javascript">Python "builtin" Modules implemented in JavaScript</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-conversion-apis">New Conversion APIs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-changes">API Changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-type-translations">Changes to type translations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-buffer-translations">Changes to buffer translations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-bug-fixes">Maintenance and Bug fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upstream-emscripten">Upstream Emscripten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-c-code-maintenance">Core C Code maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatal-error-detection">Fatal error detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-error-leaks-and-memory-leaks">Fixed error leaks and memory leaks</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

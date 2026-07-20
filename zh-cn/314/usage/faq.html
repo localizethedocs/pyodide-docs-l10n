@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Frequently Asked Questions &#8212; Version 314.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=3057e5bd"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/faq';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/usage/faq.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Community Examples" href="examples.html" />
+    <link rel="prev" title="pyodide CLI" href="api/pyodide-cli.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="314.0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.0.2 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.0.2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/debugging.html">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/core.html">Contributing to the "core" C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/usage/faq.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Frequently Asked Questions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-load-external-files-in-pyodide">How can I load external files in Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-i-load-files-from-the-local-file-system">Why can't I load files from the local file system?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-execute-code-in-a-custom-namespace">How can I execute code in a custom namespace?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-detect-that-code-is-run-with-pyodide">How to detect that code is run with Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-create-custom-python-packages-from-javascript">How do I create custom Python packages from JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-send-a-python-object-from-my-server-to-pyodide">How can I send a Python object from my server to Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-use-a-python-function-as-an-event-handler">How can I use a Python function as an event handler?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-use-fetch-with-optional-arguments-from-python">How can I use fetch with optional arguments from Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-control-the-behavior-of-stdin-stdout-stderr">How can I control the behavior of stdin / stdout / stderr?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-micropip-find-a-pure-python-wheel-for-a-package">Why can't Micropip find a "pure Python wheel" for a package?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-change-the-behavior-of-runpython-and-runpythonasync">How can I change the behavior of <code class="xref js js-func docutils literal notranslate"><span class="pre">runPython()</span></code> and <code class="xref js js-func docutils literal notranslate"><span class="pre">runPythonAsync()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-i-import-a-file-i-just-wrote-to-the-file-system">Why can't I import a file I just wrote to the file system?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-changes-made-to-indexeddb-don-t-persist">Why changes made to IndexedDB don't persist?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-access-javascript-objects-attributes-in-python-if-their-names-are-python-keywords">How can I access JavaScript objects/attributes in Python if their names are Python keywords?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-use-threading-multiprocessing-subprocess">Can I use threading/multiprocessing/subprocess?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading">#</a></h1>
+<section id="how-can-i-load-external-files-in-pyodide">
+<span id="load-external-files-in-pyodide"></span><h2>How can I load external files in Pyodide?<a class="headerlink" href="#how-can-i-load-external-files-in-pyodide" title="Link to this heading">#</a></h2>
+<p>See <a class="reference internal" href="accessing-files.html#accessing-files-quickref"><span class="std std-ref">Accessing Files Quick Reference</span></a>.</p>
+</section>
+<section id="why-can-t-i-load-files-from-the-local-file-system">
+<h2>Why can't I load files from the local file system?<a class="headerlink" href="#why-can-t-i-load-files-from-the-local-file-system" title="Link to this heading">#</a></h2>
+<p>For security reasons JavaScript in the browser is not allowed to load local data files
+(for example, <code class="docutils literal notranslate"><span class="pre">file:///path/to/local/file.data</span></code>).
+You will run into Network Errors, due to the <a class="reference external" href="https://en.wikipedia.org/wiki/Same-origin_policy">Same Origin Policy</a>.
+There is a
+<a class="reference external" href="https://wicg.github.io/file-system-access/">File System API</a> supported in Chrome
+but not in Firefox or Safari. See <a class="reference internal" href="file-system.html#nativefs-api"><span class="std std-ref">(Experimental) Using the native file system in the browser</span></a> for experimental local file system
+support.</p>
+<p>For development purposes, you can serve your files with a
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server">web server</a>.</p>
+</section>
+<section id="how-can-i-execute-code-in-a-custom-namespace">
+<h2>How can I execute code in a custom namespace?<a class="headerlink" href="#how-can-i-execute-code-in-a-custom-namespace" title="Link to this heading">#</a></h2>
+<p>The second argument to <a class="reference internal" href="api/js-api.html#pyodide.runPython" title="pyodide.runPython"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.runPython()</span></code></a> is an options object which may
+include a <code class="docutils literal notranslate"><span class="pre">globals</span></code> element which is a namespace for code to read from and write
+to. The provided namespace must be a Python dictionary.</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">my_namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dict&quot;</span><span class="p">)();</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="s">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">globals</span><span class="o">:</span><span class="w"> </span><span class="nx">my_namespace</span><span class="w"> </span><span class="p">});</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="n">x</span><span class="s">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">globals</span><span class="o">:</span><span class="w"> </span><span class="nx">my_namespace</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">my_namespace</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// ==&gt; 4</span>
+</pre></div>
+</div>
+<p>You can also use this approach to inject variables from JavaScript into the
+Python namespace, for example:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">my_namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">toPy</span><span class="p">({</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span><span class="w"> </span><span class="p">});</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span>
+<span class="w">  </span><span class="sb">`</span>
+<span class="sb">  assert x == y[1]</span>
+<span class="sb">  z = x ** x</span>
+<span class="sb">  `</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">globals</span><span class="o">:</span><span class="w"> </span><span class="nx">my_namespace</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+<span class="nx">my_namespace</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// ==&gt; 4</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-detect-that-code-is-run-with-pyodide">
+<h2>How to detect that code is run with Pyodide?<a class="headerlink" href="#how-to-detect-that-code-is-run-with-pyodide" title="Link to this heading">#</a></h2>
+<p><strong>At run time</strong>, you can check if Python is built with Emscripten (which is the
+case for Pyodide) with,</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;emscripten&#39;</span><span class="p">:</span>
+    <span class="c1"># running in Pyodide or other Emscripten based build</span>
+</pre></div>
+</div>
+<p>To detect that a code is running with Pyodide specifically, you can check
+for the loaded <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> module,</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="k">if</span> <span class="s2">&quot;pyodide&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+   <span class="c1"># running in Pyodide</span>
+</pre></div>
+</div>
+<p>This however will not work at build time (i.e. in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>) due to the way
+the Pyodide build system works. It first compiles packages with the host compiler
+(e.g. gcc) and then re-runs the compilation commands with emsdk. So the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is
+never run inside the Pyodide environment.</p>
+<p>To detect Pyodide, <strong>at build time</strong> use,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">if</span> <span class="s2">&quot;PYODIDE&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="c1"># building for Pyodide</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-create-custom-python-packages-from-javascript">
+<h2>How do I create custom Python packages from JavaScript?<a class="headerlink" href="#how-do-i-create-custom-python-packages-from-javascript" title="Link to this heading">#</a></h2>
+<p>Put a collection of functions into a JavaScript object and use
+<a class="reference internal" href="api/js-api.html#pyodide.registerJsModule" title="pyodide.registerJsModule"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.registerJsModule()</span></code></a>:
+JavaScript:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">my_module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">g</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Calling g on argument </span><span class="si">${</span><span class="nx">x</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">submodule</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">c</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">};</span>
+<span class="nx">pyodide</span><span class="p">.</span><span class="nx">registerJsModule</span><span class="p">(</span><span class="s2">&quot;my_js_module&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">my_module</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can import your package like a normal Python package:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">my_js_module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_js_module.submodule</span><span class="w"> </span><span class="kn">import</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span>
+<span class="k">assert</span> <span class="n">my_js_module</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="mi">50</span>
+<span class="k">assert</span> <span class="n">h</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">==</span> <span class="mi">80</span>
+<span class="k">assert</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-send-a-python-object-from-my-server-to-pyodide">
+<h2>How can I send a Python object from my server to Pyodide?<a class="headerlink" href="#how-can-i-send-a-python-object-from-my-server-to-pyodide" title="Link to this heading">#</a></h2>
+<p>The best way to do this is with pickle. If the version of Python used in the
+server exactly matches the version of Python used in the client, then objects
+that can be successfully pickled can be sent to the client and unpickled in
+Pyodide. If the versions of Python are different then for instance sending AST
+is unlikely to work since there are breaking changes to Python AST in most
+Python minor versions.</p>
+<p>Similarly when pickling Python objects defined in a Python package, the package
+version needs to match exactly between the server and pyodide.</p>
+<p>Generally, pickles are portable between architectures (here amd64 and wasm32).
+The rare cases when they are not portable, for instance currently tree based
+models in scikit-learn, can be considered as a bug in the upstream library.</p>
+<div class="warning admonition">
+<p class="admonition-title">Security Issues with pickle</p>
+<p>Unpickling data is similar to <code class="docutils literal notranslate"><span class="pre">eval</span></code>. On any public-facing server it is a really
+bad idea to unpickle any data sent from the client. For sending data from client
+to server, try some other serialization format like JSON.</p>
+</div>
+</section>
+<section id="how-can-i-use-a-python-function-as-an-event-handler">
+<h2>How can I use a Python function as an event handler?<a class="headerlink" href="#how-can-i-use-a-python-function-as-an-event-handler" title="Link to this heading">#</a></h2>
+<p>Note that the most straight forward way of doing this will not work:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">document</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;(&gt;.&lt;)&quot;</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now every time you click, an error will be raised (see <a class="reference internal" href="type-conversions.html#call-js-from-py"><span class="std std-ref">Calling JavaScript functions from Python</span></a>).</p>
+<p>To do this correctly use <a class="reference internal" href="api/python-api/ffi.html#pyodide.ffi.create_proxy" title="pyodide.ffi.create_proxy"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_proxy()</span></code></a> as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyodide.ffi</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_proxy</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;(&gt;.&lt;)&quot;</span>
+
+<span class="n">proxy_f</span> <span class="o">=</span> <span class="n">create_proxy</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">document</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">proxy_f</span><span class="p">)</span>
+<span class="c1"># Store proxy_f in Python then later:</span>
+<span class="n">document</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">removeEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">proxy_f</span><span class="p">)</span>
+<span class="n">proxy_f</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-use-fetch-with-optional-arguments-from-python">
+<h2>How can I use fetch with optional arguments from Python?<a class="headerlink" href="#how-can-i-use-fetch-with-optional-arguments-from-python" title="Link to this heading">#</a></h2>
+<p>The most obvious translation of the JavaScript code won't work:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">js</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;/someurl&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> <span class="s2">&quot;some&quot;</span> <span class="p">:</span> <span class="s2">&quot;json&quot;</span> <span class="p">}),</span>
+  <span class="s2">&quot;credentials&quot;</span><span class="p">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span> <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/fetch" title="（在 MDN docs）"><code class="xref js js-func docutils literal notranslate"><span class="pre">fetch()</span></code></a> API ignores the options that we attempted to provide. You can do
+this correctly in one of two ways:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyodide.ffi</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_js</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">Object</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">js</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;example.com/some_api&#39;</span><span class="p">,</span>
+  <span class="n">method</span><span class="o">=</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="n">body</span><span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> <span class="s2">&quot;some&quot;</span> <span class="p">:</span> <span class="s2">&quot;json&quot;</span> <span class="p">}),</span>
+  <span class="n">credentials</span><span class="o">=</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span>
+  <span class="n">headers</span><span class="o">=</span> <span class="n">Object</span><span class="o">.</span><span class="n">fromEntries</span><span class="p">(</span><span class="n">to_js</span><span class="p">({</span> <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span> <span class="p">})),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyodide.ffi</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_js</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">Object</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">js</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;example.com/some_api&#39;</span><span class="p">,</span> <span class="n">to_js</span><span class="p">({</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> <span class="s2">&quot;some&quot;</span> <span class="p">:</span> <span class="s2">&quot;json&quot;</span> <span class="p">}),</span>
+  <span class="s2">&quot;credentials&quot;</span><span class="p">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span> <span class="p">}</span>
+<span class="p">},</span> <span class="n">dict_converter</span><span class="o">=</span><span class="n">Object</span><span class="o">.</span><span class="n">fromEntries</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-control-the-behavior-of-stdin-stdout-stderr">
+<h2>How can I control the behavior of stdin / stdout / stderr?<a class="headerlink" href="#how-can-i-control-the-behavior-of-stdin-stdout-stderr" title="Link to this heading">#</a></h2>
+<p>If you wish to override <code class="docutils literal notranslate"><span class="pre">stdin</span></code>, <code class="docutils literal notranslate"><span class="pre">stdout</span></code> or <code class="docutils literal notranslate"><span class="pre">stderr</span></code> for the entire Pyodide
+runtime, you can pass options to <a class="reference internal" href="api/js-api.html#exports.loadPyodide" title="exports.loadPyodide"><code class="xref js js-func docutils literal notranslate"><span class="pre">loadPyodide()</span></code></a>: If
+you say</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">loadPyodide</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">stdin</span><span class="o">:</span><span class="w"> </span><span class="nx">stdin_func</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">stdout</span><span class="o">:</span><span class="w"> </span><span class="nx">stdout_func</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">stderr</span><span class="o">:</span><span class="w"> </span><span class="nx">stderr_func</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>then every time a line is written to <code class="docutils literal notranslate"><span class="pre">stdout</span></code> (resp. <code class="docutils literal notranslate"><span class="pre">stderr</span></code>), <code class="docutils literal notranslate"><span class="pre">stdout_func</span></code>
+(resp <code class="docutils literal notranslate"><span class="pre">stderr_func</span></code>) will be called on the line. Every time <code class="docutils literal notranslate"><span class="pre">stdin</span></code> is read,
+<code class="docutils literal notranslate"><span class="pre">stdin_func</span></code> will be called with zero arguments. It is expected to return a
+string which is interpreted as a line of text.</p>
+<p>You can also use the functions <a class="reference internal" href="api/js-api.html#pyodide.setStdin" title="pyodide.setStdin"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.setStdin()</span></code></a>,
+<a class="reference internal" href="api/js-api.html#pyodide.setStdout" title="pyodide.setStdout"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.setStdout()</span></code></a>, and <a class="reference internal" href="api/js-api.html#pyodide.setStderr" title="pyodide.setStderr"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.setStderr()</span></code></a>.</p>
+<p>Temporary redirection works much the same as it does in native Python: you can
+overwrite <a class="reference external" href="https://docs.python.org/3.14/library/sys.html#sys.stdin" title="（在 Python v3.14）"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdin</span></code></a>, <a class="reference external" href="https://docs.python.org/3.14/library/sys.html#sys.stdout" title="（在 Python v3.14）"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdout</span></code></a>, and <a class="reference external" href="https://docs.python.org/3.14/library/sys.html#sys.stderr" title="（在 Python v3.14）"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>
+respectively. If you want to do it temporarily, it's recommended to use
+<a class="reference external" href="https://docs.python.org/3.14/library/contextlib.html#contextlib.redirect_stdout" title="（在 Python v3.14）"><code class="xref py py-func docutils literal notranslate"><span class="pre">contextlib.redirect_stdout()</span></code></a> and <a class="reference external" href="https://docs.python.org/3.14/library/contextlib.html#contextlib.redirect_stderr" title="（在 Python v3.14）"><code class="xref py py-func docutils literal notranslate"><span class="pre">contextlib.redirect_stderr()</span></code></a>
+There is no <code class="docutils literal notranslate"><span class="pre">contextlib.redirect_stdin()</span></code> but it is easy to make your own as
+follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_RedirectStream</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">redirect_stdin</span><span class="p">(</span><span class="n">_RedirectStream</span><span class="p">):</span>
+    <span class="n">_stream</span> <span class="o">=</span> <span class="s2">&quot;stdin&quot;</span>
+</pre></div>
+</div>
+<p>For example, if you do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
+<span class="k">with</span> <span class="n">redirect_stdin</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span> <span class="s2">&quot;asyncio.ensure_future&quot;</span><span class="p">,</span> <span class="s2">&quot;functools.reduce&quot;</span><span class="p">,</span> <span class="s2">&quot;quit&quot;</span><span class="p">]))):</span>
+  <span class="n">help</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>it will print:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Welcome</span> <span class="n">to</span> <span class="n">Python</span> <span class="mf">3.14</span><span class="s1">&#39;s help utility!</span>
+<span class="o">&lt;...</span><span class="n">OMITTED</span> <span class="n">LINES</span><span class="o">&gt;</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">eval</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+<span class="nb">eval</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span>
+    <span class="n">Evaluate</span> <span class="n">the</span> <span class="n">given</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">context</span> <span class="n">of</span> <span class="nb">globals</span> <span class="ow">and</span> <span class="nb">locals</span><span class="o">.</span>
+<span class="o">&lt;...</span><span class="n">OMITTED</span> <span class="n">LINES</span><span class="o">&gt;</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">ensure_future</span> <span class="ow">in</span> <span class="n">asyncio</span><span class="p">:</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span> <span class="o">=</span> <span class="n">ensure_future</span><span class="p">(</span><span class="n">coro_or_future</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">Wrap</span> <span class="n">a</span> <span class="n">coroutine</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">awaitable</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">future</span><span class="o">.</span>
+<span class="o">&lt;...</span><span class="n">OMITTED</span> <span class="n">LINES</span><span class="o">&gt;</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">reduce</span> <span class="ow">in</span> <span class="n">functools</span><span class="p">:</span>
+<span class="n">functools</span><span class="o">.</span><span class="n">reduce</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">sequence</span><span class="p">[,</span> <span class="n">initial</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">value</span>
+    <span class="n">Apply</span> <span class="n">a</span> <span class="n">function</span> <span class="n">of</span> <span class="n">two</span> <span class="n">arguments</span> <span class="n">cumulatively</span> <span class="n">to</span> <span class="n">the</span> <span class="n">items</span> <span class="n">of</span> <span class="n">a</span> <span class="n">sequence</span><span class="p">,</span>
+<span class="o">&lt;...</span><span class="n">OMITTED</span> <span class="n">LINES</span><span class="o">&gt;</span>
+<span class="n">You</span> <span class="n">are</span> <span class="n">now</span> <span class="n">leaving</span> <span class="n">help</span> <span class="ow">and</span> <span class="n">returning</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">interpreter</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="why-can-t-micropip-find-a-pure-python-wheel-for-a-package">
+<h2>Why can't Micropip find a &quot;pure Python wheel&quot; for a package?<a class="headerlink" href="#why-can-t-micropip-find-a-pure-python-wheel-for-a-package" title="Link to this heading">#</a></h2>
+<p>When installing a Python package from PyPI, micropip will produce an error if
+it cannot find a pure Python wheel. To determine if a package has a pure
+Python wheel manually, you can open its PyPi page (for instance
+https://pypi.org/project/snowballstemmer/) and go to the &quot;Download files&quot; tab.
+If this tab doesn't contain a file <code class="docutils literal notranslate"><span class="pre">*py3-none-any.whl</span></code> then the pure Python
+wheel is missing.</p>
+<p>This can happen for two reasons,</p>
+<ol class="arabic simple">
+<li><p>either the package is pure Python (you can check language composition for a
+package on Github), and its maintainers didn't upload a wheel.
+In this case, you can report this issue to the package issue tracker. As a
+temporary solution, you can also <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives">build the
+wheel</a>
+yourself, upload it to some temporary location and install it with micropip
+from the corresponding URL.</p></li>
+<li><p>or the package has binary extensions (e.g. C, Fortran or Rust), in which
+case it needs to be cross-compiled for Pyodide. Please make a request to
+the package maintainers to add Pyodide support.</p></li>
+</ol>
+</section>
+<section id="how-can-i-change-the-behavior-of-runpython-and-runpythonasync">
+<h2>How can I change the behavior of <a class="reference internal" href="api/js-api.html#pyodide.runPython" title="pyodide.runPython"><code class="xref js js-func docutils literal notranslate"><span class="pre">runPython()</span></code></a> and <a class="reference internal" href="api/js-api.html#pyodide.runPythonAsync" title="pyodide.runPythonAsync"><code class="xref js js-func docutils literal notranslate"><span class="pre">runPythonAsync()</span></code></a>?<a class="headerlink" href="#how-can-i-change-the-behavior-of-runpython-and-runpythonasync" title="Link to this heading">#</a></h2>
+<p>You can directly call Python functions from JavaScript. For most purposes it
+makes sense to make your own Python function as an entrypoint and call that
+instead of redefining <code class="docutils literal notranslate"><span class="pre">runPython</span></code>. The definitions of
+<a class="reference internal" href="api/js-api.html#pyodide.runPython" title="pyodide.runPython"><code class="xref js js-func docutils literal notranslate"><span class="pre">runPython()</span></code></a> and <a class="reference internal" href="api/js-api.html#pyodide.runPythonAsync" title="pyodide.runPythonAsync"><code class="xref js js-func docutils literal notranslate"><span class="pre">runPythonAsync()</span></code></a> are very
+simple:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">runPython</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">pyodide_py</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">eval_code</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">runPythonAsync</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">pyodide_py</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">eval_code_async</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To make your own version of <a class="reference internal" href="api/js-api.html#pyodide.runPython" title="pyodide.runPython"><code class="xref js js-func docutils literal notranslate"><span class="pre">runPython()</span></code></a> you could do:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">my_eval_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+  <span class="kn">from</span><span class="w"> </span><span class="nn">pyodide.code</span><span class="w"> </span><span class="kn">import</span> <span class="n">eval_code</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">my_eval_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">extra_info</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">eval_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">globals</span><span class="p">[</span><span class="s2">&quot;extra_info&quot;</span><span class="p">],</span> <span class="n">result</span>
+  <span class="n">my_eval_code</span>
+<span class="s">`</span><span class="p">)</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">myRunPython</span><span class="p">(</span><span class="nx">code</span><span class="p">){</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">my_eval_code</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">myRunPython(&quot;2+7&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">[None,</span> <span class="pre">9]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">myRunPython(&quot;extra_info='hello'</span> <span class="pre">;</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">2&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">['hello',</span> <span class="pre">4]</span></code>. If you want
+to change which packages <a class="reference internal" href="api/js-api.html#pyodide.loadPackagesFromImports" title="pyodide.loadPackagesFromImports"><code class="xref js js-func docutils literal notranslate"><span class="pre">pyodide.loadPackagesFromImports()</span></code></a> loads, you
+can monkey patch <a class="reference internal" href="api/python-api/code.html#pyodide.code.find_imports" title="pyodide.code.find_imports"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyodide.code.find_imports()</span></code></a> which takes <code class="docutils literal notranslate"><span class="pre">code</span></code> as an
+argument and returns a list of packages imported.</p>
+</section>
+<section id="why-can-t-i-import-a-file-i-just-wrote-to-the-file-system">
+<h2>Why can't I import a file I just wrote to the file system?<a class="headerlink" href="#why-can-t-i-import-a-file-i-just-wrote-to-the-file-system" title="Link to this heading">#</a></h2>
+<p>For example:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">Path</span><span class="p">(</span><span class="s2">&quot;mymodule.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">def hello():</span>
+<span class="s2">  print(&quot;hello world!&quot;)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mymodule</span><span class="w"> </span><span class="kn">import</span> <span class="n">hello</span> <span class="c1"># may raise &quot;ModuleNotFoundError: No module named &#39;mymodule&#39;&quot;</span>
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you see this error, call <a class="reference external" href="https://docs.python.org/3.14/library/importlib.html#importlib.invalidate_caches" title="（在 Python v3.14）"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.invalidate_caches()</span></code></a> before
+importing the module:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">Path</span><span class="p">(</span><span class="s2">&quot;mymodule.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">def hello():</span>
+<span class="s2">  print(&quot;hello world!&quot;)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">invalidate_caches</span><span class="p">()</span> <span class="c1"># Make sure Python notices the new .py file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mymodule</span><span class="w"> </span><span class="kn">import</span> <span class="n">hello</span>
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="why-changes-made-to-indexeddb-don-t-persist">
+<h2>Why changes made to IndexedDB don't persist?<a class="headerlink" href="#why-changes-made-to-indexeddb-don-t-persist" title="Link to this heading">#</a></h2>
+<p>Unlike other filesystems, IndexedDB (pyodide.FS.filesystem.IDBFS) is an asynchronous filesystem.
+This is because browsers offer only asynchronous interfaces for IndexedDB.
+So in order to persist changes, you have to call
+<a class="reference external" href="https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.syncfs"><code class="docutils literal notranslate"><span class="pre">pyodide.FS.syncfs()</span></code></a>.
+See <a class="reference external" href="https://emscripten.org/docs/api_reference/Filesystem-API.html#persistent-data">Emscripten File System API</a>
+for more details.</p>
+</section>
+<section id="how-can-i-access-javascript-objects-attributes-in-python-if-their-names-are-python-keywords">
+<h2>How can I access JavaScript objects/attributes in Python if their names are Python keywords?<a class="headerlink" href="#how-can-i-access-javascript-objects-attributes-in-python-if-their-names-are-python-keywords" title="Link to this heading">#</a></h2>
+<p>Some JavaScript objects may have names or attributes which are also <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">Python Keywords</a>, making them difficult to interact with when importing them into Python. For example, all three of the following uses of <code class="docutils literal notranslate"><span class="pre">runPython</span></code> will throw a SyntaxError:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="c1">//The built-in method Array.from() overlaps with Python&#39;s &quot;from&quot;</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">Array</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">Array</span><span class="o">.</span><span class="n">from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span><span class="s">`</span><span class="p">);</span>
+
+<span class="c1">//&quot;global&quot; is a valid attribute name in JS, but a reserved keyword in Python</span>
+<span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lots and lots&quot;</span><span class="p">};</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">people</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">people</span><span class="o">.</span><span class="k">global</span><span class="p">)</span><span class="s">`</span><span class="p">);</span>
+
+<span class="c1">//&quot;lambda&quot; is a valid object name in JS, but a reserved keyword in Python</span>
+<span class="nx">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">};</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="k">lambda</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you try to access a Python reserved word followed by one or more underscores
+on a <code class="docutils literal notranslate"><span class="pre">JsProxy</span></code>, Pyodide will remove a single underscore:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">Array</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Array</span><span class="o">.</span><span class="n">from_</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you meant to access the keyword with an underscore at the end, you'll have to
+add an extra one:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="nb">globalThis</span><span class="p">.</span><span class="nx">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+<span class="nb">globalThis</span><span class="p">.</span><span class="nx">lambda_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">lambda_</span><span class="p">,</span> <span class="n">lambda__</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lambda_</span><span class="p">,</span> <span class="n">lambda__</span><span class="p">)</span> <span class="c1"># 7, 8</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Another example:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lots and lots&quot;</span><span class="p">};</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">people</span>
+    <span class="c1"># the dir contains global_ but not global:</span>
+    <span class="k">assert</span> <span class="s2">&quot;global_&quot;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">people</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="s2">&quot;global&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">people</span><span class="p">)</span>
+    <span class="n">people</span><span class="o">.</span><span class="n">global_</span> <span class="o">=</span> <span class="s1">&#39;even more&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">people</span><span class="o">.</span><span class="n">global_</span><span class="p">)</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">getattr</span></code>, <code class="docutils literal notranslate"><span class="pre">setattr</span></code>, and <code class="docutils literal notranslate"><span class="pre">delattr</span></code> to access the attribute:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">Array</span>
+    <span class="n">fromFunc</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">Array</span><span class="p">,</span> <span class="s1">&#39;from&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fromFunc</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="s">`</span><span class="p">);</span>
+
+<span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lots and lots&quot;</span><span class="p">};</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">people</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="s1">&#39;even more&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">))</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For JavaScript globals whose names are keywords, one can similarly use
+<a class="reference external" href="https://docs.python.org/3.14/library/functions.html#getattr" title="（在 Python v3.14）"><code class="xref py py-func docutils literal notranslate"><span class="pre">getattr()</span></code></a> on the <code class="docutils literal notranslate"><span class="pre">js</span></code> module itself:</p>
+<div class="highlight-pyodide notranslate"><div class="highlight"><pre><span></span><span class="nb">globalThis</span><span class="p">.</span><span class="nx">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+<span class="nb">globalThis</span><span class="p">.</span><span class="nx">lambda_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
+<span class="n">pyodide</span><span class="o">.</span><span class="n">runPython</span><span class="p">(</span><span class="s">`</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">js</span>
+    <span class="n">js_lambda</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">js</span><span class="p">,</span> <span class="s1">&#39;lambda&#39;</span><span class="p">)</span>
+    <span class="n">js_lambda_</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">js</span><span class="p">,</span> <span class="s1">&#39;lambda_&#39;</span><span class="p">)</span>
+    <span class="n">js_lambda__</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">js</span><span class="p">,</span> <span class="s1">&#39;lambda__&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">js_lambda</span><span class="p">,</span> <span class="n">js_lambda_</span><span class="p">,</span> <span class="n">js_lambda__</span><span class="p">)</span> <span class="c1"># 7, 7, 8</span>
+<span class="s">`</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="can-i-use-threading-multiprocessing-subprocess">
+<h2>Can I use threading/multiprocessing/subprocess?<a class="headerlink" href="#can-i-use-threading-multiprocessing-subprocess" title="Link to this heading">#</a></h2>
+<p>No, fork and pthreads do not work in Pyodide (see more <a class="reference external" href="https://pyodide.org/en/stable/usage/wasm-constraints.html">here</a>).
+Attempts to use <code class="docutils literal notranslate"><span class="pre">threading</span></code>, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>, or <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> will raise a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>.
+You may be able to work around this by setting the number of threads to 1:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_can_start_thread</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;emscripten&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">_emscripten_info</span><span class="o">.</span><span class="n">pthreads</span>
+    <span class="k">return</span> <span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;wasm32&quot;</span><span class="p">,</span> <span class="s2">&quot;wasm64&quot;</span><span class="p">)</span>
+
+<span class="n">can_start_thread</span> <span class="o">=</span> <span class="n">_can_start_thread</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">can_start_thread</span><span class="p">:</span>
+  <span class="n">n_threads</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>You can still import the packages and use the general info API, but you cannot
+start any asynchronous work without receiving a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;MainThread&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current</span><span class="o">.</span><span class="n">daemon</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">target</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;console&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">&quot;/lib/python312.zip/threading.py&quot;</span>, line <span class="m">994</span>, in <span class="n">start</span>
+<span class="w">    </span><span class="n">_start_new_thread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bootstrap</span><span class="p">,</span> <span class="p">())</span>
+<span class="gr">RuntimeError</span>: <span class="n">can&#39;t start new thread</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="api/pyodide-cli.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">pyodide CLI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="examples.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Community Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-load-external-files-in-pyodide">How can I load external files in Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-i-load-files-from-the-local-file-system">Why can't I load files from the local file system?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-execute-code-in-a-custom-namespace">How can I execute code in a custom namespace?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-detect-that-code-is-run-with-pyodide">How to detect that code is run with Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-create-custom-python-packages-from-javascript">How do I create custom Python packages from JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-send-a-python-object-from-my-server-to-pyodide">How can I send a Python object from my server to Pyodide?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-use-a-python-function-as-an-event-handler">How can I use a Python function as an event handler?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-use-fetch-with-optional-arguments-from-python">How can I use fetch with optional arguments from Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-control-the-behavior-of-stdin-stdout-stderr">How can I control the behavior of stdin / stdout / stderr?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-micropip-find-a-pure-python-wheel-for-a-package">Why can't Micropip find a "pure Python wheel" for a package?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-change-the-behavior-of-runpython-and-runpythonasync">How can I change the behavior of <code class="xref js js-func docutils literal notranslate"><span class="pre">runPython()</span></code> and <code class="xref js js-func docutils literal notranslate"><span class="pre">runPythonAsync()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-t-i-import-a-file-i-just-wrote-to-the-file-system">Why can't I import a file I just wrote to the file system?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-changes-made-to-indexeddb-don-t-persist">Why changes made to IndexedDB don't persist?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-access-javascript-objects-attributes-in-python-if-their-names-are-python-keywords">How can I access JavaScript objects/attributes in Python if their names are Python keywords?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-use-threading-multiprocessing-subprocess">Can I use threading/multiprocessing/subprocess?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
