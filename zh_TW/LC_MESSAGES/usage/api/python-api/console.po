@@ -1,0 +1,419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/python-api/console.md:1
+msgid "pyodide.console"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of pyodide.console:1
+msgid "**Classes:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console:1:<autosummary>:1
+msgid ""
+":py:obj:`Console <pyodide.console.Console>`\\ \\(\\[globals\\, "
+"stdin\\_callback\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of pyodide.console.Console:1
+#: pyodide.console:1:<autosummary>:1
+msgid "Interactive Pyodide console"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console:1:<autosummary>:1
+msgid ""
+":py:obj:`ConsoleFuture <pyodide.console.ConsoleFuture>`\\ "
+"\\(syntax\\_check\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.ConsoleFuture:1 pyodide.console:1:<autosummary>:1
+msgid ""
+"A future with extra fields used as the return value for :py:class:`Console` "
+"APIs."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console:1:<autosummary>:1
+msgid ""
+":py:obj:`PyodideConsole <pyodide.console.PyodideConsole>`\\ \\(\\[globals\\, "
+"stdin\\_callback\\, ...\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.PyodideConsole:1 pyodide.console:1:<autosummary>:1
+msgid ""
+"A subclass of :py:class:`Console` that uses :js:func:`pyodide."
+"loadPackagesFromImports` before running the code."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of pyodide.console:1
+msgid "**Functions:**"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:1:<autosummary>:1
+msgid ""
+":py:obj:`repr_shorten <pyodide.console.repr_shorten>`\\ \\(value\\[\\, "
+"limit\\, split\\, separator\\]\\)"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:1:<autosummary>:1 pyodide.console.repr_shorten:1
+msgid ""
+"Compute the string representation of ``value`` and shorten it if necessary."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of pyodide.console.Console:3
+msgid ""
+"An interactive console based on the Python standard library :py:class:`~code."
+"InteractiveConsole` that manages stream redirections and asynchronous "
+"execution of the code."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of pyodide.console.Console:7
+msgid ""
+"The stream callbacks can be modified directly by assigning to :py:attr:"
+"`~Console.stdin_callback` (for example) as long as "
+"``persistent_stream_redirection`` is ``False``."
+msgstr ""
+
+#: ../../../usage/api/python-api/console.md:0
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:12
+msgid ""
+"The global namespace in which to evaluate the code. Defaults to a new empty "
+"dictionary."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:15
+msgid ""
+"Function to call at each read from :py:data:`sys.stdin`. Defaults to :py:"
+"data:`None`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:17
+msgid ""
+"Function to call at each write to :py:data:`sys.stdout`. Defaults to :py:"
+"data:`None`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:19
+msgid ""
+"Function to call at each write to :py:data:`sys.stderr`. Defaults to :py:"
+"data:`None`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:21
+msgid ""
+"Should redirection of standard streams be kept between calls to :py:meth:"
+"`~Console.runcode`? Defaults to :py:data:`False`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:24
+msgid ""
+"The file name to report in error messages. Defaults to ``\"<console>\"``."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:26
+msgid ""
+"Whether to inherit ``__future__`` imports from the outer code. See the "
+"documentation for the built-in :external:py:func:`compile` function."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console:29
+msgid ""
+"Specifies the optimization level of the compiler. See the documentation for "
+"the built-in :external:py:func:`compile` function."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.buffer:1
+msgid ""
+"The list of lines of code that have been the argument to :py:meth:`~Console."
+"push`."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.buffer:4
+msgid "This is emptied whenever the code is executed."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:1
+msgid ""
+"Use Python's :py:mod:`rlcompleter` to complete the source string using the :"
+"py:attr:`Console.globals` namespace."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:4
+msgid ""
+"Finds the last \"word\" in the source string and completes it with "
+"rlcompleter. Word breaks are determined by the set of characters in :py:attr:"
+"`~Console.completer_word_break_characters`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:9
+msgid "The source string to complete at the end."
+msgstr ""
+
+#: ../../../usage/api/python-api/console.md:0
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:11
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`tuple\\`\\\\ \\\\\\[\\:"
+"py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\]\\, \\:py\\:"
+"class\\:\\`int\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:12
+msgid ""
+"* **completions** (:py:class:`list`\\[:py:class:`str`]) -- A list of "
+"completion strings. * **start** (:py:class:`int`) -- The index where "
+"completion starts."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:12
+msgid ""
+"**completions** (:py:class:`list`\\[:py:class:`str`]) -- A list of "
+"completion strings."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:13
+msgid "**start** (:py:class:`int`) -- The index where completion starts."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.complete:16 pyodide.console.repr_shorten:8
+msgid "Examples"
+msgstr "範例"
+
+#: ../../../docstring of
+#: pyodide.console.Console.completer_word_break_characters:1
+msgid ""
+"The set of characters considered by :py:meth:`~Console.complete` to be word "
+"breaks."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.formatsyntaxerror:1
+msgid "Format the syntax error that just occurred."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.formatsyntaxerror:3
+msgid ""
+"This doesn't include a stack trace because there isn't one. The actual error "
+"object is stored into :py:data:`sys.last_value`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.formatsyntaxerror:8
+#: pyodide.console.Console.formattraceback:7 pyodide.console.repr_shorten:32
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`str\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.formattraceback:1
+msgid "Format the exception that just occurred."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.formattraceback:3
+msgid "The actual error object is stored into :py:data:`sys.last_value`."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.globals:1
+msgid "The namespace used as the globals"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.persistent_redirect_streams:1
+msgid ""
+"Redirect :py:data:`~sys.stdin`/:py:data:`~sys.stdout`/:py:data:`~sys.stdout` "
+"persistently"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.persistent_redirect_streams:4
+#: pyodide.console.Console.persistent_restore_streams:4
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.persistent_restore_streams:1
+msgid ""
+"Restore :py:data:`~sys.stdin`/:py:data:`~sys.stdout`/:py:data:`~sys.stdout` "
+"if they have been persistently redirected"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.push:1
+msgid "Push a line to the interpreter."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.push:3
+msgid ""
+"The line should not have a trailing newline; it may have internal newlines.  "
+"The line is appended to a buffer and the interpreter's :py:meth:`~Console."
+"runsource` method is called with the concatenated contents of the buffer as "
+"source.  If this indicates that the command was executed or invalid, the "
+"buffer is reset; otherwise, the command is incomplete, and the buffer is "
+"left as it was after the line was appended."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.push:10
+msgid ""
+"The return value is the result of calling :py:meth:`~Console.runsource` on "
+"the current buffer contents."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.push:15 pyodide.console.Console.runsource:7
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.console."
+"ConsoleFuture\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.redirect_streams:1
+msgid "A context manager to redirect standard streams."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.redirect_streams:3
+msgid "This supports nesting."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.redirect_streams:6
+msgid ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
+"Generator\\`\\\\ \\\\\\[\\:py\\:obj\\:\\`None\\`\\]`"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.runcode:1
+msgid "Execute a code object and return the result."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.runcode:7
+msgid ":sphinx_autodoc_typehints_type:`\\:py\\:data\\:\\`\\~typing.Any\\``"
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.Console.runsource:1
+msgid "Compile and run source code in the interpreter."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.stderr_callback:1
+msgid "Function to call at each write to :py:data:`sys.stderr`."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.stdin_callback:1
+msgid "The function to call at each read from :py:data:`sys.stdin`"
+msgstr ""
+
+#: ../../../docstring of pyodide.console.Console.stdout_callback:1
+msgid "Function to call at each write to :py:data:`sys.stdout`."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.ConsoleFuture:4 pyodide.console.PyodideConsole:5
+msgid "Example"
+msgstr "範例"
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.formatted_error:1
+msgid ""
+"If the ``Future`` is rejected, this will be filled with a formatted version "
+"of the code. This is a convenience that simplifies code and helps to avoid "
+"large memory leaks when using from JavaScript."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:1
+msgid "The status of the future. The values mean the following:"
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:0
+msgid "'incomplete'"
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:3
+msgid ""
+"Input is incomplete. The future has already been resolved with result "
+"``None``."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:0
+msgid "'syntax-error'"
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:6
+msgid ""
+"Input contained a syntax error. The future has been rejected with a "
+"``SyntaxError``."
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:0
+msgid "'complete'"
+msgstr ""
+
+#: ../../../docstring of pyodide.console.ConsoleFuture.syntax_check:9
+msgid ""
+"The input complete and syntactically correct and asynchronous execution has "
+"begun. When the execution is done, the Future will be resolved with the "
+"result or rejected with an exception."
+msgstr ""
+
+#: ../../../../src/py/pyodide/console.py:docstring of
+#: pyodide.console.repr_shorten:4
+msgid ""
+"This is equivalent to ``shorten(repr(value), limit, split, separator)``, but "
+"a value error is raised if ``limit`` is less than ``4``."
+msgstr ""
