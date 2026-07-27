@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-01 01:09:14 +0900",
-      "hash" : "093010924ae312143180ac546d58df7a061a2d95",
-      "title" : "CI Move npm publishing job before publishing github releases (#6328)"
+      "date" : "2026-07-19 11:50:51 +0200",
+      "hash" : "2e200b20b14286ac55e0b655519c87f9307a97c0",
+      "title" : "chore: Put emsdk version in directory name (#6351)"
     }
   },
   "type" : "branch",
