@@ -1,0 +1,376 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/contributing.md:3
+#: ../../../development/contributing.md:102
+msgid "How to Contribute"
+msgstr ""
+
+#: ../../../development/contributing.md:5
+msgid ""
+"Thank you for your interest in contributing to Pyodide! There are many ways "
+"to contribute, and we appreciate all of them. Here are some guidelines & "
+"pointers for diving into it."
+msgstr ""
+
+#: ../../../development/contributing.md:9
+msgid "Development Workflow"
+msgstr ""
+
+#: ../../../development/contributing.md:11
+msgid "To contribute code, see the following steps,"
+msgstr ""
+
+#: ../../../development/contributing.md:13
+msgid ""
+"Fork the Pyodide repository [https://github.com/pyodide/pyodide](https://"
+"github.com/pyodide/pyodide) on Github."
+msgstr ""
+
+#: ../../../development/contributing.md:14
+msgid ""
+"If you are on Linux, you can skip this step. On Windows and MacOS you have a "
+"choice. The first option is to manually install Docker:"
+msgstr ""
+
+#: ../../../development/contributing.md:16
+msgid ""
+"on MacOS follow [these instructions](https://docs.docker.com/desktop/mac/"
+"install/)"
+msgstr ""
+
+#: ../../../development/contributing.md:17
+msgid ""
+"on Windows, [install WSL 2](https://docs.microsoft.com/en-us/windows/wsl/"
+"install), then Docker. Note that Windows filesystem access from WSL2 is very "
+"slow and should be avoided when building Pyodide."
+msgstr ""
+
+#: ../../../development/contributing.md:22
+msgid ""
+"The second option is to use a service that provides a Linux development "
+"environment, such as"
+msgstr ""
+
+#: ../../../development/contributing.md:24
+msgid "[Github Codespaces](https://github.com/features/codespaces)"
+msgstr ""
+
+#: ../../../development/contributing.md:25
+msgid "[gitpod.io](https://gitpod.io)"
+msgstr ""
+
+#: ../../../development/contributing.md:26
+msgid "or a remote Linux VM with SSH connection."
+msgstr ""
+
+#: ../../../development/contributing.md:28
+msgid "Clone your fork of Pyodide"
+msgstr ""
+
+#: ../../../development/contributing.md:29
+msgid "git clone --recursive https://github.com/<your-username>/pyodide.git\n"
+msgstr ""
+
+#: ../../../development/contributing.md:32
+msgid "and add the upstream remote,"
+msgstr ""
+
+#: ../../../development/contributing.md:33
+msgid "git remote add upstream https://github.com/pyodide/pyodide.git\n"
+msgstr ""
+
+#: ../../../development/contributing.md:36
+msgid ""
+"While the build will happen inside Docker you still need a development "
+"environment with Python 3.11 and ideally Node.js. These can be installed for "
+"instance with,"
+msgstr ""
+
+#: ../../../development/contributing.md:39
+msgid ""
+"conda env create -f environment.yml\n"
+"conda activate pyodide-env\n"
+msgstr ""
+
+#: ../../../development/contributing.md:43
+msgid "or via your system package manager."
+msgstr ""
+
+#: ../../../development/contributing.md:44
+msgid ""
+"Install requirements (it's recommended to use a virtualenv or a conda env),"
+msgstr ""
+
+#: ../../../development/contributing.md:45
+msgid "pip install -r requirements.txt\n"
+msgstr ""
+
+#: ../../../development/contributing.md:48
+msgid "Enable [pre-commit](https://pre-commit.com/) for code style,"
+msgstr ""
+
+#: ../../../development/contributing.md:50
+msgid "pre-commit install\n"
+msgstr ""
+
+#: ../../../development/contributing.md:54
+msgid "This will run a set of linters for each commit."
+msgstr ""
+
+#: ../../../development/contributing.md:56
+msgid "Follow {ref}`building_from_source` instructions."
+msgstr ""
+
+#: ../../../development/contributing.md:58
+msgid "See {ref}`testing` documentation."
+msgstr ""
+
+#: ../../../development/contributing.md:60
+msgid "Code of Conduct"
+msgstr ""
+
+#: ../../../development/contributing.md:62
+msgid ""
+"Pyodide has adopted a {ref}`code-of-conduct` that we expect all contributors "
+"and core members to adhere to."
+msgstr ""
+
+#: ../../../development/contributing.md:65
+msgid "Development"
+msgstr ""
+
+#: ../../../development/contributing.md:67
+msgid ""
+"Work on Pyodide happens on GitHub. Core members and contributors can make "
+"Pull Requests to fix issues and add features, which all go through the same "
+"review process. We’ll detail how you can start making PRs below."
+msgstr ""
+
+#: ../../../development/contributing.md:71
+msgid ""
+"We’ll do our best to keep `main` in a non-breaking state, ideally with tests "
+"always passing. The unfortunate reality of software development is sometimes "
+"things break. As such, `main` cannot be expected to remain reliable at all "
+"times. We recommend using the latest stable version of Pyodide."
+msgstr ""
+
+#: ../../../development/contributing.md:76
+msgid ""
+"Pyodide follows [semantic versioning](http://semver.org/) - major versions "
+"for breaking changes (x.0.0), minor versions for new features (0.x.0), and "
+"patches for bug fixes (0.0.x)."
+msgstr ""
+
+#: ../../../development/contributing.md:80
+msgid ""
+"We keep a file, {ref}`docs/project/changelog.md <changelog>`, outlining "
+"changes to Pyodide in each release. We like to think of the audience for "
+"changelogs as non-developers who primarily run the latest stable. So the "
+"change log will primarily outline user-visible changes such as new features "
+"and deprecations, and will exclude things that might otherwise be "
+"inconsequential to the end user experience, such as infrastructure or "
+"refactoring."
+msgstr ""
+
+#: ../../../development/contributing.md:87
+msgid "Bugs & Issues"
+msgstr ""
+
+#: ../../../development/contributing.md:89
+msgid ""
+"We use [Github Issues](https://github.com/pyodide/pyodide/issues) for "
+"announcing and discussing bugs and features. Use [this link](https://github."
+"com/pyodide/pyodide/issues/new) to report a bug or issue. We provide a "
+"template to give you a guide for how to file optimally. If you have the "
+"chance, please search the existing issues before reporting a bug. It's "
+"possible that someone else has already reported your error. This doesn't "
+"always work, and sometimes it's hard to know what to search for, so consider "
+"this extra credit. We won't mind if you accidentally file a duplicate report."
+msgstr ""
+
+#: ../../../development/contributing.md:99
+msgid ""
+"Core contributors are monitoring new issues & comments all the time, and "
+"will label & organize issues to align with development priorities."
+msgstr ""
+
+#: ../../../development/contributing.md:104
+msgid ""
+"Pull requests are the primary mechanism we use to change Pyodide. GitHub "
+"itself has some [great documentation](https://help.github.com/articles/about-"
+"pull-requests/) on using the Pull Request feature. We use the \"fork and "
+"pull\" model [described here](https://help.github.com/articles/about-pull-"
+"requests/), where contributors push changes to their personal fork and "
+"create pull requests to bring those changes into the source repository."
+msgstr ""
+
+#: ../../../development/contributing.md:112
+msgid "Please make pull requests against the `main` branch."
+msgstr ""
+
+#: ../../../development/contributing.md:114
+msgid ""
+"If you’re looking for a way to jump in and contribute, our list of [good "
+"first issues](https://github.com/pyodide/pyodide/labels/"
+"good%20first%20issue) is a great place to start."
+msgstr ""
+
+#: ../../../development/contributing.md:118
+msgid ""
+"If you’d like to fix a currently-filed issue, please take a look at the "
+"comment thread on the issue to ensure no one is already working on it. If no "
+"one has claimed the issue, make a comment stating you’d like to tackle it in "
+"a PR. If someone has claimed the issue but has not worked on it in a few "
+"weeks, make a comment asking if you can take over, and we’ll figure it out "
+"from there."
+msgstr ""
+
+#: ../../../development/contributing.md:124
+msgid ""
+"We use [pytest](https://pytest.org), driving [Selenium](https://www."
+"seleniumhq.org) as our testing framework. Every PR will automatically run "
+"through our tests, and our test framework will alert you on GitHub if your "
+"PR doesn’t pass all of them. If your PR fails a test, try to figure out "
+"whether or not you can update your code to make the test pass again, or ask "
+"for help. As a policy we will not accept a PR that fails any of our tests, "
+"and will likely ask you to add tests if your PR adds new functionality. "
+"Writing tests can be scary, but they make open-source contributions easier "
+"for everyone to assess. Take a moment and look through how we’ve written our "
+"tests, and try to make your tests match. If you are having trouble, we can "
+"help you get started on our test-writing journey."
+msgstr ""
+
+#: ../../../development/contributing.md:136
+msgid ""
+"All code submissions should pass `make lint`. Python is checked with "
+"`flake8`, `black` and `mypy`. JavaScript is checked with `prettier`. C is "
+"checked against the Mozilla style in `clang-format`."
+msgstr ""
+
+#: ../../../development/contributing.md:140
+msgid "Contributing to the “core” C Code"
+msgstr ""
+
+#: ../../../development/contributing.md:142
+msgid "See {ref}`contributing-core`."
+msgstr ""
+
+#: ../../../development/contributing.md:144
+msgid "Documentation"
+msgstr ""
+
+#: ../../../development/contributing.md:146
+msgid ""
+"Documentation is a critical part of any open source project, and we are very "
+"welcome to any documentation improvements. Pyodide has a documentation "
+"written in Markdown in the `docs/` folder. We use the [MyST](https://myst-"
+"parser.readthedocs.io/en/latest/using/syntax.html#targets-and-cross-"
+"referencing) for parsing Markdown in sphinx. You may want to have a look at "
+"the [MyST syntax guide](https://myst-parser.readthedocs.io/en/latest/using/"
+"syntax.html#the-myst-syntax-guide) when contributing, in particular "
+"regarding [cross-referencing sections](https://myst-parser.readthedocs.io/en/"
+"latest/using/syntax.html#targets-and-cross-referencing)."
+msgstr ""
+
+#: ../../../development/contributing.md:155
+msgid "Building the docs"
+msgstr ""
+
+#: ../../../development/contributing.md:157
+msgid ""
+"From the directory `docs`, first install the Python dependencies with `pip "
+"install -r requirements-doc.txt`. You also need to install JsDoc, which is a "
+"`node` dependency. Install it with `sudo npm install -g jsdoc`. Then to "
+"build the docs run `make html`. The built documentation will be in the "
+"subdirectory `docs/_build/html`. To view them, cd into `_build/html` and "
+"start a file server, for instance `http-server`."
+msgstr ""
+
+#: ../../../development/contributing.md:164
+msgid "Migrating patches"
+msgstr ""
+
+#: ../../../development/contributing.md:166
+msgid ""
+"It often happens that patches need to be migrated between different versions "
+"of upstream packages."
+msgstr ""
+
+#: ../../../development/contributing.md:169
+msgid "If patches fail to apply automatically, one solution can be to"
+msgstr ""
+
+#: ../../../development/contributing.md:171
+msgid ""
+"Checkout the initial version of the upstream package in a separate repo, and "
+"create a branch from it."
+msgstr ""
+
+#: ../../../development/contributing.md:173
+msgid "Add existing patches with `git apply <path.path>`"
+msgstr ""
+
+#: ../../../development/contributing.md:174
+msgid ""
+"Checkout the new version of the upstream package and create a branch from it."
+msgstr ""
+
+#: ../../../development/contributing.md:175
+msgid "Cherry-pick patches to the new version,"
+msgstr ""
+
+#: ../../../development/contributing.md:176
+msgid "git cherry-pick <commit-hash>\n"
+msgstr ""
+
+#: ../../../development/contributing.md:179
+msgid "and resolve conflicts."
+msgstr ""
+
+#: ../../../development/contributing.md:180
+msgid "Re-export last `N` commits as patches e.g."
+msgstr ""
+
+#: ../../../development/contributing.md:181
+msgid "git format-patch -<N> -N --no-stat HEAD -o <out_dir>\n"
+msgstr ""
+
+#: ../../../development/contributing.md:185
+msgid "Maintainer information"
+msgstr ""
+
+#: ../../../development/contributing.md:187
+msgid ""
+"For information about making releases see {ref}`maintainer-information`."
+msgstr ""
+
+#: ../../../development/contributing.md:189
+msgid "License"
+msgstr ""
+
+#: ../../../development/contributing.md:191
+msgid ""
+"All contributions to Pyodide will be licensed under the [Mozilla Public "
+"License 2.0 (MPL 2.0)](https://www.mozilla.org/en-US/MPL/2.0/). This is "
+"considered a \"weak copyleft\" license. Check out the [tl;drLegal entry][] "
+"for more information, as well as Mozilla's [MPL 2.0 FAQ](https://www.mozilla."
+"org/en-US/MPL/2.0/FAQ/) if you need further clarification on what is and "
+"isn't permitted."
+msgstr ""
