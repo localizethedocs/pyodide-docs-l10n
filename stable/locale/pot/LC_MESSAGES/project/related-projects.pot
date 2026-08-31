@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 314.0.2\n"
+"Project-Id-Version: Pyodide 314.0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:06+0000\n"
+"POT-Creation-Date: 2026-08-31 17:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,70 +129,78 @@ msgid ""
 "run-python-in-browser-pyodide-editorjs)."
 msgstr ""
 
-#: ../../../project/related-projects.md:42
+#: ../../../project/related-projects.md:41
+msgid ""
+"[codeplug.org](https://codeplug.org) is an in-browser suite for programming "
+"amateur radio transceivers. It leverages [CHIRP](https://chirpmyradio.com/"
+"projects/chirp/wiki/Home)'s radio drivers using Pyodide and WebSerial to let "
+"the user program radios from anywhere."
+msgstr ""
+
+#: ../../../project/related-projects.md:43
 msgid "Workarounds for common WASM and browser limitations"
 msgstr ""
 
-#: ../../../project/related-projects.md:44
+#: ../../../project/related-projects.md:45
 msgid ""
 "[pyodide-http](https://github.com/koenvo/pyodide-http) Provides patches for "
 "widely used http libraries to make them work in Pyodide environments like "
 "JupyterLite."
 msgstr ""
 
-#: ../../../project/related-projects.md:48
+#: ../../../project/related-projects.md:49
 msgid "Dashboards and visualization"
 msgstr ""
 
-#: ../../../project/related-projects.md:50
+#: ../../../project/related-projects.md:51
 msgid ""
 "[WebDash](https://github.com/ibdafna/webdash) is a Plotly Dash distribution "
 "that runs entirely in the browser, using Pyodide."
 msgstr ""
 
-#: ../../../project/related-projects.md:52
+#: ../../../project/related-projects.md:53
 msgid ""
 "[Flet](https://flet.dev) is a UI framework for your Pyodide apps based on "
 "Flutter."
 msgstr ""
 
-#: ../../../project/related-projects.md:53
+#: ../../../project/related-projects.md:54
 msgid ""
 "[stlite](https://github.com/whitphx/stlite) is a serverless version of "
 "[Streamlit](https://streamlit.io/) running on Pyodide."
 msgstr ""
 
-#: ../../../project/related-projects.md:54
+#: ../../../project/related-projects.md:55
 msgid ""
 "[Gradio-Lite](https://www.gradio.app/guides/gradio-lite) is a serverless "
 "version of [Gradio](https://www.gradio.app/) running on Pyodide."
 msgstr ""
 
-#: ../../../project/related-projects.md:56
+#: ../../../project/related-projects.md:57
 msgid "Other projects"
 msgstr ""
 
-#: ../../../project/related-projects.md:58
+#: ../../../project/related-projects.md:59
 msgid ""
 "[wc-code](https://github.com/vanillawc/wc-code) is a library to run "
 "JavaScript, Python, and Theme in the browser with inline code blocks. It "
 "uses Pyodide to execute Python code."
 msgstr ""
 
-#: ../../../project/related-projects.md:61
+#: ../../../project/related-projects.md:62
 msgid ""
 "[SymPy Beta](https://github.com/eagleoflqj/sympy_beta) is a fork of SymPy "
 "Gamma. It's an in-browser answer engine with a Pyodide backend."
 msgstr ""
 
-#: ../../../project/related-projects.md:63
+#: ../../../project/related-projects.md:64
 msgid ""
 "[react-py](https://github.com/elilambnz/react-py) is a library that allows "
 "for easy integration of Pyodide in React applications. It provides "
 "convenient hooks for running Python code."
 msgstr ""
 
-#: ../../../project/related-projects.md:64
+#: ../../../project/related-projects.md:65
 msgid ""
 "[inseri core](https://wordpress.org/plugins/inseri-core/) is a WordPress "
 "plugin that introduces scientific and interactive Gutenberg blocks to "
