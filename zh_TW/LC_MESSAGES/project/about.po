@@ -1,0 +1,352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../project/about.md:1
+msgid "What is Pyodide?"
+msgstr "什麼是 Pyodide？"
+
+#: ../../../project/about.md:3
+msgid ""
+"Pyodide is a Python distribution for the browser and Node.js based on "
+"WebAssembly/[Emscripten](https://emscripten.org/)."
+msgstr ""
+
+#: ../../../project/about.md:5
+msgid ""
+"Pyodide makes it possible to install and run Python packages in the browser "
+"with [micropip](https://pyodide.org/en/stable/usage/api/micropip-api.html). "
+"Any pure Python package with a wheel available on PyPI is supported. Many "
+"packages with C extensions have also been ported for use with Pyodide. These "
+"include many general-purpose packages such as regex, PyYAML, lxml and "
+"scientific Python packages including NumPy, pandas, SciPy, Matplotlib, and "
+"scikit-learn."
+msgstr ""
+
+#: ../../../project/about.md:12
+msgid ""
+"Pyodide comes with a robust Javascript 🡘 Python foreign function interface "
+"so that you can freely mix these two languages in your code with minimal "
+"friction. This includes full support for error handling (throw an error in "
+"one language, catch it in the other), async/await, and much more."
+msgstr ""
+
+#: ../../../project/about.md:17
+msgid "When used inside a browser, Python has full access to the Web APIs."
+msgstr "在瀏覽器中使用時，Python 具有存取 Web API 的完整權限。"
+
+#: ../../../project/about.md:19
+msgid "History"
+msgstr ""
+
+#: ../../../project/about.md:21
+msgid ""
+"Pyodide was created in 2018 by [Michael Droettboom](https://github.com/"
+"mdboom) at Mozilla as part of the [Iodide project](https://github.com/iodide-"
+"project/iodide). Iodide is an experimental web-based notebook environment "
+"for literate scientific computing and communication."
+msgstr ""
+
+#: ../../../project/about.md:27
+msgid "Contributing"
+msgstr ""
+
+#: ../../../project/about.md:29
+msgid ""
+"See the {ref}`contributing guide <how_to_contribute>` for tips on filing "
+"issues, making changes, and submitting pull requests. Pyodide is an "
+"independent and community-driven open-source project. The decision-making "
+"process is outlined in {ref}`project-governance`."
+msgstr ""
+
+#: ../../../project/about.md:34
+msgid "Citing"
+msgstr ""
+
+#: ../../../project/about.md:36
+msgid ""
+"If you use Pyodide for a scientific publication, we would appreciate "
+"citations. Please find us [on Zenodo](https://zenodo.org/record/5156931) and "
+"use the citation for the version you are using. You can replace the full "
+"author list from there with \"The Pyodide development team\" like in the "
+"example below:"
+msgstr ""
+
+#: ../../../project/about.md:41
+msgid ""
+"@software{pyodide_2021,\n"
+"  author       = {The Pyodide development team},\n"
+"  title        = {pyodide/pyodide},\n"
+"  month        = aug,\n"
+"  year         = 2021,\n"
+"  publisher    = {Zenodo},\n"
+"  version      = {314.0.2},\n"
+"  doi          = {10.5281/zenodo.5156931},\n"
+"  url          = {https://doi.org/10.5281/zenodo.5156931}\n"
+"}\n"
+msgstr ""
+
+#: ../../../project/about.md:54
+msgid "Communication"
+msgstr ""
+
+#: ../../../project/about.md:56
+msgid "Blog: [blog.pyodide.org](https://blog.pyodide.org/)"
+msgstr ""
+
+#: ../../../project/about.md:57
+msgid ""
+"Mailing list: [mail.python.org/mailman3/lists/pyodide.python.org/](https://"
+"mail.python.org/mailman3/lists/pyodide.python.org/)"
+msgstr ""
+
+#: ../../../project/about.md:58
+msgid "Twitter: [twitter.com/pyodide](https://twitter.com/pyodide)"
+msgstr ""
+
+#: ../../../project/about.md:59
+msgid ""
+"Stack Overflow: [stackoverflow.com/questions/tagged/pyodide](https://"
+"stackoverflow.com/questions/tagged/pyodide)"
+msgstr ""
+
+#: ../../../project/about.md:60
+msgid "Discord: [Pyodide Discord](https://dsc.gg/pyodide)"
+msgstr ""
+
+#: ../../../project/about.md:62
+msgid "Institutional and Financial Support"
+msgstr ""
+
+#: ../../../project/about.md:64
+msgid ""
+"Pyodide is a community-driven project that has benefited from the support of "
+"various institutions, grants, and employers who have allocated resources and "
+"time to its development."
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Institution"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Contributor(s)"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Contribution Type"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Period"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Cloudflare, Inc."
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Gyeongjae Choi"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Employer-sponsored time"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2025–Present"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Quansight Labs"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Agriya Khetarpal"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2024–Present"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid ""
+"Chan Zuckerberg Initiative (CZI) [2022-316713](https://blog.scientific-"
+"python.org/scientific-python/2022-czi-grant/)"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Research software grant"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2024–2025"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Robert Hood Chatham"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2023–Present"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Anaconda, Inc."
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2023"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid ""
+"NSF Grant [DMS–2002087](https://www.nsf.gov/awardsearch/showAward?"
+"AWD_ID=2002087)"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Research grant"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2020–2022"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Symerio ([symerio.com](https://www.symerio.com/))"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Roman Yurchak"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "French state-funded contributions"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2020–2023"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Mozilla Corporation"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Michael Droettboom"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Core development support"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2018–2020"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "Nexedi ([nexedi.com](https://www.nexedi.com/))"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "R&D grant for early development"
+msgstr ""
+
+#: ../../../project/about.md:0
+msgid "2018"
+msgstr ""
+
+#: ../../../project/about.md:78
+msgid "Supporting Pyodide"
+msgstr ""
+
+#: ../../../project/about.md:80
+msgid ""
+"Pyodide is a community-driven project, and there are many ways to contribute:"
+msgstr ""
+
+#: ../../../project/about.md:82
+msgid ""
+"**Code and Documentation**: Contribute improvements, bug fixes, or new "
+"features via [GitHub](https://github.com/pyodide/pyodide)."
+msgstr ""
+
+#: ../../../project/about.md:83
+msgid "**Financial Support**: Help sustain the project via:"
+msgstr ""
+
+#: ../../../project/about.md:84
+msgid "[GitHub Sponsors](https://github.com/sponsors/pyodide)"
+msgstr ""
+
+#: ../../../project/about.md:85
+msgid "[OpenCollective](https://opencollective.com/pyodide)"
+msgstr ""
+
+#: ../../../project/about.md:86
+msgid ""
+"**Community Engagement**: Report issues, share feedback, or help others on "
+"GitHub Discussions."
+msgstr ""
+
+#: ../../../project/about.md:88
+msgid ""
+"Financial contributions help fund infrastructure, organize development "
+"sprints, and enable maintainers to dedicate more time to the project."
+msgstr ""
+
+#: ../../../project/about.md:90
+msgid ""
+"For partnership opportunities or major institutional support, please reach "
+"out via [GitHub Discussions](https://github.com/pyodide/pyodide/discussions)."
+msgstr ""
+
+#: ../../../project/about.md:92
+msgid "License"
+msgstr ""
+
+#: ../../../project/about.md:94
+msgid ""
+"Pyodide uses the [Mozilla Public License Version 2.0](https://choosealicense."
+"com/licenses/mpl-2.0/)."
+msgstr ""
+
+#: ../../../project/about.md:97
+msgid "Infrastructure support"
+msgstr ""
+
+#: ../../../project/about.md:99
+msgid "We would like to thank,"
+msgstr ""
+
+#: ../../../project/about.md:101
+msgid ""
+"[Mozilla](https://www.mozilla.org/en-US/) and [CircleCl](https://circleci."
+"com/) for Continuous Integration resources"
+msgstr ""
+
+#: ../../../project/about.md:103
+msgid ""
+"[JsDelivr](https://www.jsdelivr.com/) for providing a CDN for Pyodide "
+"packages"
+msgstr ""
+
+#: ../../../project/about.md:105
+msgid "[ReadTheDocs](https://readthedocs.org/) for hosting the documentation."
+msgstr ""
