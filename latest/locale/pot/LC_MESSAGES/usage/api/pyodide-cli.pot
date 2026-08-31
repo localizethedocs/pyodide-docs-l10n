@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-08-31 17:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,19 +67,113 @@ msgid "Show the version of the Pyodide CLI"
 msgstr ""
 
 #: ../../../pyodide app:1
-msgid "Clean build artifacts."
+msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
 msgstr ""
 
 #: ../../../pyodide app:1
 msgid "pyodide app [OPTIONS] COMMAND [ARGS]..."
 msgstr ""
 
-#: ../../../pyodide app recipes:1
-msgid "Remove build artifacts for recipe packages."
+#: ../../../pyodide app copy:1
+msgid ""
+"[Deprecated] Copy shared libraries to the wheel directory. Works same as "
+"`repair`. Use `repair` instead."
 msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "Arguments:"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_FILE: Path to wheel file. (required)"
+msgstr ""
+
+#: ../../../pyodide app copy:1
+msgid "pyodide app copy [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "Path to the directory containing the shared libraries."
+msgstr ""
+
+#: ../../../pyodide app copy:0 exports:0 imports:0 repair:0 build-recipes:0
+#: main:0
+msgid "default"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "``'lib'``"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid ""
+"Directory to output repaired wheel or shared library. (default: overwrite "
+"the input file)"
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Arguments"
+msgstr ""
+
+#: ../../../pyodide app copy:1 exports:1 get:1 imports:1 pypi:1 repair:1 show:1
+#: use:1 main:1
+msgid "Required argument"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "Show exports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "pyodide app exports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "Show function type."
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "``False``"
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "Show imports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "Repair a wheel file: copy shared libraries to the wheel directory."
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1 show:1
+msgid "Show runtime paths."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "Show shared library dependencies of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app:1
+msgid "Clean build artifacts."
+msgstr ""
+
+#: ../../../pyodide app recipes:1
+msgid "Remove build artifacts for recipe packages."
 msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
@@ -100,10 +194,6 @@ msgstr ""
 msgid ""
 "Directory where package build artifacts are stored. Defaults to recipe "
 "directory."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "Arguments"
 msgstr ""
 
 #: ../../../pyodide app recipes:1
@@ -133,11 +223,6 @@ msgstr ""
 
 #: ../../../pyodide app get:1
 msgid "pyodide app get [OPTIONS] CONFIG_VAR"
-msgstr ""
-
-#: ../../../pyodide app copy:1 exports:1 get:1 imports:1 pypi:1 repair:1 show:1
-#: use:1 main:1
-msgid "Required argument"
 msgstr ""
 
 #: ../../../pyodide app list:1
@@ -283,7 +368,9 @@ msgid "pyodide app install [OPTIONS] [VERSION]"
 msgstr ""
 
 #: ../../../pyodide app install:1
-msgid "destination to download cross-build environment directory to."
+msgid ""
+"destination to download cross-build environment directory to (default: "
+"resolved from config or platformdirs cache)."
 msgstr ""
 
 #: ../../../pyodide app install:1
@@ -292,6 +379,16 @@ msgstr ""
 
 #: ../../../pyodide app install:1
 msgid "force installation even if the version is not compatible."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid "install a nightly cross-build environment instead of a stable release."
+msgstr ""
+
+#: ../../../pyodide app install:1
+msgid ""
+"install the debug variant of the cross-build environment. Combine with --"
+"nightly to install the nightly debug variant."
 msgstr ""
 
 #: ../../../pyodide app install:1
@@ -363,6 +460,16 @@ msgid "search all versions, without filtering out incompatible ones."
 msgstr ""
 
 #: ../../../pyodide app search:1
+msgid "search nightly releases instead of stable ones."
+msgstr ""
+
+#: ../../../pyodide app search:1
+msgid ""
+"search debug releases. Searches stable-debug by default. Combine with --"
+"nightly to search nightly-debug releases."
+msgstr ""
+
+#: ../../../pyodide app search:1
 msgid "output results in JSON format."
 msgstr ""
 
@@ -408,91 +515,6 @@ msgstr ""
 
 #: ../../../pyodide app versions:1
 msgid "pyodide app versions [OPTIONS]"
-msgstr ""
-
-#: ../../../pyodide app:1
-msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
-msgstr ""
-
-#: ../../../pyodide app copy:1
-msgid ""
-"[Deprecated] Copy shared libraries to the wheel directory. Works same as "
-"`repair`. Use `repair` instead."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEEL_FILE: Path to wheel file. (required)"
-msgstr ""
-
-#: ../../../pyodide app copy:1
-msgid "pyodide app copy [OPTIONS] WHEEL_FILE"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid "Path to the directory containing the shared libraries."
-msgstr ""
-
-#: ../../../pyodide app copy:0 exports:0 imports:0 repair:0 build-recipes:0
-#: main:0
-msgid "default"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid "``'lib'``"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid ""
-"Directory to output repaired wheel or shared library. (default: overwrite "
-"the input file)"
-msgstr ""
-
-#: ../../../pyodide app exports:1
-msgid "Show exports of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)"
-msgstr ""
-
-#: ../../../pyodide app exports:1
-msgid "pyodide app exports [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
-
-#: ../../../pyodide app exports:1 imports:1
-msgid "Show function type."
-msgstr ""
-
-#: ../../../pyodide app exports:1 imports:1
-msgid "``False``"
-msgstr ""
-
-#: ../../../pyodide app imports:1
-msgid "Show imports of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../pyodide app imports:1
-msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
-
-#: ../../../pyodide app repair:1
-msgid "Repair a wheel file: copy shared libraries to the wheel directory."
-msgstr ""
-
-#: ../../../pyodide app repair:1
-msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
-msgstr ""
-
-#: ../../../pyodide app repair:1 show:1
-msgid "Show runtime paths."
-msgstr ""
-
-#: ../../../pyodide app show:1
-msgid "Show shared library dependencies of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../pyodide app show:1
-msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
 msgstr ""
 
 #: ../../../pyodide build-recipes:1
@@ -621,6 +643,63 @@ msgid "Don't setup rust environment when building a rust package"
 msgstr ""
 
 #: ../../../pyodide main:1
+msgid "Manipulate pyodide-lock.json lockfiles."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] COMMAND [ARGS]..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Add a set of package wheels to an existing pyodide-lock.json and write it "
+"out to pyodide-lock-new.json"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Each package in the wheel will be added to the output lockfile, including "
+"resolution of dependencies in the lock file. By default this will fail if a "
+"dependency isn't available in either the existing lock file, or in the set "
+"of new wheels."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEELS: List of paths to wheel files. (required)"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "pyodide main add-wheels [OPTIONS] WHEELS..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"If this is true, dependencies which are not in the original lockfile or the "
+"added wheels will be added to the lockfile. Warning: This will allow a "
+"broken lockfile to be created."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Source lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Updated lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base path for wheels - wheel file names will be created relative to this "
+"path."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base url which will be appended to the wheel location. Use this if you are "
+"hosting these wheels on a different server to core pyodide packages"
+msgstr ""
+
+#: ../../../pyodide main:1
 msgid "Use pypa/build to build a Python package from source, pypi or url."
 msgstr ""
 
@@ -651,7 +730,11 @@ msgid "Build a list of package requirements from a requirements.txt file"
 msgstr ""
 
 #: ../../../pyodide main:1
-msgid "Which symbols should be exported when linking .so files?"
+msgid ""
+"Which symbols to export when linking .so files. Choices: 'pyinit' (only "
+"PyInit_<module>), 'requested' (default, symbols requested by the build "
+"system), 'whole_archive' (all symbols from all archives), or a comma-"
+"separated list of symbol names."
 msgstr ""
 
 #: ../../../pyodide main:1
@@ -697,7 +780,15 @@ msgid ""
 msgstr ""
 
 #: ../../../pyodide main:1
-msgid "Path to the cross-build environment directory."
+msgid ""
+"Path to the cross-build environment directory (default: resolved from config "
+"or platformdirs cache)."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid ""
+"Increase build verbosity. Use -v for verbose output, -vv for very verbose "
+"output."
 msgstr ""
 
 #: ../../../pyodide main:1
@@ -806,61 +897,4 @@ msgstr ""
 
 #: ../../../pyodide main:1
 msgid "Disable the periodic update of the embedded wheels."
-msgstr ""
-
-#: ../../../pyodide main:1
-msgid "Manipulate pyodide-lock.json lockfiles."
-msgstr ""
-
-#: ../../../pyodide main:1
-msgid "pyodide main [OPTIONS] COMMAND [ARGS]..."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Add a set of package wheels to an existing pyodide-lock.json and write it "
-"out to pyodide-lock-new.json"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Each package in the wheel will be added to the output lockfile, including "
-"resolution of dependencies in the lock file. By default this will fail if a "
-"dependency isn't available in either the existing lock file, or in the set "
-"of new wheels."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEELS: List of paths to wheel files. (required)"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "pyodide main add-wheels [OPTIONS] WHEELS..."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"If this is true, dependencies which are not in the original lockfile or the "
-"added wheels will be added to the lockfile. Warning: This will allow a "
-"broken lockfile to be created."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "Source lockfile"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "Updated lockfile"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Base path for wheels - wheel file names will be created relative to this "
-"path."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Base url which will be appended to the wheel location. Use this if you are "
-"hosting these wheels on a different server to core pyodide packages"
 msgstr ""

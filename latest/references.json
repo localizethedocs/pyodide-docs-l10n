@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-19 11:50:51 +0200",
-      "hash" : "2e200b20b14286ac55e0b655519c87f9307a97c0",
-      "title" : "chore: Put emsdk version in directory name (#6351)"
+      "date" : "2026-08-26 17:34:07 -0700",
+      "hash" : "834084f6db5c8bfcc6f3d78fb5d79ee814664b99",
+      "title" : "Add asan build option (#6442)"
     }
   },
   "type" : "branch",

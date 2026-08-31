@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.1.0.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 17:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/abi/315.md:1
+msgid "pyemscripten_2026_5"
+msgstr ""
+
+#: ../../../development/abi/315.md:3
+msgid ""
+"By default, all builds of the Pyodide runtime with Python 3.15 use the "
+"`pyemscripten_2026_5` platform."
+msgstr ""
+
+#: ../../../development/abi/315.md:6
+msgid ""
+"This section reflects the planned definition for the `pyemscripten_2026_5` "
+"platform."
+msgstr ""
+
+#: ../../../development/abi/315.md:9
+msgid "Platform Specification"
+msgstr ""
+
+#: ../../../development/abi/315.md:11
+msgid "CPython and Emscripten Version"
+msgstr ""
+
+#: ../../../development/abi/315.md:13
+msgid "**CPython**: 3.15"
+msgstr ""
+
+#: ../../../development/abi/315.md:14
+msgid "**Emscripten**: 6.0.5"
+msgstr ""
+
+#: ../../../development/abi/315.md:16
+msgid "Unwinding ABIs"
+msgstr ""
+
+#: ../../../development/abi/315.md:18
+msgid ""
+"C++ libraries are built with WebAssembly exception handling (`-fwasm-"
+"exceptions`) and WebAssembly-based `setjmp`/`longjmp` (`-"
+"sSUPPORT_LONGJMP=wasm`). To enable exceptions and `setjmp`/`longjmp`, `-"
+"fwasm-exceptions` must be passed at compile time and link time."
+msgstr ""
+
+#: ../../../development/abi/315.md:23
+msgid "Rust Toolchain"
+msgstr ""
+
+#: ../../../development/abi/315.md:25
+msgid ""
+"When building Rust packages to target the `pyemscripten_2026_5` platform, "
+"use Rust version 1.93.0 or later. As of writing this, we default to Rust "
+"1.97.1."
+msgstr ""
+
+#: ../../../development/abi/315.md:28
+msgid "Runtime Library Loading Path"
+msgstr ""
+
+#: ../../../development/abi/315.md:30
+msgid ""
+"There is full support for `RPATH`. The dynamic loader will only load "
+"dependencies that are properly specified on the `RPATH`, just being in `/lib/"
+"python3.15/site-packages/wheel_name.libs` is not sufficient."
+msgstr ""
+
+#: ../../../development/abi/315.md:34
+msgid "Libraries Linked to the Main Binary"
+msgstr ""
+
+#: ../../../development/abi/315.md:36
+msgid "The following libraries are statically linked to the binary:"
+msgstr ""
+
+#: ../../../development/abi/315.md:38
+msgid "`libegl.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:39
+msgid "`libeventloop.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:40
+msgid "`libGL`"
+msgstr ""
+
+#: ../../../development/abi/315.md:41
+msgid "`libhtml5_webgl.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:42
+msgid "`libhtml5.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:43
+msgid "`liblz4`"
+msgstr ""
+
+#: ../../../development/abi/315.md:44
+msgid "`libsdl.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:45
+msgid "`libwebgl.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:46
+msgid "`libwebsocket.js`"
+msgstr ""
+
+#: ../../../development/abi/315.md:47
+msgid "`bzip2`"
+msgstr ""
+
+#: ../../../development/abi/315.md:48
+msgid "`zlib`"
+msgstr ""
+
+#: ../../../development/abi/315.md:49
+msgid "`sqlite3` version 3.39.0"
+msgstr ""
+
+#: ../../../development/abi/315.md:50
+msgid "`lzma` (xz) version 5.2.2"
+msgstr ""
+
+#: ../../../development/abi/315.md:52
+msgid ""
+"Aside from `sqlite3` and `lzma`, these libraries come from Emscripten ports "
+"and the versions of the libraries are determined by the version of "
+"Emscripten we build with. Any symbols from these static libraries may be "
+"used by shared libraries."
+msgstr ""
+
+#: ../../../development/abi/315.md:57
+msgid "Changes from pyemscripten_2026_0"
+msgstr ""
+
+#: ../../../development/abi/315.md:59
+msgid ""
+"The only change from `pyemscripten_2026_0` to `pyemscripten_2026_5` is that "
+"Emscripten was upgraded from **5.0.3** to **6.0.5**."
+msgstr ""
+
+#: ../../../development/abi/315.md:62
+msgid "Migration Notes"
+msgstr ""
+
+#: ../../../development/abi/315.md:64
+msgid ""
+"There are three changes in Emscripten 6.0.5 that may cause trouble building "
+"Python packages."
+msgstr ""
+
+#: ../../../development/abi/315.md:66
+msgid "`-shared` links a real dynamic library instead of a static library"
+msgstr ""
+
+#: ../../../development/abi/315.md:68
+msgid ""
+"Until Emscripten 6.0.0, the `-shared` flag was not really respected, and "
+"passing it would generate a `.so` file that was actually a static archive. "
+"This difference in behavior can lead to differences in linking behavior. "
+"Generally this shows up when running `configure`. Pass `-sFAKE_DYLIBS` as an "
+"ldflag to opt into the old behavior of ignoring `-shared`."
+msgstr ""
+
+#: ../../../development/abi/315.md:73
+msgid "OpenMP Supported by Emscripten 6.0.5 but not by Pyodide"
+msgstr ""
+
+#: ../../../development/abi/315.md:75
+msgid ""
+"OpenMP is supported by Emscripten 6.0.5 but it requires pthreads. (On the "
+"other hand, `-fopenmp-simd` works fine.) Pyodide's compiler and linker "
+"wrapper will exit with a nonzero status code if `-fopenmp` or related flags "
+"are passed, but if emcc is invoked directly it will successfully link a "
+"shared library that can only be loaded by a pthreads-enabled binary."
+msgstr ""
+
+#: ../../../development/abi/315.md:81
+msgid "Bug involving C++ exceptions in optimizing builds with dwarf symbols"
+msgstr ""
+
+#: ../../../development/abi/315.md:83
+msgid ""
+"A program with C++ exceptions and dwarf symbols may crash in wasm-opt with a "
+"message like:"
+msgstr ""
+
+#: ../../../development/abi/315.md:84
+msgid ""
+"wasm-opt: wasm-debug.cpp:439: void wasm::Debug::AddrExprMap::add(Expression "
+"*, const BinaryLocations::Span): Assertion `!endMap.contains(span.end)' "
+"failed.\n"
+msgstr ""
+
+#: ../../../development/abi/315.md:87
+msgid "To work around this, disable dwarf."
+msgstr ""
+
+#: ../../../development/abi/315.md:89
+msgid "https://github.com/emscripten-core/emscripten/issues/27449"
+msgstr ""
