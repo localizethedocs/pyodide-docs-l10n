@@ -1,0 +1,950 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/maintainers.md:3
+msgid "Maintainer information"
+msgstr ""
+
+#: ../../../development/maintainers.md:5
+msgid "Making a release"
+msgstr ""
+
+#: ../../../development/maintainers.md:7
+msgid ""
+"For branch organization we use a variation of the [GitHub Flow](https://"
+"guides.github.com/introduction/flow/) with the latest release branch named "
+"`stable` (due to ReadTheDocs constraints)."
+msgstr ""
+
+#: ../../../development/maintainers.md:11
+msgid "Making a major release"
+msgstr ""
+
+#: ../../../development/maintainers.md:13
+msgid "Assume for concreteness that we are releasing version 0.20.0."
+msgstr ""
+
+#: ../../../development/maintainers.md:15
+#: ../../../development/maintainers.md:87
+#: ../../../development/maintainers.md:164
+msgid "Preparation"
+msgstr ""
+
+#: ../../../development/maintainers.md:17
+msgid ""
+"Make a tracking issue with a title like \"0.20.0 release planning\". Add the "
+"checklist:"
+msgstr ""
+
+#: ../../../development/maintainers.md:19
+msgid "[ ] Update packages"
+msgstr ""
+
+#: ../../../development/maintainers.md:20
+msgid "[ ] Look for open PRs to add to the release milestone"
+msgstr ""
+
+#: ../../../development/maintainers.md:21
+msgid "[ ] Make sure all PRs in the release milestone are merged"
+msgstr ""
+
+#: ../../../development/maintainers.md:22
+msgid "[ ] Write release notes"
+msgstr ""
+
+#: ../../../development/maintainers.md:23
+msgid "[ ] Tidy changelog"
+msgstr ""
+
+#: ../../../development/maintainers.md:25
+msgid ""
+"Make a release notes blog post at pyodide-blog: https://github.com/pyodide/"
+"pyodide-blog"
+msgstr ""
+
+#: ../../../development/maintainers.md:28
+msgid ""
+"Generate the list of contributors for the release at the end of the release "
+"notes blog post with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:31
+msgid ""
+"git shortlog -s 0.19.0.. | cut -f2- | grep -v '\\[bot\\]' | sort --ignore-"
+"case | tr '\\n' ';' | sed 's/;/, /g;s/, $//' | fold -s\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:35
+msgid "where `0.19.0` is the tag for the last major release."
+msgstr ""
+
+#: ../../../development/maintainers.md:37
+msgid ""
+"Read the changelog and tidy it up by adding subsections, organizing, and "
+"proof reading it. Make a pull request with these changes titled \"Rearrange "
+"changelog for 0.20.0 release\" and merge it."
+msgstr ""
+
+#: ../../../development/maintainers.md:41
+msgid ""
+"Make sure all the PRs that we want to release are merged and that the "
+"release notes are ready."
+msgstr ""
+
+#: ../../../development/maintainers.md:43
+#: ../../../development/maintainers.md:145
+msgid "Releasing"
+msgstr ""
+
+#: ../../../development/maintainers.md:45
+msgid "Switch to the main branch"
+msgstr ""
+
+#: ../../../development/maintainers.md:46
+msgid ""
+"Replace the `## Unreleased` heading in the changelog with `## Version "
+"0.20.0` and add the date underneath it. Commit this."
+msgstr ""
+
+#: ../../../development/maintainers.md:48
+#: ../../../development/maintainers.md:148
+#: ../../../development/maintainers.md:176
+msgid "From the root of the repository run:"
+msgstr ""
+
+#: ../../../development/maintainers.md:49
+msgid "./tools/bump_version.py 0.20.0 --tag\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:52
+#: ../../../development/maintainers.md:152
+#: ../../../development/maintainers.md:180
+msgid "This makes a release commit and tags it."
+msgstr ""
+
+#: ../../../development/maintainers.md:53
+msgid ""
+"Push the release commit and tag to upstream. This triggers the release CI."
+msgstr ""
+
+#: ../../../development/maintainers.md:54
+msgid "git push upstream main 0.20.0\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:57
+msgid "Wait for CI to pass and release to be created."
+msgstr ""
+
+#: ../../../development/maintainers.md:58
+msgid ""
+"Rename the `stable` branch to a release branch for the previous major "
+"version. For instance if last release was, `0.20.0`, the corresponding "
+"release branch would be `0.20.X`:"
+msgstr ""
+
+#: ../../../development/maintainers.md:62
+msgid ""
+"git fetch upstream stable:stable\n"
+"git branch 0.20.X stable\n"
+"git push -u upstream 0.20.X\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:68
+msgid "Create a new `stable` branch:"
+msgstr ""
+
+#: ../../../development/maintainers.md:70
+msgid ""
+"git switch main\n"
+"git switch -C stable\n"
+"git push upstream stable --force\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:76
+msgid "Set the version back to next development version with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:77
+msgid ""
+"git switch main\n"
+"./tools/bump_version.py 0.21.0 --dev\n"
+"git push upstream main\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:83
+msgid "Making a minor release"
+msgstr ""
+
+#: ../../../development/maintainers.md:85
+msgid "Assume for concreteness that we are releasing version 0.27.2."
+msgstr ""
+
+#: ../../../development/maintainers.md:89
+msgid ""
+"Go through the commits on the main branch since the last release, find ones "
+"you want to backport and add the \"needs backport\" label to the pull "
+"requests. You can do this manually in the web interface on the GitHub PR or "
+"you can use"
+msgstr ""
+
+#: ../../../development/maintainers.md:93
+msgid "./tools/backports.py add-pr <pr-number>\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:97
+msgid ""
+"List out the `needs backport` PRs that are missing changelog entries with"
+msgstr ""
+
+#: ../../../development/maintainers.md:99
+msgid "./tools/backports.py missing-changelogs\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:103
+msgid ""
+"and double check that every PR that should have a changelog does have one."
+msgstr ""
+
+#: ../../../development/maintainers.md:105
+msgid ""
+"Read the changelog and tidy it up by adding subsections, organizing, and "
+"proof reading it. Make a pull request with these changes titled e.g., "
+"\"Rearrange changelog for 0.27.2 release\" and merge it."
+msgstr ""
+
+#: ../../../development/maintainers.md:109
+msgid "Make the backport branch (on top of stable):"
+msgstr ""
+
+#: ../../../development/maintainers.md:111
+msgid "./tools/backports.py backport-branch\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:115
+msgid "Make the update-changelog branch (on top of main) with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:117
+msgid "./tools/backports.py changelog-branch\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:121
+msgid "Open PRs for these two branches with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:123
+msgid "./tools/backports.py open-release-prs\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:127
+msgid "Use the backport branch PR as the release tracker."
+msgstr ""
+
+#: ../../../development/maintainers.md:129
+msgid ""
+"Make sure that the CI passes on the backports branch and it is approved. "
+"When it does pass, set the date for the release in the changelog with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:131
+msgid ""
+"./tools/backports.py set-date\n"
+"git switch backports-for-0.27.2\n"
+"git push -f\n"
+"git switch changelog-for-0.27.2\n"
+"git push -f\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:138
+msgid "Then merge the two PRs."
+msgstr ""
+
+#: ../../../development/maintainers.md:139
+msgid "Run"
+msgstr ""
+
+#: ../../../development/maintainers.md:140
+msgid "./tools/backport.py clear-prs\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:143
+msgid "to clear all the \"needs backport\" labels."
+msgstr ""
+
+#: ../../../development/maintainers.md:147
+msgid "Switch to the stable branch and `git pull`."
+msgstr ""
+
+#: ../../../development/maintainers.md:149
+msgid "./tools/backport.py bump-version --tag\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:153
+msgid ""
+"Push the release commit and tag to `upstream/stable`. This triggers the "
+"release CI."
+msgstr ""
+
+#: ../../../development/maintainers.md:155
+msgid "git push upstream stable 0.27.2\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:158
+#: ../../../development/maintainers.md:191
+msgid "Wait for CI to pass and the release to be created."
+msgstr ""
+
+#: ../../../development/maintainers.md:160
+msgid "Making an alpha release"
+msgstr ""
+
+#: ../../../development/maintainers.md:162
+msgid "Assume for concreteness that we are releasing 0.28.0a1."
+msgstr ""
+
+#: ../../../development/maintainers.md:166
+msgid ""
+"Any single maintainer can decide on their own to make an alpha release, it "
+"is not required to discuss it with other maintainers."
+msgstr ""
+
+#: ../../../development/maintainers.md:169
+msgid ""
+"Name the first alpha release `x.x.xa1` and in subsequent alphas increment "
+"the final number. No preparation is necessary. Do not make any changes to "
+"the changelog."
+msgstr ""
+
+#: ../../../development/maintainers.md:173
+msgid "Release instructions"
+msgstr ""
+
+#: ../../../development/maintainers.md:175
+msgid "Switch to the main branch and `git pull`."
+msgstr ""
+
+#: ../../../development/maintainers.md:177
+msgid "./tools/bump_version.py 0.28.0a1 --tag\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:181
+msgid ""
+"Push the release commit and tag to `upstream/main`. This triggers the "
+"release CI."
+msgstr ""
+
+#: ../../../development/maintainers.md:183
+msgid "git push upstream main 0.28.0a1\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:186
+msgid "Put the version back with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:187
+msgid ""
+"git revert 0.28.0a1 -n && git commit -m \"Back to development version\"\n"
+"git push upstream main\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:193
+msgid "Fixing documentation for a released version"
+msgstr ""
+
+#: ../../../development/maintainers.md:195
+msgid ""
+"Cherry pick the corresponding documentation commits to the `stable` branch. "
+"Use `git commit --amend` to add `[skip ci]` to the commit message."
+msgstr ""
+
+#: ../../../development/maintainers.md:198
+msgid "Updating the Docker image"
+msgstr ""
+
+#: ../../../development/maintainers.md:200
+msgid ""
+"Anyone with an account on hub.docker.com can follow the following steps:"
+msgstr ""
+
+#: ../../../development/maintainers.md:202
+msgid "Make whatever changes are needed to the Dockerfile."
+msgstr ""
+
+#: ../../../development/maintainers.md:203
+msgid ""
+"Build the docker image with `docker build .` in the Pyodide root directory. "
+"If the build succeeds, docker will give you a hash for the built image."
+msgstr ""
+
+#: ../../../development/maintainers.md:205
+msgid ""
+"Use `python ./tools/docker_image_tag.py` to find out what the new image tag "
+"should be. Tag the image with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:207
+msgid ""
+"docker image tag <image-hash> <your-docker-username>/pyodide-env:<image-"
+"tag>\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:210
+msgid "Push the image with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:211
+msgid "docker image push <your-docker-username>/pyodide-env:<image-tag>\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:214
+msgid ""
+"Replace the image in `.circleci/config.yml` with your newly created image. "
+"Open a pull request with your changes to `Dockerfile` and `.circleci/config."
+"yml`."
+msgstr ""
+
+#: ../../../development/maintainers.md:216
+msgid ""
+"When the tests pass and the pull request is approved, a maintainer must copy "
+"the new image into the `pyodide` dockerhub account."
+msgstr ""
+
+#: ../../../development/maintainers.md:218
+msgid ""
+"Then replace the image tag in `.circleci/config.yml`, `.devcontainer/"
+"devcontainer.json`, and `run_docker` with the new image under the `pyodide` "
+"dockerhub account."
+msgstr ""
+
+#: ../../../development/maintainers.md:222
+msgid ""
+"It's also possible to update the docker image by pushing your changes to the "
+"`Dockerfile` to a branch in the `pyodide/pyodide` repo (not on a fork) and "
+"clicking `Run workflow` on https://github.com/pyodide/pyodide/actions/"
+"workflows/docker_image.yml."
+msgstr ""
+
+#: ../../../development/maintainers.md:229
+msgid "Updating packages"
+msgstr ""
+
+#: ../../../development/maintainers.md:231
+msgid ""
+"Before updating the Python version and before making a major Pyodide "
+"release, we try to update all packages that are not too much trouble. Run"
+msgstr ""
+
+#: ../../../development/maintainers.md:234
+msgid "make -C packages update-all\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:238
+msgid ""
+"to update all packages and make a pull request with these changes. There "
+"will be build/test failures, revert the packages that fail the build or "
+"tests and make a note to update them independently."
+msgstr ""
+
+#: ../../../development/maintainers.md:242
+msgid "Updating pyodide-build"
+msgstr ""
+
+#: ../../../development/maintainers.md:244
+msgid ""
+"To change the version of pyodide-build, change the commit of the pyodide-"
+"build submodule."
+msgstr ""
+
+#: ../../../development/maintainers.md:246
+msgid ""
+"cd pyodide-build\n"
+"git checkout \"<COMMIT HASH>\"\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:251
+msgid ""
+"To test with a fork of pyodide-build, change the `.gitmodules` file to point "
+"to your fork and update the commit hash"
+msgstr ""
+
+#: ../../../development/maintainers.md:253
+msgid ""
+"# .gitmodules\n"
+"[submodule \"pyodide-build\"]\n"
+"\tpath = pyodide-build\n"
+"\turl = https://github.com/<yourfork>/pyodide-build\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:260
+msgid ""
+"git submodule sync\n"
+"cd pyodide-build\n"
+"git checkout \"<COMMIT HASH>\"\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:266
+msgid "Upgrading the ABI"
+msgstr ""
+
+#: ../../../development/maintainers.md:268
+msgid ""
+"Each year, we aim to release a new Pyodide ABI version with a new CPython "
+"and Emscripten version."
+msgstr ""
+
+#: ../../../development/maintainers.md:271
+msgid ""
+"Similar to the CPython alpha release, we stabilize the ABI early before "
+"releasing the new Pyodide version so that package maintainers can update "
+"their packages to use the new ABI ([#5580](https://github.com/pyodide/"
+"pyodide/issues/5580))."
+msgstr ""
+
+#: ../../../development/maintainers.md:275
+msgid "0. Stabilize and freeze the ABI"
+msgstr ""
+
+#: ../../../development/maintainers.md:277
+msgid ""
+"Discuss with the maintainers to decide what ABI changes to make before the "
+"release."
+msgstr ""
+
+#: ../../../development/maintainers.md:280
+msgid ""
+"Once the ABI changes are decided, create a `20XX_0` branch (targeting year) "
+"from the `main` branch. All PRs that change the ABI should be merged to the "
+"`20XX_0` branch."
+msgstr ""
+
+#: ../../../development/maintainers.md:284
+msgid "1. Disable `USE_PREBUILT_PACKAGES`"
+msgstr ""
+
+#: ../../../development/maintainers.md:286
+msgid ""
+"Pyodide CI uses prebuilt packages built with the ABI of the last release. To "
+"upgrade the ABI, you need to disable them, otherwise the CI will fail."
+msgstr ""
+
+#: ../../../development/maintainers.md:289
+msgid ""
+"Find the `USE_PREBUILT_PACKAGES` environment variable in [.circleci/config."
+"yml](https://github.com/ryanking13/pyodide/blob/unvendor-recipes/.circleci/"
+"config.yml) and set it to `false`."
+msgstr ""
+
+#: ../../../development/maintainers.md:293
+msgid "2. Upgrade Emscripten and CPython version"
+msgstr ""
+
+#: ../../../development/maintainers.md:295
+msgid "Update the Emscripten and CPython versions respectively."
+msgstr ""
+
+#: ../../../development/maintainers.md:297
+msgid ""
+"Updating the Emscripten version is not mandatory, but it is recommended to "
+"benefit from the latest features and bug fixes."
+msgstr ""
+
+#: ../../../development/maintainers.md:300
+msgid ""
+"Updating Emscripten and CPython separately is often easier than updating "
+"them together."
+msgstr ""
+
+#: ../../../development/maintainers.md:303
+msgid "2.1. Upgrade the Emscripten version"
+msgstr ""
+
+#: ../../../development/maintainers.md:305
+msgid "Updating Emscripten requires the following three steps:"
+msgstr ""
+
+#: ../../../development/maintainers.md:307
+msgid "Rebase the patches in `emsdk/patches` onto the new Emscripten version."
+msgstr ""
+
+#: ../../../development/maintainers.md:308
+msgid "Update the Emscripten version in `Makefile.envs`."
+msgstr ""
+
+#: ../../../development/maintainers.md:309
+msgid ""
+"Update the `struct_info` JSON file in `src/js/` to match the version of the "
+"file in Emscripten."
+msgstr ""
+
+#: ../../../development/maintainers.md:312
+msgid ""
+"All three steps are automated by `tools/update_emscripten.py`. To update, "
+"run:"
+msgstr ""
+
+#: ../../../development/maintainers.md:314
+msgid "./tools/update_emscripten.py new_version\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:318
+msgid ""
+"If there are rebase conflicts, you will have to manually finish the rebase. "
+"Once the rebase is completed, rerun `update_emscripten.py`. It will start "
+"over the rebase from scratch but reuse your conflict resolutions using the "
+"git rerere feature."
+msgstr ""
+
+#: ../../../development/maintainers.md:323
+msgid ""
+"After this is done, commit all the changes and open a PR. There are "
+"frequently complicated CI failures."
+msgstr ""
+
+#: ../../../development/maintainers.md:326
+msgid "2.2. Upgrade CPython version"
+msgstr ""
+
+#: ../../../development/maintainers.md:328
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../development/maintainers.md:330
+msgid "The desired version of CPython must be available at:"
+msgstr ""
+
+#: ../../../development/maintainers.md:332
+msgid "The \"specific release\" section of https://www.python.org/downloads"
+msgstr ""
+
+#: ../../../development/maintainers.md:333
+msgid "https://hub.docker.com/_/python"
+msgstr ""
+
+#: ../../../development/maintainers.md:334
+msgid "https://github.com/actions/python-versions/releases"
+msgstr ""
+
+#: ../../../development/maintainers.md:336
+msgid "Steps"
+msgstr ""
+
+#: ../../../development/maintainers.md:338
+msgid ""
+"Follow the steps in \"Updating the Docker image\" to create a Docker image "
+"for the new Python version."
+msgstr ""
+
+#: ../../../development/maintainers.md:341
+msgid ""
+"Make sure you are in a Python virtual environment with the new version of "
+"Python and with `requirements.txt` installed. (It is also possible to work "
+"in the Docker image as an alternative.)"
+msgstr ""
+
+#: ../../../development/maintainers.md:345
+msgid "Update the Python version in `Makefile.envs`."
+msgstr ""
+
+#: ../../../development/maintainers.md:347
+msgid "Update the Python version in the following locations:"
+msgstr ""
+
+#: ../../../development/maintainers.md:348
+msgid "`.github/workflows/main.yml`"
+msgstr ""
+
+#: ../../../development/maintainers.md:349
+msgid "`docs/conf.py`"
+msgstr ""
+
+#: ../../../development/maintainers.md:350
+msgid "`docs/development/contributing.md`"
+msgstr ""
+
+#: ../../../development/maintainers.md:351
+msgid "`docs/development/building-and-testing-packages.md`"
+msgstr ""
+
+#: ../../../development/maintainers.md:352
+msgid "`environment.yml`"
+msgstr ""
+
+#: ../../../development/maintainers.md:353
+msgid "`.pre-commit-config.yaml`"
+msgstr ""
+
+#: ../../../development/maintainers.md:354
+msgid "`pyproject.toml`"
+msgstr ""
+
+#: ../../../development/maintainers.md:356
+msgid "(TODO: make this list shorter.)"
+msgstr ""
+
+#: ../../../development/maintainers.md:358
+msgid "Rebase the patches:"
+msgstr ""
+
+#: ../../../development/maintainers.md:360
+msgid ""
+"Clone CPython and cd into it. Checkout the Python version you are upgrading "
+"from. For instance, if the old version is 3.13.2, use `git checkout v3.13.2` "
+"(Python tags have a leading `v`). Run:"
+msgstr ""
+
+#: ../../../development/maintainers.md:364
+msgid "git am ~/path/to/pyodide/cpython/patches/*\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:368
+msgid ""
+"Rebase the patches onto the new version of Python. For instance, if updating "
+"from Python v3.13.2 to Python 3.14.1:"
+msgstr ""
+
+#: ../../../development/maintainers.md:371
+msgid "git rebase v3.13.2 --onto v3.14.1\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:375
+msgid ""
+"Resolve conflicts and drop patches that have been upstreamed. If you have "
+"conflicts, make sure you are using diff3:"
+msgstr ""
+
+#: ../../../development/maintainers.md:378
+msgid "git config --global merge.conflictstyle diff3\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:382
+msgid "Generate the new patches:"
+msgstr ""
+
+#: ../../../development/maintainers.md:384
+msgid ""
+"rm ~/path/to/pyodide/cpython/patches/*\n"
+"git format-patch v3.14.1 -o ~/path/to/pyodide/cpython/patches/\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:389
+msgid ""
+"Try to build Python with `make -C cpython`. Fix any build errors. If you "
+"modify the Python source in-tree after a failed build, it may be useful to "
+"run `make rebuild`."
+msgstr ""
+
+#: ../../../development/maintainers.md:393
+msgid ""
+"Try to finish the build with a top-level `make`. Fix compile errors in `src/"
+"core` and any link errors. It may be useful to apply [`upgrade_pythoncapi.py "
+"--no-compat`](https://github.com/python/pythoncapi-compat/blob/main/"
+"upgrade_pythoncapi.py) to the C extension in `src/core`."
+msgstr ""
+
+#: ../../../development/maintainers.md:398
+msgid ""
+"The file most tightly coupled to the CPython version is `src/core/"
+"stack_switching/pystate.c`. Consult the [greenlet TPythonState.cpp](https://"
+"github.com/python-greenlet/greenlet/blob/master/src/greenlet/TPythonState."
+"cpp) to figure out how to fix it."
+msgstr ""
+
+#: ../../../development/maintainers.md:403
+msgid "Run:"
+msgstr ""
+
+#: ../../../development/maintainers.md:405
+msgid "python tools/make_test_list.py\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:409
+msgid ""
+"Then run the core tests with `pytest src/tests/test_core_python.py` and "
+"either fix the failures or update `src/tests/python_tests.yaml` to skip or "
+"xfail them."
+msgstr ""
+
+#: ../../../development/maintainers.md:413
+msgid "Try to build packages with:"
+msgstr ""
+
+#: ../../../development/maintainers.md:415
+msgid "pyodide build-recipes '*'\n"
+msgstr ""
+
+#: ../../../development/maintainers.md:419
+msgid "Fix failing package tests."
+msgstr ""
+
+#: ../../../development/maintainers.md:421
+msgid "Old major Python upgrades"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "version"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "pr"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.13"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`5498`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.12"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`4435`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.11"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`3252`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.10"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`2225`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.9"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`1637`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.8"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`712`"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "3.7"
+msgstr ""
+
+#: ../../../development/maintainers.md:0
+msgid "{pr}`77`"
+msgstr ""
+
+#: ../../../development/maintainers.md:433
+msgid "3. Release a new Pyodide alpha version"
+msgstr ""
+
+#: ../../../development/maintainers.md:435
+msgid ""
+"After all the changes are merged, release a new Pyodide alpha version so "
+"that people can build packages with the new ABI."
+msgstr ""
+
+#: ../../../development/maintainers.md:438
+msgid "4. Update packages and release new package set"
+msgstr ""
+
+#: ../../../development/maintainers.md:440
+msgid ""
+"TODO: Update the process after [PEP 783](https://peps.python.org/pep-0783/) "
+"is accepted."
+msgstr ""
+
+#: ../../../development/maintainers.md:442
+msgid ""
+"Go to [pyodide/pyodide-recipes](https://github.com/pyodide/pyodide-recipes) "
+"and follow the guidelines in [MAINTAINERS.md](https://github.com/pyodide/"
+"pyodide-recipes/blob/main/docs/MAINTAINERS.md). You'll need to create a tag "
+"for the existing package sets and update `default_cross_build_env_url` in "
+"the main branch."
+msgstr ""
+
+#: ../../../development/maintainers.md:448
+msgid ""
+"If you updated the Python version, also update the `python` version used in "
+"the CI. When opening the PR, include the `full build` label to trigger a "
+"full build of all packages; otherwise, only a small set of packages will be "
+"built."
+msgstr ""
+
+#: ../../../development/maintainers.md:452
+msgid ""
+"Most likely, some packages will fail to build. You can disable them by "
+"adding `_disabled: true` to the recipes of the failing packages. You don't "
+"need to handle all the build failures in the same PR—you can open multiple "
+"PRs to fix the build failures or let the package maintainers handle them."
+msgstr ""
+
+#: ../../../development/maintainers.md:457
+msgid ""
+"Create a new tag for the new package set when the build is successful. This "
+"will create a new release with the new package set."
+msgstr ""
+
+#: ../../../development/maintainers.md:460
+msgid ""
+"5. Re-enable `USE_PREBUILT_PACKAGES` and upgrade the ABI in the main branch"
+msgstr ""
+
+#: ../../../development/maintainers.md:462
+msgid ""
+"Go back to `pyodide/pyodide` and update the `PYODIDE_PREBUILT_PACKAGES_BASE` "
+"variable in `Makefile.envs` to the new package set you created in the "
+"previous step."
+msgstr ""
+
+#: ../../../development/maintainers.md:466
+msgid ""
+"Then re-enable `USE_PREBUILT_PACKAGES` in `.circleci/config.yml` and open a "
+"PR to merge it into the main branch."
+msgstr ""
+
+#: ../../../development/maintainers.md:469
+msgid "6. Release a new Pyodide version"
+msgstr ""
+
+#: ../../../development/maintainers.md:471
+msgid ""
+"After enabling most of the packages that were available in the previous ABI "
+"version, we are ready to release a new Pyodide version with the new ABI."
+msgstr ""
+
+#: ../../../development/maintainers.md:474
+msgid "Update {ref}`pyodide-platform-abi` to match the new ABI."
+msgstr ""
+
+#: ../../../development/maintainers.md:476
+msgid ""
+"Merge the `20XX_0` branch into `main` and open a PR, then release a new "
+"Pyodide version with the new ABI."
+msgstr ""
