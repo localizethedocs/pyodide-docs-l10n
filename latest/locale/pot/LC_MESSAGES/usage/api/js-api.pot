@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-09-14 16:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,7 +302,7 @@ msgid "Returns"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:224 ../../../usage/api/js-api.md:394
-#: ../../../usage/api/js-api.md:820
+#: ../../../usage/api/js-api.md:824
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
 "\\`void\\`\\\\ \\>`"
@@ -354,7 +354,7 @@ msgid ""
 msgstr ""
 
 #: ../../../usage/api/js-api.md:279 ../../../usage/api/js-api.md:503
-#: ../../../usage/api/js-api.md:576 ../../../usage/api/js-api.md:750
+#: ../../../usage/api/js-api.md:578 ../../../usage/api/js-api.md:754
 msgid "Example"
 msgstr ""
 
@@ -701,7 +701,7 @@ msgstr ""
 msgid ":any:`toPy <pyodide.toPy>`\\ **\\(obj\\, options\\)**"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:771
+#: ../../../usage/api/js-api.md:775
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Convert a JavaScript object to a Python object as best as possible."
 msgstr ""
@@ -712,7 +712,7 @@ msgid ""
 "options\\)**"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:791
+#: ../../../usage/api/js-api.md:795
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Unpack an archive into a target directory."
 msgstr ""
@@ -732,7 +732,7 @@ msgstr ""
 msgid "**async** :any:`useNodeSockFS <pyodide.useNodeSockFS>`\\ **\\(\\)**"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:818
+#: ../../../usage/api/js-api.md:822
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Use Node.js native socket filesystem instead of Emscripten's SOCKFS."
 msgstr ""
@@ -1211,23 +1211,23 @@ msgid ""
 "expression is returned."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:566 ../../../usage/api/js-api.md:625
+#: ../../../usage/api/js-api.md:566 ../../../usage/api/js-api.md:627
 msgid "The Python code to run"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:567 ../../../usage/api/js-api.md:626
+#: ../../../usage/api/js-api.md:567 ../../../usage/api/js-api.md:628
 msgid ""
 "An optional Python dictionary to use as the globals. Defaults to :js:attr:"
 "`pyodide.globals`."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:568 ../../../usage/api/js-api.md:627
+#: ../../../usage/api/js-api.md:568 ../../../usage/api/js-api.md:629
 msgid ""
 "An optional Python dictionary to use as the locals. Defaults to the same as "
 "``globals``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:569 ../../../usage/api/js-api.md:628
+#: ../../../usage/api/js-api.md:569 ../../../usage/api/js-api.md:630
 msgid ""
 "An optional string to use as the file name. Defaults to ``\"<exec>\"``. If a "
 "custom file name is given, the traceback for any exception that is thrown "
@@ -1235,14 +1235,20 @@ msgid ""
 "ends with ``>``)."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:574
+#: ../../../usage/api/js-api.md:570 ../../../usage/api/js-api.md:631
+msgid ""
+"An optional boolean indicating whether ``code`` should be dedented before "
+"being run. Defaults to ``true``."
+msgstr ""
+
+#: ../../../usage/api/js-api.md:576
 msgid ""
 ":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The result of the Python code "
 "translated to JavaScript. See the documentation for :py:func:`~pyodide.code."
 "eval_code` for more info."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:578
+#: ../../../usage/api/js-api.md:580
 msgid ""
 "async function main(){\n"
 "  const pyodide = await loadPyodide();\n"
@@ -1260,7 +1266,7 @@ msgid ""
 "main();"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:599
+#: ../../../usage/api/js-api.md:601
 msgid ""
 "Run a Python code string with top level await using :py:func:`~pyodide.code."
 "eval_code_async` to evaluate the code. Returns a promise which resolves when "
@@ -1269,11 +1275,11 @@ msgid ""
 "will resolve to the value of this expression."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:504 ../../../usage/api/js-api.md:605
+#: ../../../usage/api/js-api.md:504 ../../../usage/api/js-api.md:607
 msgid "For example:"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:607
+#: ../../../usage/api/js-api.md:609
 msgid ""
 "let result = await pyodide.runPythonAsync(`\n"
 "    from js import fetch\n"
@@ -1286,40 +1292,40 @@ msgid ""
 "console.log(result); // 79"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:618
+#: ../../../usage/api/js-api.md:620
 msgid "Python imports"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:621
+#: ../../../usage/api/js-api.md:623
 msgid ""
 "Since pyodide 0.18.0, you must call :js:func:`loadPackagesFromImports` to "
 "import any python packages referenced via ``import`` statements in your "
 "code. This function will no longer do it for you."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:633
+#: ../../../usage/api/js-api.md:637
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
 "\\`any\\`\\\\ \\>` -- The result of the Python code translated to JavaScript."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:638
+#: ../../../usage/api/js-api.md:642
 msgid ""
 "Turn on or off debug mode. In debug mode, some error messages are improved "
 "at a performance cost."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:641
+#: ../../../usage/api/js-api.md:645
 msgid "If true, turn debug mode on. If false, turn debug mode off."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:643
+#: ../../../usage/api/js-api.md:647
 msgid ""
 ":sphinx_js_type:`\\:js\\:data\\:\\`boolean\\`` -- The old value of the debug "
 "flag."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:648
+#: ../../../usage/api/js-api.md:652
 msgid ""
 "Sets the interrupt buffer to be ``interrupt_buffer``. This is only useful "
 "when Pyodide is used in a webworker. The buffer should be a :js:class:"
@@ -1329,18 +1335,18 @@ msgid ""
 "be silently ignored."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:655
+#: ../../../usage/api/js-api.md:659
 msgid ""
 "You can disable interrupts by calling ``setInterruptBuffer(undefined)``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:657
+#: ../../../usage/api/js-api.md:661
 msgid ""
 "If you wish to trigger a :py:exc:`KeyboardInterrupt`, write ``SIGINT`` (a 2) "
 "into the interrupt buffer."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:660
+#: ../../../usage/api/js-api.md:664
 msgid ""
 "By default ``SIGINT`` raises a :py:exc:`KeyboardInterrupt` and all other "
 "signals are ignored. You can install custom signal handlers with the signal "
@@ -1349,7 +1355,7 @@ msgid ""
 "be used for any purpose you like."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:672
+#: ../../../usage/api/js-api.md:676
 msgid ""
 "Sets the standard error handler. A :js:typealias:`BatchedWriteHandler`, a :"
 "js:typealias:`RawWriteHandler`, or a :js:typealias:`Writer` can be provided. "
@@ -1358,7 +1364,7 @@ msgid ""
 "`Writer` provides the most flexibility and the best performance."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:684
+#: ../../../usage/api/js-api.md:688
 msgid ""
 "Set a stdin handler. See :ref:`redirecting standard streams <streams-stdin>` "
 "for a more detailed explanation. There are two different possible interfaces "
@@ -1366,38 +1372,38 @@ msgid ""
 "handler or an error handler that always returns an IO error."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:689
+#: ../../../usage/api/js-api.md:693
 msgid "passing a ``read`` function (see below),"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:690
+#: ../../../usage/api/js-api.md:694
 msgid "passing a ``stdin`` function (see below),"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:691
+#: ../../../usage/api/js-api.md:695
 msgid ""
 "passing ``error: true`` indicates that attempting to read from stdin should "
 "always raise an IO error."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:693
+#: ../../../usage/api/js-api.md:697
 msgid ""
 "passing none of these sets the default behavior. In node, the default is to "
 "read from stdin. In the browser, the default is to raise an error."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:696
+#: ../../../usage/api/js-api.md:700
 msgid ""
 "The functions on the ``options`` argument will be called with ``options`` "
 "bound to ``this`` so passing an instance of a class as the ``options`` "
 "object works as expected."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:700
+#: ../../../usage/api/js-api.md:704
 msgid "The interfaces that the handlers implement are as follows:"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:702
+#: ../../../usage/api/js-api.md:706
 msgid ""
 "The ``read`` function is called with a ``Uint8Array`` argument. The function "
 "should place the utf8-encoded input into this buffer and return the number "
@@ -1407,73 +1413,73 @@ msgid ""
 "flushed."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:709
+#: ../../../usage/api/js-api.md:713
 msgid ""
 "The ``stdin`` function is called with zero arguments. It should return one "
 "of:"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:712
+#: ../../../usage/api/js-api.md:716
 msgid ""
 ":js:data:`null` or :js:data:`undefined`: these are interpreted as end of "
 "file."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:714
+#: ../../../usage/api/js-api.md:718
 msgid "a number"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:715
+#: ../../../usage/api/js-api.md:719
 msgid "a string"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:716
+#: ../../../usage/api/js-api.md:720
 msgid ""
 "an :js:class:`ArrayBuffer` or :js:class:`TypedArray` with :js:data:"
 "`~TypedArray.BYTES_PER_ELEMENT` equal to 1. The buffer should contain utf8 "
 "encoded text."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:720
+#: ../../../usage/api/js-api.md:724
 msgid ""
 "If a number is returned, it is interpreted as a single character code. The "
 "number should be between 0 and 255."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:723
+#: ../../../usage/api/js-api.md:727
 msgid ""
 "If a string is returned, it is encoded into a buffer using :js:class:"
 "`TextEncoder`. By default, an EOF is appended after each string or buffer "
 "returned. If this behavior is not desired, pass ``autoEOF: false``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:727
+#: ../../../usage/api/js-api.md:731
 msgid "A stdin handler"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:728
+#: ../../../usage/api/js-api.md:732
 msgid "A read handler"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:729
+#: ../../../usage/api/js-api.md:733
 msgid ""
 "If this is set to ``true``, attempts to read from stdin will always set an "
 "IO error."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:730
+#: ../../../usage/api/js-api.md:734
 msgid ""
 "Should :py:func:`isatty(stdin) <os.isatty>` be ``true`` or ``false`` "
 "(default ``false``)."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:731
+#: ../../../usage/api/js-api.md:735
 msgid ""
 "Insert an EOF automatically after each string or buffer? (default ``true``). "
 "This option can only be used with the stdin handler."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:741
+#: ../../../usage/api/js-api.md:745
 msgid ""
 "Sets the standard out handler. A :js:class:`BatchedWriteHandler`, a :js:"
 "class:`RawWriteHandler`, or a :js:class:`Writer` can be provided. See the "
@@ -1482,7 +1488,7 @@ msgid ""
 "provides the most flexibility and the best performance."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:752
+#: ../../../usage/api/js-api.md:756
 msgid ""
 "async function main(){\n"
 "  const pyodide = await loadPyodide();\n"
@@ -1499,7 +1505,7 @@ msgid ""
 "main();"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:773
+#: ../../../usage/api/js-api.md:777
 msgid ""
 "This is similar to :py:meth:`~pyodide.ffi.JsProxy.to_py` but for use from "
 "JavaScript. If the object is immutable or a :js:class:`~pyodide.ffi."
@@ -1507,34 +1513,34 @@ msgid ""
 "into Python, it will be returned unchanged."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:778
+#: ../../../usage/api/js-api.md:782
 msgid "See :ref:`type-translations-jsproxy-to-py` for more information."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:780
+#: ../../../usage/api/js-api.md:784
 msgid "The object to convert."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:781
+#: ../../../usage/api/js-api.md:785
 msgid "Optional argument to limit the depth of the conversion."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:782
+#: ../../../usage/api/js-api.md:786
 msgid ""
 "Optional argument to convert objects with no default conversion. See the "
 "documentation of :py:meth:`~pyodide.ffi.JsProxy.to_py`."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:786
+#: ../../../usage/api/js-api.md:790
 msgid ""
 ":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The object converted to Python."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:793
+#: ../../../usage/api/js-api.md:797
 msgid "The archive as an :js:class:`ArrayBuffer` or :js:class:`TypedArray`."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:794
+#: ../../../usage/api/js-api.md:798
 msgid ""
 "The format of the archive. Should be one of the formats recognized by :py:"
 "func:`shutil.unpack_archive`. By default the options are ``'bztar'``, "
@@ -1543,12 +1549,12 @@ msgid ""
 "gz'``, ``'.tgz'``, ``'tar.gz'`` or ``'tgz'`` are considered to be synonyms."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:795
+#: ../../../usage/api/js-api.md:799
 msgid ""
 "The directory to unpack the archive into. Defaults to the working directory."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:803
+#: ../../../usage/api/js-api.md:807
 msgid ""
 "Unregisters a JavaScript module with given name that has been previously "
 "registered with :js:func:`pyodide.registerJsModule` or :func:`~pyodide.ffi."
@@ -1559,7 +1565,7 @@ msgid ""
 "unregister_js_module`."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:811
+#: ../../../usage/api/js-api.md:815
 msgid "Name of the JavaScript module to remove"
 msgstr ""
 

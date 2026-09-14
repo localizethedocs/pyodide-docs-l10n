@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-19 11:50:51 +0200",
-      "hash" : "2e200b20b14286ac55e0b655519c87f9307a97c0",
-      "title" : "chore: Put emsdk version in directory name (#6351)"
+      "date" : "2026-09-14 15:10:13 +0900",
+      "hash" : "4a6730d00df76f1ab356e733e2f84ef14b2fbfd3",
+      "title" : "Update cross-build metadata files for version 314.0.7 (#6455)"
     }
   },
   "type" : "branch",
