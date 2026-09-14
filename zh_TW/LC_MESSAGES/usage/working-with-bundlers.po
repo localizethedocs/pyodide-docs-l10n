@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/working-with-bundlers.md:3
+msgid "Working with Bundlers"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:5
+msgid "When using Pyodide with bundlers, there are two main approaches:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:7
+msgid ""
+"**Loading from a CDN** - This is the simplest approach and sufficient for "
+"most use cases"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:8
+msgid ""
+"**Bundling Pyodide files** - For applications that need to work offline or "
+"have specific hosting requirements"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:10
+msgid "Using Pyodide from a CDN"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:12
+msgid ""
+"For most applications, the simplest approach is to use Pyodide from a CDN by "
+"setting the `indexURL` parameter:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:14
+msgid ""
+"import { loadPyodide, version as pyodideVersion } from \"pyodide\";\n"
+"\n"
+"async function initPyodide() {\n"
+"  const pyodide = await loadPyodide({\n"
+"    indexURL: `https://cdn.jsdelivr.net/pyodide/v${pyodideVersion}/full/`,\n"
+"  });\n"
+"  return pyodide;\n"
+"}\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:25
+msgid ""
+"This approach works with most bundlers without additional configuration and "
+"is recommended for most users."
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:27
+msgid "Bundling Pyodide Files"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:29
+msgid ""
+"If you need to bundle all Pyodide files with your application (for offline "
+"use or self-hosting), follow the instructions below for your specific "
+"bundler."
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:31
+msgid "Webpack"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:33
+msgid ""
+"There is a [Pyodide Webpack Plugin][] to load Pyodide from a local bundle in "
+"a Webpack project."
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:35
+msgid "Vite"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:38
+msgid ""
+"The following instructions have been tested with Pyodide 0.26.2, Vite 5.4.9, "
+"and vite-plugin-static-copy 2.0.0."
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:42
+msgid "First, install the Pyodide and vite-plugin-static-copy npm packages:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:44
+msgid "$ npm install pyodide vite-plugin-static-copy\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:48
+msgid ""
+"Then, in your `vite.config.mjs` file, exclude Pyodide from [Vite's "
+"dependency pre-bundling][optimizedeps] by setting `optimizeDeps.exclude` and "
+"ensure that all Pyodide files will be available in `dist/assets` for "
+"production builds by using a Vite plugin:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:53
+msgid ""
+"import { defineConfig } from \"vite\";\n"
+"import { viteStaticCopy } from \"vite-plugin-static-copy\";\n"
+"import { dirname, join } from \"path\";\n"
+"import { fileURLToPath } from \"url\";\n"
+"\n"
+"const PYODIDE_EXCLUDE = [\n"
+"  \"!**/*.{md,html}\",\n"
+"  \"!**/*.d.ts\",\n"
+"  \"!**/*.whl\",\n"
+"  \"!**/node_modules\",\n"
+"];\n"
+"\n"
+"export function viteStaticCopyPyodide() {\n"
+"  const pyodideDir = dirname(fileURLToPath(import.meta."
+"resolve(\"pyodide\")));\n"
+"  return viteStaticCopy({\n"
+"    targets: [\n"
+"      {\n"
+"        src: [join(pyodideDir, \"*\")].concat(PYODIDE_EXCLUDE),\n"
+"        dest: \"assets\",\n"
+"      },\n"
+"    ],\n"
+"  });\n"
+"}\n"
+"\n"
+"export default defineConfig({\n"
+"  optimizeDeps: { exclude: [\"pyodide\"] },\n"
+"  plugins: [viteStaticCopyPyodide()],\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:84
+msgid "You can test your setup with this `index.html` file:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:86
+msgid ""
+"<!doctype html>\n"
+"<html lang=\"en\">\n"
+"  <head>\n"
+"    <title>Vite + Pyodide</title>\n"
+"    <script type=\"module\" src=\"main.mjs\"></script>\n"
+"  </head>\n"
+"</html>\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:96
+msgid "And this `src/main.mjs` file:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:98
+msgid ""
+"import { loadPyodide } from \"pyodide\";\n"
+"\n"
+"async function hello_python() {\n"
+"  let pyodide = await loadPyodide();\n"
+"  return pyodide.runPythonAsync(\"1+1\");\n"
+"}\n"
+"\n"
+"hello_python().then((result) => {\n"
+"  console.log(\"Python says that 1+1 =\", result);\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:111
+msgid ""
+"If you need to specify a specific path for the bundled files, you can set "
+"the `indexURL` parameter:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:113
+msgid ""
+"let pyodide = await loadPyodide({\n"
+"  indexURL: \"/assets\", // Path to the directory containing pyodide.js and "
+"other files\n"
+"});\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:119
+msgid "Make sure this works both in Vite's dev mode:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:121
+msgid "npx vite\n"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:125
+msgid "And as a production build:"
+msgstr ""
+
+#: ../../../usage/working-with-bundlers.md:127
+msgid ""
+"npx vite build\n"
+"npx vite preview\n"
+msgstr ""

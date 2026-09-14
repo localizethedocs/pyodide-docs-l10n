@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../project/deprecation-timeline.md:3
+msgid "Pyodide Deprecation Timeline"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:5
+msgid ""
+"Each Pyodide release may deprecate certain features from previous releases "
+"in a backward incompatible way. If a feature is deprecated, it will continue "
+"to work until its removal, but raise warnings. We try to ensure deprecations "
+"are done over at least two minor(feature) releases, however, as Pyodide is "
+"still in beta state, this list is subject to change and some features can be "
+"removed without deprecation warnings. More details about each item can often "
+"be found in the {ref}`changelog`."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:13
+msgid "0.31.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:15
+msgid ""
+"`jsproxy.as_object_map()` will be removed. Use `jsproxy.as_py_json()` "
+"instead."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:17
+msgid "0.25.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:19
+msgid ""
+"Typescript type imports for `PyProxy` subtypes from `pyodide` will be "
+"removed."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:21
+msgid ""
+"The methods `PyProxy.supportsHas`, `PyProxy.isCallable`, etc will be removed."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:23
+msgid ""
+"Support for the `homedir` argument will be removed in favor of `env: {HOME: "
+"\"/the/home/directory\"}`."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:26
+msgid "0.24.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:28
+msgid ""
+"The `messageCallback` and `errorCallback` argument to `loadPackage` and "
+"`loadPackagesFromImports` will be passed as a named argument only."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:31
+msgid "`Py2JsResult` will be removed."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:33
+msgid "The `--output-directory` argument to `pyodide build` will be removed."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:35
+msgid "0.23.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:37
+msgid ""
+"Names that used to be in the root `pyodide` module and were moved to "
+"submodules will no longer be available in the root module."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:39
+msgid ""
+"The \"message\" argument to `PyProxy.destroy` method will no longer be "
+"accepted as a positional argument."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:42
+msgid "0.21.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:44
+msgid ""
+"The `globals` argument to `runPython` and `runPythonAsync` will be passed as "
+"a named argument only."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:46
+msgid ""
+"The `extractDir` argument to `unpackArchive` will be passed as a named "
+"argument only."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:49
+msgid "0.20.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:51
+msgid ""
+"The skip-host key will be removed from the meta.yaml format. If needed, "
+"install a host copy of the package with pip instead."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:53
+msgid ""
+"`pyodide-interrupts` module will be removed. If you were using this for some "
+"reason, use {js:func}`~pyodide.setInterruptBuffer` instead."
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:56
+msgid "0.19.0"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:58
+msgid ""
+"The default working directory (home directory) inside the Pyodide virtual "
+"file system has been changed from `/` to `/home/pyodide`. To get the "
+"previous behavior, you can"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:61
+msgid "call `os.chdir(\"/\")` in Python to change working directory or"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:62
+msgid "call {js:func}`~exports.loadPyodide` with the `homedir=\"/\"` argument"
+msgstr ""
+
+#: ../../../project/deprecation-timeline.md:65
+msgid ""
+"When a JavaScript function is called from Python, PyProxy arguments and "
+"return values will be automatically destroyed when the function is finished."
+msgstr ""
