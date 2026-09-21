@@ -37,9 +37,9 @@
     "branch" : "stable",
     "commit" : 
     {
-      "date" : "2026-07-18 23:21:11 +0200",
-      "hash" : "e36205564810717a03e820ee8498ed43da61f2f5",
-      "title" : "Remove some outdated items from roadmap (#6349)"
+      "date" : "2026-09-16 10:56:22 -0700",
+      "hash" : "4be6473810dcbacbb0b3e2a9b8798a783c6dcf2f",
+      "title" : "Update changelog to include 0.27.8 and 0.29.5"
     }
   },
   "type" : "branch",
