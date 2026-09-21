@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-09-21 16:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 #: ../../../usage/cli.md:18
 msgid ""
 "It should work on Linux and macOS. There is currently no Windows support. It "
-"requires an installation of NodeJS >= 20."
+"requires an installation of NodeJS >= 22."
 msgstr ""
 
 #: ../../../usage/cli.md:21
