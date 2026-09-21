@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-19 11:50:51 +0200",
-      "hash" : "2e200b20b14286ac55e0b655519c87f9307a97c0",
-      "title" : "chore: Put emsdk version in directory name (#6351)"
+      "date" : "2026-09-18 15:59:35 +0900",
+      "hash" : "2bcd2cc6334f0a18464f2a330bb0556cd527ebcd",
+      "title" : "Add .DS_Store to gitignore [skip ci] (#6469)"
     }
   },
   "type" : "branch",
