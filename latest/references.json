@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-19 11:50:51 +0200",
-      "hash" : "2e200b20b14286ac55e0b655519c87f9307a97c0",
-      "title" : "chore: Put emsdk version in directory name (#6351)"
+      "date" : "2026-09-22 12:43:22 +0900",
+      "hash" : "e4d3ae954d01d61a3e90531d63b881f2d33361b4",
+      "title" : "Support cross-drive paths in windows pyodide cli (#6467)"
     }
   },
   "type" : "branch",
