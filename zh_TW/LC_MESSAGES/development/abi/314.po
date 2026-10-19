@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/abi/314.md:1
+msgid "pyemscripten_2026_0 (under development)"
+msgstr ""
+
+#: ../../../development/abi/314.md:3
+msgid ""
+"By default, all builds of the Pyodide runtime with Python 3.14 will use the "
+"`pyemscripten_2026_0` platform."
+msgstr ""
+
+#: ../../../development/abi/314.md:6
+msgid ""
+"This section reflects the planned definition for the `pyemscripten_2026_0` "
+"platform. This is subject to change without notice."
+msgstr ""
+
+#: ../../../development/abi/314.md:9
+msgid "Platform Specification"
+msgstr ""
+
+#: ../../../development/abi/314.md:11
+msgid "CPython and Emscripten Version"
+msgstr ""
+
+#: ../../../development/abi/314.md:13
+msgid "**CPython**: 3.14"
+msgstr ""
+
+#: ../../../development/abi/314.md:14
+msgid "**Emscripten**: 5.0.3"
+msgstr ""
+
+#: ../../../development/abi/314.md:16
+msgid "Unwinding ABIs"
+msgstr ""
+
+#: ../../../development/abi/314.md:18
+msgid ""
+"C++ libraries are built with WebAssembly exception handling (`-fwasm-"
+"exceptions`) and WebAssembly-based `setjmp`/`longjmp` (`-"
+"sSUPPORT_LONGJMP=wasm`). To enable exceptions and `setjmp`/`longjmp`, `-"
+"fwasm-exceptions` must be passed at compile time and link time."
+msgstr ""
+
+#: ../../../development/abi/314.md:23
+msgid "Rust Toolchain"
+msgstr ""
+
+#: ../../../development/abi/314.md:25
+msgid ""
+"When building Rust packages to target the `pyemscripten_2026_0` platform, "
+"use Rust version 1.93.0 or later."
+msgstr ""
+
+#: ../../../development/abi/314.md:28
+msgid "Runtime Library Loading Path"
+msgstr ""
+
+#: ../../../development/abi/314.md:30
+msgid ""
+"There is full support for `RPATH`. The dynamic loader will only load "
+"dependencies that are properly specified on the `RPATH`, just being in `/lib/"
+"python3.14/site-packages/wheel_name.libs` is not sufficient."
+msgstr ""
+
+#: ../../../development/abi/314.md:34
+msgid "Libraries Linked to the Main Binary"
+msgstr ""
+
+#: ../../../development/abi/314.md:36
+msgid "The following libraries are statically linked to the binary:"
+msgstr ""
+
+#: ../../../development/abi/314.md:38
+msgid "`libegl.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:39
+msgid "`libeventloop.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:40
+msgid "`libGL`"
+msgstr ""
+
+#: ../../../development/abi/314.md:41
+msgid "`libhtml5_webgl.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:42
+msgid "`libhtml5.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:43
+msgid "`liblz4`"
+msgstr ""
+
+#: ../../../development/abi/314.md:44
+msgid "`libsdl.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:45
+msgid "`libwebgl.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:46
+msgid "`libwebsocket.js`"
+msgstr ""
+
+#: ../../../development/abi/314.md:47
+msgid "`bzip2`"
+msgstr ""
+
+#: ../../../development/abi/314.md:48
+msgid "`zlib`"
+msgstr ""
+
+#: ../../../development/abi/314.md:49
+msgid "`sqlite3` version 3.39.0"
+msgstr ""
+
+#: ../../../development/abi/314.md:50
+msgid "`lzma` (xz) version 5.2.2"
+msgstr ""
+
+#: ../../../development/abi/314.md:52
+msgid ""
+"Aside from `sqlite3` and `lzma`, these libraries come from Emscripten ports "
+"and the versions of the libraries are determined by the version of "
+"Emscripten we build with. Any symbols from these static libraries may be "
+"used by shared libraries."
+msgstr ""
+
+#: ../../../development/abi/314.md:57
+msgid "Changes from pyodide_2025_0"
+msgstr ""
+
+#: ../../../development/abi/314.md:59
+msgid "Platform Name"
+msgstr ""
+
+#: ../../../development/abi/314.md:61
+msgid "The platform name was changed from `pyodide` to `pyemscripten`."
+msgstr ""
+
+#: ../../../development/abi/314.md:63
+msgid "Emscripten version"
+msgstr ""
+
+#: ../../../development/abi/314.md:65
+msgid "Emscripten was upgraded from **4.0.9** to **5.0.3**."
+msgstr ""
+
+#: ../../../development/abi/314.md:67
+msgid "Rust toolchain simplified"
+msgstr ""
+
+#: ../../../development/abi/314.md:69
+msgid ""
+"In `pyodide_2025_0`, a Rust nightly was required with the unstable `-Z "
+"emscripten-wasm-eh` flag and a custom sysroot. In `pyemscripten_2026_0`, "
+"Rust 1.93.0 or later is sufficient — no custom sysroot or nightly-only flags "
+"are needed."
+msgstr ""
+
+#: ../../../development/abi/314.md:74
+msgid ""
+"Technically speaking, this is not a change to the platform. `pyodide_2025_0` "
+"also works with stable Rust 1.93.0."
+msgstr ""
+
+#: ../../../development/abi/314.md:77
+msgid "Additional statically linked libraries"
+msgstr ""
+
+#: ../../../development/abi/314.md:79
+msgid ""
+"The following libraries are now statically linked to the interpreter in "
+"addition to the Emscripten port libraries:"
+msgstr ""
+
+#: ../../../development/abi/314.md:82
+msgid "`sqlite3` (3.39.0)"
+msgstr ""
+
+#: ../../../development/abi/314.md:83
+msgid "`lzma` (xz) (5.2.2)"
+msgstr ""
