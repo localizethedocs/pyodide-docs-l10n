@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 17:51+0000\n"
+"POT-Creation-Date: 2026-10-19 17:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid ":any:`version <exports.version>`\\"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:263 ../../../usage/api/js-api.md:367
+#: ../../../usage/api/js-api.md:273 ../../../usage/api/js-api.md:367
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "The Pyodide version."
@@ -66,7 +66,7 @@ msgid ""
 "**\\(options\\=\\{\\}\\)**"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:273
+#: ../../../usage/api/js-api.md:283
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid "Load the main Pyodide wasm module and initialize it."
 msgstr ""
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: ../../../usage/api/js-api.md:17 ../../../usage/api/js-api.md:100
-#: ../../../usage/api/js-api.md:119 ../../../usage/api/js-api.md:168
+#: ../../../usage/api/js-api.md:119 ../../../usage/api/js-api.md:178
 msgid "type: :sphinx_js_type:`\\:js\\:data\\:\\`string\\`\\\\ \\[\\]`"
 msgstr ""
 
@@ -91,8 +91,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:28 ../../../usage/api/js-api.md:41
 #: ../../../usage/api/js-api.md:64 ../../../usage/api/js-api.md:87
-#: ../../../usage/api/js-api.md:185 ../../../usage/api/js-api.md:208
-#: ../../../usage/api/js-api.md:211 ../../../usage/api/js-api.md:227
+#: ../../../usage/api/js-api.md:195 ../../../usage/api/js-api.md:211
+#: ../../../usage/api/js-api.md:218 ../../../usage/api/js-api.md:227
 #: ../../../usage/api/js-api.md:245 ../../../usage/api/js-api.md:264
 #: ../../../usage/api/js-api.md:319
 msgid "type: :sphinx_js_type:`\\:js\\:data\\:\\`boolean\\``"
@@ -104,8 +104,8 @@ msgid ""
 "match the version of the Pyodide js package."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:37 ../../../usage/api/js-api.md:181
-#: ../../../usage/api/js-api.md:204
+#: ../../../usage/api/js-api.md:37 ../../../usage/api/js-api.md:191
+#: ../../../usage/api/js-api.md:214
 msgid "Deprecated."
 msgstr ""
 
@@ -161,12 +161,12 @@ msgstr ""
 #: ../../../usage/api/js-api.md:46 ../../../usage/api/js-api.md:65
 #: ../../../usage/api/js-api.md:75 ../../../usage/api/js-api.md:86
 #: ../../../usage/api/js-api.md:95 ../../../usage/api/js-api.md:108
-#: ../../../usage/api/js-api.md:127 ../../../usage/api/js-api.md:137
-#: ../../../usage/api/js-api.md:138 ../../../usage/api/js-api.md:152
-#: ../../../usage/api/js-api.md:155 ../../../usage/api/js-api.md:161
+#: ../../../usage/api/js-api.md:127 ../../../usage/api/js-api.md:138
+#: ../../../usage/api/js-api.md:147 ../../../usage/api/js-api.md:152
+#: ../../../usage/api/js-api.md:161 ../../../usage/api/js-api.md:165
 #: ../../../usage/api/js-api.md:170 ../../../usage/api/js-api.md:176
-#: ../../../usage/api/js-api.md:188 ../../../usage/api/js-api.md:194
-#: ../../../usage/api/js-api.md:261 ../../../usage/api/js-api.md:272
+#: ../../../usage/api/js-api.md:188 ../../../usage/api/js-api.md:204
+#: ../../../usage/api/js-api.md:271 ../../../usage/api/js-api.md:272
 #: ../../../usage/api/js-api.md:365 ../../../usage/api/js-api.md:1133
 msgid "type: :sphinx_js_type:`\\:js\\:data\\:\\`string\\``"
 msgstr ""
@@ -216,7 +216,20 @@ msgid ""
 "Default: ```${indexURL}/pyodide-lock.json```"
 msgstr ""
 
+#: ../../../usage/api/js-api.md:137 ../../../usage/api/js-api.md:281
+#: ../../../usage/api/js-api.md:289 ../../../usage/api/js-api.md:299
+#: ../../../usage/api/js-api.md:309
+msgid "type: :sphinx_js_type:`\\:js\\:data\\:\\`number\\``"
+msgstr ""
+
 #: ../../../usage/api/js-api.md:139
+msgid ""
+"The maximum size, in bytes, that the WebAssembly heap may grow to. "
+"Allocations beyond it fail with a :py:exc:`MemoryError`. It defaults to 4 "
+"GiB, which is also the most memory a 32-bit address can reach."
+msgstr ""
+
+#: ../../../usage/api/js-api.md:149
 msgid ""
 "The base url relative to which a relative value of :js:attr:`~pyodide."
 "LockfilePackage.file_name` is interpreted. If ``lockfileContents`` is "
@@ -224,25 +237,25 @@ msgid ""
 "install packages with relative paths."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:144
+#: ../../../usage/api/js-api.md:154
 msgid "Otherwise, the default is calculated as follows:"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:146
+#: ../../../usage/api/js-api.md:156
 msgid ""
 "If ``lockFileURL`` contains a ``/``, the default is everything before the "
 "last ``/`` in ``lockFileURL``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:148
+#: ../../../usage/api/js-api.md:158
 msgid "If in the browser, the default is ``location.toString()``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:149
+#: ../../../usage/api/js-api.md:159
 msgid "Otherwise, the default is ``'.'``."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:157
+#: ../../../usage/api/js-api.md:167
 msgid ""
 "The file path where packages will be cached in node. If a package exists in "
 "``packageCacheDir`` it is loaded from there, otherwise it is downloaded from "
@@ -250,15 +263,15 @@ msgid ""
 "running in node; ignored in browsers."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:162
+#: ../../../usage/api/js-api.md:172
 msgid "Default: same as indexURL"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:170
+#: ../../../usage/api/js-api.md:180
 msgid "A list of packages to load as Pyodide is initializing."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:172
+#: ../../../usage/api/js-api.md:182
 msgid ""
 "This is the same as loading the packages with :js:func:`pyodide.loadPackage` "
 "after Pyodide is loaded except using the ``packages`` option is more "
@@ -266,27 +279,27 @@ msgid ""
 "itself."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:187
+#: ../../../usage/api/js-api.md:197
 msgid ""
 "Opt into the old behavior where :js:func:`PyProxy.toString() <pyodide.ffi."
 "PyProxy.toString>` calls :py:func:`repr` and not :py:class:`str() <str>`. "
 "Deprecated."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:196
+#: ../../../usage/api/js-api.md:206
 msgid ""
 "The URL from which to load the standard library ``python_stdlib.zip`` file. "
 "This URL includes the most of the Python standard library. Default: "
 "```${indexURL}/python_stdlib.zip```"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:210
+#: ../../../usage/api/js-api.md:220
 msgid ""
 "Opt into the old behavior where Python dictionaries are converted to "
 "LiteralMap instead of Object."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:216
+#: ../../../usage/api/js-api.md:226
 msgid ""
 "This is a hook that allows modification of the file system before the main() "
 "function is called and the intereter is started. When this is called, it is "
@@ -301,14 +314,14 @@ msgstr ""
 msgid "Returns"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:224 ../../../usage/api/js-api.md:394
+#: ../../../usage/api/js-api.md:234 ../../../usage/api/js-api.md:394
 #: ../../../usage/api/js-api.md:488 ../../../usage/api/js-api.md:836
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
 "\\`void\\`\\\\ \\>`"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:228
+#: ../../../usage/api/js-api.md:238
 msgid ""
 "Override the standard error output callback. The :js:func:`pyodide."
 "setStderr` function is more flexible and should be preferred in most cases, "
@@ -317,20 +330,20 @@ msgid ""
 "``stdout`` function."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:239
+#: ../../../usage/api/js-api.md:249
 msgid ""
 "Override the standard input callback. Should ask the user for one line of "
 "input. The :js:func:`pyodide.setStdin` function is more flexible and should "
 "be preferred."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:243
+#: ../../../usage/api/js-api.md:253
 msgid ""
 ":sphinx_js_type:`\\:js\\:data\\:\\`null\\`\\\\  \\| \\\\ \\:js\\:data\\:"
 "\\`string\\``"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:247
+#: ../../../usage/api/js-api.md:257
 msgid ""
 "Override the standard output callback. The :js:func:`pyodide.setStdout` "
 "function is more flexible and should be preferred in most cases, but "
@@ -339,26 +352,26 @@ msgid ""
 "``stdout`` function."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:265 ../../../usage/api/js-api.md:369
+#: ../../../usage/api/js-api.md:275 ../../../usage/api/js-api.md:369
 msgid ""
 "The version here is a Python version, following :pep:`440`. This is "
 "different from the version in ``package.json`` which follows the node "
 "package manager version convention."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:277
+#: ../../../usage/api/js-api.md:287
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<typeof \\\\ \\:ref\\:"
 "\\`PyodideAPI \\<js\\-api\\-pyodide\\>\\`\\\\ \\>` -- The :ref:`js-api-"
 "pyodide` module."
 msgstr ""
 
-#: ../../../usage/api/js-api.md:279 ../../../usage/api/js-api.md:515
+#: ../../../usage/api/js-api.md:289 ../../../usage/api/js-api.md:515
 #: ../../../usage/api/js-api.md:590 ../../../usage/api/js-api.md:766
 msgid "Example"
 msgstr ""
 
-#: ../../../usage/api/js-api.md:281
+#: ../../../usage/api/js-api.md:291
 msgid ""
 "async function main() {\n"
 "  const pyodide = await loadPyodide({\n"
@@ -2192,11 +2205,6 @@ msgstr ""
 msgid ""
 "The format string for the buffer. See :ref:`struct-format-strings` and :py:"
 "attr:`memoryview.format`."
-msgstr ""
-
-#: ../../../usage/api/js-api.md:281 ../../../usage/api/js-api.md:289
-#: ../../../usage/api/js-api.md:299 ../../../usage/api/js-api.md:309
-msgid "type: :sphinx_js_type:`\\:js\\:data\\:\\`number\\``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:283
