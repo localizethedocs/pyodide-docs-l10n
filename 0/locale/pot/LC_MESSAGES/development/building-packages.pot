@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -153,8 +154,8 @@ msgstr ""
 #: ../../../development/building-packages.md:79
 msgid ""
 "Running `source emsdk_env.sh` will set up the environment variables needed "
-"for Emscripten. If you restart your shell, you need to run `source emsdk_env."
-"sh` again to set up the environment variables."
+"for Emscripten. If you restart your shell, you need to run `source "
+"emsdk_env.sh` again to set up the environment variables."
 msgstr ""
 
 #: ../../../development/building-packages.md:82

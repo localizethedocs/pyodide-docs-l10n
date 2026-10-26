@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,8 +132,9 @@ msgstr ""
 msgid ""
 "It is primarily intended for REPLs and other sophisticated consumers that "
 "may wish to add their own AST transformations, separately signal to the user "
-"when parsing is complete, etc. The simpler :py:func:`eval_code` and :py:func:"
-"`eval_code_async` apis should be preferred when their flexibility suffices."
+"when parsing is complete, etc. The simpler :py:func:`eval_code` "
+"and :py:func:`eval_code_async` apis should be preferred when their "
+"flexibility suffices."
 msgstr ""
 
 #: ../../../usage/api/python-api/code.md:0
@@ -220,16 +222,16 @@ msgstr ""
 msgid ""
 "The \"mode\" to compile in. One of ``\"exec\"``, ``\"single\"``, or "
 "``\"eval\"``. Defaults to ``\"exec\"``. For most purposes it's unnecessary "
-"to use this argument. See the documentation for the built-in :external:py:"
-"func:`compile` function."
+"to use this argument. See the documentation for the built-"
+"in :external:py:func:`compile` function."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:32 ../../../../src/py/pyodide/code.py:docstring
 #: _pyodide._base.eval_code:30 _pyodide._base.eval_code_async:32
 msgid ""
-"The flags to compile with. See the documentation for the built-in :external:"
-"py:func:`compile` function."
+"The flags to compile with. See the documentation for the built-"
+"in :external:py:func:`compile` function."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
@@ -262,15 +264,15 @@ msgstr ""
 #: ../../../docstring of pyodide.code.CodeRunner.code:1
 msgid ""
 "Once you call :py:meth:`CodeRunner.compile` the compiled code will be "
-"available in the code field. You can modify this variable before calling :py:"
-"meth:`CodeRunner.run` to do a code transform."
+"available in the code field. You can modify this variable before "
+"calling :py:meth:`CodeRunner.run` to do a code transform."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner.compile:1
 msgid ""
-"Compile the current value of ``self.ast`` and store the result in ``self."
-"code``."
+"Compile the current value of ``self.ast`` and store the result in "
+"``self.code``."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
@@ -287,8 +289,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner.compile:6
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~\\_pyodide.\\_base."
-"CodeRunner\\``"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~\\_pyodide."
+"\\_base.CodeRunner\\``"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
@@ -356,8 +358,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner.run_async:3
 msgid ""
-"Can only be used after calling :py:meth:`CodeRunner.compile`. If ``self."
-"code`` uses top level await, automatically awaits the resulting coroutine."
+"Can only be used after calling :py:meth:`CodeRunner.compile`. If "
+"``self.code`` uses top level await, automatically awaits the resulting "
+"coroutine."
 msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of _pyodide._base.eval_code:22
@@ -381,8 +384,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: _pyodide._base.find_imports:6
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:"
-"py\\:class\\:\\`str\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`list\\`\\\\ \\\\\\"
+"[\\:py\\:class\\:\\`str\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of
@@ -420,15 +423,16 @@ msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.relaxed_wrap:8
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"Callable\\`\\\\ \\\\\\[\\:py\\:data\\:\\`...\\<Ellipsis\\>\\`\\, "
-"\\`\\`RetType\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.Callable\\`\\\\ \\\\\\[\\:py\\:data\\:\\`..."
+"\\<Ellipsis\\>\\`\\, \\`\\`RetType\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.run_js:3
 msgid ""
-"Runs ``code`` as a Javascript code string and returns the result. Unlike :js:"
-"func:`eval`, if ``code`` is not a string we raise a :py:exc:`TypeError`."
+"Runs ``code`` as a Javascript code string and returns the result. "
+"Unlike :js:func:`eval`, if ``code`` is not a string we raise "
+"a :py:exc:`TypeError`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of

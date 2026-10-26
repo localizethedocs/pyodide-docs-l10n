@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -205,8 +206,9 @@ msgstr ""
 #: ../../../../src/py/pyodide/http/_exceptions.py:docstring
 #: pyodide.http._exceptions.HttpStatusError:1
 msgid ""
-"A subclass of :py:exc:`OSError` raised by :py:meth:`FetchResponse."
-"raise_for_status` if the response status is 4XX or 5XX."
+"A subclass of :py:exc:`OSError` raised "
+"by :py:meth:`FetchResponse.raise_for_status` if the response status is 4XX "
+"or 5XX."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/__init__.py:docstring of pyodide.http:1
@@ -315,9 +317,9 @@ msgstr ""
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
 #: pyodide.http.FetchResponse.body_used:3
 msgid ""
-"If so, attempting to retrieve the body again will raise an :py:exc:"
-"`OSError`. Use :py:meth:`~FetchResponse.clone` first to avoid this. See :js:"
-"attr:`Response.bodyUsed`."
+"If so, attempting to retrieve the body again will raise "
+"an :py:exc:`OSError`. Use :py:meth:`~FetchResponse.clone` first to avoid "
+"this. See :js:attr:`Response.bodyUsed`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
@@ -333,8 +335,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
 #: pyodide.http._pyfetch.FetchResponse.buffer:6
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsBuffer\\``"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsBuffer\\``"
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
@@ -507,10 +509,11 @@ msgstr ""
 #: pyodide.http._pyfetch.FetchResponse.unpack_archive:11
 msgid ""
 "The archive format: one of ``\"zip\"``, ``\"tar\"``, ``\"gztar\"``, "
-"``\"bztar\"``. Or any other format registered with :py:func:`shutil."
-"register_unpack_format`. If not provided, :py:meth:`unpack_archive` will use "
-"the archive file name extension and see if an unpacker was registered for "
-"that extension. In case none is found, a :py:exc:`ValueError` is raised."
+"``\"bztar\"``. Or any other format registered "
+"with :py:func:`shutil.register_unpack_format`. If not "
+"provided, :py:meth:`unpack_archive` will use the archive file name extension "
+"and see if an unpacker was registered for that extension. In case none is "
+"found, a :py:exc:`ValueError` is raised."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
@@ -521,8 +524,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/http/_pyfetch.py:docstring of
 #: pyodide.http.FetchResponse.url:3
 msgid ""
-"The value may be different than the url passed to fetch. See :js:attr:"
-"`Response.url`."
+"The value may be different than the url passed to fetch. "
+"See :js:attr:`Response.url`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/_exceptions.py:docstring of
@@ -543,15 +546,15 @@ msgstr ""
 #: ../../../../src/py/pyodide/http/__init__.py:docstring of
 #: pyodide.http.open_url:3
 msgid ""
-"The download of binary files is not supported. To download binary files use :"
-"func:`pyodide.http.pyfetch` which is asynchronous."
+"The download of binary files is not supported. To download binary files "
+"use :func:`pyodide.http.pyfetch` which is asynchronous."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/__init__.py:docstring of
 #: pyodide.http.open_url:6
 msgid ""
-"It will not work in Node unless you include a polyfill for :js:class:"
-"`XMLHttpRequest`"
+"It will not work in Node unless you include a polyfill "
+"for :js:class:`XMLHttpRequest`"
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/__init__.py:docstring of
@@ -583,9 +586,9 @@ msgstr ""
 #: pyodide.http._pyfetch.pyfetch:3
 msgid ""
 "This functions provides a similar API to :js:func:`fetch` however it is "
-"designed to be convenient to use from Python. The :class:`~pyodide.http."
-"FetchResponse` has methods with the output types already converted to Python "
-"objects."
+"designed to be convenient to use from Python. "
+"The :class:`~pyodide.http.FetchResponse` has methods with the output types "
+"already converted to Python objects."
 msgstr ""
 
 #: ../../../../src/py/pyodide/http/__init__.py:docstring of
