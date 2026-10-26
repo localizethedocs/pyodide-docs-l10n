@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -414,8 +415,8 @@ msgstr ""
 #: ../../../development/maintainers.md:214
 msgid ""
 "Replace the image in `.circleci/config.yml` with your newly created image. "
-"Open a pull request with your changes to `Dockerfile` and `.circleci/config."
-"yml`."
+"Open a pull request with your changes to `Dockerfile` and `.circleci/"
+"config.yml`."
 msgstr ""
 
 #: ../../../development/maintainers.md:216
@@ -544,9 +545,9 @@ msgstr ""
 
 #: ../../../development/maintainers.md:289
 msgid ""
-"Find the `USE_PREBUILT_PACKAGES` environment variable in [.circleci/config."
-"yml](https://github.com/ryanking13/pyodide/blob/unvendor-recipes/.circleci/"
-"config.yml) and set it to `false`."
+"Find the `USE_PREBUILT_PACKAGES` environment variable in [.circleci/"
+"config.yml](https://github.com/ryanking13/pyodide/blob/unvendor-"
+"recipes/.circleci/config.yml) and set it to `false`."
 msgstr ""
 
 #: ../../../development/maintainers.md:293
@@ -760,8 +761,8 @@ msgstr ""
 msgid ""
 "The file most tightly coupled to the CPython version is `src/core/"
 "stack_switching/pystate.c`. Consult the [greenlet TPythonState.cpp](https://"
-"github.com/python-greenlet/greenlet/blob/master/src/greenlet/TPythonState."
-"cpp) to figure out how to fix it."
+"github.com/python-greenlet/greenlet/blob/master/src/greenlet/"
+"TPythonState.cpp) to figure out how to fix it."
 msgstr ""
 
 #: ../../../development/maintainers.md:403

@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,17 +111,17 @@ msgid ""
 "looking at the source files, it's time to pull out `wasm-objdump`. In this "
 "case `a.o` is part of `some_static_lib.a` so you first need to get it out "
 "with `ar -x some_static_lib.a a.o`. Now we can check if `a.o` imports or "
-"defines `some_func`. To check for imports, use `wasm-objdump a.o -j Import -"
-"x | grep some_func`. If `a.o` is importing `some_func` you should see a line "
-"like: `- func[0] sig=1 <env.some_func> <- env.some_func` in the output."
+"defines `some_func`. To check for imports, use `wasm-objdump a.o -j Import "
+"-x | grep some_func`. If `a.o` is importing `some_func` you should see a "
+"line like: `- func[0] sig=1 <env.some_func> <- env.some_func` in the output."
 msgstr ""
 
 #: ../../../development/debugging.md:71
 msgid ""
 "If not, you will see nothing or things like `some_func2`. To check if `a.o` "
 "defines `some_func` (this is a bit redundant because you can conclude "
-"whether or not does from whether it imports it) we can use: `wasm-objdump a."
-"o -j Function -x | grep some_func`, if `a.o` defines `some_func` you will "
+"whether or not does from whether it imports it) we can use: `wasm-objdump "
+"a.o -j Function -x | grep some_func`, if `a.o` defines `some_func` you will "
 "see something like: ` - func[0] sig=0 <some_func>`."
 msgstr ""
 
@@ -140,9 +141,9 @@ msgstr ""
 
 #: ../../../development/debugging.md:86
 msgid ""
-"This process works in basically the same way for already-linked `.so` and `."
-"wasm` files, which can help if you get the load-time version of this linker "
-"error."
+"This process works in basically the same way for already-linked `.so` and "
+"`.wasm` files, which can help if you get the load-time version of this "
+"linker error."
 msgstr ""
 
 #: ../../../development/debugging.md:90
@@ -310,8 +311,8 @@ msgstr ""
 #: ../../../development/debugging.md:178
 msgid ""
 "(14 vs 15 parameters) which might be a little hard to discern. I copy the "
-"signature into the Javascript console and run `\"i32 ... i32\".split(\" \")."
-"length` in this case."
+"signature into the Javascript console and run `\"i32 ... i32\".split(\" "
+"\").length` in this case."
 msgstr ""
 
 #: ../../../development/debugging.md:184
@@ -328,8 +329,8 @@ msgstr ""
 
 #: ../../../development/debugging.md:190
 msgid ""
-"These instructions are adapted from here: https://www.diverto.hr/en/"
-"blog/2020-08-15-WebAssembly-limit/"
+"These instructions are adapted from here: https://www.diverto.hr/en/blog/"
+"2020-08-15-WebAssembly-limit/"
 msgstr ""
 
 #: ../../../development/debugging.md:193

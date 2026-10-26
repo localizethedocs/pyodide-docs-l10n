@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 0.29.4\n"
+"Project-Id-Version: Pyodide 0.29.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,8 +40,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console:1:<autosummary>:1
 msgid ""
-":py:obj:`ConsoleFuture <pyodide.console.ConsoleFuture>`\\ "
-"\\(syntax\\_check\\)"
+":py:obj:`ConsoleFuture <pyodide.console.ConsoleFuture>`\\ \\"
+"(syntax\\_check\\)"
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -60,8 +61,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.PyodideConsole:1 pyodide.console:1:<autosummary>:1
 msgid ""
-"A subclass of :py:class:`Console` that uses :js:func:`pyodide."
-"loadPackagesFromImports` before running the code."
+"A subclass of :py:class:`Console` that "
+"uses :js:func:`pyodide.loadPackagesFromImports` before running the code."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of pyodide.console:1
@@ -83,15 +84,15 @@ msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of pyodide.console.Console:3
 msgid ""
-"An interactive console based on the Python standard library :py:class:`~code."
-"InteractiveConsole` that manages stream redirections and asynchronous "
-"execution of the code."
+"An interactive console based on the Python standard "
+"library :py:class:`~code.InteractiveConsole` that manages stream "
+"redirections and asynchronous execution of the code."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of pyodide.console.Console:7
 msgid ""
-"The stream callbacks can be modified directly by assigning to :py:attr:"
-"`~Console.stdin_callback` (for example) as long as "
+"The stream callbacks can be modified directly by assigning "
+"to :py:attr:`~Console.stdin_callback` (for example) as long as "
 "``persistent_stream_redirection`` is ``False``."
 msgstr ""
 
@@ -111,29 +112,29 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console:15
 msgid ""
-"Function to call at each read from :py:data:`sys.stdin`. Defaults to :py:"
-"data:`None`."
+"Function to call at each read from :py:data:`sys.stdin`. Defaults "
+"to :py:data:`None`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console:17
 msgid ""
-"Function to call at each write to :py:data:`sys.stdout`. Defaults to :py:"
-"data:`None`."
+"Function to call at each write to :py:data:`sys.stdout`. Defaults "
+"to :py:data:`None`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console:19
 msgid ""
-"Function to call at each write to :py:data:`sys.stderr`. Defaults to :py:"
-"data:`None`."
+"Function to call at each write to :py:data:`sys.stderr`. Defaults "
+"to :py:data:`None`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console:21
 msgid ""
-"Should redirection of standard streams be kept between calls to :py:meth:"
-"`~Console.runcode`? Defaults to :py:data:`False`."
+"Should redirection of standard streams be kept between calls "
+"to :py:meth:`~Console.runcode`? Defaults to :py:data:`False`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -158,8 +159,8 @@ msgstr ""
 
 #: ../../../docstring of pyodide.console.Console.buffer:1
 msgid ""
-"The list of lines of code that have been the argument to :py:meth:`~Console."
-"push`."
+"The list of lines of code that have been the argument "
+"to :py:meth:`~Console.push`."
 msgstr ""
 
 #: ../../../docstring of pyodide.console.Console.buffer:4
@@ -169,16 +170,16 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.complete:1
 msgid ""
-"Use Python's :py:mod:`rlcompleter` to complete the source string using the :"
-"py:attr:`Console.globals` namespace."
+"Use Python's :py:mod:`rlcompleter` to complete the source string using "
+"the :py:attr:`Console.globals` namespace."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.complete:4
 msgid ""
 "Finds the last \"word\" in the source string and completes it with "
-"rlcompleter. Word breaks are determined by the set of characters in :py:attr:"
-"`~Console.completer_word_break_characters`."
+"rlcompleter. Word breaks are determined by the set of characters "
+"in :py:attr:`~Console.completer_word_break_characters`."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -195,9 +196,9 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.complete:11
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`tuple\\`\\\\ \\\\\\[\\:"
-"py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\]\\, \\:py\\:"
-"class\\:\\`int\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`tuple\\`\\\\ \\\\\\"
+"[\\:py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\]\\, "
+"\\:py\\:class\\:\\`int\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -298,11 +299,11 @@ msgstr ""
 #: pyodide.console.Console.push:3
 msgid ""
 "The line should not have a trailing newline; it may have internal newlines.  "
-"The line is appended to a buffer and the interpreter's :py:meth:`~Console."
-"runsource` method is called with the concatenated contents of the buffer as "
-"source.  If this indicates that the command was executed or invalid, the "
-"buffer is reset; otherwise, the command is incomplete, and the buffer is "
-"left as it was after the line was appended."
+"The line is appended to a buffer and the "
+"interpreter's :py:meth:`~Console.runsource` method is called with the "
+"concatenated contents of the buffer as source.  If this indicates that the "
+"command was executed or invalid, the buffer is reset; otherwise, the command "
+"is incomplete, and the buffer is left as it was after the line was appended."
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -315,8 +316,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.push:15 pyodide.console.Console.runsource:7
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.console."
-"ConsoleFuture\\``"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.console.ConsoleFuture\\``"
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
@@ -332,8 +333,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/console.py:docstring of
 #: pyodide.console.Console.redirect_streams:6
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"Generator\\`\\\\ \\\\\\[\\:py\\:obj\\:\\`None\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.Generator\\`\\\\ \\\\\\[\\:py\\:obj\\:\\`None\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/pyodide/console.py:docstring of
