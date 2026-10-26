@@ -6,12 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 314.0.2\n"
+"Project-Id-Version: Pyodide 314.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"POT-Creation-Date: 2026-10-26 15:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,8 +59,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.JsArray:1
 #: pyodide.ffi:1:<autosummary>:1
 msgid ""
-"A JsProxy of an :js:class:`Array`, :js:class:`NodeList`, or :js:class:"
-"`TypedArray`"
+"A JsProxy of an :js:class:`Array`, :js:class:`NodeList`, "
+"or :js:class:`TypedArray`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -151,8 +152,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsFetchResponse:1 pyodide.ffi:1:<autosummary>:1
 msgid ""
-"A :py:class:`JsFetchResponse` object represents a :js:data:`Response` to a :"
-"js:func:`fetch` request."
+"A :py:class:`JsFetchResponse` object represents a :js:data:`Response` to "
+"a :js:func:`fetch` request."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -274,8 +275,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.ToJsConverter:1 pyodide.ffi:1:<autosummary>:1
 msgid ""
-"Protocol for the ``default_converter`` and ``eager_converter`` arguments of :"
-"py:func:`to_js`."
+"Protocol for the ``default_converter`` and ``eager_converter`` arguments "
+"of :py:func:`to_js`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi:1
@@ -286,8 +287,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi:1:<autosummary>:1
 msgid ""
-":py:obj:`create_once_callable <pyodide.ffi.create_once_callable>`\\ "
-"\\(obj\\, \\/\\)"
+":py:obj:`create_once_callable <pyodide.ffi.create_once_callable>`\\ \\"
+"(obj\\, \\/\\)"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -299,8 +300,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi:1:<autosummary>:1
 msgid ""
-":py:obj:`create_proxy <pyodide.ffi.create_proxy>`\\ \\(obj\\, \\/\\, "
-"\\*\\[\\, capture\\_this\\, ...\\]\\)"
+":py:obj:`create_proxy <pyodide.ffi.create_proxy>`\\ \\(obj\\, \\/\\, \\*\\"
+"[\\, capture\\_this\\, ...\\]\\)"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -357,16 +358,16 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi:1:<autosummary>:1
 msgid ""
-":py:obj:`unregister_js_module <pyodide.ffi.unregister_js_module>`\\ "
-"\\(name\\)"
+":py:obj:`unregister_js_module <pyodide.ffi.unregister_js_module>`\\ \\"
+"(name\\)"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi:1:<autosummary>:1
 msgid ""
 "Unregisters a JavaScript module with given name that has been previously "
-"registered with :js:func:`pyodide.registerJsModule` or :py:func:`pyodide.ffi."
-"register_js_module`."
+"registered with :js:func:`pyodide.registerJsModule` "
+"or :py:func:`pyodide.ffi.register_js_module`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi:1
@@ -391,9 +392,10 @@ msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.JsArray:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ [:py:obj:`~_pyodide._core_docs."
-"T`], :py:class:`~typing.Generic`\\ [:py:obj:`~_pyodide._core_docs.T`], :py:"
-"class:`~collections.abc.MutableSequence`\\ [:py:obj:`~_pyodide._core_docs.T`]"
+"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ "
+"[:py:obj:`~_pyodide._core_docs.T`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.T`], :py:class:`~collections.abc.MutableSequence`\\ "
+"[:py:obj:`~_pyodide._core_docs.T`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -534,15 +536,16 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsArray.to_py:16
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`list\\`\\\\ \\\\\\[\\:"
-"py\\:data\\:\\`\\~typing.Any\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`list\\`\\\\ \\\\\\"
+"[\\:py\\:data\\:\\`\\~typing.Any\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsArray.to_py:19 pyodide.ffi.JsProxy.as_object_map:23
 #: pyodide.ffi.JsProxy.as_py_json:12 pyodide.ffi.JsProxy.object_entries:6
 #: pyodide.ffi.JsProxy.object_keys:6 pyodide.ffi.JsProxy.object_values:6
-#: pyodide.ffi.JsProxy.to_py:19 pyodide.ffi.to_js:54
+#: pyodide.ffi.JsProxy.to_py:19 pyodide.ffi.create_once_callable:8
+#: pyodide.ffi.to_js:54
 msgid "Examples"
 msgstr ""
 
@@ -601,8 +604,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsArray.to_py:54 pyodide.ffi.JsProxy.to_py:54
 msgid ""
-"We can use the following ``default_converter`` to convert ``Pair`` to :py:"
-"class:`list`:"
+"We can use the following ``default_converter`` to convert ``Pair`` "
+"to :py:class:`list`:"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -645,21 +648,21 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncGenerator:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsAsyncIterable`\\ [:py:obj:`~_pyodide."
-"_core_docs.T_co`], :py:class:`~typing.Generic`\\ [:py:obj:`~_pyodide."
-"_core_docs.T_co`, :py:obj:`~_pyodide._core_docs.T_contra`, :py:obj:"
-"`~_pyodide._core_docs.V_co`]"
+"Bases: :py:class:`~pyodide.ffi.JsAsyncIterable`\\ "
+"[:py:obj:`~_pyodide._core_docs.T_co`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.T_co`, :py:obj:`~_pyodide._core_docs.T_contra`, :py:obj:`~_pyodide._core_docs.V_co`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncGenerator:3
 msgid ""
-"A JavaScript object is treated as an async generator if it's :js:data:"
-"`Symbol.toStringTag` is ``\"AsyncGenerator\"``. Most likely this will be "
-"because it is a true async generator produced by the JavaScript runtime, but "
-"it may be a custom object trying hard to pretend to be an async generator. "
-"It should have :js:meth:`~AsyncGenerator.next`, :js:meth:`~AsyncGenerator."
-"return`, and :js:meth:`~AsyncGenerator.throw` methods."
+"A JavaScript object is treated as an async generator if "
+"it's :js:data:`Symbol.toStringTag` is ``\"AsyncGenerator\"``. Most likely "
+"this will be because it is a true async generator produced by the JavaScript "
+"runtime, but it may be a custom object trying hard to pretend to be an async "
+"generator. It should "
+"have :js:meth:`~AsyncGenerator.next`, :js:meth:`~AsyncGenerator.return`, "
+"and :js:meth:`~AsyncGenerator.throw` methods."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -674,17 +677,17 @@ msgstr ""
 msgid ""
 "If the generator function then exits gracefully, is already closed, or "
 "raises :py:exc:`GeneratorExit` (by not catching the exception), ``aclose()`` "
-"returns to its caller. If the generator yields a value, a :py:exc:"
-"`RuntimeError` is raised. If the generator raises any other exception, it is "
-"propagated to the caller. ``aclose()`` does nothing if the generator has "
-"already exited due to an exception or normal exit."
+"returns to its caller. If the generator yields a value, "
+"a :py:exc:`RuntimeError` is raised. If the generator raises any other "
+"exception, it is propagated to the caller. ``aclose()`` does nothing if the "
+"generator has already exited due to an exception or normal exit."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncGenerator.aclose:12
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"Awaitable\\`\\\\ \\\\\\[\\:py\\:obj\\:\\`None\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.Awaitable\\`\\\\ \\\\\\[\\:py\\:obj\\:\\`None\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -717,8 +720,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncGenerator.asend:18
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"Awaitable\\`\\\\ \\\\\\[\\`\\`T\\_co\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.Awaitable\\`\\\\ \\\\\\[\\`\\`T\\_co\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -749,23 +752,23 @@ msgstr ""
 #: pyodide.ffi.JsAsyncIterable:1 pyodide.ffi.JsAsyncIterator:1
 #: pyodide.ffi.JsIterable:1 pyodide.ffi.JsIterator:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ [:py:"
-"obj:`~_pyodide._core_docs.T_co`]"
+"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.T_co`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncIterable:3
 msgid ""
-"A JavaScript object is async iterable if it has a :js:data:`Symbol."
-"asyncIterator` method."
+"A JavaScript object is async iterable if it has "
+"a :js:data:`Symbol.asyncIterator` method."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsAsyncIterator:3
 msgid ""
-"An object is a :py:class:`JsAsyncIterator` if it has a :js:meth:"
-"`~AsyncIterator.next` method and either has a :js:data:`Symbol."
-"asyncIterator` or has no :js:data:`Symbol.iterator`"
+"An object is a :py:class:`JsAsyncIterator` if it has "
+"a :js:meth:`~AsyncIterator.next` method and either has "
+"a :js:data:`Symbol.asyncIterator` or has no :js:data:`Symbol.iterator`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -884,8 +887,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsBuffer.to_memoryview:3
 msgid ""
-"Copies the data once. This currently has the same effect as :py:meth:"
-"`~JsArray.to_py`."
+"Copies the data once. This currently has the same effect "
+"as :py:meth:`~JsArray.to_py`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -920,8 +923,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsCallable:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ [:py:"
-"obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`]"
+"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -934,19 +937,18 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsCallableDoubleProxy:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsDoubleProxy`\\ [:py:class:`~collections.abc."
-"Callable`\\ [[:py:obj:`~_pyodide._core_docs.P`], :py:obj:`~_pyodide."
-"_core_docs.T`]], :py:class:`~pyodide.ffi.JsCallable`\\ [:py:obj:`~_pyodide."
-"_core_docs.P`, :py:obj:`~_pyodide._core_docs.T`], :py:class:`~typing."
-"Generic`\\ [:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs."
-"T`]"
+"Bases: :py:class:`~pyodide.ffi.JsDoubleProxy`\\ "
+"[:py:class:`~collections.abc.Callable`\\ "
+"[[:py:obj:`~_pyodide._core_docs.P`], :py:obj:`~_pyodide._core_docs.T`]], :py:class:`~pyodide.ffi.JsCallable`\\ "
+"[:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsDoubleProxy:1 pyodide.ffi.JsPromise:1 pyodide.ffi.JsWeakRef:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ [:py:"
-"obj:`~_pyodide._core_docs.T`]"
+"Bases: :py:class:`~pyodide.ffi.JsProxy`, :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.T`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -987,8 +989,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsException.new:5
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsException\\``"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsException\\``"
 msgstr ""
 
 #: ../../../docstring of pyodide.ffi.JsException.stack:1
@@ -998,20 +1000,21 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsGenerator:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ [:py:obj:`~_pyodide._core_docs."
-"T_co`], :py:class:`~typing.Generic`\\ [:py:obj:`~_pyodide._core_docs.T_co`, :"
-"py:obj:`~_pyodide._core_docs.T_contra`, :py:obj:`~_pyodide._core_docs.V_co`]"
+"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ "
+"[:py:obj:`~_pyodide._core_docs.T_co`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.T_co`, :py:obj:`~_pyodide._core_docs.T_contra`, :py:obj:`~_pyodide._core_docs.V_co`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsGenerator:3
 msgid ""
-"A JavaScript object is treated as a generator if its :js:data:`Symbol."
-"toStringTag` is ``\"Generator\"``. Most likely this will be because it is a "
-"true :js:class:`Generator` produced by the JavaScript runtime, but it may be "
-"a custom object trying hard to pretend to be a generator. It should have :js:"
-"meth:`~Generator.next`, :js:meth:`~Generator.return` and :js:meth:"
-"`~Generator.throw` methods."
+"A JavaScript object is treated as a generator if "
+"its :js:data:`Symbol.toStringTag` is ``\"Generator\"``. Most likely this "
+"will be because it is a true :js:class:`Generator` produced by the "
+"JavaScript runtime, but it may be a custom object trying hard to pretend to "
+"be a generator. It should "
+"have :js:meth:`~Generator.next`, :js:meth:`~Generator.return` "
+"and :js:meth:`~Generator.throw` methods."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1019,10 +1022,10 @@ msgstr ""
 msgid ""
 "If the generator function then exits gracefully, is already closed, or "
 "raises :py:exc:`GeneratorExit` (by not catching the exception), ``close()`` "
-"returns to its caller. If the generator yields a value, a :py:exc:"
-"`RuntimeError` is raised. If the generator raises any other exception, it is "
-"propagated to the caller. ``close()`` does nothing if the generator has "
-"already exited due to an exception or normal exit."
+"returns to its caller. If the generator yields a value, "
+"a :py:exc:`RuntimeError` is raised. If the generator raises any other "
+"exception, it is propagated to the caller. ``close()`` does nothing if the "
+"generator has already exited due to an exception or normal exit."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1053,10 +1056,10 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsGenerator.throw:4
 msgid ""
-"If the generator exits without yielding another value, a :py:exc:"
-"`StopIteration` exception is raised. If the generator function does not "
-"catch the passed-in exception, or raises a different exception, then that "
-"exception propagates to the caller."
+"If the generator exits without yielding another value, "
+"a :py:exc:`StopIteration` exception is raised. If the generator function "
+"does not catch the passed-in exception, or raises a different exception, "
+"then that exception propagates to the caller."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1087,17 +1090,17 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsIterator:3
 msgid ""
-"An object is a :py:class:`JsAsyncIterator` if it has a :js:meth:`~Iterator."
-"next` method and either has a :js:data:`Symbol.iterator` or has no :js:data:"
-"`Symbol.asyncIterator`."
+"An object is a :py:class:`JsAsyncIterator` if it has "
+"a :js:meth:`~Iterator.next` method and either has "
+"a :js:data:`Symbol.iterator` or has no :js:data:`Symbol.asyncIterator`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.JsMap:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ [:py:obj:`~_pyodide._core_docs."
-"KT`], :py:class:`~typing.Generic`\\ [:py:obj:`~_pyodide._core_docs.KT`, :py:"
-"obj:`~_pyodide._core_docs.VT_co`], :py:class:`~collections.abc.Mapping`\\ [:"
-"py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT_co`]"
+"Bases: :py:class:`~pyodide.ffi.JsIterable`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT_co`], :py:class:`~collections.abc.Mapping`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT_co`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.JsMap:3
@@ -1126,8 +1129,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsMap.items:4
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"ItemsView\\`\\\\ \\\\\\[\\`\\`KT\\`\\`\\, \\`\\`VT\\_co\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.ItemsView\\`\\\\ \\\\\\[\\`\\`KT\\`\\`\\, "
+"\\`\\`VT\\_co\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1138,8 +1142,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsMap.keys:4
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"KeysView\\`\\\\ \\\\\\[\\`\\`KT\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.KeysView\\`\\\\ \\\\\\[\\`\\`KT\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1150,18 +1154,17 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsMap.values:4
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~collections.abc."
-"ValuesView\\`\\\\ \\\\\\[\\`\\`VT\\_co\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.ValuesView\\`\\\\ \\\\\\[\\`\\`VT\\_co\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsMutableMap:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsMap`\\ [:py:obj:`~_pyodide._core_docs.KT`, :"
-"py:obj:`~_pyodide._core_docs.VT`], :py:class:`~typing.Generic`\\ [:py:obj:"
-"`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT`], :py:class:"
-"`~collections.abc.MutableMapping`\\ [:py:obj:`~_pyodide._core_docs.KT`, :py:"
-"obj:`~_pyodide._core_docs.VT`]"
+"Bases: :py:class:`~pyodide.ffi.JsMap`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT`], :py:class:`~collections.abc.MutableMapping`\\ "
+"[:py:obj:`~_pyodide._core_docs.KT`, :py:obj:`~_pyodide._core_docs.VT`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1207,8 +1210,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsMutableMap.popitem:5
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`tuple\\`\\\\ \\\\"
-"\\[\\`\\`KT\\`\\`\\, \\`\\`VT\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`tuple\\`\\\\ \\\\\\"
+"[\\`\\`KT\\`\\`\\, \\`\\`VT\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1281,9 +1284,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsOnceCallable:1
 msgid ""
-"Bases: :py:class:`~pyodide.ffi.JsCallable`\\ [:py:obj:`~_pyodide._core_docs."
-"P`, :py:obj:`~_pyodide._core_docs.T`], :py:class:`~typing.Generic`\\ [:py:"
-"obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`]"
+"Bases: :py:class:`~pyodide.ffi.JsCallable`\\ "
+"[:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`], :py:class:`~typing.Generic`\\ "
+"[:py:obj:`~_pyodide._core_docs.P`, :py:obj:`~_pyodide._core_docs.T`]"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1317,8 +1320,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsPromise.catch:9 pyodide.ffi.JsPromise.then:10
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsPromise\\`\\\\ \\\\\\[\\`\\`S\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsPromise\\`\\\\ \\\\\\[\\`\\`S\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1339,8 +1342,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsPromise.finally_:10
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsPromise\\`\\\\ \\\\\\[\\`\\`T\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsPromise\\`\\\\ \\\\\\[\\`\\`T\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1366,8 +1369,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.as_object_map:3
 msgid ""
-"The methods :py:func:`~operator.__getitem__`, :py:func:`~operator."
-"__setitem__`, :py:func:`~operator.__contains__`, :py:meth:`~object.__len__`, "
+"The "
+"methods :py:func:`~operator.__getitem__`, :py:func:`~operator.__setitem__`, :py:func:`~operator.__contains__`, :py:meth:`~object.__len__`, "
 "etc will perform lookups via ``object[key]`` or similar."
 msgstr ""
 
@@ -1395,9 +1398,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.as_object_map:20
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsMutableMap\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\, \\:py\\:data\\:"
-"\\`\\~typing.Any\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsMutableMap\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\, "
+"\\:py\\:data\\:\\`\\~typing.Any\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1445,17 +1448,17 @@ msgstr ""
 #: pyodide.ffi.JsProxy.as_py_json:9
 msgid ""
 ":sphinx_autodoc_typehints_type:`\\:py\\:data\\:\\`\\~typing.Union\\`\\\\ \\\\"
-"\\[\\:py\\:class\\:\\`\\~pyodide.ffi.JsMutableMap\\`\\\\ \\\\\\[\\:py\\:"
-"class\\:\\`str\\`\\, \\:py\\:data\\:\\`\\~typing.Any\\`\\]\\, \\:py\\:"
-"class\\:\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:data\\:\\`\\~typing."
-"Any\\`\\]\\]`"
+"\\[\\:py\\:class\\:\\`\\~pyodide.ffi.JsMutableMap\\`\\\\ \\\\\\"
+"[\\:py\\:class\\:\\`str\\`\\, \\:py\\:data\\:\\`\\~typing.Any\\`\\]\\, "
+"\\:py\\:class\\:\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:data\\:"
+"\\`\\~typing.Any\\`\\]\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.as_py_json:21
 msgid ""
-"You can use the following converter as the `default` argument to :py:func:"
-"`json.dumps` to serialize a JavaScript object with"
+"You can use the following converter as the `default` argument "
+"to :py:func:`json.dumps` to serialize a JavaScript object with"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1485,8 +1488,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.bind_class:6
 msgid ""
-"At runtime, ``proxy.bind_class(A)`` is equivalent to ``proxy."
-"bind_class(type[A])``, it only needs to be a separate method to help mypy."
+"At runtime, ``proxy.bind_class(A)`` is equivalent to "
+"``proxy.bind_class(type[A])``, it only needs to be a separate method to help "
+"mypy."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1534,9 +1538,10 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.object_entries:3
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsArray\\`\\\\ \\\\\\[\\:py\\:class\\:\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\"
-"\\[\\:py\\:data\\:\\`\\~typing.Any\\`\\]\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:data\\:\\`\\~typing.Any\\`\\]"
+"\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1547,8 +1552,8 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.object_keys:3
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsArray\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:class\\:\\`str\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1559,8 +1564,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.object_values:3
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsArray\\`\\\\ \\\\\\[\\:py\\:data\\:\\`\\~typing.Any\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsArray\\`\\\\ \\\\\\[\\:py\\:data\\:"
+"\\`\\~typing.Any\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1591,8 +1597,9 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.JsProxy.to_weakref:15
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsWeakRef\\`\\\\ \\\\\\[\\:py\\:class\\:\\`\\~typing.Self\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsWeakRef\\`\\\\ \\\\\\[\\:py\\:class\\:"
+"\\`\\~typing.Self\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1640,8 +1647,8 @@ msgid ""
 "example:  .. code-block:: python      from js import Array      def "
 "default_converter(value, convert, cache):         if not isinstance(value, "
 "Pair):             return value         result = Array.new() cache(value, "
-"result)         result.push(convert(value.first))         result."
-"push(convert(value.second))         return result"
+"result)         result.push(convert(value.first))         "
+"result.push(convert(value.second))         return result"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1674,18 +1681,18 @@ msgid ""
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
-#: pyodide.ffi.create_once_callable:9
+#: pyodide.ffi.create_once_callable:21
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsOnceCallable\\``"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsOnceCallable\\``"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.create_proxy:3
 msgid ""
-"This allows explicit control over the lifetime of the :js:class:`~pyodide."
-"ffi.PyProxy` from Python: call the :py:meth:`~JsDoubleProxy.destroy` API "
-"when done."
+"This allows explicit control over the lifetime of "
+"the :js:class:`~pyodide.ffi.PyProxy` from Python: call "
+"the :py:meth:`~JsDoubleProxy.destroy` API when done."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1740,18 +1747,18 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.create_proxy:29
 msgid ""
-":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsDoubleProxy\\`\\\\ \\\\\\[\\`\\`T\\`\\`\\]`"
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsDoubleProxy\\`\\\\ \\\\\\[\\`\\`T\\`\\`\\]`"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
 #: pyodide.ffi.destroy_proxies:3
 msgid ""
 "pyproxies must be a JavaScript Array of PyProxies. Intended for use with the "
-"arrays created from the \"pyproxies\" argument of :js:meth:`~pyodide.ffi."
-"PyProxy.toJs` and :py:func:`to_js`. This method is necessary because "
-"indexing the Array from Python automatically unwraps the PyProxy into the "
-"wrapped Python object."
+"arrays created from the \"pyproxies\" argument "
+"of :js:meth:`~pyodide.ffi.PyProxy.toJs` and :py:func:`to_js`. This method is "
+"necessary because indexing the Array from Python automatically unwraps the "
+"PyProxy into the wrapped Python object."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1760,9 +1767,9 @@ msgid ""
 "Registers ``jsproxy`` as a JavaScript module named ``name``. The module can "
 "then be imported from Python using the standard Python import system. If "
 "another module by the same name has already been imported, this won't have "
-"much effect unless you also delete the imported module from :py:data:`sys."
-"modules`. This is called by the JavaScript API :js:func:`pyodide."
-"registerJsModule`."
+"much effect unless you also delete the imported module "
+"from :py:data:`sys.modules`. This is called by the JavaScript "
+"API :js:func:`pyodide.registerJsModule`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1780,8 +1787,8 @@ msgstr ""
 msgid ""
 "Only works if JS Promise integration is enabled in the runtime and the "
 "current Python call stack was entered via :js:func:`pyodide.runPythonAsync`, "
-"by calling an async Python function, or via :js:func:`~pyodide.ffi."
-"PyCallable.callPromising`."
+"by calling an async Python function, or "
+"via :js:func:`~pyodide.ffi.PyCallable.callPromising`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -1794,8 +1801,9 @@ msgid ""
 "This is similar to :js:meth:`~pyodide.ffi.PyProxy.toJs`, but for use from "
 "Python. If the object can be implicitly translated to JavaScript, it will be "
 "returned unchanged. If the object cannot be converted into JavaScript, this "
-"method will return a :py:class:`JsProxy` of a :js:class:`~pyodide.ffi."
-"PyProxy`, as if you had used :func:`~pyodide.ffi.create_proxy`."
+"method will return a :py:class:`JsProxy` of "
+"a :js:class:`~pyodide.ffi.PyProxy`, as if you had "
+"used :func:`~pyodide.ffi.create_proxy`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.to_js:10
@@ -1830,9 +1838,10 @@ msgstr ""
 msgid ""
 "This converter if provided receives a (JavaScript) iterable of (JavaScript) "
 "pairs [key, value]. It is expected to return the desired result of the dict "
-"conversion. Some suggested values for this argument:    * ``js.Object."
-"fromEntries`` -- similar to the default behavior   * ``js.Map.new`` -- "
-"convert to a map   * ``js.Array.from`` -- convert to an array of entries"
+"conversion. Some suggested values for this argument:    * "
+"``js.Object.fromEntries`` -- similar to the default behavior   * "
+"``js.Map.new`` -- convert to a map   * ``js.Array.from`` -- convert to an "
+"array of entries"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.to_js:27
@@ -1938,8 +1947,8 @@ msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.to_js:118
 msgid ""
-"We can use the following ``default_converter`` to convert ``Pair`` to :js:"
-"class:`Array`:"
+"We can use the following ``default_converter`` to convert ``Pair`` "
+"to :js:class:`Array`:"
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of pyodide.ffi.to_js:121
@@ -2013,12 +2022,12 @@ msgstr ""
 #: _pyodide._importhook.JsFinder.unregister_js_module:1
 msgid ""
 "Unregisters a JavaScript module with given name that has been previously "
-"registered with :js:func:`pyodide.registerJsModule` or :py:func:`pyodide.ffi."
-"register_js_module`. If a JavaScript module with that name does not already "
-"exist, will raise an error. If the module has already been imported, this "
-"won't have much effect unless you also delete the imported module from :py:"
-"data:`sys.modules`. This is called by the JavaScript API :js:func:`pyodide."
-"unregisterJsModule`."
+"registered with :js:func:`pyodide.registerJsModule` "
+"or :py:func:`pyodide.ffi.register_js_module`. If a JavaScript module with "
+"that name does not already exist, will raise an error. If the module has "
+"already been imported, this won't have much effect unless you also delete "
+"the imported module from :py:data:`sys.modules`. This is called by the "
+"JavaScript API :js:func:`pyodide.unregisterJsModule`."
 msgstr ""
 
 #: ../../../../src/py/_pyodide/_core_docs.py:docstring of
@@ -2029,8 +2038,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
 #: pyodide.ffi.wrappers.add_event_listener:1:<autosummary>:1
 msgid ""
-":py:obj:`add_event_listener <pyodide.ffi.wrappers.add_event_listener>`\\ "
-"\\(elt\\, event\\, listener\\)"
+":py:obj:`add_event_listener <pyodide.ffi.wrappers.add_event_listener>`\\ \\"
+"(elt\\, event\\, listener\\)"
 msgstr ""
 
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
@@ -2045,8 +2054,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
 #: pyodide.ffi.wrappers.add_event_listener:1:<autosummary>:1
 msgid ""
-":py:obj:`clear_interval <pyodide.ffi.wrappers.clear_interval>`\\ "
-"\\(interval\\_retval\\)"
+":py:obj:`clear_interval <pyodide.ffi.wrappers.clear_interval>`\\ \\"
+"(interval\\_retval\\)"
 msgstr ""
 
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
@@ -2061,8 +2070,8 @@ msgstr ""
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
 #: pyodide.ffi.wrappers.add_event_listener:1:<autosummary>:1
 msgid ""
-":py:obj:`clear_timeout <pyodide.ffi.wrappers.clear_timeout>`\\ "
-"\\(timeout\\_retval\\)"
+":py:obj:`clear_timeout <pyodide.ffi.wrappers.clear_timeout>`\\ \\"
+"(timeout\\_retval\\)"
 msgstr ""
 
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
@@ -2076,8 +2085,9 @@ msgstr ""
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
 #: pyodide.ffi.wrappers.add_event_listener:1:<autosummary>:1
 msgid ""
-":py:obj:`remove_event_listener <pyodide.ffi.wrappers."
-"remove_event_listener>`\\ \\(elt\\, event\\, listener\\)"
+":py:obj:`remove_event_listener "
+"<pyodide.ffi.wrappers.remove_event_listener>`\\ \\(elt\\, event\\, "
+"listener\\)"
 msgstr ""
 
 #: ../../../../src/py/pyodide/ffi/wrappers.py:docstring of
@@ -2123,6 +2133,6 @@ msgstr ""
 #: pyodide.ffi.wrappers.set_interval:9 pyodide.ffi.wrappers.set_timeout:9
 msgid ""
 ":sphinx_autodoc_typehints_type:`\\:py\\:data\\:\\`\\~typing.Union\\`\\\\ \\\\"
-"\\[\\:py\\:class\\:\\`int\\`\\, \\:py\\:class\\:\\`\\~pyodide.ffi."
-"JsProxy\\`\\]`"
+"\\[\\:py\\:class\\:\\`int\\`\\, \\:py\\:class\\:"
+"\\`\\~pyodide.ffi.JsProxy\\`\\]`"
 msgstr ""
