@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 314.0.2\n"
+"Project-Id-Version: Pyodide 314.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:06+0000\n"
+"POT-Creation-Date: 2026-10-26 16:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,8 +25,8 @@ msgstr ""
 msgid ""
 "If you are building the latest development version of Pyodide from the "
 "`main` branch, please make sure to follow the build instructions from the "
-"dev version of the documentation at [pyodide.org/en/latest/](https://pyodide."
-"org/en/latest/development/building-from-sources.html)"
+"dev version of the documentation at [pyodide.org/en/latest/](https://"
+"pyodide.org/en/latest/development/building-from-sources.html)"
 msgstr ""
 
 #: ../../../development/building-from-sources.md:12
@@ -98,8 +98,9 @@ msgstr ""
 
 #: ../../../development/building-from-sources.md:52
 msgid ""
-"These Docker images are also available from the Github packages at [`github."
-"com/orgs/pyodide/packages`](https://github.com/orgs/pyodide/packages)."
+"These Docker images are also available from the Github packages at "
+"[`github.com/orgs/pyodide/packages`](https://github.com/orgs/pyodide/"
+"packages)."
 msgstr ""
 
 #: ../../../development/building-from-sources.md:56
@@ -128,8 +129,8 @@ msgid ""
 "available to the container is different from the physical RAM capacity of "
 "the machine.) Ideally, at least 3 GB of RAM should be available to the "
 "docker container to build Pyodide smoothly. These settings can be changed "
-"via Docker preferences (see [here](https://stackoverflow.com/"
-"questions/44533319/how-to-assign-more-memory-to-docker-container))."
+"via Docker preferences (see [here](https://stackoverflow.com/questions/"
+"44533319/how-to-assign-more-memory-to-docker-container))."
 msgstr ""
 
 #: ../../../development/building-from-sources.md:76
@@ -146,10 +147,10 @@ msgstr ""
 #: ../../../development/building-from-sources.md:82
 msgid ""
 "We provide a dev container configuration that is equivalent to the use of `./"
-"run_docker` script. It can be used in [Visual Studio Code](https://code."
-"visualstudio.com/docs/devcontainers/containers) and on [GitHub Codespaces]"
-"(https://docs.github.com/en/codespaces/overview). When prompted, select "
-"\"Docker\"."
+"run_docker` script. It can be used in [Visual Studio Code](https://"
+"code.visualstudio.com/docs/devcontainers/containers) and on [GitHub "
+"Codespaces](https://docs.github.com/en/codespaces/overview). When prompted, "
+"select \"Docker\"."
 msgstr ""
 
 #: ../../../development/building-from-sources.md:87
@@ -209,8 +210,8 @@ msgstr ""
 #: ../../../development/building-from-sources.md:121
 msgid ""
 "You would need a working native compiler toolchain, enough to build   "
-"[CPython](https://devguide.python.org/getting-started/setup-building/index."
-"html#linux), for example,"
+"[CPython](https://devguide.python.org/getting-started/setup-building/"
+"index.html#linux), for example,"
 msgstr ""
 
 #: ../../../development/building-from-sources.md:123
@@ -449,8 +450,8 @@ msgstr ""
 msgid ""
 "`PYODIDE_BASE_URL`: Base URL where Pyodide packages are deployed. It must "
 "end with a trailing `/`. Default: `./` to load Pyodide packages from the "
-"same base URL path as where `pyodide.js` is located. Example: `https://cdn."
-"jsdelivr.net/pyodide/v314.0.2/full/`"
+"same base URL path as where `pyodide.js` is located. Example: `https://"
+"cdn.jsdelivr.net/pyodide/v314.0.7/full/`"
 msgstr ""
 
 #: ../../../development/building-from-sources.md:250
