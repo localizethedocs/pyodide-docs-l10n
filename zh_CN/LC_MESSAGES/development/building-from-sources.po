@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/building-from-sources.md:3
+msgid "Building from source"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:6
+msgid ""
+"If you are building the latest development version of Pyodide from the "
+"`main` branch, please make sure to follow the build instructions from the "
+"dev version of the documentation at [pyodide.org/en/latest/](https://pyodide."
+"org/en/latest/development/building-from-sources.html)"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:12
+msgid "Pyodide can be built from sources on different platforms,"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:14
+msgid ""
+"on **Linux** it is easiest using the Pyodide Docker image. This approach "
+"works with any native operating system as long as Docker is installed. You "
+"can also build on your native Linux OS if the correct build prerequisites "
+"are installed."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:18
+msgid ""
+"on **MacOS** it is recommended to install dependencies via conda-forge or "
+"using Homebrew, particularly with the M1 ARM CPU. Building with Docker is "
+"possible but very slow."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:21
+msgid ""
+"It is not possible to build on **Windows**, but you can use [Windows "
+"Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-"
+"win10) to create a Linux build environment."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:25
+msgid "Build instructions"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:27
+msgid ""
+"The Pyodide repository has a git submodule called `pyodide-build`. Make sure "
+"to do a recursive clone:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:30
+msgid "git clone --recursive https://github.com/pyodide/pyodide\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:34
+msgid ""
+"or if you have already cloned the Pyodide repository without the `--"
+"recursive` flag, you may initialize the submodule with:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:37
+msgid "git submodule update --init\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:41
+msgid ""
+"If you change git branches, make sure you update `pyodide-build` with `git "
+"submodule update`."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:44
+msgid "Using Docker"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:46
+msgid ""
+"We provide a Debian-based x86_64 Docker image ([`pyodide/pyodide-env`]"
+"(https://hub.docker.com/r/pyodide/pyodide-env)) on Docker Hub with the "
+"dependencies already installed to make it easier to build Pyodide."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:52
+msgid ""
+"These Docker images are also available from the Github packages at [`github."
+"com/orgs/pyodide/packages`](https://github.com/orgs/pyodide/packages)."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:56
+msgid "Install Docker"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:58
+msgid "From a git checkout of Pyodide, run `./run_docker`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:60
+msgid "Run `make` to build."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:63
+msgid ""
+"You can control the resources allocated to the build by setting the env vars "
+"`EMSDK_NUM_CORE`, `EMCC_CORES` and `PYODIDE_JOBS` (the default for each is "
+"4)."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:68
+msgid ""
+"If running `make` deterministically stops at some point, increasing the "
+"maximum RAM usage available to the docker container might help. (The RAM "
+"available to the container is different from the physical RAM capacity of "
+"the machine.) Ideally, at least 3 GB of RAM should be available to the "
+"docker container to build Pyodide smoothly. These settings can be changed "
+"via Docker preferences (see [here](https://stackoverflow.com/"
+"questions/44533319/how-to-assign-more-memory-to-docker-container))."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:76
+msgid ""
+"You can edit the files in the shared `pyodide` source folder on your host "
+"machine (outside of Docker), and then repeatedly run `make` inside the "
+"Docker environment to test your changes."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:80
+msgid "Using the \"Docker\" dev container"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:82
+msgid ""
+"We provide a dev container configuration that is equivalent to the use of `./"
+"run_docker` script. It can be used in [Visual Studio Code](https://code."
+"visualstudio.com/docs/devcontainers/containers) and on [GitHub Codespaces]"
+"(https://docs.github.com/en/codespaces/overview). When prompted, select "
+"\"Docker\"."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:87
+msgid "Using the \"Conda\" dev container"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:89
+msgid ""
+"We provide another dev container configuration that corresponds to the "
+"\"Linux with conda\" method described below. When [Visual Studio Code]"
+"(https://code.visualstudio.com/docs/devcontainers/containers) or [GitHub "
+"Codespaces](https://docs.github.com/en/codespaces/overview) prompts for the "
+"dev container configuration, select \"Conda\"."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:94
+msgid "Using `make`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:96
+msgid ""
+"Make sure the prerequisites for [emsdk](https://github.com/emscripten-core/"
+"emsdk) are installed. Pyodide will build a custom, patched version of emsdk, "
+"so there is no need to build it yourself prior."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:101
+msgid ""
+"You need Python 3.14.2 to run the build scripts. To make sure that the "
+"correct Python is used during the build it is recommended to use a [virtual "
+"environment](https://packaging.python.org/guides/installing-using-pip-and-"
+"virtual-environments/#creating-a-virtual-environment) or a conda environment."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:0
+msgid "Linux"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:110
+msgid "To build on Linux, you need:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:112
+msgid ""
+"A working native compiler toolchain, enough to build [CPython](https://"
+"devguide.python.org/getting-started/setup-building/index.html#linux)."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:114
+msgid "CMake (required to install Emscripten)"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:0
+msgid "Linux with conda"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:121
+msgid ""
+"You would need a working native compiler toolchain, enough to build   "
+"[CPython](https://devguide.python.org/getting-started/setup-building/index."
+"html#linux), for example,"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:123
+msgid "`apt install build-essential` on Debian based systems."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:124
+msgid ""
+"Conda which can be installed from [MiniForge](https://github.com/conda-forge/"
+"miniforge)"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:126
+#: ../../../development/building-from-sources.md:140
+msgid ""
+"Then install the required Python version and other build dependencies in a "
+"separate conda environment,"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:128
+#: ../../../development/building-from-sources.md:142
+msgid ""
+"conda env create -f environment.yml\n"
+"conda activate pyodide-env\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:0
+msgid "macOS with conda"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:134
+msgid "You would need,"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:135
+msgid "System libraries in the root directory: `xcode-select --install`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:137
+msgid ""
+"Conda which can be installed using [Miniforge](https://github.com/conda-"
+"forge/miniforge) (both for Intel and M1 CPU)"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:0
+msgid "macOS with Homebrew"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:149
+msgid "To build on macOS with Homebrew, you need:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:151
+msgid "System command line tools: `xcode-select --install`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:153
+msgid "[Homebrew](https://brew.sh/) for installing dependencies"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:154
+msgid ""
+"Pyodide requires CMake3 but Homebrew installs CMake4. Use pip for cmake `pip "
+"install cmake==3.31`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:156
+msgid ""
+"`brew install coreutils cmake autoconf automake libtool libffi ccache wget "
+"rustup-init`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:157
+msgid ""
+"Initialize Rust (needed for building test-rust-* packages): `rustup-init`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:158
+msgid ""
+"Install the GNU patch and GNU sed (`brew install gpatch gnu-sed`) and re-"
+"defining them temporarily as [`patch`](https://formulae.brew.sh/formula/"
+"gpatch) and [`sed`](https://formulae.brew.sh/formula/gnu-sed)."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:167
+msgid ""
+"If you encounter issues with the requirements, it is useful to check the "
+"exact list in the [Dockerfile](https://github.com/pyodide/pyodide/blob/main/"
+"Dockerfile) which is tested in the CI."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:173
+msgid ""
+"You can install the Python dependencies from the requirement file at the "
+"root of Pyodide folder: `pip install -r requirements.txt`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:176
+msgid "After installing the build prerequisites, run from the command line:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:178
+msgid "make\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:184
+msgid "Building a full Pyodide distribution"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:186
+msgid ""
+"By running `make`, you build a minimal Pyodide distribution that includes "
+"only the core packages. Pyodide contains a large number of packages, and "
+"building all of them takes a long time. If you want to build a full "
+"distribution, or make a custom distribution with a subset of packages, there "
+"are two options:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:191
+msgid "Use pre-built packages from the `pyodide-recipes` repository."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:193
+msgid ""
+"Packages included in the Pyodide distribution are built separately and "
+"stored in the [`pyodide-recipes`](https://github.com/pyodide/pyodide-"
+"recipes) repository."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:196
+msgid ""
+"Setting `ENABLE_PREBUILT_PACKAGES` environment variable to `1` will download "
+"and install pre-built packages from the `pyodide-recipes` repository."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:199
+msgid "ENABLE_PREBUILT_PACKAGES=1 make\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:203
+msgid "Build a subset of packages from the `pyodide-recipes` repository."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:205
+msgid ""
+"If you want to build a subset of packages, you can clone the `pyodide-"
+"recipes` repository and build the packages you need."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:208
+msgid ""
+"git clone https://github.com/pyodide/pyodide-recipes\n"
+"\n"
+"# Build the packages you need\n"
+"pyodide build-recipes \"numpy, scipy, toolz, attrs\" --recipe-dir pyodide-"
+"recipes/packages --install\n"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:215
+msgid ""
+"Dependencies of the listed packages will be built automatically as well. The "
+"package names must match the folder names in `pyodide-recipes/packages` "
+"exactly; in particular they are case-sensitive."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:219
+msgid ""
+"There are also some meta-packages that can be used to build a subset of "
+"packages:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:221
+msgid ""
+"\"tag:min-scipy-stack\": includes the \"core\" meta-package as well as some "
+"core packages from the Scientific Python stack and their dependencies: "
+"\"numpy\", \"scipy\", \"pandas\", \"matplotlib\", \"scikit-learn\", "
+"\"joblib\", \"pytest\". This option is non exhaustive and is mainly intended "
+"to make build faster while testing a diverse set of scientific packages."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:226
+msgid "\"tag:library\": includes all shared and static libraries."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:227
+msgid ""
+"\"tag:shared_library\": includes all shared libraries. Added in conjunction "
+"with the \"library\" tag."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:229
+msgid ""
+"\"tag:static_library\": includes all static libraries. Added in conjunction "
+"with the \"library\" tag."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:231
+msgid ""
+"\"tag:pyodide-test\": includes all packages built to test the Pyodide build "
+"system's behaviour."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:233
+msgid ""
+"\"tag:rust\": includes all packages that require a Rust toolchain to build, "
+"and their dependencies."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:235
+msgid "\"\\*\" builds all packages"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:236
+msgid "You can exclude a package by prefixing it with \"!\"."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:238
+msgid "micropip is always automatically included."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:240
+msgid "Environment variables"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:242
+msgid "The following environment variables additionally impact the build:"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:244
+msgid ""
+"`PYODIDE_JOBS`: the `-j` option passed to the `emmake make` command when "
+"applicable for parallel compilation. Default: 3."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:246
+msgid ""
+"`PYODIDE_BASE_URL`: Base URL where Pyodide packages are deployed. It must "
+"end with a trailing `/`. Default: `./` to load Pyodide packages from the "
+"same base URL path as where `pyodide.js` is located. Example: `https://cdn."
+"jsdelivr.net/pyodide/v314.0.2/full/`"
+msgstr ""
+
+#: ../../../development/building-from-sources.md:250
+msgid "`EXTRA_CFLAGS`: Add extra compilation flags."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:251
+msgid "`EXTRA_LDFLAGS`: Add extra linker flags."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:253
+msgid ""
+"Setting `EXTRA_CFLAGS=\"-D DEBUG_F\"` provides detailed diagnostic "
+"information whenever error branches are taken inside the Pyodide core code. "
+"These error messages are frequently helpful even when the problem is a fatal "
+"configuration problem and Pyodide cannot even be initialized. These error "
+"branches occur also in correctly working code, but they are relatively "
+"uncommon so in practice the amount of noise generated isn't too large. The "
+"shorthand `make debug` automatically sets this flag."
+msgstr ""
+
+#: ../../../development/building-from-sources.md:261
+msgid ""
+"In certain cases, setting `EXTRA_LDFLAGS=\"-s ASSERTIONS=1` or "
+"`ASSERTIONS=2` can also be helpful, but this slows down the linking and the "
+"runtime speed of Pyodide a lot and generates a large amount of noise in the "
+"console."
+msgstr ""
