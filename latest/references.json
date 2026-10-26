@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-09-22 12:43:22 +0900",
-      "hash" : "e4d3ae954d01d61a3e90531d63b881f2d33361b4",
-      "title" : "Support cross-drive paths in windows pyodide cli (#6467)"
+      "date" : "2026-10-26 12:14:57 +0900",
+      "hash" : "8876676cbb135363e3c662cc307826f66fb1a2c8",
+      "title" : "Fix PyMutableSequence misclassifying immutables (#6503)"
     }
   },
   "type" : "branch",
