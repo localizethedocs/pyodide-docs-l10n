@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-US" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Debugging tips &#8212; Version 314.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pyodide.css?v=6097e04c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=47a651a3"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/debugging';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pyodide-docs-l10n/development/debugging.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Contribute" href="contributing.html" />
+    <link rel="prev" title="Testing and benchmarking" href="testing.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-US"/>
+  <meta name="docsearch:version" content="314.0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+<script
+  defer
+  src="https://static.cloudflareinsights.com/beacon.min.js"
+  data-cf-beacon='{"token": "4405a86c36a84efca5dbde1b25edd153"}'
+></script>
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyodide-logo.png" class="logo__image only-light" alt="Version 314.0.2 - Home"/>
+    <img src="../_static/pyodide-logo.png" class="logo__image only-dark pst-js-only" alt="Version 314.0.2 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage/quickstart.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/downloading-and-deploying.html">Downloading and deploying Pyodide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/index.html">Using Pyodide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/loading-custom-python-code.html">Loading custom Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/file-system.html">Dealing with the file system</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../usage/webworker.html">Using Pyodide in a web worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/service-worker.html">Using Pyodide in a service worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/working-with-bundlers.html">Working with Bundlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/cli.html">The Pyodide Python CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/socket.html">Using Sockets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/accessing-files.html">Accessing Files Quick Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/loading-packages.html">Loading packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/packages-in-pyodide.html">Packages built in Pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/sdl.html">Using SDL-based packages in Pyodide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/wasm-constraints.html">Pyodide Python compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/type-conversions.html">Type translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/keyboard-interrupts.html">Interrupting execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/streams.html">Redirecting standard streams</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usage/api-reference.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/js-api.html">JavaScript API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../usage/api/python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/code.html">pyodide.code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/console.html">pyodide.console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/ffi.html">pyodide.ffi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/http.html">pyodide.http</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/api/python-api/webloop.html">pyodide.webloop</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference external" href="https://micropip.pyodide.org/en/stable/project/api.html">Micropip API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/api/pyodide-cli.html">pyodide CLI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/examples.html">Community Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="building-packages.html">Building packages for Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-from-sources.html">Building from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and benchmarking</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Debugging tips</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">How to Contribute</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Contributing to the “core” C Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainers.html">Maintainer information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abi.html">The PyEmscripten Platform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abi/314.html">pyemscripten_2026_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/313.html">pyemscripten_2025_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/312.html">pyemscripten_2024_0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abi/flags.html">ABI-sensitive flags</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/about.html">What is Pyodide?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/governance.html">Governance and Decision-making</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/changelog.html">Change Log</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/deprecation-timeline.html">Pyodide Deprecation Timeline</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/related-projects.html">Related Projects</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/pyodide/pyodide" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/development/debugging.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Debugging tips</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-prettier-on-pyodide-asm-mjs">Run <code class="docutils literal notranslate"><span class="pre">prettier</span></code> on <code class="docutils literal notranslate"><span class="pre">pyodide.asm.mjs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-symbols-or-source-maps">Building with symbols or source maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linker-error-function-signature-mismatch">Linker error: function signature mismatch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misencoded-wasm">Misencoded Wasm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-runtimeerror-function-signature-mismatch">Debugging RuntimeError: function signature mismatch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-text-is-truncated-due-to-size">Dealing with <code class="docutils literal notranslate"><span class="pre">;;</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">truncated</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">size</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="debugging-tips">
+<span id="debugging"></span><h1>Debugging tips<a class="headerlink" href="#debugging-tips" title="Link to this heading">#</a></h1>
+<p>See <a class="reference external" href="https://emscripten.org/docs/porting/Debugging.html">Emscripten’s page about
+debugging</a> which has
+extensive info about the various debugging options available. The <a class="reference external" href="https://github.com/WebAssembly/wabt">Wasm Binary
+Toolkit</a> is super helpful for analyzing
+<code class="docutils literal notranslate"><span class="pre">.wasm</span></code>, <code class="docutils literal notranslate"><span class="pre">.so</span></code>, <code class="docutils literal notranslate"><span class="pre">.a</span></code>, and <code class="docutils literal notranslate"><span class="pre">.o</span></code> files.</p>
+<p>Also whenever you can reproduce a bug in chromium make sure to use a
+chromium-based browser (e.g., chrome) for debugging. They are better at it.</p>
+<section id="run-prettier-on-pyodide-asm-mjs">
+<h2>Run <code class="docutils literal notranslate"><span class="pre">prettier</span></code> on <code class="docutils literal notranslate"><span class="pre">pyodide.asm.mjs</span></code><a class="headerlink" href="#run-prettier-on-pyodide-asm-mjs" title="Link to this heading">#</a></h2>
+<p>Before doing any debugger I strongly recommend running
+<code class="docutils literal notranslate"><span class="pre">npx</span> <span class="pre">prettier</span> <span class="pre">-w</span> <span class="pre">pyodide.asm.mjs</span></code>. This makes everything much easier.</p>
+</section>
+<section id="building-with-symbols-or-source-maps">
+<span id="build-with-symbols"></span><h2>Building with symbols or source maps<a class="headerlink" href="#building-with-symbols-or-source-maps" title="Link to this heading">#</a></h2>
+<p>Building with symbols retains the names of all internal functions, but will not
+prevent function calls from being inlined away and does not retain a source map
+to the original C code. Symbols do not cause much of a slowdown and only cause a
+minor increase in code size. Building with source maps disables many
+optimizations such as inlining and slows down execution by quite a lot.</p>
+<p>To rebuild with symbols you can use the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>src/core/jsproxy.h
+<span class="nv">PYODIDE_SYMBOLS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>make<span class="w"> </span>-C<span class="w"> </span>cpython<span class="w"> </span>rebuild-all
+<span class="nv">PYODIDE_SYMBOLS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>make<span class="w"> </span>all-but-packages
+</pre></div>
+</div>
+<p>To use source maps, use <code class="docutils literal notranslate"><span class="pre">PYODIDE_SOURCEMAPS=1</span></code> instead of <code class="docutils literal notranslate"><span class="pre">PYODIDE_SYMBOLS=1</span></code>.
+To get the benefits of source maps, you need the
+<a class="reference external" href="https://chromewebstore.google.com/detail/cc++-devtools-support-dwa/pdcpmagijalfljmkmjngeonclgbbannb?pli=1">C/C++ devtoools support Chrome extension</a>.</p>
+<p>When source maps are present and the devtools extension is enabled, you will not
+be able to see the raw disassembly, which makes it hard to inspect the state of
+the program in the debugger because there is no support for executing C
+expressions. The extension provides no way to see the raw assembly without
+disabling the extension and refreshing the page.</p>
+</section>
+<section id="linker-error-function-signature-mismatch">
+<span id="function-signature-mismatch"></span><h2>Linker error: function signature mismatch<a class="headerlink" href="#linker-error-function-signature-mismatch" title="Link to this heading">#</a></h2>
+<p>You may get linker errors as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wasm</span><span class="o">-</span><span class="n">ld</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">function</span> <span class="n">signature</span> <span class="n">mismatch</span><span class="p">:</span> <span class="n">some_func</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">defined</span> <span class="k">as</span> <span class="p">(</span><span class="n">i32</span><span class="p">,</span> <span class="n">i32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">i32</span> <span class="ow">in</span> <span class="n">some_static_lib</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">o</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">defined</span> <span class="k">as</span> <span class="p">(</span><span class="n">i32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">i32</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">o</span>
+</pre></div>
+</div>
+<p>This is especially common in Scipy. Oftentimes it isn’t too hard to figure out
+what is going wrong because it told you the both the symbol name (<code class="docutils literal notranslate"><span class="pre">some_func</span></code>)
+and the object files involved (this is much easier than the runtime version of
+this error!). If you can’t tell what is going on from looking at the source
+files, it’s time to pull out <code class="docutils literal notranslate"><span class="pre">wasm-objdump</span></code>. In this case <code class="docutils literal notranslate"><span class="pre">a.o</span></code> is part of
+<code class="docutils literal notranslate"><span class="pre">some_static_lib.a</span></code> so you first need to get it out with
+<code class="docutils literal notranslate"><span class="pre">ar</span> <span class="pre">-x</span> <span class="pre">some_static_lib.a</span> <span class="pre">a.o</span></code>.
+Now we can check if <code class="docutils literal notranslate"><span class="pre">a.o</span></code> imports or defines <code class="docutils literal notranslate"><span class="pre">some_func</span></code>.
+To check for imports, use <code class="docutils literal notranslate"><span class="pre">wasm-objdump</span> <span class="pre">a.o</span> <span class="pre">-j</span> <span class="pre">Import</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">some_func</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">a.o</span></code> is importing <code class="docutils literal notranslate"><span class="pre">some_func</span></code> you should see a line like:
+<code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">func[0]</span> <span class="pre">sig=1</span> <span class="pre">&lt;env.some_func&gt;</span> <span class="pre">&lt;-</span> <span class="pre">env.some_func</span></code> in the output.</p>
+<p>If not, you will see nothing or things like <code class="docutils literal notranslate"><span class="pre">some_func2</span></code>. To check if <code class="docutils literal notranslate"><span class="pre">a.o</span></code>
+defines <code class="docutils literal notranslate"><span class="pre">some_func</span></code> (this is a bit redundant because you can conclude whether or
+not does from whether it imports it) we can use:
+<code class="docutils literal notranslate"><span class="pre">wasm-objdump</span> <span class="pre">a.o</span> <span class="pre">-j</span> <span class="pre">Function</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">some_func</span></code>, if
+<code class="docutils literal notranslate"><span class="pre">a.o</span></code> defines <code class="docutils literal notranslate"><span class="pre">some_func</span></code> you will see something like:
+<code class="docutils literal notranslate"> <span class="pre">-</span> <span class="pre">func[0]</span> <span class="pre">sig=0</span> <span class="pre">&lt;some_func&gt;</span></code>.</p>
+<p>Now the question is what these signatures mean (though we already know this from
+the linker error). To find out what signature 0 is, you can use
+<code class="docutils literal notranslate"><span class="pre">wasm-objdump</span> <span class="pre">a.o</span> <span class="pre">-j</span> <span class="pre">Type</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">&quot;type\[0\]&quot;</span></code>.</p>
+<p>Using this, we can verify that <code class="docutils literal notranslate"><span class="pre">a.o</span></code> imports <code class="docutils literal notranslate"><span class="pre">some_func</span></code> with signature
+<code class="docutils literal notranslate"><span class="pre">(i32,</span> <span class="pre">i32)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code> but <code class="docutils literal notranslate"><span class="pre">b.o</span></code> exports it with signature <code class="docutils literal notranslate"><span class="pre">(i32)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code>,
+hence the linker error.</p>
+<p>This process works in basically the same way for already-linked <code class="docutils literal notranslate"><span class="pre">.so</span></code> and
+<code class="docutils literal notranslate"><span class="pre">.wasm</span></code> files, which can help if you get the load-time version of this linker
+error.</p>
+</section>
+<section id="misencoded-wasm">
+<h2>Misencoded Wasm<a class="headerlink" href="#misencoded-wasm" title="Link to this heading">#</a></h2>
+<p>On a very rare occasion you may run into a misencoded object file. This can
+cause different tools to crash, <code class="docutils literal notranslate"><span class="pre">wasm-ld</span></code> may panic, etc. <code class="docutils literal notranslate"><span class="pre">wasm-objdump</span></code> will
+just generate a useless error message. In this case, I recommend
+<code class="docutils literal notranslate"><span class="pre">wasm-objdump</span> <span class="pre">-s</span> <span class="pre">--debug</span> <span class="pre">2&gt;&amp;1</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">error</span> <span class="pre">-C</span> <span class="pre">20</span></code> (or pipe to <code class="docutils literal notranslate"><span class="pre">less</span></code>), which will result in
+more diagnostic information. Sometimes the crash happens quite a lot later than the actual error,
+look for suspiciously large constants, these are often the first sign of something gone haywire.</p>
+<p>After this, you can get out a hex editor and consult the
+<a class="reference external" href="https://webassembly.github.io/spec/core/binary/index.html">WebAssembly binary specification</a>
+Cross reference against the hex addresses appearing in <code class="docutils literal notranslate"><span class="pre">wasm-objdump</span> <span class="pre">--debug</span></code>.
+With enough diligence you can locate the problem.</p>
+</section>
+<section id="debugging-runtimeerror-function-signature-mismatch">
+<h2>Debugging RuntimeError: function signature mismatch<a class="headerlink" href="#debugging-runtimeerror-function-signature-mismatch" title="Link to this heading">#</a></h2>
+<p>First recompile with a source map as suggested in <a class="reference internal" href="#build-with-symbols"><span class="std std-ref">Building with symbols or source maps</span></a>, and
+disable the C/C++ DevTools extension (if it’s enabled).</p>
+<p>The browser console will show something like the following. Click on the
+innermost stack trace:</p>
+<p><img alt="fpcast stack trace" src="../_images/signature-mismatch1.png" /></p>
+<p>Clicking the offset will (hopefully) take you to the corresponding wasm
+instruction, which should be a <code class="docutils literal notranslate"><span class="pre">call_indirect</span></code>. If the offset is too large
+(somewhere between <code class="docutils literal notranslate"><span class="pre">0x0200000</span></code> and <code class="docutils literal notranslate"><span class="pre">0x0300000</span></code>) you will instead see
+<code class="docutils literal notranslate"><span class="pre">;;</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">truncated</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">size</span></code>, see <a class="reference internal" href="#text-truncated-due-to-size"><span class="std std-ref">Dealing with ;; text is truncated due to size</span></a>. In
+this example we see the following:</p>
+<p><img alt="wasm bad call_indirect instruction" src="../_images/signature-mismatch2.png" /></p>
+<p>So we think we are calling a function pointer with signature
+<code class="docutils literal notranslate"><span class="pre">(param</span> <span class="pre">i32</span> <span class="pre">i32)</span> <span class="pre">(result</span> <span class="pre">i32)</span></code>
+meaning that it takes two <code class="docutils literal notranslate"><span class="pre">i32</span></code> inputs and returns one <code class="docutils literal notranslate"><span class="pre">i32</span></code> output. Set a
+breakpoint by clicking on the address, then refresh the page and run the
+reproduction again. Sometimes these are on really hot code paths (as in the
+present example) so you probably only want to set the breakpoint once Pyodide is
+finished loading. If your reproduction passes through the breakpoint multiple
+times before crashing you can do the usual chore of counting how many times you
+have to press “Resume” before the crash. Suppose you’ve done all this, and we’ve
+got the vm stopped at the bad instruction just before crashing:</p>
+<p><img alt="wasm bad function pointer" src="../_images/signature-mismatch3.png" /></p>
+<p>The bottom value on the stack is the function pointer. In this case it’s the
+fourth item on the stack, so you can type the following into the console:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">_module</span><span class="p">.</span><span class="nx">wasmTable</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">stack</span><span class="p">[</span><span class="mf">4</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="c1">// stack[4].value === 13109</span>
+<span class="o">&lt;</span><span class="w"> </span><span class="nx">ƒ</span><span class="w"> </span><span class="nx">$one</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="kr">native</span><span class="w"> </span><span class="nx">code</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>So the bad function pointer’s symbol is <code class="docutils literal notranslate"><span class="pre">one</span></code>! Now clicking on <code class="docutils literal notranslate"><span class="pre">$one</span></code> brings you
+to the source for it:</p>
+<p><img alt="function pointer signature" src="../_images/signature-mismatch4.png" /></p>
+<p>and we see the function pointer has signature <code class="docutils literal notranslate"><span class="pre">(param</span> <span class="pre">$var0</span> <span class="pre">i32)</span> <span class="pre">(result</span> <span class="pre">i32)</span></code>,
+meaning it takes one <code class="docutils literal notranslate"><span class="pre">i32</span></code> input and returns one <code class="docutils literal notranslate"><span class="pre">i32</span></code> output. Note that if the
+function had <code class="docutils literal notranslate"><span class="pre">void</span></code> return type it might look like <code class="docutils literal notranslate"><span class="pre">(param</span> <span class="pre">$var0</span> <span class="pre">i32</span> <span class="pre">$var1</span> <span class="pre">i32)</span></code>
+(with no <code class="docutils literal notranslate"><span class="pre">result</span></code>). Confusion between <code class="docutils literal notranslate"><span class="pre">i32</span></code> and <code class="docutils literal notranslate"><span class="pre">void</span></code> return type is the single
+most common cause of this error.</p>
+<p>Now we basically know the cause of the trouble. You can look up <code class="docutils literal notranslate"><span class="pre">cfunction_call</span></code>
+in the CPython source code with the help of ripgrep and locate the line that
+generates this call, and look up <code class="docutils literal notranslate"><span class="pre">one</span></code> in the appropriate source and find the
+signature. Another approach to locate the call site would be to recompile with
+<code class="docutils literal notranslate"><span class="pre">-g3</span></code> and use source maps <a class="reference internal" href="#build-with-symbols"><span class="std std-ref">Building with symbols or source maps</span></a> to locate the problematic
+source code. With the same process of reproduce crash ==&gt; click innermost stack
+frame ==&gt; see source file and line where the error occurs. In this case we see
+that the crash is on the line:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_PyCFunction_TrampolineCall</span><span class="p">(</span><span class="n">meth</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>in the file <code class="docutils literal notranslate"><span class="pre">/src/cpython/build/Python-3.11.0dev0/Objects/methodobject.c</span></code>.
+Unfortunately, source maps are useless for the harder problem of finding the
+callee because compiling with <code class="docutils literal notranslate"><span class="pre">-g3</span></code> increases the number of function pointers so
+the function pointer we are calling is in a different spot. I know of no way to
+determine the bad function pointer when compiling with <code class="docutils literal notranslate"><span class="pre">-g3</span></code>.</p>
+<p>Sometimes (particularly with Scipy/OpenBLAS/libf2c) the issue will be a
+mismatch between
+<code class="docutils literal notranslate"><span class="pre">(param</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32)</span> <span class="pre">(result</span> <span class="pre">i32)</span></code> and
+<code class="docutils literal notranslate"><span class="pre">(param</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32</span> <span class="pre">i32)</span> <span class="pre">(result</span> <span class="pre">i32)</span></code></p>
+<p>(14 vs 15 parameters) which might be a little hard to discern. I copy the
+signature into the Javascript console and run <code class="docutils literal notranslate"><span class="pre">&quot;i32</span> <span class="pre">...</span> <span class="pre">i32&quot;.split(&quot;</span> <span class="pre">&quot;).length</span></code>
+in this case.</p>
+</section>
+<section id="dealing-with-text-is-truncated-due-to-size">
+<span id="text-truncated-due-to-size"></span><h2>Dealing with <code class="docutils literal notranslate"><span class="pre">;;</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">truncated</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">size</span></code><a class="headerlink" href="#dealing-with-text-is-truncated-due-to-size" title="Link to this heading">#</a></h2>
+<p>If you are debugging and run into the dreaded <code class="docutils literal notranslate"><span class="pre">;;</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">truncated</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">size</span></code>
+error message, the solution is to compile a modified version of Chrome devtools
+with a larger wasm size cap. Surprisingly, this is not actually all that hard.</p>
+<p>These instructions are adapted from here:
+https://www.diverto.hr/en/blog/2020-08-15-WebAssembly-limit/</p>
+<p>In short,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">chromium</span><span class="o">.</span><span class="n">googlesource</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">chromium</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">depot_tools</span><span class="o">.</span><span class="n">git</span>
+<span class="o">./</span><span class="n">fetch</span> <span class="n">devtools</span><span class="o">-</span><span class="n">frontend</span>
+<span class="n">cd</span> <span class="n">devtools</span><span class="o">-</span><span class="n">frontend</span>
+</pre></div>
+</div>
+<p>Apply the following change:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- a/front_end/entrypoints/wasmparser_worker/WasmParserWorker.ts</span>
+<span class="gi">+++ b/front_end/entrypoints/wasmparser_worker/WasmParserWorker.ts</span>
+<span class="gu">@@ -55,7 +55,7 @@ export function dissambleWASM(</span>
+<span class="w"> </span>    const lines = [];
+<span class="w"> </span>    const offsets = [];
+<span class="w"> </span>    const functionBodyOffsets = [];
+<span class="gd">-    const MAX_LINES = 1000 * 1000;</span>
+<span class="gi">+    const MAX_LINES = 12 * 1000 * 1000;</span>
+<span class="w"> </span>    let chunkSize: number = 128 * 1024;
+<span class="w"> </span>    let buffer: Uint8Array = new Uint8Array(chunkSize);
+<span class="w"> </span>    let pendingSize = 0;
+</pre></div>
+</div>
+<p>Then build with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">Default</span>
+<span class="n">autoninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">Default</span>
+</pre></div>
+</div>
+<p>then</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">out</span><span class="o">/</span><span class="n">Default</span><span class="o">/</span><span class="n">resources</span><span class="o">/</span><span class="n">inspector_overlay</span><span class="o">/</span>
+<span class="n">python</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="o">&lt;</span><span class="n">some_port</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and then you can start a version of chrome using the modified devtools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chrome</span> <span class="o">--</span><span class="n">custom</span><span class="o">-</span><span class="n">devtools</span><span class="o">-</span><span class="n">frontend</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="o">&lt;</span><span class="n">some_port</span><span class="o">&gt;/</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Testing and benchmarking</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="contributing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Contribute</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-prettier-on-pyodide-asm-mjs">Run <code class="docutils literal notranslate"><span class="pre">prettier</span></code> on <code class="docutils literal notranslate"><span class="pre">pyodide.asm.mjs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-with-symbols-or-source-maps">Building with symbols or source maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linker-error-function-signature-mismatch">Linker error: function signature mismatch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misencoded-wasm">Misencoded Wasm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-runtimeerror-function-signature-mismatch">Debugging RuntimeError: function signature mismatch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-text-is-truncated-due-to-size">Dealing with <code class="docutils literal notranslate"><span class="pre">;;</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">truncated</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">size</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pyodide contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, Pyodide contributors and Mozilla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>This website, <strong><a href="https://pyodide.org">https://pyodide.org</a></strong>, is the sole official website of the Pyodide project. Any other website purporting to represent Pyodide is not affiliated with, endorsed by, or authorized by the Pyodide project or its maintainers in any capacity.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
