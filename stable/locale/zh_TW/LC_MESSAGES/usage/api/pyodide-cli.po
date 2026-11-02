@@ -534,8 +534,8 @@ msgstr ""
 
 #: ../../../pyodide build-recipes:1
 msgid ""
-"If true, extract the METADATA file from the built wheels to a matching ``*."
-"whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
+"If true, extract the METADATA file from the built wheels to a matching "
+"``*.whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
 msgstr ""
 
 #: ../../../pyodide build-recipes:1

@@ -33,9 +33,9 @@ msgstr ""
 
 #: ../../../usage/sdl.md:12
 msgid ""
-"In addition, this feature requires to enable an opt-in flag, `pyodide._api."
-"_skip_unwind_fatal_error = true;` which can lead to stack unwinding issues "
-"(see {ref}`sdl-known-issues`)."
+"In addition, this feature requires to enable an opt-in flag, "
+"`pyodide._api._skip_unwind_fatal_error = true;` which can lead to stack "
+"unwinding issues (see {ref}`sdl-known-issues`)."
 msgstr ""
 
 #: ../../../usage/sdl.md:17
@@ -54,9 +54,10 @@ msgstr ""
 
 #: ../../../usage/sdl.md:24
 msgid ""
-"The `canvas` object must be a [HTMLCanvasElement](https://developer.mozilla."
-"org/en-US/docs/Web/API/HTMLCanvasElement) object, with the `id` attribute "
-"set to `\"canvas\"`. For example, you can set a canvas like this:"
+"The `canvas` object must be a [HTMLCanvasElement](https://"
+"developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) object, with the "
+"`id` attribute set to `\"canvas\"`. For example, you can set a canvas like "
+"this:"
 msgstr ""
 
 #: ../../../usage/sdl.md:29

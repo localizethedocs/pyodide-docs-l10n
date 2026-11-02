@@ -189,8 +189,8 @@ msgid ""
 "constant, e.g., `PyDict_GetItemString(dict, \"identifier\")`, then make an "
 "id with `Py_Identifier(identifier)` and then use "
 "`_PyDict_GetItemId(&PyId_identifier)`. If the string is not constant, "
-"convert it to a Python object with `PyUnicode_FromString()` and then use e."
-"g., `PyDict_GetItem`."
+"convert it to a Python object with `PyUnicode_FromString()` and then use "
+"e.g., `PyDict_GetItem`."
 msgstr ""
 
 #: ../../../development/core.md:52
@@ -229,8 +229,9 @@ msgid ""
 "`fail_return` and a `success` flag. On failure the macros return "
 "`fail_return` directly; resource cleanup is handled by `_Defer` blocks that "
 "run on every return (see structure of functions section below). When "
-"compiled with `DEBUG_F`, these commands will write a message to `console."
-"error` reporting the line, function, and file where the error occurred."
+"compiled with `DEBUG_F`, these commands will write a message to "
+"`console.error` reporting the line, function, and file where the error "
+"occurred."
 msgstr ""
 
 #: ../../../development/core.md:67

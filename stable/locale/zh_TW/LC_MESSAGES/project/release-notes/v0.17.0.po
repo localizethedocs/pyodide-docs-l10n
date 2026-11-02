@@ -168,9 +168,10 @@ msgstr ""
 
 #: ../../../project/release-notes/v0.17.0.md:109
 msgid ""
-"The promise handler methods `JsProxy.then`, `JsProxy.catch`, and `JsProxy."
-"finally_` were particularly hard to use without leaking memory so they have "
-"been updated with internal magic to automatically manage the memory."
+"The promise handler methods `JsProxy.then`, `JsProxy.catch`, and "
+"`JsProxy.finally_` were particularly hard to use without leaking memory so "
+"they have been updated with internal magic to automatically manage the "
+"memory."
 msgstr ""
 
 #: ../../../project/release-notes/v0.17.0.md:113
@@ -326,12 +327,12 @@ msgid ""
 "We fixed many of the long standing bugs caused by inconsistencies in the "
 "behavior of {any}`JsProxy <pyodide.ffi.JsProxy>`. There used to be two "
 "different code paths for producing a {any}`JsProxy <pyodide.ffi.JsProxy>` "
-"and two different code paths for calling a {any}`JsProxy <pyodide.ffi."
-"JsProxy>` leading to four different behaviors, all of which were presented "
-"errors in some cases. This fixed numerous bugs, including issues {issue}"
-"`461`, {issue}`768`, {issue}`788`, and {issue}`1123`. The number of "
-"surprises you can expect when using the foreign function interface has gone "
-"way down."
+"and two different code paths for calling a {any}`JsProxy "
+"<pyodide.ffi.JsProxy>` leading to four different behaviors, all of which "
+"were presented errors in some cases. This fixed numerous bugs, including "
+"issues {issue}`461`, {issue}`768`, {issue}`788`, and {issue}`1123`. The "
+"number of surprises you can expect when using the foreign function interface "
+"has gone way down."
 msgstr ""
 
 #: ../../../project/release-notes/v0.17.0.md:204
