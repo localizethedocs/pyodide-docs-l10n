@@ -122,8 +122,8 @@ msgstr ""
 msgid ""
 "If you are using Pyodide in the browser, you should download external files "
 "and save them to the virtual file system. The recommended way to do this is "
-"to zip the files and unpack them into the file system with {js:func}`pyodide."
-"unpackArchive`:"
+"to zip the files and unpack them into the file system with {js:func}"
+"`pyodide.unpackArchive`:"
 msgstr ""
 
 #: ../../../usage/accessing-files.md:80
@@ -135,8 +135,9 @@ msgstr ""
 
 #: ../../../usage/accessing-files.md:86
 msgid ""
-"You can also download the files from Python using {py:func}`~pyodide.http."
-"pyfetch`, which is a convenient wrapper of JavaScript {js:func}`fetch`:"
+"You can also download the files from Python using {py:func}"
+"`~pyodide.http.pyfetch`, which is a convenient wrapper of JavaScript "
+"{js:func}`fetch`:"
 msgstr ""
 
 #: ../../../usage/accessing-files.md:90

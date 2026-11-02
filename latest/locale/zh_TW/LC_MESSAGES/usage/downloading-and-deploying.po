@@ -99,9 +99,9 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:23
 msgid ""
-"You can also download Pyodide packages from [GitHub releases](https://github."
-"com/pyodide/pyodide/releases). The full distribution including all vendored "
-"packages is available as `pyodide-314.1.0.dev0.tar.bz2`. The full "
+"You can also download Pyodide packages from [GitHub releases](https://"
+"github.com/pyodide/pyodide/releases). The full distribution including all "
+"vendored packages is available as `pyodide-314.1.0.dev0.tar.bz2`. The full "
 "distribution is quite large (200+ megabytes). The minimal set of files "
 "needed to start Pyodide is included as `pyodide-core-314.1.0.dev0.tar.bz2`. "
 "It is intended for use with node which will automatically install missing "
@@ -123,8 +123,8 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:40
 msgid ""
-"With Python 3.7.5+ you can serve Pyodide files locally with {py:mod}`http."
-"server`:"
+"With Python 3.7.5+ you can serve Pyodide files locally with {py:mod}"
+"`http.server`:"
 msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:42
@@ -242,8 +242,8 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:0
 msgid ""
-"Lockfile for Python packages, used by pyodide.loadPackage and micropip."
-"install. Necessary in all cases."
+"Lockfile for Python packages, used by pyodide.loadPackage and "
+"micropip.install. Necessary in all cases."
 msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:0

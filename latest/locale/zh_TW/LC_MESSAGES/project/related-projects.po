@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../project/related-projects.md:1
 msgid "Related Projects"
-msgstr ""
+msgstr "相關專案"
 
 #: ../../../project/related-projects.md:3
 msgid "WebAssembly ecosystem"
-msgstr ""
+msgstr "WebAssembly 生態系統"
 
 #: ../../../project/related-projects.md:5
 msgid ""
@@ -186,7 +186,7 @@ msgstr ""
 
 #: ../../../project/related-projects.md:58
 msgid "Other projects"
-msgstr ""
+msgstr "其他專案"
 
 #: ../../../project/related-projects.md:60
 msgid ""

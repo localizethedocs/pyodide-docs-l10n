@@ -42,8 +42,8 @@ msgstr "什麼是 Pyodide？"
 
 #: ../../../index.rst:10
 msgid ""
-"Pyodide is a port of CPython to WebAssembly/`Emscripten <https://emscripten."
-"org/>`_."
+"Pyodide is a port of CPython to WebAssembly/`Emscripten <https://"
+"emscripten.org/>`_."
 msgstr ""
 "Pyodide 是將 CPython 移植到 WebAssembly/`Emscripten <https://emscripten.org/"
 ">`_ 的產物。"
@@ -51,8 +51,8 @@ msgstr ""
 #: ../../../index.rst:12
 msgid ""
 "Pyodide makes it possible to install and run Python packages in the browser "
-"with `micropip <https://pyodide.org/en/stable/usage/api/micropip-api."
-"html>`_. Any pure Python package with a wheel available on PyPi is "
+"with `micropip <https://pyodide.org/en/stable/usage/api/micropip-"
+"api.html>`_. Any pure Python package with a wheel available on PyPi is "
 "supported. Many packages with C, C++, and Rust extensions have also been "
 "ported for use with Pyodide. These include many general-purpose packages "
 "such as regex, PyYAML, and cryptography, and scientific Python packages "
@@ -96,8 +96,8 @@ msgstr ""
 
 #: ../../../index.rst:37
 msgid ""
-"If you wish to use a hosted distribution of Pyodide: see the :ref:"
-"`quickstart` documentation."
+"If you wish to use a hosted distribution of Pyodide: see "
+"the :ref:`quickstart` documentation."
 msgstr ""
 
 #: ../../../index.rst:39
@@ -109,8 +109,8 @@ msgstr ""
 
 #: ../../../index.rst:41
 msgid ""
-"If you wish to use Pyodide with a bundler, see the documentation on :ref:"
-"`working-with-bundlers`."
+"If you wish to use Pyodide with a bundler, see the documentation "
+"on :ref:`working-with-bundlers`."
 msgstr ""
 
 #: ../../../index.rst:43

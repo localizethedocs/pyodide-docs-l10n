@@ -28,9 +28,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:5
 msgid ""
 "These can be imported via `import { name } from \"pyodide.mjs\";`. If you "
-"can't use the es6 module, `pyodide.js` places {js:func}`~exports."
-"loadPyodide` on {js:data}`globalThis`. The other top level exports cannot be "
-"accessed from `pyodide.js`."
+"can't use the es6 module, `pyodide.js` places {js:func}"
+"`~exports.loadPyodide` on {js:data}`globalThis`. The other top level exports "
+"cannot be accessed from `pyodide.js`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
@@ -62,8 +62,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid ""
-"**async** :any:`loadPyodide <exports.loadPyodide>`\\ "
-"**\\(options\\=\\{\\}\\)**"
+"**async** :any:`loadPyodide <exports.loadPyodide>`\\ **\\(options\\=\\{\\}"
+"\\)**"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:273
@@ -85,8 +85,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:19
 msgid ""
 "Command line arguments to pass to Python on startup. See `Python command "
-"line interface options <https://docs.python.org/3.10/using/cmdline."
-"html#interface-options>`_ for more details. Default: ``[]``"
+"line interface options <https://docs.python.org/3.10/using/"
+"cmdline.html#interface-options>`_ for more details. Default: ``[]``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:28 ../../../usage/api/js-api.md:41
@@ -117,8 +117,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:50
 msgid ""
-"type: :sphinx_js_type:`\\(settings\\: EmscriptenSettings\\) \\=\\> \\\\ \\:"
-"js\\:class\\:\\`Promise\\`\\\\ \\<PyodideModule\\>`"
+"type: :sphinx_js_type:`\\(settings\\: EmscriptenSettings\\) \\=\\> \\\\ "
+"\\:js\\:class\\:\\`Promise\\`\\\\ \\<PyodideModule\\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:52
@@ -141,17 +141,17 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:73
 msgid ""
-"type: :sphinx_js_type:`\\{ \\[key\\: \\\\ \\:js\\:data\\:\\`string\\`\\\\ "
-"\\]\\: \\\\ \\:js\\:data\\:\\`string\\`\\\\ \\; \\}`"
+"type: :sphinx_js_type:`\\{ \\[key\\: \\\\ \\:js\\:data\\:\\`string\\`\\\\ \\]"
+"\\: \\\\ \\:js\\:data\\:\\`string\\`\\\\ \\; \\}`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:75
 msgid ""
 "Environment variables to pass to Python. This can be accessed inside of "
 "Python at runtime via :py:data:`os.environ`. Certain environment variables "
-"change the way that Python loads: https://docs.python.org/3.10/using/cmdline."
-"html#environment-variables Default: ``{}``. If ``env.HOME`` is undefined, it "
-"will be set to a default value of ``\"/home/pyodide\"``"
+"change the way that Python loads: https://docs.python.org/3.10/using/"
+"cmdline.html#environment-variables Default: ``{}``. If ``env.HOME`` is "
+"undefined, it will be set to a default value of ``\"/home/pyodide\"``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:89
@@ -180,8 +180,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:101
 msgid ""
-"Default: The url that Pyodide is loaded from with the file name (``pyodide."
-"js`` or ``pyodide.mjs``) removed."
+"Default: The url that Pyodide is loaded from with the file name "
+"(``pyodide.js`` or ``pyodide.mjs``) removed."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:108
@@ -196,17 +196,17 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:117
 msgid ""
-"type: :sphinx_js_type:`\\:js\\:data\\:\\`string\\`\\\\  \\| \\\\ \\:js\\:"
-"interface\\:\\`\\~pyodide.Lockfile\\`\\\\  \\| \\\\ \\:js\\:class\\:"
-"\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`string\\`\\\\  \\| \\\\ \\:js\\:"
-"interface\\:\\`\\~pyodide.Lockfile\\`\\\\ \\>`"
+"type: :sphinx_js_type:`\\:js\\:data\\:\\`string\\`\\\\  \\| \\\\ "
+"\\:js\\:interface\\:\\`\\~pyodide.Lockfile\\`\\\\  \\| \\\\ \\:js\\:class\\:"
+"\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`string\\`\\\\  \\| \\\\ "
+"\\:js\\:interface\\:\\`\\~pyodide.Lockfile\\`\\\\ \\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:119
 msgid ""
-"The contents of a lockfile. If a string, it should be valid json and ``JSON."
-"parse()`` should return a ``Lockfile`` instance. See :js:interface:`~pyodide."
-"Lockfile` for the schema."
+"The contents of a lockfile. If a string, it should be valid json and "
+"``JSON.parse()`` should return a ``Lockfile`` instance. "
+"See :js:interface:`~pyodide.Lockfile` for the schema."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:129
@@ -218,10 +218,10 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:139
 msgid ""
-"The base url relative to which a relative value of :js:attr:`~pyodide."
-"LockfilePackage.file_name` is interpreted. If ``lockfileContents`` is "
-"provided, then ``lockFileContents`` must be provided explicitly in order to "
-"install packages with relative paths."
+"The base url relative to which a relative value "
+"of :js:attr:`~pyodide.LockfilePackage.file_name` is interpreted. If "
+"``lockfileContents`` is provided, then ``lockFileContents`` must be provided "
+"explicitly in order to install packages with relative paths."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:144
@@ -268,16 +268,16 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:187
 msgid ""
-"Opt into the old behavior where :js:func:`PyProxy.toString() <pyodide.ffi."
-"PyProxy.toString>` calls :py:func:`repr` and not :py:class:`str() <str>`. "
-"Deprecated."
+"Opt into the old behavior where :js:func:`PyProxy.toString() "
+"<pyodide.ffi.PyProxy.toString>` calls :py:func:`repr` and "
+"not :py:class:`str() <str>`. Deprecated."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:196
 msgid ""
 "The URL from which to load the standard library ``python_stdlib.zip`` file. "
-"This URL includes the most of the Python standard library. Default: "
-"```${indexURL}/python_stdlib.zip```"
+"This URL includes the most of the Python standard library. Default: ```$"
+"{indexURL}/python_stdlib.zip```"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:210
@@ -310,11 +310,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:228
 msgid ""
-"Override the standard error output callback. The :js:func:`pyodide."
-"setStderr` function is more flexible and should be preferred in most cases, "
-"but depending on the ``args`` passed to ``loadPyodide``, Pyodide may write "
-"to stdout on startup, which can only be controlled by passing a custom "
-"``stdout`` function."
+"Override the standard error output callback. "
+"The :js:func:`pyodide.setStderr` function is more flexible and should be "
+"preferred in most cases, but depending on the ``args`` passed to "
+"``loadPyodide``, Pyodide may write to stdout on startup, which can only be "
+"controlled by passing a custom ``stdout`` function."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:239
@@ -375,8 +375,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:20
 msgid ""
-"This section documents the `pyodide` API object, which is returned by {js:"
-"func}`loadPyodide`."
+"This section documents the `pyodide` API object, which is returned by "
+"{js:func}`loadPyodide`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -386,8 +386,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:5
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"A batched handler to provide to :js:func:`~pyodide.setStdout` or :js:func:"
-"`~pyodide.setStderr`."
+"A batched handler to provide to :js:func:`~pyodide.setStdout` "
+"or :js:func:`~pyodide.setStderr`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -427,8 +427,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:193
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"A raw handler to provide to :js:func:`~pyodide.setStdout` or :js:func:"
-"`~pyodide.setStderr`."
+"A raw handler to provide to :js:func:`~pyodide.setStdout` "
+"or :js:func:`~pyodide.setStderr`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -438,8 +438,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:225
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"A Writer to provide to :js:func:`~pyodide.setStdout` or :js:func:`~pyodide."
-"setStderr`."
+"A Writer to provide to :js:func:`~pyodide.setStdout` "
+"or :js:func:`~pyodide.setStderr`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -553,8 +553,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"**async** :any:`initializeNodeSockFS <pyodide.initializeNodeSockFS>`\\ "
-"**\\(connectFunc\\)**"
+"**async** :any:`initializeNodeSockFS <pyodide.initializeNodeSockFS>`\\ **\\"
+"(connectFunc\\)**"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -647,8 +647,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"Runs a string of Python code from JavaScript, using :py:func:`~pyodide.code."
-"eval_code` to evaluate the code."
+"Runs a string of Python code from JavaScript, "
+"using :py:func:`~pyodide.code.eval_code` to evaluate the code."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -659,8 +659,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-"Run a Python code string with top level await using :py:func:`~pyodide.code."
-"eval_code_async` to evaluate the code."
+"Run a Python code string with top level await "
+"using :py:func:`~pyodide.code.eval_code_async` to evaluate the code."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -673,8 +673,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
-":any:`setInterruptBuffer <pyodide.setInterruptBuffer>`\\ "
-"**\\(interrupt\\_buffer\\)**"
+":any:`setInterruptBuffer <pyodide.setInterruptBuffer>`\\ **\\"
+"(interrupt\\_buffer\\)**"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -732,8 +732,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
 "Unregisters a JavaScript module with given name that has been previously "
-"registered with :js:func:`pyodide.registerJsModule` or :func:`~pyodide.ffi."
-"register_js_module`."
+"registered with :js:func:`pyodide.registerJsModule` "
+"or :func:`~pyodide.ffi.register_js_module`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -759,9 +759,9 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:33
 msgid ""
-"type: :sphinx_js_type:`\\:js\\:class\\:\\`Record\\`\\\\ \\<\\\\ \\:js\\:"
-"data\\:\\`string\\`\\\\ \\, \\\\ \\:js\\:interface\\:\\`LockfilePackage\\`\\"
-"\\ \\>`"
+"type: :sphinx_js_type:`\\:js\\:class\\:\\`Record\\`\\\\ \\<\\\\ "
+"\\:js\\:data\\:\\`string\\`\\\\ \\, \\\\ \\:js\\:interface\\:"
+"\\`LockfilePackage\\`\\\\ \\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:38
@@ -822,8 +822,9 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:121
 msgid ""
-"The set of imports provided by this package as best we can tell. Used by :js:"
-"func:`pyodide.loadPackagesFromImports` to work out what packages to install."
+"The set of imports provided by this package as best we can tell. Used "
+"by :js:func:`pyodide.loadPackagesFromImports` to work out what packages to "
+"install."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:129
@@ -906,10 +907,10 @@ msgstr ""
 #: ../../../usage/api/js-api.md:278
 msgid ""
 "This provides a wide range of POSIX-`like` file/device operations, including "
-"`mount <https://emscripten.org/docs/api_reference/Filesystem-API.html#FS."
-"mount>`_ which can be used to extend the in-memory filesystem with features "
-"like `persistence <https://emscripten.org/docs/api_reference/Filesystem-API."
-"html#persistent-data>`_."
+"`mount <https://emscripten.org/docs/api_reference/Filesystem-"
+"API.html#FS.mount>`_ which can be used to extend the in-memory filesystem "
+"with features like `persistence <https://emscripten.org/docs/api_reference/"
+"Filesystem-API.html#persistent-data>`_."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:284
@@ -942,23 +943,23 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:319
 msgid ""
-"type: :sphinx_js_type:`\\:js\\:class\\:\\`Record\\`\\\\ \\<\\\\ \\:js\\:"
-"data\\:\\`string\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`string\\`\\\\ \\>`"
+"type: :sphinx_js_type:`\\:js\\:class\\:\\`Record\\`\\\\ \\<\\\\ "
+"\\:js\\:data\\:\\`string\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`string\\`\\\\ \\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:321
 msgid ""
 "An object whose keys are the names of the loaded packages and whose values "
-"are the install sources of the packages. Use `Object.keys(pyodide."
-"loadedPackages)` to get the list of names of loaded packages, and ``pyodide."
-"loadedPackages[package_name]`` to access the install source for a particular "
-"``package_name``."
+"are the install sources of the packages. Use "
+"`Object.keys(pyodide.loadedPackages)` to get the list of names of loaded "
+"packages, and ``pyodide.loadedPackages[package_name]`` to access the install "
+"source for a particular ``package_name``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:332
 msgid ""
-"type: readonly :sphinx_js_type:`\\:js\\:interface\\:\\`\\~pyodide."
-"Lockfile\\``"
+"type: readonly :sphinx_js_type:`\\:js\\:interface\\:"
+"\\`\\~pyodide.Lockfile\\``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:334
@@ -1005,8 +1006,8 @@ msgstr ""
 msgid ""
 "This function can only install packages included in the Pyodide "
 "distribution, or Python wheels by URL, without dependency resolution. It is "
-"significantly more limited in terms of functionality as compared to :mod:"
-"`micropip`, however it has less overhead and can be faster."
+"significantly more limited in terms of functionality as compared "
+"to :mod:`micropip`, however it has less overhead and can be faster."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:410
@@ -1024,8 +1025,8 @@ msgid ""
 "or relative. The URLs must correspond to Python wheels: either pure Python "
 "wheels, with a file name ending with ``none-any.whl`` or Emscripten/WASM 32 "
 "wheels, with a file name ending with "
-"``cp<pyversion>_emscripten_<em_version>_wasm32.whl``. The argument can be a :"
-"js:class:`~pyodide.ffi.PyProxy` of a list, in which case the list will be "
+"``cp<pyversion>_emscripten_<em_version>_wasm32.whl``. The argument can be "
+"a :js:class:`~pyodide.ffi.PyProxy` of a list, in which case the list will be "
 "converted to JavaScript and the :js:class:`~pyodide.ffi.PyProxy` will be "
 "destroyed."
 msgstr ""
@@ -1044,15 +1045,16 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:424
 msgid ""
-":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:"
-"interface\\:\\`PackageData\\`\\\\ \\[\\]\\>` -- The loaded package data."
+":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ "
+"\\:js\\:interface\\:\\`PackageData\\`\\\\ \\[\\]\\>` -- The loaded package "
+"data."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:430
 msgid ""
 "Inspect a Python code chunk and use :js:func:`pyodide.loadPackage` to "
-"install any known packages that the code chunk imports. Uses the Python API :"
-"func:`pyodide.code.find\\_imports` to inspect the code."
+"install any known packages that the code chunk imports. Uses the Python "
+"API :func:`pyodide.code.find\\_imports` to inspect the code."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:434
@@ -1067,8 +1069,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:441
 msgid ""
-":js:func:`loadPackagesFromImports` will call ``pyodide."
-"loadPackage(['numpy'])``."
+":js:func:`loadPackagesFromImports` will call "
+"``pyodide.loadPackage(['numpy'])``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:444
@@ -1077,15 +1079,15 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:452
 msgid ""
-":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:"
-"interface\\:\\`PackageData\\`\\\\ \\[\\]\\>`"
+":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ "
+"\\:js\\:interface\\:\\`PackageData\\`\\\\ \\[\\]\\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:458
 msgid ""
 "Mounts a :js:class:`FileSystemDirectoryHandle` into the target directory. "
-"Currently it's only possible to acquire a :js:class:"
-"`FileSystemDirectoryHandle` in Chrome."
+"Currently it's only possible to acquire "
+"a :js:class:`FileSystemDirectoryHandle` in Chrome."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:462 ../../../usage/api/js-api.md:473
@@ -1181,8 +1183,8 @@ msgid ""
 "``name``. This module can then be imported from Python using the standard "
 "Python import system. If another module by the same name has already been "
 "imported, this won't have much effect unless you also delete the imported "
-"module from :py:data:`sys.modules`. This calls :func:`~pyodide.ffi."
-"register_js_module`."
+"module from :py:data:`sys.modules`. This "
+"calls :func:`~pyodide.ffi.register_js_module`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:540
@@ -1227,10 +1229,10 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:573
 msgid ""
-"Runs a string of Python code from JavaScript, using :py:func:`~pyodide.code."
-"eval_code` to evaluate the code. If the last statement in the Python code is "
-"an expression (and the code doesn't end with a semicolon), the value of the "
-"expression is returned."
+"Runs a string of Python code from JavaScript, "
+"using :py:func:`~pyodide.code.eval_code` to evaluate the code. If the last "
+"statement in the Python code is an expression (and the code doesn't end with "
+"a semicolon), the value of the expression is returned."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:578 ../../../usage/api/js-api.md:639
@@ -1239,8 +1241,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:579 ../../../usage/api/js-api.md:640
 msgid ""
-"An optional Python dictionary to use as the globals. Defaults to :js:attr:"
-"`pyodide.globals`."
+"An optional Python dictionary to use as the globals. Defaults "
+"to :js:attr:`pyodide.globals`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:580 ../../../usage/api/js-api.md:641
@@ -1266,8 +1268,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:588
 msgid ""
 ":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The result of the Python code "
-"translated to JavaScript. See the documentation for :py:func:`~pyodide.code."
-"eval_code` for more info."
+"translated to JavaScript. See the documentation "
+"for :py:func:`~pyodide.code.eval_code` for more info."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:592
@@ -1290,11 +1292,12 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:613
 msgid ""
-"Run a Python code string with top level await using :py:func:`~pyodide.code."
-"eval_code_async` to evaluate the code. Returns a promise which resolves when "
-"execution completes. If the last statement in the Python code is an "
-"expression (and the code doesn't end with a semicolon), the returned promise "
-"will resolve to the value of this expression."
+"Run a Python code string with top level await "
+"using :py:func:`~pyodide.code.eval_code_async` to evaluate the code. Returns "
+"a promise which resolves when execution completes. If the last statement in "
+"the Python code is an expression (and the code doesn't end with a "
+"semicolon), the returned promise will resolve to the value of this "
+"expression."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:504 ../../../usage/api/js-api.md:619
@@ -1350,11 +1353,11 @@ msgstr ""
 #: ../../../usage/api/js-api.md:664
 msgid ""
 "Sets the interrupt buffer to be ``interrupt_buffer``. This is only useful "
-"when Pyodide is used in a webworker. The buffer should be a :js:class:"
-"`SharedArrayBuffer` shared with the main browser thread (or another worker). "
-"In that case, signal ``signum`` may be sent by writing ``signum`` into the "
-"interrupt buffer. If ``signum`` does not satisfy 0 < ``signum`` < 65 it will "
-"be silently ignored."
+"when Pyodide is used in a webworker. The buffer should be "
+"a :js:class:`SharedArrayBuffer` shared with the main browser thread (or "
+"another worker). In that case, signal ``signum`` may be sent by writing "
+"``signum`` into the interrupt buffer. If ``signum`` does not satisfy 0 < "
+"``signum`` < 65 it will be silently ignored."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:671
@@ -1379,11 +1382,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:688
 msgid ""
-"Sets the standard error handler. A :js:typealias:`BatchedWriteHandler`, a :"
-"js:typealias:`RawWriteHandler`, or a :js:typealias:`Writer` can be provided. "
-"See the documentation for these types for more information about how each "
-"works. If no handler is provided, we restore the default handler. Passing a "
-"`Writer` provides the most flexibility and the best performance."
+"Sets the standard error handler. A :js:typealias:`BatchedWriteHandler`, "
+"a :js:typealias:`RawWriteHandler`, or a :js:typealias:`Writer` can be "
+"provided. See the documentation for these types for more information about "
+"how each works. If no handler is provided, we restore the default handler. "
+"Passing a `Writer` provides the most flexibility and the best performance."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:700
@@ -1457,9 +1460,9 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:732
 msgid ""
-"an :js:class:`ArrayBuffer` or :js:class:`TypedArray` with :js:data:"
-"`~TypedArray.BYTES_PER_ELEMENT` equal to 1. The buffer should contain utf8 "
-"encoded text."
+"an :js:class:`ArrayBuffer` or :js:class:`TypedArray` "
+"with :js:data:`~TypedArray.BYTES_PER_ELEMENT` equal to 1. The buffer should "
+"contain utf8 encoded text."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:736
@@ -1470,9 +1473,10 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:739
 msgid ""
-"If a string is returned, it is encoded into a buffer using :js:class:"
-"`TextEncoder`. By default, an EOF is appended after each string or buffer "
-"returned. If this behavior is not desired, pass ``autoEOF: false``."
+"If a string is returned, it is encoded into a buffer "
+"using :js:class:`TextEncoder`. By default, an EOF is appended after each "
+"string or buffer returned. If this behavior is not desired, pass ``autoEOF: "
+"false``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:743
@@ -1503,11 +1507,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:757
 msgid ""
-"Sets the standard out handler. A :js:class:`BatchedWriteHandler`, a :js:"
-"class:`RawWriteHandler`, or a :js:class:`Writer` can be provided. See the "
-"documentation for these types for more information about how each works. If "
-"no handler is provided, we restore the default handler. Passing a ``Writer`` "
-"provides the most flexibility and the best performance."
+"Sets the standard out handler. A :js:class:`BatchedWriteHandler`, "
+"a :js:class:`RawWriteHandler`, or a :js:class:`Writer` can be provided. See "
+"the documentation for these types for more information about how each works. "
+"If no handler is provided, we restore the default handler. Passing a "
+"``Writer`` provides the most flexibility and the best performance."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:768
@@ -1530,9 +1534,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:789
 msgid ""
 "This is similar to :py:meth:`~pyodide.ffi.JsProxy.to_py` but for use from "
-"JavaScript. If the object is immutable or a :js:class:`~pyodide.ffi."
-"PyProxy`, it will be returned unchanged. If the object cannot be converted "
-"into Python, it will be returned unchanged."
+"JavaScript. If the object is immutable or "
+"a :js:class:`~pyodide.ffi.PyProxy`, it will be returned unchanged. If the "
+"object cannot be converted into Python, it will be returned unchanged."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:794
@@ -1564,11 +1568,12 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:810
 msgid ""
-"The format of the archive. Should be one of the formats recognized by :py:"
-"func:`shutil.unpack_archive`. By default the options are ``'bztar'``, "
+"The format of the archive. Should be one of the formats recognized "
+"by :py:func:`shutil.unpack_archive`. By default the options are ``'bztar'``, "
 "``'gztar'``, ``'tar'``, ``'zip'``, and ``'wheel'``. Several synonyms are "
-"accepted for each format, e.g., for ``'gztar'`` any of ``'.gztar'``, ``'.tar."
-"gz'``, ``'.tgz'``, ``'tar.gz'`` or ``'tgz'`` are considered to be synonyms."
+"accepted for each format, e.g., for ``'gztar'`` any of ``'.gztar'``, "
+"``'.tar.gz'``, ``'.tgz'``, ``'tar.gz'`` or ``'tgz'`` are considered to be "
+"synonyms."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:811
@@ -1579,12 +1584,12 @@ msgstr ""
 #: ../../../usage/api/js-api.md:819
 msgid ""
 "Unregisters a JavaScript module with given name that has been previously "
-"registered with :js:func:`pyodide.registerJsModule` or :func:`~pyodide.ffi."
-"register_js_module`. If a JavaScript module with that name does not already "
-"exist, will throw an error. Note that if the module has already been "
-"imported, this won't have much effect unless you also delete the imported "
-"module from :py:data:`sys.modules`. This calls :func:`~pyodide.ffi."
-"unregister_js_module`."
+"registered with :js:func:`pyodide.registerJsModule` "
+"or :func:`~pyodide.ffi.register_js_module`. If a JavaScript module with that "
+"name does not already exist, will throw an error. Note that if the module "
+"has already been imported, this won't have much effect unless you also "
+"delete the imported module from :py:data:`sys.modules`. This "
+"calls :func:`~pyodide.ffi.unregister_js_module`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:827
@@ -1635,9 +1640,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:12
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is an :std:"
-"term:`asynchronous generator` (i.e., it is an instance of :py:class:"
-"`~collections.abc.AsyncGenerator`)"
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"an :std:term:`asynchronous generator` (i.e., it is an instance "
+"of :py:class:`~collections.abc.AsyncGenerator`)"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1647,8 +1652,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:48
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is :std:term:"
-"`asynchronous iterable` (i.e., has an :meth:`~object.__aiter__` method)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object "
+"is :std:term:`asynchronous iterable` (i.e., has an :meth:`~object.__aiter__` "
+"method)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1658,8 +1664,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:66
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is an :std:"
-"term:`asynchronous iterator`"
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"an :std:term:`asynchronous iterator`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1669,9 +1675,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:88
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is :ref:"
-"`awaitable <asyncio-awaitables>` (i.e., has an :meth:`~object.__await__` "
-"method)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object "
+"is :ref:`awaitable <asyncio-awaitables>` (i.e., has "
+"an :meth:`~object.__await__` method)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1700,8 +1706,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:352
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is :std:term:"
-"`callable` (i.e., has an :py:meth:`~object.__call__` method)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object "
+"is :std:term:`callable` (i.e., has an :py:meth:`~object.__call__` method)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1711,8 +1717,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:525
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is a :py:"
-"class:`dict`."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"a :py:class:`dict`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1722,9 +1728,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:538
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is a :std:"
-"term:`generator` (i.e., it is an instance of :py:class:`~collections.abc."
-"Generator`)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"a :std:term:`generator` (i.e., it is an instance "
+"of :py:class:`~collections.abc.Generator`)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1734,8 +1740,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:571
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is :std:term:"
-"`iterable` (i.e., it has an :meth:`~object.__iter__` method)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object "
+"is :std:term:`iterable` (i.e., it has an :meth:`~object.__iter__` method)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1745,9 +1751,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:590
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is an :term:"
-"`iterator` (i.e., has a :meth:`~generator.send` or :meth:`~iterator."
-"__next__` method)."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"an :term:`iterator` (i.e., has a :meth:`~generator.send` "
+"or :meth:`~iterator.__next__` method)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1757,8 +1763,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:611
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is an :py:"
-"class:`~collections.abc.MutableSequence` (i.e., a :py:class:`list`)"
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"an :py:class:`~collections.abc.MutableSequence` (i.e., a :py:class:`list`)"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1778,8 +1784,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:784
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has a :meth:"
-"`~object.__getitem__` method."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has "
+"a :meth:`~object.__getitem__` method."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1789,8 +1795,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:818
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has a :meth:"
-"`~object.__contains__` method."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has "
+"a :meth:`~object.__contains__` method."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1800,8 +1806,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:835
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has a :meth:"
-"`~object.__len__` method."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has "
+"a :meth:`~object.__len__` method."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1811,8 +1817,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:852
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has a :meth:"
-"`~object.__setitem__` or :meth:`~object.__delitem__` method."
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object has "
+"a :meth:`~object.__setitem__` or :meth:`~object.__delitem__` method."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1822,8 +1828,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:877
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ""
-"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is an :py:"
-"class:`~collections.abc.Sequence` (i.e., a :py:class:`list`)"
+"A :js:class:`~pyodide.ffi.PyProxy` whose proxied Python object is "
+"an :py:class:`~collections.abc.Sequence` (i.e., a :py:class:`list`)"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1837,12 +1843,13 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:7
 msgid ""
-"type: :sphinx_js_type:`\\:js\\:class\\:\\`Int8Array\\`\\\\  \\| \\\\ \\:js\\:"
-"class\\:\\`Uint8Array\\`\\\\  \\| \\\\ \\:js\\:class\\:\\`Int16Array\\`\\\\  "
-"\\| \\\\ \\:js\\:class\\:\\`Uint16Array\\`\\\\  \\| \\\\ \\:js\\:class\\:"
-"\\`Int32Array\\`\\\\  \\| \\\\ \\:js\\:class\\:\\`Uint32Array\\`\\\\  \\| \\"
-"\\ \\:js\\:class\\:\\`Uint8ClampedArray\\`\\\\  \\| \\\\ \\:js\\:class\\:"
-"\\`Float32Array\\`\\\\  \\| \\\\ \\:js\\:class\\:\\`Float64Array\\``"
+"type: :sphinx_js_type:`\\:js\\:class\\:\\`Int8Array\\`\\\\  \\| \\\\ "
+"\\:js\\:class\\:\\`Uint8Array\\`\\\\  \\| \\\\ \\:js\\:class\\:"
+"\\`Int16Array\\`\\\\  \\| \\\\ \\:js\\:class\\:\\`Uint16Array\\`\\\\  \\| \\"
+"\\ \\:js\\:class\\:\\`Int32Array\\`\\\\  \\| \\\\ \\:js\\:class\\:"
+"\\`Uint32Array\\`\\\\  \\| \\\\ \\:js\\:class\\:\\`Uint8ClampedArray\\`\\\\  "
+"\\| \\\\ \\:js\\:class\\:\\`Float32Array\\`\\\\  \\| \\\\ \\:js\\:class\\:"
+"\\`Float64Array\\``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:16 ../../../usage/api/js-api.md:51
@@ -1872,13 +1879,14 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:22
 msgid ""
-"Throws a :py:exc:`GeneratorExit` into the generator and if the :py:exc:"
-"`GeneratorExit` is not caught returns the argument value ``{done: true, "
-"value: v}``. If the generator catches the :py:exc:`GeneratorExit` and "
-"returns or yields another value the next value of the generator this is "
-"returned in the normal way. If it throws some error other than :py:exc:"
-"`GeneratorExit` or :py:exc:`StopAsyncIteration`, that error is propagated. "
-"See the documentation for :js:meth:`AsyncGenerator.throw`"
+"Throws a :py:exc:`GeneratorExit` into the generator and if "
+"the :py:exc:`GeneratorExit` is not caught returns the argument value "
+"``{done: true, value: v}``. If the generator catches "
+"the :py:exc:`GeneratorExit` and returns or yields another value the next "
+"value of the generator this is returned in the normal way. If it throws some "
+"error other than :py:exc:`GeneratorExit` or :py:exc:`StopAsyncIteration`, "
+"that error is propagated. See the documentation "
+"for :js:meth:`AsyncGenerator.throw`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:30 ../../../usage/api/js-api.md:554
@@ -1888,12 +1896,12 @@ msgstr ""
 #: ../../../usage/api/js-api.md:32
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
-"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:"
-"js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: ``done`` "
-"and ``value``. When the generator yields ``some_value``, ``return`` returns "
-"``{done : false, value : some_value}``. When the generator raises a :py:exc:"
-"`StopAsyncIteration` exception, ``return`` returns ``{done : true, value : "
-"result_value}``."
+"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: "
+"``done`` and ``value``. When the generator yields ``some_value``, ``return`` "
+"returns ``{done : false, value : some_value}``. When the generator raises "
+"a :py:exc:`StopAsyncIteration` exception, ``return`` returns ``{done : true, "
+"value : result_value}``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:37 ../../../usage/api/js-api.md:560
@@ -1912,10 +1920,10 @@ msgstr ""
 #: ../../../usage/api/js-api.md:43
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
-"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:"
-"js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: ``done`` "
-"and ``value``. When the generator yields ``some_value``, ``return`` returns "
-"``{done : false, value : some_value}``. When the generator raises a "
+"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: "
+"``done`` and ``value``. When the generator yields ``some_value``, ``return`` "
+"returns ``{done : false, value : some_value}``. When the generator raises a "
 "``StopIteration(result_value)`` exception, ``return`` returns ``{done : "
 "true, value : result_value}``."
 msgstr ""
@@ -1923,8 +1931,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:56
 msgid ""
 "This translates to the Python code ``aiter(obj)``. Return an async iterator "
-"associated to the proxy. See the documentation for :js:data:`Symbol."
-"asyncIterator`."
+"associated to the proxy. See the documentation "
+"for :js:data:`Symbol.asyncIterator`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:59
@@ -1933,9 +1941,9 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:61
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`AsyncIterator\\`\\\\ \\<\\\\ \\:js\\:"
-"data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:"
-"data\\:\\`any\\`\\\\ \\>`"
+":sphinx_js_type:`\\:js\\:data\\:\\`AsyncIterator\\`\\\\ \\<\\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\>`"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:75
@@ -1959,11 +1967,11 @@ msgstr ""
 #: ../../../usage/api/js-api.md:83
 msgid ""
 ":sphinx_js_type:`\\:js\\:class\\:\\`Promise\\`\\\\ \\<\\\\ \\:js\\:data\\:"
-"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:"
-"js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: ``done`` "
-"and ``value``. When the iterator yields ``some_value``, ``next`` returns "
-"``{done : false, value : some_value}``. When the giterator is done, ``next`` "
-"returns ``{done : true }``."
+"\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\>\\>` -- An Object with two properties: "
+"``done`` and ``value``. When the iterator yields ``some_value``, ``next`` "
+"returns ``{done : false, value : some_value}``. When the giterator is done, "
+"``next`` returns ``{done : true }``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:93 ../../../usage/api/js-api.md:443
@@ -2034,24 +2042,25 @@ msgid ""
 "We do not support suboffsets, if the buffer requires suboffsets we will "
 "throw an error. JavaScript nd array libraries can't handle suboffsets "
 "anyways. In this case, you should use the :js:meth:`~PyProxy.toJs` api or "
-"copy the buffer to one that doesn't use suboffsets (using e.g., :py:func:"
-"`numpy.ascontiguousarray`)."
+"copy the buffer to one that doesn't use suboffsets (using "
+"e.g., :py:func:`numpy.ascontiguousarray`)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:151
 msgid ""
 "If the buffer stores big endian data or half floats, this function will fail "
-"without an explicit type argument. For big endian data you can use :js:meth:"
-"`~PyProxy.toJs`. :js:class:`DataView` has support for big endian data, so "
-"you might want to pass ``'dataview'`` as the type argument in that case."
+"without an explicit type argument. For big endian data you can "
+"use :js:meth:`~PyProxy.toJs`. :js:class:`DataView` has support for big "
+"endian data, so you might want to pass ``'dataview'`` as the type argument "
+"in that case."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:157
 msgid ""
-"When you are done with the buffer view, you have to call :js:func:"
-"`~PyBufferView.release`. Alternatively, if you declare the buffer with "
-"``using pybuf = proxy.getBuffer()``, JavaScript will automatically release "
-"the buffer at the end of the current scope."
+"When you are done with the buffer view, you have to "
+"call :js:func:`~PyBufferView.release`. Alternatively, if you declare the "
+"buffer with ``using pybuf = proxy.getBuffer()``, JavaScript will "
+"automatically release the buffer at the end of the current scope."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:162
@@ -2060,9 +2069,10 @@ msgid ""
 "output. Should be one of: ``\"i8\"``, ``\"u8\"``, ``\"u8clamped\"``, "
 "``\"i16\"``, ``\"u16\"``, ``\"i32\"``, ``\"u32\"``, ``\"i32\"``, "
 "``\"u32\"``, ``\"i64\"``, ``\"u64\"``, ``\"f32\"``, ``\"f64\"``, or "
-"``\"dataview\"``. This argument is optional, if absent :js:meth:`~pyodide."
-"ffi.PyBuffer.getBuffer` will try to determine the appropriate output type "
-"based on the buffer format string (see :std:ref:`struct-format-strings`)."
+"``\"dataview\"``. This argument is optional, if "
+"absent :js:meth:`~pyodide.ffi.PyBuffer.getBuffer` will try to determine the "
+"appropriate output type based on the buffer format string "
+"(see :std:ref:`struct-format-strings`)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:164
@@ -2073,12 +2083,12 @@ msgstr ""
 msgid ""
 "A class to allow access to Python data buffers from JavaScript. These are "
 "produced by :js:meth:`~pyodide.ffi.PyBuffer.getBuffer` and cannot be "
-"constructed directly. When you are done, release it with the :js:func:"
-"`~PyBufferView.release` method. It has a ``[Symbol.dispose]()`` method which "
-"is identical to the ``release`` method, so if you create the buffer with "
-"`using pybuf = proxy.getBuffer();` and JavaScript will automatically release "
-"it at the end of the scope. See the Python :external:doc:`c-api/buffer` "
-"documentation for more information."
+"constructed directly. When you are done, release it with "
+"the :js:func:`~PyBufferView.release` method. It has a ``[Symbol.dispose]()`` "
+"method which is identical to the ``release`` method, so if you create the "
+"buffer with `using pybuf = proxy.getBuffer();` and JavaScript will "
+"automatically release it at the end of the scope. See the "
+"Python :external:doc:`c-api/buffer` documentation for more information."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:178
@@ -2190,8 +2200,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:274
 msgid ""
-"The format string for the buffer. See :ref:`struct-format-strings` and :py:"
-"attr:`memoryview.format`."
+"The format string for the buffer. See :ref:`struct-format-strings` "
+"and :py:attr:`memoryview.format`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:281 ../../../usage/api/js-api.md:289
@@ -2205,9 +2215,9 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:291
 msgid ""
-"The total number of bytes the buffer takes up. This is equal to :js:attr:"
-"`buff.data.byteLength <TypedArray.byteLength>`. See :py:attr:`memoryview."
-"nbytes`."
+"The total number of bytes the buffer takes up. This is equal "
+"to :js:attr:`buff.data.byteLength <TypedArray.byteLength>`. "
+"See :py:attr:`memoryview.nbytes`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:301
@@ -2226,8 +2236,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:321
 msgid ""
 "If the data is read only, you should not modify it. There is no way for us "
-"to enforce this, but it may cause very weird behavior. See :py:attr:"
-"`memoryview.readonly`."
+"to enforce this, but it may cause very weird behavior. "
+"See :py:attr:`memoryview.readonly`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:329 ../../../usage/api/js-api.md:339
@@ -2255,15 +2265,16 @@ msgstr ""
 #: ../../../usage/api/js-api.md:360
 msgid ""
 "The ``apply()`` method calls the specified function with a given this value, "
-"and arguments provided as an array (or an array-like object). Like :js:meth:"
-"`Function.apply`."
+"and arguments provided as an array (or an array-like object). "
+"Like :js:meth:`Function.apply`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:364 ../../../usage/api/js-api.md:394
 msgid ""
-"The ``this`` argument. Has no effect unless the :js:class:`~pyodide.ffi."
-"PyCallable` has :js:meth:`captureThis` set. If :js:meth:`captureThis` is "
-"set, it will be passed as the first argument to the Python function."
+"The ``this`` argument. Has no effect unless "
+"the :js:class:`~pyodide.ffi.PyCallable` has :js:meth:`captureThis` set. "
+"If :js:meth:`captureThis` is set, it will be passed as the first argument to "
+"the Python function."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:365
@@ -2280,17 +2291,17 @@ msgstr ""
 msgid ""
 "The ``bind()`` method creates a new function that, when called, has its "
 "``this`` keyword set to the provided value, with a given sequence of "
-"arguments preceding any provided when the new function is called. See :js:"
-"meth:`Function.bind`."
+"arguments preceding any provided when the new function is called. "
+"See :js:meth:`Function.bind`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:377
 msgid ""
-"If the :js:class:`~pyodide.ffi.PyCallable` does not have :js:meth:"
-"`captureThis` set, the ``this`` parameter will be discarded. If it does "
-"have :js:meth:`captureThis` set, ``thisArg`` will be set to the first "
-"argument of the Python function. The returned proxy and the original proxy "
-"have the same lifetime so destroying either destroys both."
+"If the :js:class:`~pyodide.ffi.PyCallable` does not "
+"have :js:meth:`captureThis` set, the ``this`` parameter will be discarded. "
+"If it does have :js:meth:`captureThis` set, ``thisArg`` will be set to the "
+"first argument of the Python function. The returned proxy and the original "
+"proxy have the same lifetime so destroying either destroys both."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:383
@@ -2344,9 +2355,10 @@ msgstr ""
 #: ../../../usage/api/js-api.md:430 ../../../usage/api/js-api.md:448
 msgid ""
 "Call the function with stack switching enabled. The last argument must be an "
-"object with the keyword arguments. Functions called this way can use :py:"
-"meth:`~pyodide.ffi.run_sync` to block until an :py:class:`~collections.abc."
-"Awaitable` is resolved. Only works in runtimes with JS Promise integration."
+"object with the keyword arguments. Functions called this way can "
+"use :py:meth:`~pyodide.ffi.run_sync` to block until "
+"an :py:class:`~collections.abc.Awaitable` is resolved. Only works in "
+"runtimes with JS Promise integration."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:436 ../../../usage/api/js-api.md:454
@@ -2378,8 +2390,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:484
 msgid ""
-"If true, extra arguments are ignored instead of raising a :py:exc:"
-"`TypeError`."
+"If true, extra arguments are ignored instead of raising "
+"a :py:exc:`TypeError`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:485
@@ -2400,8 +2412,9 @@ msgstr ""
 #: ../../../usage/api/js-api.md:496
 msgid ""
 "Returns a :js:class:`~pyodide.ffi.PyProxy` that passes ``this`` as the first "
-"argument to the Python function. The returned :js:class:`~pyodide.ffi."
-"PyProxy` has the internal ``captureThis`` property set."
+"argument to the Python function. The "
+"returned :js:class:`~pyodide.ffi.PyProxy` has the internal ``captureThis`` "
+"property set."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:500
@@ -2458,23 +2471,23 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:546
 msgid ""
-"Throws a :py:exc:`GeneratorExit` into the generator and if the :py:exc:"
-"`GeneratorExit` is not caught returns the argument value ``{done: true, "
-"value: v}``. If the generator catches the :py:exc:`GeneratorExit` and "
-"returns or yields another value the next value of the generator this is "
-"returned in the normal way. If it throws some error other than :py:exc:"
-"`GeneratorExit` or :py:exc:`StopIteration`, that error is propagated. See "
-"the documentation for :js:meth:`Generator.return`."
+"Throws a :py:exc:`GeneratorExit` into the generator and if "
+"the :py:exc:`GeneratorExit` is not caught returns the argument value "
+"``{done: true, value: v}``. If the generator catches "
+"the :py:exc:`GeneratorExit` and returns or yields another value the next "
+"value of the generator this is returned in the normal way. If it throws some "
+"error other than :py:exc:`GeneratorExit` or :py:exc:`StopIteration`, that "
+"error is propagated. See the documentation for :js:meth:`Generator.return`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:556 ../../../usage/api/js-api.md:566
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:"
-"data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\>` -- An Object "
-"with two properties: ``done`` and ``value``. When the generator yields "
-"``some_value``, ``return`` returns ``{done : false, value : some_value}``. "
-"When the generator raises a ``StopIteration(result_value)`` exception, "
-"``return`` returns ``{done : true, value : result_value}``."
+":sphinx_js_type:`\\:js\\:data\\:\\`IteratorResult\\`\\\\ \\<\\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\>` -- "
+"An Object with two properties: ``done`` and ``value``. When the generator "
+"yields ``some_value``, ``return`` returns ``{done : false, value : "
+"some_value}``. When the generator raises a ``StopIteration(result_value)`` "
+"exception, ``return`` returns ``{done : true, value : result_value}``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:562
@@ -2484,8 +2497,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:579
 msgid ""
 "This translates to the Python code ``iter(obj)``. Return an iterator "
-"associated to the proxy. See the documentation for :js:data:`Symbol."
-"iterator`."
+"associated to the proxy. See the documentation "
+"for :js:data:`Symbol.iterator`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:585
@@ -2510,19 +2523,19 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:606
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`IteratorResult\\`\\\\ \\<\\\\ \\:js\\:"
-"data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\>` -- An Object "
-"with two properties: ``done`` and ``value``. When the generator yields "
-"``some_value``, ``next`` returns ``{done : false, value : some_value}``. "
-"When the generator raises a :py:exc:`StopIteration` exception, ``next`` "
+":sphinx_js_type:`\\:js\\:data\\:\\`IteratorResult\\`\\\\ \\<\\\\ "
+"\\:js\\:data\\:\\`any\\`\\\\ \\, \\\\ \\:js\\:data\\:\\`any\\`\\\\ \\>` -- "
+"An Object with two properties: ``done`` and ``value``. When the generator "
+"yields ``some_value``, ``next`` returns ``{done : false, value : some_value}"
+"``. When the generator raises a :py:exc:`StopIteration` exception, ``next`` "
 "returns ``{done : true, value : result_value}``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:619
 msgid ""
-"The :js:meth:`Array.copyWithin` method shallow copies part of a :js:class:"
-"`PyMutableSequence` to another location in the same :js:class:"
-"`PyMutableSequence` without modifying its length."
+"The :js:meth:`Array.copyWithin` method shallow copies part of "
+"a :js:class:`PyMutableSequence` to another location in the "
+"same :js:class:`PyMutableSequence` without modifying its length."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:623
@@ -2539,8 +2552,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:629
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The modified :js:class:"
-"`PyMutableSequence`."
+":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The "
+"modified :js:class:`PyMutableSequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:633
@@ -2563,15 +2576,15 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:646
 msgid ""
-"The :js:meth:`Array.pop` method removes the last element from a :js:class:"
-"`PyMutableSequence`."
+"The :js:meth:`Array.pop` method removes the last element from "
+"a :js:class:`PyMutableSequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:649 ../../../usage/api/js-api.md:672
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The removed element from the :"
-"js:class:`PyMutableSequence`; undefined if the :js:class:`PyMutableSequence` "
-"is empty."
+":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The removed element from "
+"the :js:class:`PyMutableSequence`; undefined if "
+"the :js:class:`PyMutableSequence` is empty."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:653
@@ -2604,14 +2617,14 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:669
 msgid ""
-"The :js:meth:`Array.shift` method removes the first element from a :js:class:"
-"`PyMutableSequence`."
+"The :js:meth:`Array.shift` method removes the first element from "
+"a :js:class:`PyMutableSequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:676
 msgid ""
-"The :js:meth:`Array.sort` method sorts the elements of a :js:class:"
-"`PyMutableSequence` in place."
+"The :js:meth:`Array.sort` method sorts the elements of "
+"a :js:class:`PyMutableSequence` in place."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:679
@@ -2620,21 +2633,21 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:685
 msgid ""
-"The :js:meth:`Array.splice` method changes the contents of a :js:class:"
-"`PyMutableSequence` by removing or replacing existing elements and/or adding "
-"new elements in place."
+"The :js:meth:`Array.splice` method changes the contents of "
+"a :js:class:`PyMutableSequence` by removing or replacing existing elements "
+"and/or adding new elements in place."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:689
 msgid ""
-"Zero-based index at which to start changing the :js:class:"
-"`PyMutableSequence`."
+"Zero-based index at which to start changing "
+"the :js:class:`PyMutableSequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:690
 msgid ""
-"An integer indicating the number of elements in the :js:class:"
-"`PyMutableSequence` to remove from ``start``."
+"An integer indicating the number of elements in "
+"the :js:class:`PyMutableSequence` to remove from ``start``."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:691
@@ -2661,8 +2674,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:704
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The new length of the :js:"
-"class:`PyMutableSequence`."
+":sphinx_js_type:`\\:js\\:data\\:\\`any\\`` -- The new length of "
+"the :js:class:`PyMutableSequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:709
@@ -2744,17 +2757,19 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:762
 msgid ""
-"If false, :js:meth:`toJs` will throw a :py:exc:`~pyodide.ffi."
-"ConversionError` rather than producing a :js:class:`~pyodide.ffi.PyProxy`."
+"If false, :js:meth:`toJs` will throw "
+"a :py:exc:`~pyodide.ffi.ConversionError` rather than producing "
+"a :js:class:`~pyodide.ffi.PyProxy`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:763
 msgid ""
 "A function to be called on an iterable of pairs ``[key, value]``. Convert "
-"this iterable of pairs to the desired output. For instance, :js:func:`Object."
-"fromEntries` would convert the dict to an object, :js:func:`Array.from` "
-"converts it to an :js:class:`Array` of pairs, and ``(it) => new Map(it)`` "
-"converts it to a :js:class:`Map` (which is the default behavior)."
+"this iterable of pairs to the desired output. For "
+"instance, :js:func:`Object.fromEntries` would convert the dict to an "
+"object, :js:func:`Array.from` converts it to an :js:class:`Array` of pairs, "
+"and ``(it) => new Map(it)`` converts it to a :js:class:`Map` (which is the "
+"default behavior)."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:764
@@ -2768,8 +2783,8 @@ msgid ""
 "Optional callback to convert objects which gets called after ``str``, "
 "``int``, ``float``, ``bool``, ``None``, and ``JsProxy`` are converted but "
 "*before* any default conversions are applied to standard data structures. "
-"Its arguments are the same as ``dict_converter``. See the documentation of :"
-"meth:`~pyodide.ffi.to_js`."
+"Its arguments are the same as ``dict_converter``. See the documentation "
+"of :meth:`~pyodide.ffi.to_js`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:772
@@ -2780,8 +2795,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:776
 msgid ""
-"Returns ``str(o)`` (unless ``pyproxyToStringRepr: true`` was passed to :js:"
-"func:`~exports.loadPyodide` in which case it will return ``repr(o)``)"
+"Returns ``str(o)`` (unless ``pyproxyToStringRepr: true`` was passed "
+"to :js:func:`~exports.loadPyodide` in which case it will return ``repr(o)``)"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:779
@@ -2798,15 +2813,16 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:795 ../../../usage/api/js-api.md:888
 msgid ""
-"property access / modification / deletion is implemented with :meth:`~object."
-"__getitem__`, :meth:`~object.__setitem__`, and :meth:`~object.__delitem__` "
-"respectively."
+"property access / modification / deletion is implemented "
+"with :meth:`~object.__getitem__`, :meth:`~object.__setitem__`, "
+"and :meth:`~object.__delitem__` respectively."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:798 ../../../usage/api/js-api.md:891
 msgid ""
-"If an attribute is accessed and the result implements :meth:`~object."
-"__getitem__` then the result will also be a json adaptor."
+"If an attribute is accessed and the result "
+"implements :meth:`~object.__getitem__` then the result will also be a json "
+"adaptor."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:802 ../../../usage/api/js-api.md:895
@@ -3033,8 +3049,8 @@ msgstr ""
 #: ../../../usage/api/js-api.md:1004
 msgid ""
 "See :js:meth:`Array.join`. The :js:meth:`Array.join` method creates and "
-"returns a new string by concatenating all of the elements in the :py:class:"
-"`~collections.abc.Sequence`."
+"returns a new string by concatenating all of the elements in "
+"the :py:class:`~collections.abc.Sequence`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:1008
@@ -3163,10 +3179,10 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:1108
 msgid ""
-"In order to reduce the risk of large memory leaks, the :js:class:"
-"`PythonError` contains no reference to the Python exception that caused it. "
-"You can find the actual Python exception that caused this error as :py:data:"
-"`sys.last_exc`."
+"In order to reduce the risk of large memory leaks, "
+"the :js:class:`PythonError` contains no reference to the Python exception "
+"that caused it. You can find the actual Python exception that caused this "
+"error as :py:data:`sys.last_exc`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:1113
@@ -3194,8 +3210,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:1135
 msgid ""
-"The name of the Python error class, e.g, :py:exc:`RuntimeError` or :py:exc:"
-"`KeyError`."
+"The name of the Python error class, e.g, :py:exc:`RuntimeError` "
+"or :py:exc:`KeyError`."
 msgstr ""
 
 #: ../../../usage/api/js-api.md:61
@@ -3252,8 +3268,8 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:9 ../../../usage/api/js-api.md:18
 msgid ""
-":sphinx_js_type:`\\:js\\:data\\:\\`undefined\\`\\\\  \\| \\\\ \\:js\\:"
-"class\\:\\`HTMLCanvasElement\\``"
+":sphinx_js_type:`\\:js\\:data\\:\\`undefined\\`\\\\  \\| \\\\ "
+"\\:js\\:class\\:\\`HTMLCanvasElement\\``"
 msgstr ""
 
 #: ../../../usage/api/js-api.md:14
