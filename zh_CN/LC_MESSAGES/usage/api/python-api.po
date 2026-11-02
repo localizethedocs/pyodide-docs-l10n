@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2026, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 314.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../usage/api/python-api.md:3
+msgid "Python API"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:5
+msgid "Backward compatibility of the API is not guaranteed at this point."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:7
+msgid "**JavaScript Modules**"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:9
+msgid ""
+"By default there are two JavaScript modules. More can be added with {js:func}"
+"`pyodide.registerJsModule`. You can import these modules using the Python "
+"`import` statement in the normal way."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:16
+msgid "``js``"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:17
+msgid "The global JavaScript scope."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:18
+msgid ":js:mod:`pyodide_js <pyodide>`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:19
+msgid "The JavaScript Pyodide module."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:22
+msgid "**Python Modules**"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:27
+msgid ":py:mod:`pyodide.code`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:28
+msgid "Utilities for evaluating Python and JavaScript code."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:29
+msgid ":py:mod:`pyodide.console`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:30
+msgid ""
+"Similar to the builtin :py:mod:`code` module but handles top level await. "
+"Used for implementing the Pyodide console."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:32
+msgid ":py:mod:`pyodide.ffi`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:33
+msgid ""
+"The :py:class:`~pyodide.ffi.JsProxy` class and utilities to help interact "
+"with JavaScript code."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:34
+msgid ":py:mod:`pyodide.http`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:35
+msgid ""
+"Defines :py:func:`~pyodide.http.pyfetch` and other functions for making "
+"network requests."
+msgstr ""
+
+#: ../../../usage/api/python-api.md:36
+msgid ":py:mod:`pyodide.webloop`"
+msgstr ""
+
+#: ../../../usage/api/python-api.md:37
+msgid ""
+"The Pyodide event loop implementation. This is automatically configured "
+"correctly for most use cases it is unlikely you will need it outside of "
+"niche use cases."
+msgstr ""
