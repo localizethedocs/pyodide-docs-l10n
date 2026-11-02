@@ -81,9 +81,9 @@ msgstr ""
 
 #: ../../../usage/cli.md:33
 msgid ""
-"You can install `pyodide-build` with pip or uv and then run `pyodide venv ."
-"venv-pyodide`. If you use uv to install `pyodide-build` make sure you run "
-"`uv pip install pip`, it will not work without pip installed."
+"You can install `pyodide-build` with pip or uv and then run `pyodide "
+"venv .venv-pyodide`. If you use uv to install `pyodide-build` make sure you "
+"run `uv pip install pip`, it will not work without pip installed."
 msgstr ""
 
 #: ../../../usage/cli.md:37
@@ -106,8 +106,8 @@ msgstr ""
 
 #: ../../../usage/cli.md:45
 msgid ""
-"uv pip install --no-build --extra-index-url https://index.pyodide."
-"org/0.28.3/ --index-strategy unsafe-best-match\n"
+"uv pip install --no-build --extra-index-url https://index.pyodide.org/"
+"0.28.3/ --index-strategy unsafe-best-match\n"
 msgstr ""
 
 #: ../../../usage/cli.md:49

@@ -315,8 +315,8 @@ msgstr ""
 
 #: ../../../project/about.md:93
 msgid ""
-"Pyodide uses the [Mozilla Public License Version 2.0](https://choosealicense."
-"com/licenses/mpl-2.0/)."
+"Pyodide uses the [Mozilla Public License Version 2.0](https://"
+"choosealicense.com/licenses/mpl-2.0/)."
 msgstr ""
 
 #: ../../../project/about.md:96
@@ -329,8 +329,8 @@ msgstr ""
 
 #: ../../../project/about.md:100
 msgid ""
-"[Mozilla](https://www.mozilla.org/en-US/) and [CircleCl](https://circleci."
-"com/) for Continuous Integration resources"
+"[Mozilla](https://www.mozilla.org/en-US/) and [CircleCl](https://"
+"circleci.com/) for Continuous Integration resources"
 msgstr ""
 
 #: ../../../project/about.md:102

@@ -94,8 +94,8 @@ msgid ""
 "dynamic loader has been patched so that all dynamic libraries in a wheel "
 "named `wheel_name-<tag>.whl` will be loaded as if `/lib/python3.12/site-"
 "packages/wheel_name.libs` is on the `RPATH`, so any dynamic library "
-"dependencies should be placed in the wheel in a folder called `wheel_name."
-"libs`."
+"dependencies should be placed in the wheel in a folder called "
+"`wheel_name.libs`."
 msgstr ""
 
 #: ../../../development/abi/312.md:43

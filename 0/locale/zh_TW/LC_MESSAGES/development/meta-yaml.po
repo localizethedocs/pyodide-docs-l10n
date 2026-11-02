@@ -81,11 +81,11 @@ msgstr ""
 
 #: ../../../development/meta-yaml.md:41
 msgid ""
-"The list of top-level import name for the package. This key is used in {js:"
-"func}`pyodide.loadPackagesFromImports`. For example, the top-level import "
-"name for the `scikit-learn` is `sklearn`. Some packages may have multiple "
-"top-level import names. For instance, `setuptools` exposes `setuptools` and "
-"`pkg_resources` as a top-level import names."
+"The list of top-level import name for the package. This key is used in "
+"{js:func}`pyodide.loadPackagesFromImports`. For example, the top-level "
+"import name for the `scikit-learn` is `sklearn`. Some packages may have "
+"multiple top-level import names. For instance, `setuptools` exposes "
+"`setuptools` and `pkg_resources` as a top-level import names."
 msgstr ""
 
 #: ../../../development/meta-yaml.md:48
@@ -500,8 +500,8 @@ msgstr ""
 
 #: ../../../development/meta-yaml.md:259
 msgid ""
-"The following environment variables can be used in the scripts in the meta."
-"yaml files:"
+"The following environment variables can be used in the scripts in the "
+"meta.yaml files:"
 msgstr ""
 
 #: ../../../development/meta-yaml.md:262

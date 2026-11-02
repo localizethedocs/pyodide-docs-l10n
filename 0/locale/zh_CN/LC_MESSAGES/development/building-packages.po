@@ -154,8 +154,8 @@ msgstr ""
 #: ../../../development/building-packages.md:79
 msgid ""
 "Running `source emsdk_env.sh` will set up the environment variables needed "
-"for Emscripten. If you restart your shell, you need to run `source emsdk_env."
-"sh` again to set up the environment variables."
+"for Emscripten. If you restart your shell, you need to run `source "
+"emsdk_env.sh` again to set up the environment variables."
 msgstr ""
 
 #: ../../../development/building-packages.md:82

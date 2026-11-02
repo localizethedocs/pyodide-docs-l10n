@@ -563,8 +563,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:39
 msgid ""
-"{{ Fix }} Added missing `timeout=None` parameter to `pyodide.webloop.WebLoop."
-"shutdown_default_executor()`. {pr}`6050`"
+"{{ Fix }} Added missing `timeout=None` parameter to "
+"`pyodide.webloop.WebLoop.shutdown_default_executor()`. {pr}`6050`"
 msgstr ""
 
 #: ../../../project/changelog.md:43 ../../../project/changelog.md:91
@@ -1009,10 +1009,10 @@ msgstr ""
 #: ../../../project/changelog.md:248
 msgid ""
 "{{ Enhancement }} The packages included in the Pyodide distribution are now "
-"built in a separate repository, [`pyodide/pyodide-recipes`](http://github."
-"com/pyodide/pyodide-recipes/). This decouples the set of packages from the "
-"Pyodide version and allows people to use the different sets of packages "
-"easily with different Pyodide versions. {pr}`5699`"
+"built in a separate repository, [`pyodide/pyodide-recipes`](http://"
+"github.com/pyodide/pyodide-recipes/). This decouples the set of packages "
+"from the Pyodide version and allows people to use the different sets of "
+"packages easily with different Pyodide versions. {pr}`5699`"
 msgstr ""
 
 #: ../../../project/changelog.md:254
@@ -1290,8 +1290,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:370
 msgid ""
-"{{ Fix }} Correct use of `console.log` to `this.logStdout` in `load-package."
-"ts` {pr}`5514`"
+"{{ Fix }} Correct use of `console.log` to `this.logStdout` in `load-"
+"package.ts` {pr}`5514`"
 msgstr ""
 
 #: ../../../project/changelog.md:374
@@ -1971,8 +1971,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:629
 msgid ""
-"{{ Fix }} `pyimport(\"a.b\")` won't fail when `a` is removed by `del sys."
-"modules[\"a\"]` {pr}`4993`"
+"{{ Fix }} `pyimport(\"a.b\")` won't fail when `a` is removed by `del "
+"sys.modules[\"a\"]` {pr}`4993`"
 msgstr ""
 
 #: ../../../project/changelog.md:632
@@ -2223,8 +2223,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:786
 msgid ""
-"{{ Enhancement }} Updated `pyimport` to support `pyimport(\"module."
-"attribute\")`. {pr}`4395`"
+"{{ Enhancement }} Updated `pyimport` to support "
+"`pyimport(\"module.attribute\")`. {pr}`4395`"
 msgstr ""
 
 #: ../../../project/changelog.md:789
@@ -2234,10 +2234,10 @@ msgstr ""
 #: ../../../project/changelog.md:791
 msgid ""
 "{{ Enhancement }} `str(jsproxy)` has been adjusted to not raise an error if "
-"`jsproxy.toString` is undefined. Instead, it will use `Object.prototype."
-"toString` in this case. If `jsproxy.toString` is defined and throws or is "
-"not defined but `jsproxy[Symbol.toStringTag]` is defined and throws, then "
-"`str` will still raise. {pr}`4574`"
+"`jsproxy.toString` is undefined. Instead, it will use "
+"`Object.prototype.toString` in this case. If `jsproxy.toString` is defined "
+"and throws or is not defined but `jsproxy[Symbol.toStringTag]` is defined "
+"and throws, then `str` will still raise. {pr}`4574`"
 msgstr ""
 
 #: ../../../project/changelog.md:798
@@ -2477,8 +2477,8 @@ msgstr ""
 #: ../../../project/changelog.md:947
 msgid ""
 "{{ Breaking }} The methods for checking `PyProxy` capabilities (e.g., "
-"`supportsHas`, `isCallable`) are now removed. Use e.g., `instanceof pyodide."
-"ffi.PyCallable` instead. {pr}`4342`"
+"`supportsHas`, `isCallable`) are now removed. Use e.g., `instanceof "
+"pyodide.ffi.PyCallable` instead. {pr}`4342`"
 msgstr ""
 
 #: ../../../project/changelog.md:952 ../../../project/changelog.md:1125
@@ -2526,8 +2526,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:981
 msgid ""
-"{{ Fix }} Fixed a bug that webpack messes up dynamic import of `pyodide.asm."
-"js`. {pr}`4294`"
+"{{ Fix }} Fixed a bug that webpack messes up dynamic import of "
+"`pyodide.asm.js`. {pr}`4294`"
 msgstr ""
 
 #: ../../../project/changelog.md:986
@@ -2666,9 +2666,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:1072
 msgid ""
-"{{ Fix }} Fixed adding getters/setters to a `PyProxy` with `Object."
-"defineProperty` and improved compliance with JavaScript rules around Proxy "
-"traps. {pr}`4033`"
+"{{ Fix }} Fixed adding getters/setters to a `PyProxy` with "
+"`Object.defineProperty` and improved compliance with JavaScript rules around "
+"Proxy traps. {pr}`4033`"
 msgstr ""
 
 #: ../../../project/changelog.md:1077
@@ -2795,8 +2795,8 @@ msgstr ""
 #: ../../../project/changelog.md:1141
 msgid ""
 "{{ Enhancement }} The environment variable `PYODIDE_BUILD_EXPORTS` can now "
-"be used instead of the `--exports` argument to `pyodide build` to specify `."
-"so` file exports of packages. {pr}`3973`"
+"be used instead of the `--exports` argument to `pyodide build` to specify "
+"`.so` file exports of packages. {pr}`3973`"
 msgstr ""
 
 #: ../../../project/changelog.md:1146
@@ -2909,8 +2909,8 @@ msgstr ""
 #: ../../../project/changelog.md:1215
 msgid ""
 "{{ Fix }} Fix an issue where the `pyodide venv` command did not work "
-"correctly in pyodide-build version 0.23.0 because of missing `python_stdlib."
-"zip`. {pr}`3760`"
+"correctly in pyodide-build version 0.23.0 because of missing "
+"`python_stdlib.zip`. {pr}`3760`"
 msgstr ""
 
 #: ../../../project/changelog.md:1219
@@ -3161,10 +3161,11 @@ msgstr ""
 #: ../../../project/changelog.md:1396
 msgid ""
 "{{ Enhancement}} Added `pyodide build` support for building a list of "
-"packages from a requirements.txt file with `pyodide build -r <requirements."
-"txt>`. Also can output a list of chosen dependencies in the same format when "
-"building a package and dependencies using the `--output-lockfile <lockfile."
-"txt>` argument. This enables repeatable builds of packages. {pr}`3469`"
+"packages from a requirements.txt file with `pyodide build -r "
+"<requirements.txt>`. Also can output a list of chosen dependencies in the "
+"same format when building a package and dependencies using the `--output-"
+"lockfile <lockfile.txt>` argument. This enables repeatable builds of "
+"packages. {pr}`3469`"
 msgstr ""
 
 #: ../../../project/changelog.md:1403
@@ -3399,9 +3400,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:1549
 msgid ""
-"{{ Enhancement }} Added a new release file called `pyodide-core-{version}."
-"tar.gz` intended for use in Node. It contains the files needed to start "
-"Pyodide and no additional packages. {pr}`2999`"
+"{{ Enhancement }} Added a new release file called `pyodide-core-"
+"{version}.tar.gz` intended for use in Node. It contains the files needed to "
+"start Pyodide and no additional packages. {pr}`2999`"
 msgstr ""
 
 #: ../../../project/changelog.md:1554
@@ -3494,9 +3495,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:1610
 msgid ""
-"{{ Enhancement }} Added `JsGenerator` and `JsIterator` types to `pyodide."
-"ffi`. Added `send` method to `JsIterator`s and `throw`, and `close` methods "
-"to `JsGenerator`s. {pr}`3294`"
+"{{ Enhancement }} Added `JsGenerator` and `JsIterator` types to "
+"`pyodide.ffi`. Added `send` method to `JsIterator`s and `throw`, and `close` "
+"methods to `JsGenerator`s. {pr}`3294`"
 msgstr ""
 
 #: ../../../project/changelog.md:1615
@@ -3576,8 +3577,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:1667
 msgid ""
-"{{ Enhancement }} Added a new API `pyodide.mountNativeFS` which mounts a {js:"
-"class}`FileSystemDirectoryHandle` into the Pyodide file system. {pr}`2987`"
+"{{ Enhancement }} Added a new API `pyodide.mountNativeFS` which mounts a "
+"{js:class}`FileSystemDirectoryHandle` into the Pyodide file system. {pr}"
+"`2987`"
 msgstr ""
 
 #: ../../../project/changelog.md:1671
@@ -3645,9 +3647,9 @@ msgid ""
 "{{ Breaking }} The matplotlib HTML5 backends are now available as part of "
 "the [`matplotlib-pyodide`](https://github.com/pyodide/matplotlib-pyodide) "
 "package. If you use the default backend from Pyodide, no changes are "
-"necessary. However, if you previously specified the backend with `matplotlib."
-"use`, the URL is now different. See [package readme](https://github.com/"
-"pyodide/matplotlib-pyodide) for more details. {pr}`3061`"
+"necessary. However, if you previously specified the backend with "
+"`matplotlib.use`, the URL is now different. See [package readme](https://"
+"github.com/pyodide/matplotlib-pyodide) for more details. {pr}`3061`"
 msgstr ""
 
 #: ../../../project/changelog.md:1720
@@ -3744,8 +3746,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:1783
 msgid ""
-"{{ Breaking }} `build/library` and `build/sharedlibrary` key in the `meta."
-"yaml` spec are removed. Use `build/type` instead. {pr}`3238`"
+"{{ Breaking }} `build/library` and `build/sharedlibrary` key in the "
+"`meta.yaml` spec are removed. Use `build/type` instead. {pr}`3238`"
 msgstr ""
 
 #: ../../../project/changelog.md:1787
@@ -4231,8 +4233,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:2078
 msgid ""
-"{{ Enhancement }} Added SHA-256 hash of package to entries in `repodata."
-"json` {pr}`2455`"
+"{{ Enhancement }} Added SHA-256 hash of package to entries in "
+"`repodata.json` {pr}`2455`"
 msgstr ""
 
 #: ../../../project/changelog.md:2081
@@ -4300,9 +4302,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:2118
 msgid ""
-"{{ Enhancement }} `micropip` was adjusted to keep its state in the wheel `."
-"dist-info` directories which improves consistenency with the Python standard "
-"library and other tools used to install packages. {pr}`2572`"
+"{{ Enhancement }} `micropip` was adjusted to keep its state in the wheel "
+"`.dist-info` directories which improves consistenency with the Python "
+"standard library and other tools used to install packages. {pr}`2572`"
 msgstr ""
 
 #: ../../../project/changelog.md:2123
@@ -4511,9 +4513,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:2249
 msgid ""
-"{{ Breaking }} The `globals` argument to `pyodide.runPython` and `pyodide."
-"runPythonAsync` is now passed as a named argument. The old usage still works "
-"with a deprecation warning. {pr}`2300`"
+"{{ Breaking }} The `globals` argument to `pyodide.runPython` and "
+"`pyodide.runPythonAsync` is now passed as a named argument. The old usage "
+"still works with a deprecation warning. {pr}`2300`"
 msgstr ""
 
 #: ../../../project/changelog.md:2254
@@ -4718,9 +4720,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:2384
 msgid ""
-"{{Enhancement}} Added the `unpack_archive` API to the `pyodide.http."
-"FetchResponse` object which treats the response body as an archive and uses "
-"`shutil` to unpack it. {pr}`1935`"
+"{{Enhancement}} Added the `unpack_archive` API to the "
+"`pyodide.http.FetchResponse` object which treats the response body as an "
+"archive and uses `shutil` to unpack it. {pr}`1935`"
 msgstr ""
 
 #: ../../../project/changelog.md:2388
@@ -4796,9 +4798,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:2431
 msgid ""
-"{{Enhancement}} Added `JsProxy.to_string`, `JsProxy.to_bytes`, and `JsProxy."
-"to_memoryview` to allow for conversion of `TypedArray` to standard Python "
-"types without unneeded copies. {pr}`1864`"
+"{{Enhancement}} Added `JsProxy.to_string`, `JsProxy.to_bytes`, and "
+"`JsProxy.to_memoryview` to allow for conversion of `TypedArray` to standard "
+"Python types without unneeded copies. {pr}`1864`"
 msgstr ""
 
 #: ../../../project/changelog.md:2436
@@ -5237,9 +5239,10 @@ msgstr ""
 msgid ""
 "{{ Enhancement }} Added `pyodide.console.Console` class closely based on the "
 "Python standard library `code.InteractiveConsole` but with support for top "
-"level await and stream redirection. Also added the subclass `pyodide.console."
-"PyodideConsole` which automatically uses `pyodide.loadPackagesFromImports` "
-"on the code before running it. {pr}`1125`, {pr}`1155`, {pr}`1635`"
+"level await and stream redirection. Also added the subclass "
+"`pyodide.console.PyodideConsole` which automatically uses "
+"`pyodide.loadPackagesFromImports` on the code before running it. {pr}`1125`, "
+"{pr}`1155`, {pr}`1635`"
 msgstr ""
 
 #: ../../../project/changelog.md:2727
@@ -5251,8 +5254,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:2734
 msgid ""
-"{{ API }} `pyodide.runPythonAsync` no longer automatically calls `pyodide."
-"loadPackagesFromImports`. {pr}`1538`."
+"{{ API }} `pyodide.runPythonAsync` no longer automatically calls "
+"`pyodide.loadPackagesFromImports`. {pr}`1538`."
 msgstr ""
 
 #: ../../../project/changelog.md:2737
@@ -5435,10 +5438,10 @@ msgstr ""
 msgid ""
 "{{ Enhancement }} Made `PyProxy` of an iterable Python object an iterable Js "
 "object: defined the `[Symbol.iterator]` method, can be used like `for(let x "
-"of proxy)`. Made a `PyProxy` of a Python iterator an iterator: `proxy."
-"next()` is translated to `next(it)`. Made a `PyProxy` of a Python generator "
-"into a JavaScript generator: `proxy.next(val)` is translated to `gen."
-"send(val)`. {pr}`1180`"
+"of proxy)`. Made a `PyProxy` of a Python iterator an iterator: "
+"`proxy.next()` is translated to `next(it)`. Made a `PyProxy` of a Python "
+"generator into a JavaScript generator: `proxy.next(val)` is translated to "
+"`gen.send(val)`. {pr}`1180`"
 msgstr ""
 
 #: ../../../project/changelog.md:2846
@@ -5539,8 +5542,8 @@ msgstr ""
 #: ../../../project/changelog.md:2893
 msgid ""
 "{{ Fix }} JavaScript functions imported like `from js import fetch` no "
-"longer trigger \"invalid invocation\" errors (issue {issue}`461`) and `js."
-"fetch(\"some_url\")` also works now (issue {issue}`768`). {pr}`1126`"
+"longer trigger \"invalid invocation\" errors (issue {issue}`461`) and "
+"`js.fetch(\"some_url\")` also works now (issue {issue}`768`). {pr}`1126`"
 msgstr ""
 
 #: ../../../project/changelog.md:2897
@@ -5596,9 +5599,10 @@ msgstr ""
 
 #: ../../../project/changelog.md:2922
 msgid ""
-"{{ Fix }} If `messageCallback` and `errorCallback` are supplied to `pyodide."
-"loadPackage`, `pyodide.runPythonAsync` and `pyodide.loadPackagesFromImport`, "
-"then the messages are no longer automatically logged to the console."
+"{{ Fix }} If `messageCallback` and `errorCallback` are supplied to "
+"`pyodide.loadPackage`, `pyodide.runPythonAsync` and "
+"`pyodide.loadPackagesFromImport`, then the messages are no longer "
+"automatically logged to the console."
 msgstr ""
 
 #: ../../../project/changelog.md:2926
@@ -5648,8 +5652,8 @@ msgstr ""
 
 #: ../../../project/changelog.md:2948
 msgid ""
-"{{ Fix }} `micropip.install` now interacts correctly with {js:func}`pyodide."
-"loadPackage`. {pr}`1457`"
+"{{ Fix }} `micropip.install` now interacts correctly with {js:func}"
+"`pyodide.loadPackage`. {pr}`1457`"
 msgstr ""
 
 #: ../../../project/changelog.md:2951
@@ -5717,9 +5721,9 @@ msgstr ""
 
 #: ../../../project/changelog.md:2987
 msgid ""
-"{{ Fix }} Switched from ̀Jedi to rlcompleter for completion in `pyodide."
-"console.InteractiveConsole` and so in `console.html`. This fixes some "
-"completion issues (see {issue}`821` and {issue}`1160`)"
+"{{ Fix }} Switched from ̀Jedi to rlcompleter for completion in "
+"`pyodide.console.InteractiveConsole` and so in `console.html`. This fixes "
+"some completion issues (see {issue}`821` and {issue}`1160`)"
 msgstr ""
 
 #: ../../../project/changelog.md:2990
@@ -5989,8 +5993,8 @@ msgstr ""
 msgid ""
 "The CDN URL for Pyodide changed to https://pyodide-cdn2.iodide.io/v0.15.0/"
 "full/pyodide.js It now supports versioning and should provide faster "
-"downloads. The latest release can be accessed via https://pyodide-cdn2."
-"iodide.io/latest/full/"
+"downloads. The latest release can be accessed via https://pyodide-"
+"cdn2.iodide.io/latest/full/"
 msgstr ""
 
 #: ../../../project/changelog.md:3142

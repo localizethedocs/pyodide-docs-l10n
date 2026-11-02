@@ -189,8 +189,8 @@ msgid ""
 "constant, e.g., `PyDict_GetItemString(dict, \"identifier\")`, then make an "
 "id with `Py_Identifier(identifier)` and then use "
 "`_PyDict_GetItemId(&PyId_identifier)`. If the string is not constant, "
-"convert it to a Python object with `PyUnicode_FromString()` and then use e."
-"g., `PyDict_GetItem`."
+"convert it to a Python object with `PyUnicode_FromString()` and then use "
+"e.g., `PyDict_GetItem`."
 msgstr ""
 
 #: ../../../development/core.md:52
