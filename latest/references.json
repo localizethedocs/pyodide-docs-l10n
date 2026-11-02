@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-09-22 12:43:22 +0900",
-      "hash" : "e4d3ae954d01d61a3e90531d63b881f2d33361b4",
-      "title" : "Support cross-drive paths in windows pyodide cli (#6467)"
+      "date" : "2026-11-02 14:02:15 +0900",
+      "hash" : "bfd6e9554ec8c12ec04a765fe61ef8e4f1cd6d03",
+      "title" : "Add benchmark suites for bootstrap and error conversion (#6517)"
     }
   },
   "type" : "branch",

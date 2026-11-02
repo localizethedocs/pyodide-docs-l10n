@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 17:51+0000\n"
+"POT-Creation-Date: 2026-11-02 18:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -556,8 +556,8 @@ msgstr ""
 
 #: ../../../pyodide build-recipes:1
 msgid ""
-"If true, extract the METADATA file from the built wheels to a matching ``*."
-"whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
+"If true, extract the METADATA file from the built wheels to a matching "
+"``*.whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
 msgstr ""
 
 #: ../../../pyodide build-recipes:1
@@ -640,6 +640,63 @@ msgstr ""
 
 #: ../../../pyodide build-recipes-no-deps:1
 msgid "Don't setup rust environment when building a rust package"
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "Manipulate pyodide-lock.json lockfiles."
+msgstr ""
+
+#: ../../../pyodide main:1
+msgid "pyodide main [OPTIONS] COMMAND [ARGS]..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Add a set of package wheels to an existing pyodide-lock.json and write it "
+"out to pyodide-lock-new.json"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Each package in the wheel will be added to the output lockfile, including "
+"resolution of dependencies in the lock file. By default this will fail if a "
+"dependency isn't available in either the existing lock file, or in the set "
+"of new wheels."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEELS: List of paths to wheel files. (required)"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "pyodide main add-wheels [OPTIONS] WHEELS..."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"If this is true, dependencies which are not in the original lockfile or the "
+"added wheels will be added to the lockfile. Warning: This will allow a "
+"broken lockfile to be created."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Source lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid "Updated lockfile"
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base path for wheels - wheel file names will be created relative to this "
+"path."
+msgstr ""
+
+#: ../../../pyodide main add-wheels:1
+msgid ""
+"Base url which will be appended to the wheel location. Use this if you are "
+"hosting these wheels on a different server to core pyodide packages"
 msgstr ""
 
 #: ../../../pyodide main:1
@@ -840,61 +897,4 @@ msgstr ""
 
 #: ../../../pyodide main:1
 msgid "Disable the periodic update of the embedded wheels."
-msgstr ""
-
-#: ../../../pyodide main:1
-msgid "Manipulate pyodide-lock.json lockfiles."
-msgstr ""
-
-#: ../../../pyodide main:1
-msgid "pyodide main [OPTIONS] COMMAND [ARGS]..."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Add a set of package wheels to an existing pyodide-lock.json and write it "
-"out to pyodide-lock-new.json"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Each package in the wheel will be added to the output lockfile, including "
-"resolution of dependencies in the lock file. By default this will fail if a "
-"dependency isn't available in either the existing lock file, or in the set "
-"of new wheels."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEELS: List of paths to wheel files. (required)"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "pyodide main add-wheels [OPTIONS] WHEELS..."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"If this is true, dependencies which are not in the original lockfile or the "
-"added wheels will be added to the lockfile. Warning: This will allow a "
-"broken lockfile to be created."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "Source lockfile"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid "Updated lockfile"
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Base path for wheels - wheel file names will be created relative to this "
-"path."
-msgstr ""
-
-#: ../../../pyodide main add-wheels:1
-msgid ""
-"Base url which will be appended to the wheel location. Use this if you are "
-"hosting these wheels on a different server to core pyodide packages"
 msgstr ""
