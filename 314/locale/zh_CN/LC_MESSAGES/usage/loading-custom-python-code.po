@@ -68,8 +68,8 @@ msgstr ""
 #: ../../../usage/loading-custom-python-code.md:24
 msgid ""
 "If your Python code contains C extensions, it needs to be built for Pyodide "
-"first (See the [pyodide-build documentation](https://pyodide-build."
-"readthedocs.io/en/latest/))."
+"first (See the [pyodide-build documentation](https://pyodide-"
+"build.readthedocs.io/en/latest/))."
 msgstr ""
 
 #: ../../../usage/loading-custom-python-code.md:28
@@ -92,8 +92,8 @@ msgid ""
 "// Downloading an archive\n"
 "await pyodide.runPythonAsync(`\n"
 "    from pyodide.http import pyfetch\n"
-"    response = await pyfetch(\"https://.../your_package.tar.gz\") # .zip, ."
-"whl, ...\n"
+"    response = await pyfetch(\"https://.../your_package.tar.gz\") "
+"# .zip, .whl, ...\n"
 "    await response.unpack_archive() # by default, unpacks to the current "
 "dir\n"
 "`)\n"
@@ -131,8 +131,8 @@ msgstr ""
 
 #: ../../../usage/loading-custom-python-code.md:68
 msgid ""
-"let response = await fetch(\"https://.../your_package.tar.gz\"); // .zip, ."
-"whl, ...\n"
+"let response = await fetch(\"https://.../"
+"your_package.tar.gz\"); // .zip, .whl, ...\n"
 "let buffer = await response.arrayBuffer();\n"
 "await pyodide.unpackArchive(buffer, \"gztar\"); // by default, unpacks to "
 "the current dir\n"
@@ -161,8 +161,8 @@ msgstr ""
 #: ../../../usage/loading-custom-python-code.md:87
 msgid ""
 "_Future plans:_ we are planning to support a method for a static dependency "
-"resolution (See: [pyodide#2045](https://github.com/pyodide/pyodide/"
-"issues/2045))."
+"resolution (See: [pyodide#2045](https://github.com/pyodide/pyodide/issues/"
+"2045))."
 msgstr ""
 
 #: ../../../usage/loading-custom-python-code.md:91
@@ -177,6 +177,6 @@ msgstr ""
 
 #: ../../../usage/loading-custom-python-code.md:96
 msgid ""
-"pyodide.runPython(await (await fetch(\"https://some_url/.../code.py\"))."
-"text());\n"
+"pyodide.runPython(await (await fetch(\"https://some_url/.../"
+"code.py\")).text());\n"
 msgstr ""

@@ -70,11 +70,11 @@ msgstr ""
 
 #: ../../../usage/service-worker.md:30
 msgid ""
-"You serve `pyodide.mjs`, and all its associated `.asm.mjs`, `.json`, and `."
-"wasm` files as well, though this is not strictly required if `pyodide.mjs` "
+"You serve `pyodide.mjs`, and all its associated `.asm.mjs`, `.json`, and "
+"`.wasm` files as well, though this is not strictly required if `pyodide.mjs` "
 "is pointing to a site serving current versions of these files. The simplest "
-"way to serve the required files is to use a CDN, such as `https://cdn."
-"jsdelivr.net/pyodide`."
+"way to serve the required files is to use a CDN, such as `https://"
+"cdn.jsdelivr.net/pyodide`."
 msgstr ""
 
 #: ../../../usage/service-worker.md:36

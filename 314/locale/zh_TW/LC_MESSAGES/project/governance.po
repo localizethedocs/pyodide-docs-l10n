@@ -123,9 +123,9 @@ msgid ""
 "Decisions about the future of the project are made through discussion with "
 "all members of the community. All non-sensitive project management "
 "discussion takes place on the project contributors' [issue tracker](https://"
-"github.com/Pyodide/Pyodide/issues) and on [Github discussion](https://github."
-"com/Pyodide/Pyodide/discussions). Occasionally, sensitive discussion occurs "
-"on a private communication channels."
+"github.com/Pyodide/Pyodide/issues) and on [Github discussion](https://"
+"github.com/Pyodide/Pyodide/discussions). Occasionally, sensitive discussion "
+"occurs on a private communication channels."
 msgstr ""
 
 #: ../../../project/governance.md:74
