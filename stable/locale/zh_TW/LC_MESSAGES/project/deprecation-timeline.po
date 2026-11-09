@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../project/deprecation-timeline.md:3
 msgid "Pyodide Deprecation Timeline"
-msgstr ""
+msgstr "Pyodide 棄用時間線"
 
 #: ../../../project/deprecation-timeline.md:5
 msgid ""
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../../project/deprecation-timeline.md:31
 msgid "`Py2JsResult` will be removed."
-msgstr ""
+msgstr "將會移除 `Py2JsResult`。"
 
 #: ../../../project/deprecation-timeline.md:33
 msgid "The `--output-directory` argument to `pyodide build` will be removed."

@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../../../src/py/pyodide/webloop.py:docstring of pyodide.webloop:1
 msgid "**Classes:**"
-msgstr ""
+msgstr "**類別：**"
 
 #: ../../../../src/py/pyodide/webloop.py:docstring of
 #: pyodide.webloop.PyodideFuture:1:<autosummary>:1
@@ -97,11 +97,11 @@ msgstr ""
 
 #: ../../../usage/api/python-api/webloop.md:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../usage/api/python-api/webloop.md:0
 msgid "Return type"
-msgstr ""
+msgstr "回傳值型別"
 
 #: ../../../../src/py/pyodide/webloop.py:docstring of
 #: pyodide.webloop.PyodideFuture.catch:5

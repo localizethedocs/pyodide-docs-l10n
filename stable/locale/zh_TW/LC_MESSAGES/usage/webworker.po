@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../../usage/webworker.md:29
 msgid "Detailed example"
-msgstr ""
+msgstr "詳細範例"
 
 #: ../../../usage/webworker.md:31
 msgid "In this example process we will have three parties involved:"

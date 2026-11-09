@@ -4798,7 +4798,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:2382 ../../../project/changelog.md:2506
 msgid "Type translations"
-msgstr ""
+msgstr "型別轉換"
 
 #: ../../../project/changelog.md:2384
 msgid ""

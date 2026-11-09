@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid ":any:`PyodideAPI <exports.PyodideAPI>`\\"
-msgstr ""
+msgstr ":any:`PyodideAPI <exports.PyodideAPI>`\\"
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid "The return type of :js:func:`~exports.loadPyodide`."
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid ":any:`PyodideConfig <exports.PyodideConfig>`\\"
-msgstr ""
+msgstr ":any:`PyodideConfig <exports.PyodideConfig>`\\"
 
 #: ../../../usage/api/js-api.md:11
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid ":any:`version <exports.version>`\\"
-msgstr ""
+msgstr ":any:`version <exports.version>`\\"
 
 #: ../../../usage/api/js-api.md:263 ../../../usage/api/js-api.md:367
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
@@ -65,11 +65,13 @@ msgid ""
 "**async** :any:`loadPyodide <exports.loadPyodide>`\\ **\\(options\\=\\{\\}"
 "\\)**"
 msgstr ""
+"**async** :any:`loadPyodide <exports.loadPyodide>`\\ **\\(options\\=\\{\\}"
+"\\)**"
 
 #: ../../../usage/api/js-api.md:273
 #: ../../../usage/api/js-api.md:12:<autosummary>:1
 msgid "Load the main Pyodide wasm module and initialize it."
-msgstr ""
+msgstr "載入 Pyodide 主要的 wasm 模組並進行初始化。"
 
 #: ../../../usage/api/js-api.md:5
 msgid ""
@@ -295,11 +297,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:0
 msgid "Arguments"
-msgstr ""
+msgstr "引數"
 
 #: ../../../usage/api/js-api.md:0
 msgid "Returns"
-msgstr ""
+msgstr "回傳值"
 
 #: ../../../usage/api/js-api.md:224 ../../../usage/api/js-api.md:394
 #: ../../../usage/api/js-api.md:820
@@ -381,7 +383,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`BatchedWriteHandler <pyodide.BatchedWriteHandler>`\\"
-msgstr ""
+msgstr ":any:`BatchedWriteHandler <pyodide.BatchedWriteHandler>`\\"
 
 #: ../../../usage/api/js-api.md:5
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -392,7 +394,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`Lockfile <pyodide.Lockfile>`\\"
-msgstr ""
+msgstr ":any:`Lockfile <pyodide.Lockfile>`\\"
 
 #: ../../../usage/api/js-api.md:21
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -401,7 +403,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`LockfileInfo <pyodide.LockfileInfo>`\\"
-msgstr ""
+msgstr ":any:`LockfileInfo <pyodide.LockfileInfo>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "The lockfile platform info."
@@ -409,7 +411,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`LockfilePackage <pyodide.LockfilePackage>`\\"
-msgstr ""
+msgstr ":any:`LockfilePackage <pyodide.LockfilePackage>`\\"
 
 #: ../../../usage/api/js-api.md:94
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -418,11 +420,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`PackageData <pyodide.PackageData>`\\"
-msgstr ""
+msgstr ":any:`PackageData <pyodide.PackageData>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`RawWriteHandler <pyodide.RawWriteHandler>`\\"
-msgstr ""
+msgstr ":any:`RawWriteHandler <pyodide.RawWriteHandler>`\\"
 
 #: ../../../usage/api/js-api.md:193
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -433,7 +435,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`Writer <pyodide.Writer>`\\"
-msgstr ""
+msgstr ":any:`Writer <pyodide.Writer>`\\"
 
 #: ../../../usage/api/js-api.md:225
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -444,7 +446,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`ERRNO_CODES <pyodide.ERRNO_CODES>`\\"
-msgstr ""
+msgstr ":any:`ERRNO_CODES <pyodide.ERRNO_CODES>`\\"
 
 #: ../../../usage/api/js-api.md:266
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -453,7 +455,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`FS <pyodide.FS>`\\"
-msgstr ""
+msgstr ":any:`FS <pyodide.FS>`\\"
 
 #: ../../../usage/api/js-api.md:275
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -464,7 +466,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`PATH <pyodide.PATH>`\\"
-msgstr ""
+msgstr ":any:`PATH <pyodide.PATH>`\\"
 
 #: ../../../usage/api/js-api.md:296
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -475,7 +477,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":ref:`canvas <js-api-pyodide-canvas>`\\"
-msgstr ""
+msgstr ":ref:`canvas <js-api-pyodide-canvas>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "APIs to set a canvas for rendering graphics."
@@ -483,7 +485,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":ref:`ffi <js-api-pyodide-ffi>`\\"
-msgstr ""
+msgstr ":ref:`ffi <js-api-pyodide-ffi>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Foreign function interface classes."
@@ -491,7 +493,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`globals <pyodide.globals>`\\"
-msgstr ""
+msgstr ":any:`globals <pyodide.globals>`\\"
 
 #: ../../../usage/api/js-api.md:309
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -500,7 +502,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`loadedPackages <pyodide.loadedPackages>`\\"
-msgstr ""
+msgstr ":any:`loadedPackages <pyodide.loadedPackages>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -510,7 +512,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`lockfile <pyodide.lockfile>`\\"
-msgstr ""
+msgstr ":any:`lockfile <pyodide.lockfile>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Returns the pyodide lockfile used to load the current Pyodide instance."
@@ -518,7 +520,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`lockfileBaseUrl <pyodide.lockfileBaseUrl>`\\"
-msgstr ""
+msgstr ":any:`lockfileBaseUrl <pyodide.lockfileBaseUrl>`\\"
 
 #: ../../../usage/api/js-api.md:345
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -529,7 +531,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`pyodide_py <pyodide.pyodide_py>`\\"
-msgstr ""
+msgstr ":any:`pyodide_py <pyodide.pyodide_py>`\\"
 
 #: ../../../usage/api/js-api.md:355
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -538,11 +540,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`version <pyodide.version>`\\"
-msgstr ""
+msgstr ":any:`version <pyodide.version>`\\"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`checkInterrupt <pyodide.checkInterrupt>`\\ **\\(\\)**"
-msgstr ""
+msgstr ":any:`checkInterrupt <pyodide.checkInterrupt>`\\ **\\(\\)**"
 
 #: ../../../usage/api/js-api.md:376
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -556,6 +558,8 @@ msgid ""
 "**async** :any:`initializeNodeSockFS <pyodide.initializeNodeSockFS>`\\ **\\"
 "(connectFunc\\)**"
 msgstr ""
+"**async** :any:`initializeNodeSockFS <pyodide.initializeNodeSockFS>`\\ **\\"
+"(connectFunc\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Initialize NodeSockFS."
@@ -566,6 +570,8 @@ msgid ""
 "**async** :any:`loadPackage <pyodide.loadPackage>`\\ **\\(names\\, "
 "options\\)**"
 msgstr ""
+"**async** :any:`loadPackage <pyodide.loadPackage>`\\ **\\(names\\, "
+"options\\)**"
 
 #: ../../../usage/api/js-api.md:400
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -577,6 +583,8 @@ msgid ""
 "**async** :any:`loadPackagesFromImports <pyodide.loadPackagesFromImports>`\\ "
 "**\\(code\\, options\\)**"
 msgstr ""
+"**async** :any:`loadPackagesFromImports <pyodide.loadPackagesFromImports>`\\ "
+"**\\(code\\, options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -589,6 +597,8 @@ msgid ""
 "**async** :any:`mountNativeFS <pyodide.mountNativeFS>`\\ **\\(path\\, "
 "fileSystemHandle\\)**"
 msgstr ""
+"**async** :any:`mountNativeFS <pyodide.mountNativeFS>`\\ **\\(path\\, "
+"fileSystemHandle\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -600,6 +610,8 @@ msgid ""
 ":any:`mountNodeFS <pyodide.mountNodeFS>`\\ **\\(emscriptenPath\\, "
 "hostPath\\)**"
 msgstr ""
+":any:`mountNodeFS <pyodide.mountNodeFS>`\\ **\\(emscriptenPath\\, "
+"hostPath\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Mounts a host directory into Pyodide file system."
@@ -607,7 +619,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`pyimport <pyodide.pyimport>`\\ **\\(mod\\_name\\)**"
-msgstr ""
+msgstr ":any:`pyimport <pyodide.pyimport>`\\ **\\(mod\\_name\\)**"
 
 #: ../../../usage/api/js-api.md:481
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -616,7 +628,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`registerComlink <pyodide.registerComlink>`\\ **\\(Comlink\\)**"
-msgstr ""
+msgstr ":any:`registerComlink <pyodide.registerComlink>`\\ **\\(Comlink\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Tell Pyodide about Comlink."
@@ -626,6 +638,7 @@ msgstr ""
 msgid ""
 ":any:`registerJsModule <pyodide.registerJsModule>`\\ **\\(name\\, module\\)**"
 msgstr ""
+":any:`registerJsModule <pyodide.registerJsModule>`\\ **\\(name\\, module\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -635,7 +648,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`runPython <pyodide.runPython>`\\ **\\(code\\, options\\)**"
-msgstr ""
+msgstr ":any:`runPython <pyodide.runPython>`\\ **\\(code\\, options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -648,6 +661,8 @@ msgid ""
 "**async** :any:`runPythonAsync <pyodide.runPythonAsync>`\\ **\\(code\\, "
 "options\\)**"
 msgstr ""
+"**async** :any:`runPythonAsync <pyodide.runPythonAsync>`\\ **\\(code\\, "
+"options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -657,7 +672,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`setDebug <pyodide.setDebug>`\\ **\\(debug\\)**"
-msgstr ""
+msgstr ":any:`setDebug <pyodide.setDebug>`\\ **\\(debug\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Turn on or off debug mode."
@@ -668,6 +683,8 @@ msgid ""
 ":any:`setInterruptBuffer <pyodide.setInterruptBuffer>`\\ **\\"
 "(interrupt\\_buffer\\)**"
 msgstr ""
+":any:`setInterruptBuffer <pyodide.setInterruptBuffer>`\\ **\\"
+"(interrupt\\_buffer\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Sets the interrupt buffer to be ``interrupt_buffer``."
@@ -675,7 +692,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`setStderr <pyodide.setStderr>`\\ **\\(options\\)**"
-msgstr ""
+msgstr ":any:`setStderr <pyodide.setStderr>`\\ **\\(options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Sets the standard error handler."
@@ -683,7 +700,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`setStdin <pyodide.setStdin>`\\ **\\(options\\)**"
-msgstr ""
+msgstr ":any:`setStdin <pyodide.setStdin>`\\ **\\(options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Set a stdin handler."
@@ -691,7 +708,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`setStdout <pyodide.setStdout>`\\ **\\(options\\)**"
-msgstr ""
+msgstr ":any:`setStdout <pyodide.setStdout>`\\ **\\(options\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "Sets the standard out handler."
@@ -699,7 +716,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`toPy <pyodide.toPy>`\\ **\\(obj\\, options\\)**"
-msgstr ""
+msgstr ":any:`toPy <pyodide.toPy>`\\ **\\(obj\\, options\\)**"
 
 #: ../../../usage/api/js-api.md:771
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -711,6 +728,8 @@ msgid ""
 ":any:`unpackArchive <pyodide.unpackArchive>`\\ **\\(buffer\\, format\\, "
 "options\\)**"
 msgstr ""
+":any:`unpackArchive <pyodide.unpackArchive>`\\ **\\(buffer\\, format\\, "
+"options\\)**"
 
 #: ../../../usage/api/js-api.md:791
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -720,6 +739,7 @@ msgstr ""
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ":any:`unregisterJsModule <pyodide.unregisterJsModule>`\\ **\\(name\\)**"
 msgstr ""
+":any:`unregisterJsModule <pyodide.unregisterJsModule>`\\ **\\(name\\)**"
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid ""
@@ -730,7 +750,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
 msgid "**async** :any:`useNodeSockFS <pyodide.useNodeSockFS>`\\ **\\(\\)**"
-msgstr ""
+msgstr "**async** :any:`useNodeSockFS <pyodide.useNodeSockFS>`\\ **\\(\\)**"
 
 #: ../../../usage/api/js-api.md:818
 #: ../../../usage/api/js-api.md:25:<autosummary>:1
@@ -1603,11 +1623,11 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`TypedArray <pyodide.ffi.TypedArray>`\\"
-msgstr ""
+msgstr ":any:`TypedArray <pyodide.ffi.TypedArray>`\\"
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyAsyncGenerator <pyodide.ffi.PyAsyncGenerator>`\\"
-msgstr ""
+msgstr ":any:`PyAsyncGenerator <pyodide.ffi.PyAsyncGenerator>`\\"
 
 #: ../../../usage/api/js-api.md:12
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1619,7 +1639,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyAsyncIterable <pyodide.ffi.PyAsyncIterable>`\\"
-msgstr ""
+msgstr ":any:`PyAsyncIterable <pyodide.ffi.PyAsyncIterable>`\\"
 
 #: ../../../usage/api/js-api.md:48
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1631,7 +1651,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyAsyncIterator <pyodide.ffi.PyAsyncIterator>`\\"
-msgstr ""
+msgstr ":any:`PyAsyncIterator <pyodide.ffi.PyAsyncIterator>`\\"
 
 #: ../../../usage/api/js-api.md:66
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1642,7 +1662,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyAwaitable <pyodide.ffi.PyAwaitable>`\\"
-msgstr ""
+msgstr ":any:`PyAwaitable <pyodide.ffi.PyAwaitable>`\\"
 
 #: ../../../usage/api/js-api.md:88
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1654,7 +1674,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyBuffer <pyodide.ffi.PyBuffer>`\\"
-msgstr ""
+msgstr ":any:`PyBuffer <pyodide.ffi.PyBuffer>`\\"
 
 #: ../../../usage/api/js-api.md:131
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1665,7 +1685,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyBufferView <pyodide.ffi.PyBufferView>`\\"
-msgstr ""
+msgstr ":any:`PyBufferView <pyodide.ffi.PyBufferView>`\\"
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid "A class to allow access to Python data buffers from JavaScript."
@@ -1673,7 +1693,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyCallable <pyodide.ffi.PyCallable>`\\"
-msgstr ""
+msgstr ":any:`PyCallable <pyodide.ffi.PyCallable>`\\"
 
 #: ../../../usage/api/js-api.md:352
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1684,7 +1704,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyDict <pyodide.ffi.PyDict>`\\"
-msgstr ""
+msgstr ":any:`PyDict <pyodide.ffi.PyDict>`\\"
 
 #: ../../../usage/api/js-api.md:525
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
@@ -1695,7 +1715,7 @@ msgstr ""
 
 #: ../../../usage/api/js-api.md:55:<autosummary>:1
 msgid ":any:`PyGenerator <pyodide.ffi.PyGenerator>`\\"
-msgstr ""
+msgstr ":any:`PyGenerator <pyodide.ffi.PyGenerator>`\\"
 
 #: ../../../usage/api/js-api.md:538
 #: ../../../usage/api/js-api.md:55:<autosummary>:1

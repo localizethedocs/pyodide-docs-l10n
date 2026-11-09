@@ -669,7 +669,7 @@ msgstr ""
 #: domains/c/__init__.py:306 domains/javascript.py:263
 #: domains/python/_object.py:178
 msgid "Return type"
-msgstr ""
+msgstr "回傳值型別"
 
 #: domains/javascript.py:334
 #, python-format
@@ -2129,7 +2129,7 @@ msgstr ""
 
 #: _cli/__init__.py:98
 msgid "Options"
-msgstr ""
+msgstr "選項"
 
 #: _cli/__init__.py:112 _cli/__init__.py:183
 msgid "For more information, visit https://www.sphinx-doc.org/en/master/man/."
@@ -2975,7 +2975,7 @@ msgstr ""
 #: domains/c/__init__.py:298 domains/cpp/__init__.py:436
 #: domains/python/_object.py:164 ext/napoleon/docstring.py:786
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: domains/python/_object.py:169
 msgid "Variables"
@@ -3688,7 +3688,7 @@ msgstr "範例"
 
 #: ext/napoleon/docstring.py:708
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: ext/napoleon/__init__.py:344 ext/napoleon/docstring.py:752
 msgid "Keyword Arguments"
