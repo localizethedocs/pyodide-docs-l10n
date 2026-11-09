@@ -440,7 +440,7 @@ msgstr ""
 
 #: ../../../development/building-from-sources.md:244
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: ../../../development/building-from-sources.md:246
 msgid "The following environment variables additionally impact the build:"

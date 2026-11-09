@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../project/roadmap.md:1
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: ../../../project/roadmap.md:3
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../project/roadmap.md:8
 msgid "Improve documentation"
-msgstr ""
+msgstr "改善文件"
 
 #: ../../../project/roadmap.md:10
 msgid ""
@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../../../project/roadmap.md:25
 msgid "See issue {issue}`646`."
-msgstr ""
+msgstr "請參見議題 {issue}`646`。"
 
 #: ../../../project/roadmap.md:27
 msgid "Improve performance of Python code in Pyodide"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../../project/roadmap.md:41
 msgid "See issue {issue}`1120`."
-msgstr ""
+msgstr "請參見議題 {issue}`1120`。"
 
 #: ../../../project/roadmap.md:43
 msgid "Find a better way to compile Fortran"
@@ -183,4 +183,4 @@ msgstr ""
 
 #: ../../../project/roadmap.md:98
 msgid "See issue {issue}`140`."
-msgstr ""
+msgstr "請參見議題 {issue}`140`。"
