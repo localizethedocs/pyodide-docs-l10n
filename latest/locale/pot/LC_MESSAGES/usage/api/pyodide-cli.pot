@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 17:51+0000\n"
+"POT-Creation-Date: 2026-11-09 18:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,113 +67,19 @@ msgid "Show the version of the Pyodide CLI"
 msgstr ""
 
 #: ../../../pyodide app:1
-msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
+msgid "Clean build artifacts."
 msgstr ""
 
 #: ../../../pyodide app:1
 msgid "pyodide app [OPTIONS] COMMAND [ARGS]..."
 msgstr ""
 
-#: ../../../pyodide app copy:1
-msgid ""
-"[Deprecated] Copy shared libraries to the wheel directory. Works same as "
-"`repair`. Use `repair` instead."
+#: ../../../pyodide app recipes:1
+msgid "Remove build artifacts for recipe packages."
 msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "Arguments:"
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEEL_FILE: Path to wheel file. (required)"
-msgstr ""
-
-#: ../../../pyodide app copy:1
-msgid "pyodide app copy [OPTIONS] WHEEL_FILE"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid "Path to the directory containing the shared libraries."
-msgstr ""
-
-#: ../../../pyodide app copy:0 exports:0 imports:0 repair:0 build-recipes:0
-#: main:0
-msgid "default"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid "``'lib'``"
-msgstr ""
-
-#: ../../../pyodide app copy:1 repair:1
-msgid ""
-"Directory to output repaired wheel or shared library. (default: overwrite "
-"the input file)"
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "Arguments"
-msgstr ""
-
-#: ../../../pyodide app copy:1 exports:1 get:1 imports:1 pypi:1 repair:1 show:1
-#: use:1 main:1
-msgid "Required argument"
-msgstr ""
-
-#: ../../../pyodide app exports:1
-msgid "Show exports of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../usage/api/pyodide-cli.md:0
-msgid "WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)"
-msgstr ""
-
-#: ../../../pyodide app exports:1
-msgid "pyodide app exports [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
-
-#: ../../../pyodide app exports:1 imports:1
-msgid "Show function type."
-msgstr ""
-
-#: ../../../pyodide app exports:1 imports:1
-msgid "``False``"
-msgstr ""
-
-#: ../../../pyodide app imports:1
-msgid "Show imports of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../pyodide app imports:1
-msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
-
-#: ../../../pyodide app repair:1
-msgid "Repair a wheel file: copy shared libraries to the wheel directory."
-msgstr ""
-
-#: ../../../pyodide app repair:1
-msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
-msgstr ""
-
-#: ../../../pyodide app repair:1 show:1
-msgid "Show runtime paths."
-msgstr ""
-
-#: ../../../pyodide app show:1
-msgid "Show shared library dependencies of a wheel or a shared library file."
-msgstr ""
-
-#: ../../../pyodide app show:1
-msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
-
-#: ../../../pyodide app:1
-msgid "Clean build artifacts."
-msgstr ""
-
-#: ../../../pyodide app recipes:1
-msgid "Remove build artifacts for recipe packages."
 msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
@@ -194,6 +100,10 @@ msgstr ""
 msgid ""
 "Directory where package build artifacts are stored. Defaults to recipe "
 "directory."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "Arguments"
 msgstr ""
 
 #: ../../../pyodide app recipes:1
@@ -223,6 +133,11 @@ msgstr ""
 
 #: ../../../pyodide app get:1
 msgid "pyodide app get [OPTIONS] CONFIG_VAR"
+msgstr ""
+
+#: ../../../pyodide app copy:1 exports:1 get:1 imports:1 pypi:1 repair:1 show:1
+#: use:1 main:1
+msgid "Required argument"
 msgstr ""
 
 #: ../../../pyodide app list:1
@@ -517,6 +432,91 @@ msgstr ""
 msgid "pyodide app versions [OPTIONS]"
 msgstr ""
 
+#: ../../../pyodide app:1
+msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
+msgstr ""
+
+#: ../../../pyodide app copy:1
+msgid ""
+"[Deprecated] Copy shared libraries to the wheel directory. Works same as "
+"`repair`. Use `repair` instead."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_FILE: Path to wheel file. (required)"
+msgstr ""
+
+#: ../../../pyodide app copy:1
+msgid "pyodide app copy [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "Path to the directory containing the shared libraries."
+msgstr ""
+
+#: ../../../pyodide app copy:0 exports:0 imports:0 repair:0 build-recipes:0
+#: main:0
+msgid "default"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid "``'lib'``"
+msgstr ""
+
+#: ../../../pyodide app copy:1 repair:1
+msgid ""
+"Directory to output repaired wheel or shared library. (default: overwrite "
+"the input file)"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "Show exports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../usage/api/pyodide-cli.md:0
+msgid "WHEEL_OR_SO_FILE: Path to wheel or a shared library file. (required)"
+msgstr ""
+
+#: ../../../pyodide app exports:1
+msgid "pyodide app exports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "Show function type."
+msgstr ""
+
+#: ../../../pyodide app exports:1 imports:1
+msgid "``False``"
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "Show imports of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app imports:1
+msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "Repair a wheel file: copy shared libraries to the wheel directory."
+msgstr ""
+
+#: ../../../pyodide app repair:1
+msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
+msgstr ""
+
+#: ../../../pyodide app repair:1 show:1
+msgid "Show runtime paths."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "Show shared library dependencies of a wheel or a shared library file."
+msgstr ""
+
+#: ../../../pyodide app show:1
+msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
+msgstr ""
+
 #: ../../../pyodide build-recipes:1
 msgid "Build packages using yaml recipes."
 msgstr ""
@@ -556,8 +556,8 @@ msgstr ""
 
 #: ../../../pyodide build-recipes:1
 msgid ""
-"If true, extract the METADATA file from the built wheels to a matching ``*."
-"whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
+"If true, extract the METADATA file from the built wheels to a matching "
+"``*.whl.metadata`` file. If false, no ``*.whl.metadata`` file is produced."
 msgstr ""
 
 #: ../../../pyodide build-recipes:1
