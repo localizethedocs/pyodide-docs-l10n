@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../development/abi/312.md:1
 msgid "pyemscripten_2024_0"
-msgstr ""
+msgstr "pyemscripten_2024_0"
 
 #: ../../../development/abi/312.md:3
 msgid ""
@@ -33,23 +33,23 @@ msgstr ""
 
 #: ../../../development/abi/312.md:10
 msgid "ABI Specification"
-msgstr ""
+msgstr "ABI 規格"
 
 #: ../../../development/abi/312.md:12
 msgid "CPython and Emscripten Version"
-msgstr ""
+msgstr "CPython 與 Emscripten 版本"
 
 #: ../../../development/abi/312.md:14
 msgid "**CPython**: 3.12"
-msgstr ""
+msgstr "**CPython**：3.12"
 
 #: ../../../development/abi/312.md:15
 msgid "**Emscripten**: 3.1.58"
-msgstr ""
+msgstr "**Emscripten**：3.1.58"
 
 #: ../../../development/abi/312.md:17
 msgid "WASM_BIGINT"
-msgstr ""
+msgstr "WASM_BIGINT"
 
 #: ../../../development/abi/312.md:19
 msgid "All shared libraries must be linked with `-sWASM_BIGINT`."
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../development/abi/312.md:34
 msgid "Rust Toolchain"
-msgstr ""
+msgstr "Rust 工具鏈"
 
 #: ../../../development/abi/312.md:36
 msgid ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../../../development/abi/312.md:38
 msgid "Runtime Library Loading Path"
-msgstr ""
+msgstr "執行時程式庫載入路徑"
 
 #: ../../../development/abi/312.md:40
 msgid ""
@@ -112,47 +112,47 @@ msgstr ""
 
 #: ../../../development/abi/312.md:51
 msgid "`libegl.js`"
-msgstr ""
+msgstr "`libegl.js`"
 
 #: ../../../development/abi/312.md:52
 msgid "`libeventloop.js`"
-msgstr ""
+msgstr "`libeventloop.js`"
 
 #: ../../../development/abi/312.md:53
 msgid "`libGL`"
-msgstr ""
+msgstr "`libGL`"
 
 #: ../../../development/abi/312.md:54
 msgid "`libhtml5_webgl.js`"
-msgstr ""
+msgstr "`libhtml5_webgl.js`"
 
 #: ../../../development/abi/312.md:55
 msgid "`libhtml5.js`"
-msgstr ""
+msgstr "`libhtml5.js`"
 
 #: ../../../development/abi/312.md:56
 msgid "`liblz4`"
-msgstr ""
+msgstr "`liblz4`"
 
 #: ../../../development/abi/312.md:57
 msgid "`libsdl.js`"
-msgstr ""
+msgstr "`libsdl.js`"
 
 #: ../../../development/abi/312.md:58
 msgid "`libwebgl.js`"
-msgstr ""
+msgstr "`libwebgl.js`"
 
 #: ../../../development/abi/312.md:59
 msgid "`libwebsocket.js`"
-msgstr ""
+msgstr "`libwebsocket.js`"
 
 #: ../../../development/abi/312.md:60
 msgid "`bzip2`"
-msgstr ""
+msgstr "`bzip2`"
 
 #: ../../../development/abi/312.md:61
 msgid "`zlib`"
-msgstr ""
+msgstr "`zlib`"
 
 #: ../../../development/abi/312.md:63
 msgid ""

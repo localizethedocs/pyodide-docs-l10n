@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../usage/api/python-api/code.md:1
 msgid "pyodide.code"
-msgstr ""
+msgstr "pyodide.code"
 
 #: ../../../../src/py/pyodide/code.py:docstring of pyodide.code:1
 msgid "**Classes:**"
-msgstr ""
+msgstr "**類別：**"
 
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: pyodide.code:1:<autosummary>:1
@@ -31,6 +31,8 @@ msgid ""
 ":py:obj:`CodeRunner <pyodide.code.CodeRunner>`\\ \\(source\\, \\*\\[\\, "
 "return\\_mode\\, mode\\, ...\\]\\)"
 msgstr ""
+":py:obj:`CodeRunner <pyodide.code.CodeRunner>`\\ \\(source\\, \\*\\[\\, "
+"return\\_mode\\, mode\\, ...\\]\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1 ../../../../src/py/pyodide/code.py:docstring
@@ -40,7 +42,7 @@ msgstr ""
 
 #: ../../../../src/py/pyodide/code.py:docstring of pyodide.code:1
 msgid "**Functions:**"
-msgstr ""
+msgstr "**函數：**"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -48,6 +50,8 @@ msgid ""
 ":py:obj:`eval_code <pyodide.code.eval_code>`\\ \\(source\\[\\, globals\\, "
 "locals\\, ...\\]\\)"
 msgstr ""
+":py:obj:`eval_code <pyodide.code.eval_code>`\\ \\(source\\[\\, globals\\, "
+"locals\\, ...\\]\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -61,6 +65,8 @@ msgid ""
 ":py:obj:`eval_code_async <pyodide.code.eval_code_async>`\\ \\(source\\[\\, "
 "globals\\, locals\\, ...\\]\\)"
 msgstr ""
+":py:obj:`eval_code_async <pyodide.code.eval_code_async>`\\ \\(source\\[\\, "
+"globals\\, locals\\, ...\\]\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -72,7 +78,7 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
 msgid ":py:obj:`find_imports <pyodide.code.find_imports>`\\ \\(source\\)"
-msgstr ""
+msgstr ":py:obj:`find_imports <pyodide.code.find_imports>`\\ \\(source\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -86,6 +92,8 @@ msgid ""
 ":py:obj:`relaxed_call <pyodide.code.relaxed_call>`\\ \\(func\\, \\*args\\, "
 "\\*\\*kwargs\\)"
 msgstr ""
+":py:obj:`relaxed_call <pyodide.code.relaxed_call>`\\ \\(func\\, \\*args\\, "
+"\\*\\*kwargs\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -96,7 +104,7 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
 msgid ":py:obj:`relaxed_wrap <pyodide.code.relaxed_wrap>`\\ \\(func\\)"
-msgstr ""
+msgstr ":py:obj:`relaxed_wrap <pyodide.code.relaxed_wrap>`\\ \\(func\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -107,7 +115,7 @@ msgstr ""
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
 msgid ":py:obj:`run_js <pyodide.code.run_js>`\\ \\(code\\, \\/\\)"
-msgstr ""
+msgstr ":py:obj:`run_js <pyodide.code.run_js>`\\ \\(code\\, \\/\\)"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:1:<autosummary>:1
@@ -141,7 +149,7 @@ msgstr ""
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: _pyodide._base.find_imports:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:10 ../../../../src/py/pyodide/code.py:docstring
@@ -169,7 +177,7 @@ msgstr ""
 #: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
 #: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
 msgid "'last_expr'"
-msgstr ""
+msgstr "'last_expr'"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:14 ../../../../src/py/pyodide/code.py:docstring
@@ -181,7 +189,7 @@ msgstr ""
 #: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
 #: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
 msgid "'last_expr_or_assign'"
-msgstr ""
+msgstr "'last_expr_or_assign'"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:15 ../../../../src/py/pyodide/code.py:docstring
@@ -193,13 +201,13 @@ msgstr ""
 #: _pyodide._base.CodeRunner:0 ../../../../src/py/pyodide/code.py:docstring
 #: _pyodide._base.eval_code:0 _pyodide._base.eval_code_async:0
 msgid "'none'"
-msgstr ""
+msgstr "'none'"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:18 ../../../../src/py/pyodide/code.py:docstring
 #: _pyodide._base.eval_code:20 _pyodide._base.eval_code_async:22
 msgid "always return ``None``."
-msgstr ""
+msgstr "始終回傳 ``None``。"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner:20
@@ -261,7 +269,7 @@ msgstr ""
 #: _pyodide._base.eval_code:43 _pyodide._base.find_imports:15
 #: _pyodide._base.should_quiet:7
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: ../../../docstring of pyodide.code.CodeRunner.ast:1
 msgid ""
@@ -292,7 +300,7 @@ msgstr ""
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: _pyodide._base.find_imports:0
 msgid "Return type"
-msgstr ""
+msgstr "回傳值型別"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner.compile:6
@@ -300,6 +308,8 @@ msgid ""
 ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~\\_pyodide."
 "\\_base.CodeRunner\\``"
 msgstr ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`\\~\\_pyodide."
+"\\_base.CodeRunner\\``"
 
 #: ../../../../src/py/_pyodide/_base.py:docstring of
 #: _pyodide._base.CodeRunner.run:1
@@ -435,6 +445,9 @@ msgid ""
 "\\`\\~collections.abc.Callable\\`\\\\ \\\\\\[\\:py\\:data\\:\\`..."
 "\\<Ellipsis\\>\\`\\, \\`\\`RetType\\`\\`\\]`"
 msgstr ""
+":sphinx_autodoc_typehints_type:`\\:py\\:class\\:"
+"\\`\\~collections.abc.Callable\\`\\\\ \\\\\\[\\:py\\:data\\:\\`..."
+"\\<Ellipsis\\>\\`\\, \\`\\`RetType\\`\\`\\]`"
 
 #: ../../../../src/py/pyodide/code.py:docstring of pyodide.code.run_js:3
 msgid ""
@@ -446,7 +459,7 @@ msgstr ""
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: _pyodide._base.should_quiet:3
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
 
 #: ../../../../src/py/pyodide/code.py:docstring of
 #: _pyodide._base.should_quiet:4

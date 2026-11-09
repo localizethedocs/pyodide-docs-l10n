@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../../project/release-notes/v0.17.0.md:127
 msgid "Changes to type translations"
-msgstr ""
+msgstr "型別轉換變更"
 
 #: ../../../project/release-notes/v0.17.0.md:129
 msgid ""

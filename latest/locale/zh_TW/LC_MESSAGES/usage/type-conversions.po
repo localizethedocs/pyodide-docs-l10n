@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:3
 msgid "Type translations"
-msgstr ""
+msgstr "型別轉換"
 
 #: ../../../usage/type-conversions.md:5
 msgid ""
@@ -46,21 +46,22 @@ msgstr ""
 #: ../../../usage/type-conversions.md:21
 msgid ""
 "when returning the final expression from a {js:func}`pyodide.runPython` call,"
-msgstr ""
+msgstr "從 {js:func}`pyodide.runPython` 呼叫回傳最終表達式時，"
 
 #: ../../../usage/type-conversions.md:22
 msgid ""
 "when [importing Python objects into JavaScript](type-translations_using-py-"
 "obj-from-js)"
 msgstr ""
+"[將 Python 物件匯入 JavaScript](type-translations_using-py-obj-from-js) 時"
 
 #: ../../../usage/type-conversions.md:23
 msgid "when passing arguments to a JavaScript function called from Python,"
-msgstr ""
+msgstr "將引數傳遞給從 Python 呼叫的 JavaScript 函數時，"
 
 #: ../../../usage/type-conversions.md:24
 msgid "when returning the results of a Python function called from JavaScript,"
-msgstr ""
+msgstr "回傳從 JavaScript 呼叫的 Python 函數的結果時，"
 
 #: ../../../usage/type-conversions.md:25
 msgid "when accessing an attribute of a {js:class}`~pyodide.ffi.PyProxy`"
@@ -68,7 +69,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:27
 msgid "JavaScript to Python translations occur:"
-msgstr ""
+msgstr "JavaScript 轉換為 Python 會發生於："
 
 #: ../../../usage/type-conversions.md:29
 msgid ""
@@ -138,7 +139,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:69 ../../../usage/type-conversions.md:317
 msgid "Python to JavaScript"
-msgstr ""
+msgstr "Python 轉 JavaScript"
 
 #: ../../../usage/type-conversions.md:71
 msgid ""
@@ -149,68 +150,68 @@ msgstr ""
 #: ../../../usage/type-conversions.md:34 ../../../usage/type-conversions.md:300
 #: ../../../usage/type-conversions.md:355
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../../usage/type-conversions.md:34 ../../../usage/type-conversions.md:300
 #: ../../../usage/type-conversions.md:355
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:class}`int`"
-msgstr ""
+msgstr "{py:class}`int`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`Number` or {js:data}`BigInt`\\*"
-msgstr ""
+msgstr "{js:data}`Number` 或 {js:data}`BigInt`\\*"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:class}`float`"
-msgstr ""
+msgstr "{py:class}`float`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`Number`"
-msgstr ""
+msgstr "{js:data}`Number`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:class}`str`"
-msgstr ""
+msgstr "{py:class}`str`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`String`"
-msgstr ""
+msgstr "{js:data}`String`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:class}`bool`"
-msgstr ""
+msgstr "{py:class}`bool`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`Boolean`"
-msgstr ""
+msgstr "{js:data}`Boolean`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:data}`None`"
-msgstr ""
+msgstr "{py:data}`None`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`undefined`"
-msgstr ""
+msgstr "{js:data}`undefined`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:data}`pyodide.ffi.jsnull`"
-msgstr ""
+msgstr "{py:data}`pyodide.ffi.jsnull`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`null`"
-msgstr ""
+msgstr "{js:data}`null`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{py:data}`pyodide.ffi.JsBigInt`"
-msgstr ""
+msgstr "{py:data}`pyodide.ffi.JsBigInt`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{js:data}`BigInt`"
-msgstr ""
+msgstr "{js:data}`BigInt`"
 
 #: ../../../usage/type-conversions.md:84
 msgid ""
@@ -229,7 +230,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:95 ../../../usage/type-conversions.md:381
 msgid "JavaScript to Python"
-msgstr ""
+msgstr "JavaScript 轉 Python"
 
 #: ../../../usage/type-conversions.md:97
 msgid ""
@@ -272,15 +273,15 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:34
 msgid "`str(proxy)`"
-msgstr ""
+msgstr "`str(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.toString()`"
-msgstr ""
+msgstr "`x.toString()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`repr(proxy)`"
-msgstr ""
+msgstr "`repr(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.foo`"
@@ -380,71 +381,71 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy1 == proxy2`"
-msgstr ""
+msgstr "`proxy1 == proxy2`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x === y`"
-msgstr ""
+msgstr "`x === y`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.typeof`"
-msgstr ""
+msgstr "`proxy.typeof`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`typeof x`"
-msgstr ""
+msgstr "`typeof x`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`iter(proxy)`"
-msgstr ""
+msgstr "`iter(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[Symbol.iterator]()`"
-msgstr ""
+msgstr "`x[Symbol.iterator]()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`aiter(proxy)`"
-msgstr ""
+msgstr "`aiter(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[Symbol.asyncIterator]()`"
-msgstr ""
+msgstr "`x[Symbol.asyncIterator]()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`next(proxy)`"
-msgstr ""
+msgstr "`next(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.next()`"
-msgstr ""
+msgstr "`x.next()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`anext(proxy)`"
-msgstr ""
+msgstr "`anext(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`await proxy`"
-msgstr ""
+msgstr "`await proxy`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`await x`"
-msgstr ""
+msgstr "`await x`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.__exit__()`"
-msgstr ""
+msgstr "`proxy.__exit__()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[Symbol.dispose]()`"
-msgstr ""
+msgstr "`x[Symbol.dispose]()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.__aexit__()`"
-msgstr ""
+msgstr "`proxy.__aexit__()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[Symbol.asyncDispose]()`"
-msgstr ""
+msgstr "`x[Symbol.asyncDispose]()`"
 
 #: ../../../usage/type-conversions.md:152
 msgid ""
@@ -533,35 +534,35 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy[idx]`"
-msgstr ""
+msgstr "`proxy[idx]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`array[idx]`"
-msgstr ""
+msgstr "`array[idx]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy[idx] = val`"
-msgstr ""
+msgstr "`proxy[idx] = val`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`array[idx] = val`"
-msgstr ""
+msgstr "`array[idx] = val`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`idx in proxy`"
-msgstr ""
+msgstr "`idx in proxy`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`idx in array`"
-msgstr ""
+msgstr "`idx in array`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`del proxy[idx]`"
-msgstr ""
+msgstr "`del proxy[idx]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`array.splice(idx)`"
-msgstr ""
+msgstr "`array.splice(idx)`"
 
 #: ../../../usage/type-conversions.md:223
 msgid ""
@@ -634,31 +635,31 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.toString()`"
-msgstr ""
+msgstr "`proxy.toString()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`str(x)`"
-msgstr ""
+msgstr "`str(x)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`hasattr(x, 'foo')`"
-msgstr ""
+msgstr "`hasattr(x, 'foo')`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`delete proxy.foo`"
-msgstr ""
+msgstr "`delete proxy.foo`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`del x.foo`"
-msgstr ""
+msgstr "`del x.foo`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`Object.getOwnPropertyNames(proxy)`"
-msgstr ""
+msgstr "`Object.getOwnPropertyNames(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`dir(x)`"
-msgstr ""
+msgstr "`dir(x)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.length`"
@@ -890,15 +891,15 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:355
 msgid "{py:class}`list`"
-msgstr ""
+msgstr "{py:class}`list`"
 
 #: ../../../usage/type-conversions.md:355
 msgid "{js:data}`Object`\\*"
-msgstr ""
+msgstr "{js:data}`Object`\\*"
 
 #: ../../../usage/type-conversions.md:355
 msgid "{js:class}`Map`"
-msgstr ""
+msgstr "{js:class}`Map`"
 
 #: ../../../usage/type-conversions.md:397
 msgid ""
@@ -941,7 +942,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:428
 msgid "Functions"
-msgstr ""
+msgstr "函數"
 
 #: ../../../usage/type-conversions.md:432
 msgid "Calling Python objects from JavaScript"
@@ -1052,7 +1053,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:514
 msgid "f(a=2, b=3)\n"
-msgstr ""
+msgstr "f(a=2, b=3)\n"
 
 #: ../../../usage/type-conversions.md:518
 msgid ""
@@ -1160,6 +1161,14 @@ msgid ""
 "    print(numpy_array)\n"
 "`);\n"
 msgstr ""
+"self.jsarray = new Float32Array([1,2,3, 4, 5, 6]);\n"
+"pyodide.runPython(`\n"
+"    from js import jsarray\n"
+"    array = jsarray.to_py()\n"
+"    import numpy as np\n"
+"    numpy_array = np.asarray(array).reshape((2,3))\n"
+"    print(numpy_array)\n"
+"`);\n"
 
 #: ../../../usage/type-conversions.md:595
 msgid ""
@@ -1175,6 +1184,11 @@ msgid ""
 "`);\n"
 "console.log(jsarray); // [1, 2, 3, 4, 77, 6]\n"
 msgstr ""
+"pyodide.runPython(`\n"
+"    numpy_array[1,1] = 77\n"
+"    jsarray.assign(a)\n"
+"`);\n"
+"console.log(jsarray); // [1, 2, 3, 4, 77, 6]\n"
 
 #: ../../../usage/type-conversions.md:606
 msgid ""

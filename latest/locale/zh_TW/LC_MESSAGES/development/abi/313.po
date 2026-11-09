@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../development/abi/313.md:1
 msgid "pyemscripten_2025_0"
-msgstr ""
+msgstr "pyemscripten_2025_0"
 
 #: ../../../development/abi/313.md:3
 msgid ""
@@ -33,19 +33,19 @@ msgstr ""
 
 #: ../../../development/abi/313.md:10
 msgid "Platform Specification"
-msgstr ""
+msgstr "平台規格"
 
 #: ../../../development/abi/313.md:12
 msgid "CPython and Emscripten Version"
-msgstr ""
+msgstr "CPython 與 Emscripten 版本"
 
 #: ../../../development/abi/313.md:14
 msgid "**CPython**: 3.13"
-msgstr ""
+msgstr "**CPython**：3.13"
 
 #: ../../../development/abi/313.md:15
 msgid "**Emscripten**: 4.0.9"
-msgstr ""
+msgstr "**Emscripten**：4.0.9"
 
 #: ../../../development/abi/313.md:17
 msgid "Unwinding ABIs"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../../development/abi/313.md:42
 msgid "RUSTFLAGS=-Zemscripten-wasm-eh cargo build -Zbuild-std\n"
-msgstr ""
+msgstr "RUSTFLAGS=-Zemscripten-wasm-eh cargo build -Zbuild-std\n"
 
 #: ../../../development/abi/313.md:46
 msgid "If the crate uses `panic=abort` it may be possible to build with"
@@ -98,6 +98,8 @@ msgid ""
 "cargo build -Z build-std=std,panic_abort -Z build-std-"
 "features=panic_immediate_abort\n"
 msgstr ""
+"cargo build -Z build-std=std,panic_abort -Z build-std-"
+"features=panic_immediate_abort\n"
 
 #: ../../../development/abi/313.md:52
 msgid ""
@@ -138,7 +140,7 @@ msgstr ""
 
 #: ../../../development/abi/313.md:77
 msgid "Rust Toolchain"
-msgstr ""
+msgstr "Rust 工具鏈"
 
 #: ../../../development/abi/313.md:79
 msgid ""
@@ -150,7 +152,7 @@ msgstr ""
 
 #: ../../../development/abi/313.md:84
 msgid "Runtime Library Loading Path"
-msgstr ""
+msgstr "執行時程式庫載入路徑"
 
 #: ../../../development/abi/313.md:86
 msgid ""
@@ -169,47 +171,47 @@ msgstr ""
 
 #: ../../../development/abi/313.md:94
 msgid "`libegl.js`"
-msgstr ""
+msgstr "`libegl.js`"
 
 #: ../../../development/abi/313.md:95
 msgid "`libeventloop.js`"
-msgstr ""
+msgstr "`libeventloop.js`"
 
 #: ../../../development/abi/313.md:96
 msgid "`libGL`"
-msgstr ""
+msgstr "`libGL`"
 
 #: ../../../development/abi/313.md:97
 msgid "`libhtml5_webgl.js`"
-msgstr ""
+msgstr "`libhtml5_webgl.js`"
 
 #: ../../../development/abi/313.md:98
 msgid "`libhtml5.js`"
-msgstr ""
+msgstr "`libhtml5.js`"
 
 #: ../../../development/abi/313.md:99
 msgid "`liblz4`"
-msgstr ""
+msgstr "`liblz4`"
 
 #: ../../../development/abi/313.md:100
 msgid "`libsdl.js`"
-msgstr ""
+msgstr "`libsdl.js`"
 
 #: ../../../development/abi/313.md:101
 msgid "`libwebgl.js`"
-msgstr ""
+msgstr "`libwebgl.js`"
 
 #: ../../../development/abi/313.md:102
 msgid "`libwebsocket.js`"
-msgstr ""
+msgstr "`libwebsocket.js`"
 
 #: ../../../development/abi/313.md:103
 msgid "`bzip2`"
-msgstr ""
+msgstr "`bzip2`"
 
 #: ../../../development/abi/313.md:104
 msgid "`zlib`"
-msgstr ""
+msgstr "`zlib`"
 
 #: ../../../development/abi/313.md:106
 msgid ""
@@ -224,7 +226,7 @@ msgstr ""
 
 #: ../../../development/abi/313.md:112
 msgid "Emscripten version"
-msgstr ""
+msgstr "Emscripten 版本"
 
 #: ../../../development/abi/313.md:114
 msgid "Emscripten was upgraded from **3.1.58** to **4.0.9**."

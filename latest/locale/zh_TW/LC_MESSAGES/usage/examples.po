@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../../usage/examples.md:7
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: ../../../usage/examples.md:9
 msgid ""

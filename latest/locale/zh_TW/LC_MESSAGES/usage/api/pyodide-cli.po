@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:3
 msgid "pyodide CLI"
-msgstr ""
+msgstr "pyodide CLI"
 
 #: ../../../usage/api/pyodide-cli.md:5
 msgid ""
@@ -56,15 +56,15 @@ msgstr ""
 
 #: ../../../pyodide:1
 msgid "pyodide [OPTIONS] COMMAND [ARGS]..."
-msgstr ""
+msgstr "pyodide [OPTIONS] COMMAND [ARGS]..."
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "Options"
-msgstr ""
+msgstr "選項"
 
 #: ../../../pyodide:1
 msgid "Show the version of the Pyodide CLI"
-msgstr ""
+msgstr "顯示 Pyodide CLI 的版本"
 
 #: ../../../pyodide app:1
 msgid "Auditwheel-like tool for emscripten wheels and shared libraries."
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../../../pyodide app:1
 msgid "pyodide app [OPTIONS] COMMAND [ARGS]..."
-msgstr ""
+msgstr "pyodide app [OPTIONS] COMMAND [ARGS]..."
 
 #: ../../../pyodide app copy:1
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "Arguments:"
-msgstr ""
+msgstr "引數："
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "WHEEL_FILE: Path to wheel file. (required)"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: ../../../pyodide app imports:1
 msgid "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
+msgstr "pyodide app imports [OPTIONS] WHEEL_OR_SO_FILE"
 
 #: ../../../pyodide app repair:1
 msgid "Repair a wheel file: copy shared libraries to the wheel directory."
@@ -154,11 +154,11 @@ msgstr ""
 
 #: ../../../pyodide app repair:1
 msgid "pyodide app repair [OPTIONS] WHEEL_FILE"
-msgstr ""
+msgstr "pyodide app repair [OPTIONS] WHEEL_FILE"
 
 #: ../../../pyodide app repair:1 show:1
 msgid "Show runtime paths."
-msgstr ""
+msgstr "顯示執行時路徑。"
 
 #: ../../../pyodide app show:1
 msgid "Show shared library dependencies of a wheel or a shared library file."
@@ -166,15 +166,15 @@ msgstr ""
 
 #: ../../../pyodide app show:1
 msgid "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
-msgstr ""
+msgstr "pyodide app show [OPTIONS] WHEEL_OR_SO_FILE"
 
 #: ../../../pyodide app:1
 msgid "Clean build artifacts."
-msgstr ""
+msgstr "清理建置製品。"
 
 #: ../../../pyodide app recipes:1
 msgid "Remove build artifacts for recipe packages."
-msgstr ""
+msgstr "移除配方軟體包的建置製品。"
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid ""
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../../../pyodide app recipes:1
 msgid "pyodide app recipes [OPTIONS] [TARGETS]..."
-msgstr ""
+msgstr "pyodide app recipes [OPTIONS] [TARGETS]..."
 
 #: ../../../pyodide app recipes:1
 msgid ""
@@ -202,7 +202,7 @@ msgstr ""
 
 #: ../../../usage/api/pyodide-cli.md:0
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: ../../../pyodide app recipes:1 build-recipes:1 build-recipes-no-deps:1
 msgid "Provide a default for :option:`--build-dir`"

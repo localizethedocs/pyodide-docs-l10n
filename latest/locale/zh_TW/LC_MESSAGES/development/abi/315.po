@@ -35,11 +35,11 @@ msgstr ""
 
 #: ../../../development/abi/315.md:9
 msgid "Platform Specification"
-msgstr ""
+msgstr "平台規格"
 
 #: ../../../development/abi/315.md:11
 msgid "CPython and Emscripten Version"
-msgstr ""
+msgstr "CPython 與 Emscripten 版本"
 
 #: ../../../development/abi/315.md:13
 msgid "**CPython**: 3.15"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../development/abi/315.md:23
 msgid "Rust Toolchain"
-msgstr ""
+msgstr "Rust 工具鏈"
 
 #: ../../../development/abi/315.md:25
 msgid ""
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../../../development/abi/315.md:28
 msgid "Runtime Library Loading Path"
-msgstr ""
+msgstr "執行時程式庫載入路徑"
 
 #: ../../../development/abi/315.md:30
 msgid ""
@@ -93,47 +93,47 @@ msgstr ""
 
 #: ../../../development/abi/315.md:38
 msgid "`libegl.js`"
-msgstr ""
+msgstr "`libegl.js`"
 
 #: ../../../development/abi/315.md:39
 msgid "`libeventloop.js`"
-msgstr ""
+msgstr "`libeventloop.js`"
 
 #: ../../../development/abi/315.md:40
 msgid "`libGL`"
-msgstr ""
+msgstr "`libGL`"
 
 #: ../../../development/abi/315.md:41
 msgid "`libhtml5_webgl.js`"
-msgstr ""
+msgstr "`libhtml5_webgl.js`"
 
 #: ../../../development/abi/315.md:42
 msgid "`libhtml5.js`"
-msgstr ""
+msgstr "`libhtml5.js`"
 
 #: ../../../development/abi/315.md:43
 msgid "`liblz4`"
-msgstr ""
+msgstr "`liblz4`"
 
 #: ../../../development/abi/315.md:44
 msgid "`libsdl.js`"
-msgstr ""
+msgstr "`libsdl.js`"
 
 #: ../../../development/abi/315.md:45
 msgid "`libwebgl.js`"
-msgstr ""
+msgstr "`libwebgl.js`"
 
 #: ../../../development/abi/315.md:46
 msgid "`libwebsocket.js`"
-msgstr ""
+msgstr "`libwebsocket.js`"
 
 #: ../../../development/abi/315.md:47
 msgid "`bzip2`"
-msgstr ""
+msgstr "`bzip2`"
 
 #: ../../../development/abi/315.md:48
 msgid "`zlib`"
-msgstr ""
+msgstr "`zlib`"
 
 #: ../../../development/abi/315.md:49
 msgid "`sqlite3` version 3.39.0"

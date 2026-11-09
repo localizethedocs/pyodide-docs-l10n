@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../../usage/streams.md:17
 msgid "Always raise IO Error"
-msgstr ""
+msgstr "始終引發 IO 錯誤"
 
 #: ../../../usage/streams.md:19
 msgid "If we pass `{error: true}`, any read from stdin raises an I/O error."
@@ -55,6 +55,11 @@ msgid ""
 "        input()\n"
 "`);\n"
 msgstr ""
+"pyodide.setStdin({ error: true });\n"
+"pyodide.runPython(`\n"
+"    with pytest.raises(OSError, match=\"I/O error\"):\n"
+"        input()\n"
+"`);\n"
 
 #: ../../../usage/streams.md:29 ../../../usage/streams.md:260
 msgid "Set the default behavior"
@@ -308,7 +313,7 @@ msgstr ""
 
 #: ../../../usage/streams.md:204
 msgid "Handling Keyboard interrupts"
-msgstr ""
+msgstr "處理鍵盤中斷"
 
 #: ../../../usage/streams.md:206
 msgid ""
@@ -506,6 +511,8 @@ msgid ""
 "const fd = fs.openSync(\"out.txt\", \"w\");\n"
 "py.setStdout(new NodeWriter(fd));\n"
 msgstr ""
+"const fd = fs.openSync(\"out.txt\", \"w\");\n"
+"py.setStdout(new NodeWriter(fd));\n"
 
 #: ../../../usage/streams.md:346
 msgid "Or the following gives the default behavior:"
@@ -516,6 +523,8 @@ msgid ""
 "const fd = fs.openSync(\"out.txt\", \"w\");\n"
 "py.setStdout(new NodeWriter(process.stdout.fd));\n"
 msgstr ""
+"const fd = fs.openSync(\"out.txt\", \"w\");\n"
+"py.setStdout(new NodeWriter(process.stdout.fd));\n"
 
 #: ../../../usage/streams.md:355
 msgid ""

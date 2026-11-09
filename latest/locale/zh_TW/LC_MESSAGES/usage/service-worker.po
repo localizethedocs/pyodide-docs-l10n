@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../../usage/service-worker.md:11
 msgid "Detailed example"
-msgstr ""
+msgstr "詳細範例"
 
 #: ../../../usage/service-worker.md:13
 msgid ""
