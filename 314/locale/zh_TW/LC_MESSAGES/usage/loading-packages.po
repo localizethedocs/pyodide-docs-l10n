@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/loading-packages.md:3
 msgid "Loading packages"
-msgstr ""
+msgstr "載入軟體包"
 
 #: ../../../usage/loading-packages.md:5
 msgid ""
@@ -104,11 +104,11 @@ msgstr ""
 
 #: ../../../usage/loading-packages.md:50
 msgid "Micropip"
-msgstr ""
+msgstr "Micropip"
 
 #: ../../../usage/loading-packages.md:52
 msgid "Installing packages"
-msgstr ""
+msgstr "安裝軟體包"
 
 #: ../../../usage/loading-packages.md:54
 msgid ""
