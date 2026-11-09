@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-11-09 18:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,10 +23,10 @@ msgstr ""
 
 #: ../../../usage/streams.md:5
 msgid ""
-"Pyodide has three functions {js:func}`pyodide.setStdin`, {js:func}`pyodide."
-"setStdout`, and {js:func}`pyodide.setStderr` that change the behavior of "
-"reading from {py:data}`~sys.stdin` and writing to {py:data}`~sys.stdout` and "
-"{py:data}`~sys.stderr` respectively."
+"Pyodide has three functions {js:func}`pyodide.setStdin`, {js:func}"
+"`pyodide.setStdout`, and {js:func}`pyodide.setStderr` that change the "
+"behavior of reading from {py:data}`~sys.stdin` and writing to {py:data}"
+"`~sys.stdout` and {py:data}`~sys.stderr` respectively."
 msgstr ""
 
 #: ../../../usage/streams.md:10
@@ -64,8 +64,8 @@ msgstr ""
 msgid ""
 "You can set the default behavior by calling `pyodide.setStdin()` with no "
 "arguments. In Node the default behavior is to read directly from Node's "
-"standard input. In the browser, the default is the same as `pyodide."
-"setStdin({ stdin: () => prompt() })`."
+"standard input. In the browser, the default is the same as "
+"`pyodide.setStdin({ stdin: () => prompt() })`."
 msgstr ""
 
 #: ../../../usage/streams.md:36
@@ -246,14 +246,14 @@ msgid ""
 "py.setStdin(new NodeReader(fd));\n"
 msgstr ""
 
-#: ../../../usage/streams.md:163 ../../../usage/streams.md:353
+#: ../../../usage/streams.md:163 ../../../usage/streams.md:357
 msgid "isatty"
 msgstr ""
 
 #: ../../../usage/streams.md:165
 msgid ""
-"It is possible to control whether or not {py:meth}`sys.stdin.isatty() <io."
-"IOBase.isatty>` returns true with the `isatty` option:"
+"It is possible to control whether or not {py:meth}`sys.stdin.isatty() "
+"<io.IOBase.isatty>` returns true with the `isatty` option:"
 msgstr ""
 
 #: ../../../usage/streams.md:168
@@ -372,8 +372,8 @@ msgstr ""
 msgid ""
 "{js:func}`pyodide.setStdout` and {js:func}`pyodide.setStderr` respectively "
 "set the standard output and standard error handlers. These APIs are "
-"identical except in their defaults, so we will only discuss the `pyodide."
-"setStdout` except in cases where they differ."
+"identical except in their defaults, so we will only discuss the "
+"`pyodide.setStdout` except in cases where they differ."
 msgstr ""
 
 #: ../../../usage/streams.md:257
@@ -410,14 +410,16 @@ msgid "a complete line of text with the newline removed or"
 msgstr ""
 
 #: ../../../usage/streams.md:277
-msgid "a partial line of text that was flushed."
+msgid "a partial line of text, when the stream is closed or fsync'd."
 msgstr ""
 
 #: ../../../usage/streams.md:279
-msgid "For instance after:"
+msgid ""
+"Flushing the stream does not pass a partial line to the batched handler. For "
+"instance after:"
 msgstr ""
 
-#: ../../../usage/streams.md:281
+#: ../../../usage/streams.md:282
 msgid ""
 "print(\"hello!\")\n"
 "import sys\n"
@@ -425,29 +427,32 @@ msgid ""
 "sys.stdout.flush()\n"
 msgstr ""
 
-#: ../../../usage/streams.md:288
+#: ../../../usage/streams.md:289
 msgid ""
-"the batched handler is called with `\"hello!\"` and then with `\"partial "
-"line\"`. Note that there is no indication that `\"hello!\"` was a complete "
-"line of text and `\"partial line\"` was not."
+"the batched handler has only been called with `\"hello!\"`. `\"partial "
+"line\"` is held until a newline is written, or until the stream is closed or "
+"fsync'd (for example with `os.fsync(sys.stdout.fileno())`). Note that there "
+"is no indication that a string passed this way was a partial line. If you "
+"need partial lines as soon as they are written, use a write handler or a raw "
+"handler (see below) instead."
 msgstr ""
 
-#: ../../../usage/streams.md:292
+#: ../../../usage/streams.md:296
 msgid "A raw handler"
 msgstr ""
 
-#: ../../../usage/streams.md:294
+#: ../../../usage/streams.md:298
 msgid ""
 "A raw handler receives the output one character code at a time. This is "
 "neither very convenient nor very efficient. It is present primarily for "
 "backwards compatibility reasons."
 msgstr ""
 
-#: ../../../usage/streams.md:298
+#: ../../../usage/streams.md:302
 msgid "For example, the following code:"
 msgstr ""
 
-#: ../../../usage/streams.md:300
+#: ../../../usage/streams.md:304
 msgid ""
 "print(\"h\")\n"
 "import sys\n"
@@ -456,11 +461,11 @@ msgid ""
 "sys.stdout.flush()\n"
 msgstr ""
 
-#: ../../../usage/streams.md:308
+#: ../../../usage/streams.md:312
 msgid "will call the raw handler with the sequence of bytes:"
 msgstr ""
 
-#: ../../../usage/streams.md:310
+#: ../../../usage/streams.md:314
 msgid ""
 "0x68 - h\n"
 "0x0A - newline\n"
@@ -469,11 +474,11 @@ msgid ""
 "0x6c - l\n"
 msgstr ""
 
-#: ../../../usage/streams.md:318
+#: ../../../usage/streams.md:322
 msgid "A write handler"
 msgstr ""
 
-#: ../../../usage/streams.md:320
+#: ../../../usage/streams.md:324
 msgid ""
 "A write handler takes a `Uint8Array` as an argument and is supposed to write "
 "the data in this buffer to standard output and return the number of bytes "
@@ -481,7 +486,7 @@ msgid ""
 "file descriptor:"
 msgstr ""
 
-#: ../../../usage/streams.md:324
+#: ../../../usage/streams.md:328
 msgid ""
 "const fs = require(\"fs\");\n"
 "const tty = require(\"tty\");\n"
@@ -497,29 +502,29 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../usage/streams.md:339
+#: ../../../usage/streams.md:343
 msgid "Using it as follows redirects output from Pyodide to `out.txt`:"
 msgstr ""
 
-#: ../../../usage/streams.md:341
+#: ../../../usage/streams.md:345
 msgid ""
 "const fd = fs.openSync(\"out.txt\", \"w\");\n"
 "py.setStdout(new NodeWriter(fd));\n"
 msgstr ""
 
-#: ../../../usage/streams.md:346
+#: ../../../usage/streams.md:350
 msgid "Or the following gives the default behavior:"
 msgstr ""
 
-#: ../../../usage/streams.md:348
+#: ../../../usage/streams.md:352
 msgid ""
 "const fd = fs.openSync(\"out.txt\", \"w\");\n"
 "py.setStdout(new NodeWriter(process.stdout.fd));\n"
 msgstr ""
 
-#: ../../../usage/streams.md:355
+#: ../../../usage/streams.md:359
 msgid ""
-"As with `stdin`, is possible to control whether or not {py:meth}`sys.stdout."
-"isatty() <io.IOBase.isatty>` returns true with the `isatty` option. You "
-"cannot combine `isatty: true` with a batched handler."
+"As with `stdin`, is possible to control whether or not {py:meth}"
+"`sys.stdout.isatty() <io.IOBase.isatty>` returns true with the `isatty` "
+"option. You cannot combine `isatty: true` with a batched handler."
 msgstr ""
