@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-09-22 12:43:22 +0900",
-      "hash" : "e4d3ae954d01d61a3e90531d63b881f2d33361b4",
-      "title" : "Support cross-drive paths in windows pyodide cli (#6467)"
+      "date" : "2026-11-14 13:43:47 +0530",
+      "hash" : "ebb528e4e7ddf8758764c10091d6613e5ce4f1c8",
+      "title" : "Update cross-build metadata files for version 314.0.8 (#6559)"
     }
   },
   "type" : "branch",

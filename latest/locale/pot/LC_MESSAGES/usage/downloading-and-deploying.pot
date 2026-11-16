@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-11-16 18:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,49 +33,50 @@ msgstr ""
 msgid "Pyodide is available from the JsDelivr CDN"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
 msgid "channel"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
 msgid "indexURL"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
 msgid "Comments"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
 msgid "REPL"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
 msgid "Latest release"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:11
+#: ../../../usage/downloading-and-deploying.md:14
 msgid "`https://cdn.jsdelivr.net/pyodide/dev/full/`"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:13
 msgid "Recommended, cached by the browser"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:13
 msgid "[link](https://pyodide.org/en/stable/console.html)"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:13
 msgid "Dev (`main` branch)"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:14
 msgid ""
 "Re-deployed for each commit on main, no browser caching, should only be used "
 "for testing"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:14
 msgid "[link](https://pyodide.org/en/latest/console.html)"
 msgstr ""
 
@@ -99,9 +100,9 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:23
 msgid ""
-"You can also download Pyodide packages from [GitHub releases](https://github."
-"com/pyodide/pyodide/releases). The full distribution including all vendored "
-"packages is available as `pyodide-314.1.0.dev0.tar.bz2`. The full "
+"You can also download Pyodide packages from [GitHub releases](https://"
+"github.com/pyodide/pyodide/releases). The full distribution including all "
+"vendored packages is available as `pyodide-314.1.0.dev0.tar.bz2`. The full "
 "distribution is quite large (200+ megabytes). The minimal set of files "
 "needed to start Pyodide is included as `pyodide-core-314.1.0.dev0.tar.bz2`. "
 "It is intended for use with node which will automatically install missing "
@@ -123,8 +124,8 @@ msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:40
 msgid ""
-"With Python 3.7.5+ you can serve Pyodide files locally with {py:mod}`http."
-"server`:"
+"With Python 3.7.5+ you can serve Pyodide files locally with {py:mod}"
+"`http.server`:"
 msgstr ""
 
 #: ../../../usage/downloading-and-deploying.md:42
@@ -164,30 +165,32 @@ msgstr ""
 msgid "Files in `pyodide-core-314.1.0.dev0.tar.bz2`"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "File Name"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "Description"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "pyodide.asm.mjs"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "The JavaScript half of the main \"binary\". Direct output from the "
 "Emscripten compiler. Contains the Emscripten bootstrap code + all JavaScript "
 "libraries used by C + the JavaScript/Wasm runtime interop APIs."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "pyodide.asm.wasm"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "The WebAssembly half of the main \"binary\". Direct output from the "
 "Emscripten compiler. Contains all C library code that is statically linked. "
@@ -195,70 +198,70 @@ msgid ""
 "extension modules that use C++."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "pyodide.js"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "Exports loadPyodide on globalThis. Legacy support for people who can't use "
 "es6 modules for whatever reason. Prefer pyodide.mjs."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "pyodide.mjs"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "A small JS loader shim which exports loadPyodide. It manages downloading the "
 "runtime and handling user settings."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "python_stdlib.zip"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "The Python Standard Library for pyodide. A zip file consisting of the Python "
 "Lib folder and the Pyodide Python runtime libraries. Mounted directly into "
 "the Pyodide FS and imported using ZipImporter."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "package.json"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
 "Tells node how to use Pyodide, since pyodide-core was primarily intended for "
 "use with node."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "pyodide-lock.json"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid ""
-"Lockfile for Python packages, used by pyodide.loadPackage and micropip."
-"install. Necessary in all cases."
+"Lockfile for Python packages, used by pyodide.loadPackage and "
+"micropip.install. Necessary in all cases."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "python"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "Python CLI entrypoint"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "python_cli_entry.mjs"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:64
 msgid "Python CLI helper"
 msgstr ""
 
@@ -266,86 +269,86 @@ msgstr ""
 msgid "Additional Files in `pyodide-314.1.0.dev0.tar.bz2`"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "fonts/"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "Used by matplotlib-pyodide."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "ffi.d.ts"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid ""
 "Typescript type definitions, useful if you want to use Pyodide in a "
 "typescript project."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "pyodide.d.ts"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "\\*.whl"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid ""
 "Contains various Python Wheels like NumPy, Pandas, SciPy, etc. When "
 "downloading and including in a project, these no longer need to be loaded "
 "from Pyodide's online wheel repository during runtime."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid "\\*.metadata"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:78
 msgid ""
 "Information about the included wheels, such as name, author, license, "
 "dependencies, etc. Allows more efficient package resolution, specified in "
 "[PEP 658](https://peps.python.org/pep-0658/)."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "\\*.zip"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "These are shared libraries."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "pyodide.js.map"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid ""
 "Source maps to improve tracebacks. Not really that useful to people outside "
 "of the project, probably should be only included in debug builds."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "pyodide.mjs.map"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "\\*-tests.tar"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid ""
 "Unvendored tests from wheels. If a wheel includes a test folder, we take "
 "them out and put them here."
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "console.html"
 msgstr ""
 
-#: ../../../usage/downloading-and-deploying.md:0
+#: ../../../usage/downloading-and-deploying.md:84
 msgid "The Pyodide repl."
 msgstr ""

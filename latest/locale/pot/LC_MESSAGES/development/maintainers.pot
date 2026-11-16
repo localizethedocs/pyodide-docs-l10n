@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pyodide 314.1.0.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:10+0000\n"
+"POT-Creation-Date: 2026-11-16 18:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -409,8 +409,8 @@ msgstr ""
 #: ../../../development/maintainers.md:216
 msgid ""
 "Replace the image in `.circleci/config.yml` with your newly created image. "
-"Open a pull request with your changes to `Dockerfile` and `.circleci/config."
-"yml`."
+"Open a pull request with your changes to `Dockerfile` and `.circleci/"
+"config.yml`."
 msgstr ""
 
 #: ../../../development/maintainers.md:218
@@ -539,9 +539,9 @@ msgstr ""
 
 #: ../../../development/maintainers.md:291
 msgid ""
-"Find the `USE_PREBUILT_PACKAGES` environment variable in [.circleci/config."
-"yml](https://github.com/ryanking13/pyodide/blob/unvendor-recipes/.circleci/"
-"config.yml) and set it to `false`."
+"Find the `USE_PREBUILT_PACKAGES` environment variable in [.circleci/"
+"config.yml](https://github.com/ryanking13/pyodide/blob/unvendor-"
+"recipes/.circleci/config.yml) and set it to `false`."
 msgstr ""
 
 #: ../../../development/maintainers.md:295
@@ -764,8 +764,8 @@ msgstr ""
 msgid ""
 "The file most tightly coupled to the CPython version is `src/core/"
 "stack_switching/pystate.c`. Consult the [greenlet TPythonState.cpp](https://"
-"github.com/python-greenlet/greenlet/blob/master/src/greenlet/TPythonState."
-"cpp) to figure out how to fix it."
+"github.com/python-greenlet/greenlet/blob/master/src/greenlet/"
+"TPythonState.cpp) to figure out how to fix it."
 msgstr ""
 
 #: ../../../development/maintainers.md:410
@@ -808,67 +808,67 @@ msgstr ""
 msgid "Old major Python upgrades"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "version"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "pr"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.13"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`5498`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.12"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`4435`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.11"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`3252`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.10"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`2225`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.9"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`1637`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.8"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`712`"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "3.7"
 msgstr ""
 
-#: ../../../development/maintainers.md:0
+#: ../../../development/maintainers.md:436
 msgid "{pr}`77`"
 msgstr ""
 
