@@ -37,9 +37,9 @@
     "branch" : "stable",
     "commit" : 
     {
-      "date" : "2026-07-18 23:21:11 +0200",
-      "hash" : "e36205564810717a03e820ee8498ed43da61f2f5",
-      "title" : "Remove some outdated items from roadmap (#6349)"
+      "date" : "2026-11-13 12:03:47 -0800",
+      "hash" : "f37a18559ae11c5f371beb1c9462a13a663fc461",
+      "title" : "Pyodide v314.0.8"
     }
   },
   "type" : "branch",

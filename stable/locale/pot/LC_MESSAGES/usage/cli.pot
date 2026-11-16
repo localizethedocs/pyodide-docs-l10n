@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pyodide 314.0.2\n"
+"Project-Id-Version: Pyodide 314.0.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 12:06+0000\n"
+"POT-Creation-Date: 2026-11-16 18:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,8 +53,8 @@ msgstr ""
 
 #: ../../../usage/cli.md:18
 msgid ""
-"It should work on Linux and macOS. There is currently no Windows support. It "
-"requires an installation of NodeJS >= 20."
+"It should work on Linux and macOS, and Windows. It requires an installation "
+"of NodeJS >= 20."
 msgstr ""
 
 #: ../../../usage/cli.md:21
@@ -81,9 +81,9 @@ msgstr ""
 
 #: ../../../usage/cli.md:33
 msgid ""
-"You can install `pyodide-build` with pip or uv and then run `pyodide venv ."
-"venv-pyodide`. If you use uv to install `pyodide-build` make sure you run "
-"`uv pip install pip`, it will not work without pip installed."
+"You can install `pyodide-build` with pip or uv and then run `pyodide "
+"venv .venv-pyodide`. If you use uv to install `pyodide-build` make sure you "
+"run `uv pip install pip`, it will not work without pip installed."
 msgstr ""
 
 #: ../../../usage/cli.md:37
@@ -106,8 +106,8 @@ msgstr ""
 
 #: ../../../usage/cli.md:45
 msgid ""
-"uv pip install --no-build --extra-index-url https://index.pyodide."
-"org/314.0.0/ --index-strategy unsafe-best-match\n"
+"uv pip install --no-build --extra-index-url https://index.pyodide.org/"
+"314.0.0/ --index-strategy unsafe-best-match\n"
 msgstr ""
 
 #: ../../../usage/cli.md:49
