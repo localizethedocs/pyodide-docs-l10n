@@ -625,7 +625,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:36
 msgid "Version 314.0.7"
-msgstr ""
+msgstr "314.0.7 版本"
 
 #: ../../../project/changelog.md:38
 msgid "_September 14, 2026_"
@@ -643,7 +643,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:47
 msgid "Version 314.0.6"
-msgstr ""
+msgstr "314.0.6 版本"
 
 #: ../../../project/changelog.md:49
 msgid "_August 25, 2026_"
@@ -677,7 +677,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:67
 msgid "Version 314.0.5"
-msgstr ""
+msgstr "314.0.5 版本"
 
 #: ../../../project/changelog.md:69
 msgid "_August 15, 2026_"
@@ -731,7 +731,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:93
 msgid "Version 314.0.4"
-msgstr ""
+msgstr "314.0.4 版本"
 
 #: ../../../project/changelog.md:95
 msgid "_August 4, 2026_"
@@ -745,7 +745,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:100
 msgid "Version 314.0.3"
-msgstr ""
+msgstr "314.0.3 版本"
 
 #: ../../../project/changelog.md:102
 msgid "_July 24, 2026_"
@@ -774,7 +774,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:116
 msgid "Version 314.0.2"
-msgstr ""
+msgstr "314.0.2 版本"
 
 #: ../../../project/changelog.md:118
 msgid "_June 30, 2026_"
@@ -824,7 +824,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:133
 msgid "Version 314.0.1"
-msgstr ""
+msgstr "314.0.1 版本"
 
 #: ../../../project/changelog.md:135
 msgid "_June 26, 2026_"
@@ -914,7 +914,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:172
 msgid "Version 314.0.0"
-msgstr ""
+msgstr "314.0.0 版本"
 
 #: ../../../project/changelog.md:174
 msgid "_June 09, 2026_"
@@ -1083,7 +1083,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:267
 msgid "Version 0.29.5"
-msgstr ""
+msgstr "0.29.5 版本"
 
 #: ../../../project/changelog.md:269 ../../../project/changelog.md:563
 msgid "_September 15, 2026_"
@@ -1095,7 +1095,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:273
 msgid "Version 0.29.4"
-msgstr ""
+msgstr "0.29.4 版本"
 
 #: ../../../project/changelog.md:275
 msgid "_May 7, 2026_"
@@ -1116,7 +1116,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:284
 msgid "Version 0.29.3"
-msgstr ""
+msgstr "0.29.3 版本"
 
 #: ../../../project/changelog.md:286
 msgid "_January 28, 2026_"
@@ -1130,7 +1130,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:291
 msgid "Version 0.29.2"
-msgstr ""
+msgstr "0.29.2 版本"
 
 #: ../../../project/changelog.md:293
 msgid "_January 21, 2026_"
@@ -1199,7 +1199,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:315
 msgid "Version 0.29.1"
-msgstr ""
+msgstr "0.29.1 版本"
 
 #: ../../../project/changelog.md:317
 msgid "_January 7, 2026_"
@@ -1214,7 +1214,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:322
 msgid "Version 0.29.0"
-msgstr ""
+msgstr "0.29.0 版本"
 
 #: ../../../project/changelog.md:324
 msgid "_October 20, 2025_"
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:361
 msgid "Version 0.28.3"
-msgstr ""
+msgstr "0.28.3 版本"
 
 #: ../../../project/changelog.md:363
 msgid "_September 22, 2025_"
@@ -1336,7 +1336,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:375
 msgid "Version 0.28.2"
-msgstr ""
+msgstr "0.28.2 版本"
 
 #: ../../../project/changelog.md:377
 msgid "_August 19, 2025_"
@@ -1362,7 +1362,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:389
 msgid "Version 0.28.1"
-msgstr ""
+msgstr "0.28.1 版本"
 
 #: ../../../project/changelog.md:391
 msgid "_August 04, 2025_"
@@ -1431,7 +1431,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:434
 msgid "Version 0.28.0"
-msgstr ""
+msgstr "0.28.0 版本"
 
 #: ../../../project/changelog.md:436
 msgid "_July 4, 2025_"
@@ -1698,11 +1698,11 @@ msgstr ""
 
 #: ../../../project/changelog.md:561
 msgid "Version 0.27.8"
-msgstr ""
+msgstr "0.27.8 版本"
 
 #: ../../../project/changelog.md:567
 msgid "Version 0.27.7"
-msgstr ""
+msgstr "0.27.7 版本"
 
 #: ../../../project/changelog.md:569
 msgid "_June 04, 2025_"
@@ -1743,7 +1743,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:590
 msgid "Version 0.27.6"
-msgstr ""
+msgstr "0.27.6 版本"
 
 #: ../../../project/changelog.md:592
 msgid "_May 15, 2025_"
