@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024, Pyodide contributors and Mozilla
+# This file is distributed under the same license as the Pyodide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pyodide 0.29.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:3
+msgid "Adding Packages into Pyodide Distribution"
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:5
+msgid ""
+"[!NOTE] Please check {ref}`building-packages-from-source` first if you want "
+"to build a package from source. This document is for adding packages into "
+"the Pyodide distribution."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:9
+msgid ""
+"As of 2025/04, PyPI does not support Emscripten/wasm32 wheels, so it is not "
+"easy to distribute your package to Pyodide users. Therefore, Pyodide "
+"currently releases a set of packages that are precompiled and included in "
+"the Pyodide distribution. This document describes how to add a package to "
+"the Pyodide distribution."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:15
+msgid "Writing a recipe"
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:17
+msgid ""
+"To add a package to the Pyodide distribution, you need to write a recipe for "
+"that package."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:20
+msgid ""
+"See {ref}`building-packages-using-recipe` for more information on how to "
+"write a recipe."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:22
+msgid "Adding a recipe to the Pyodide distribution"
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:24
+msgid ""
+"Once you have written a recipe, you need to add it to the [`pyodide-recipes`]"
+"(https://github.com/pyodide/pyodide-recipes) repository."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:27
+msgid ""
+"Once the recipe is added to the `pyodide-recipes` repository, the Pyodide "
+"maintainers will regularly apply the updated recipes to the next Pyodide "
+"release."
+msgstr ""
+
+#: ../../../development/adding-packages-into-pyodide-distribution.md:30
+msgid ""
+"Alternatively, you can download the prebuilt packages from the `pyodide-"
+"recipes` repository, host them on your own server, and use them in your "
+"Pyodide distribution."
+msgstr ""
