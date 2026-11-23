@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../usage/index.md:1
 msgid "Using Pyodide"
-msgstr ""
+msgstr "使用 Pyodide"
 
 #: ../../../usage/index.md:3
 msgid ""
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../../usage/index.md:44
 msgid "Supported browsers"
-msgstr ""
+msgstr "支援的瀏覽器"
 
 #: ../../../usage/index.md:46
 msgid ""
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../../../usage/index.md:36
 msgid "Release date"
-msgstr ""
+msgstr "發行日期"
 
 #: ../../../usage/index.md:36
 msgid "Firefox"

@@ -285,23 +285,23 @@ msgstr "`repr(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.foo`"
-msgstr ""
+msgstr "`proxy.foo`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.foo`"
-msgstr ""
+msgstr "`x.foo`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.foo = bar`"
-msgstr ""
+msgstr "`proxy.foo = bar`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.foo = bar`"
-msgstr ""
+msgstr "`x.foo = bar`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`del proxy.foo`"
-msgstr ""
+msgstr "`del proxy.foo`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`delete x.foo`"
@@ -325,59 +325,59 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.foo(...)`"
-msgstr ""
+msgstr "`proxy.foo(...)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.foo(...)`"
-msgstr ""
+msgstr "`x.foo(...)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "{any}`proxy.new(...)<JsProxy.new>`"
-msgstr ""
+msgstr "{any}`proxy.new(...)<JsProxy.new>`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`new X(...)`"
-msgstr ""
+msgstr "`new X(...)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`len(proxy)`"
-msgstr ""
+msgstr "`len(proxy)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.length` or `x.size`"
-msgstr ""
+msgstr "`x.length` 或 `x.size`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`foo in proxy`"
-msgstr ""
+msgstr "`foo in proxy`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.has(foo)` or `x.includes(foo)`"
-msgstr ""
+msgstr "`x.has(foo)` 或 `x.includes(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy[foo]`"
-msgstr ""
+msgstr "`proxy[foo]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.get(foo)`"
-msgstr ""
+msgstr "`x.get(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy[foo] = bar`"
-msgstr ""
+msgstr "`proxy[foo] = bar`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.set(foo, bar)`"
-msgstr ""
+msgstr "`x.set(foo, bar)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`del proxy[foo]`"
-msgstr ""
+msgstr "`del proxy[foo]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x.delete(foo)`"
-msgstr ""
+msgstr "`x.delete(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy1 == proxy2`"
@@ -663,55 +663,55 @@ msgstr "`dir(x)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.length`"
-msgstr ""
+msgstr "`proxy.length`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`len(x)`"
-msgstr ""
+msgstr "`len(x)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.has(foo)`"
-msgstr ""
+msgstr "`proxy.has(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`foo in x`"
-msgstr ""
+msgstr "`foo in x`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.get(foo)`"
-msgstr ""
+msgstr "`proxy.get(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[foo]`"
-msgstr ""
+msgstr "`x[foo]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.set(foo, bar)`"
-msgstr ""
+msgstr "`proxy.set(foo, bar)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`x[foo] = bar`"
-msgstr ""
+msgstr "`x[foo] = bar`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.delete(foo)`"
-msgstr ""
+msgstr "`proxy.delete(foo)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`del x[foo]`"
-msgstr ""
+msgstr "`del x[foo]`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy.type`"
-msgstr ""
+msgstr "`proxy.type`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`type(x)`"
-msgstr ""
+msgstr "`type(x)`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`proxy[Symbol.iterator]()`"
-msgstr ""
+msgstr "`proxy[Symbol.iterator]()`"
 
 #: ../../../usage/type-conversions.md:34
 msgid "`iter(x)`"
@@ -1372,7 +1372,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:744
 msgid "Importing Objects"
-msgstr ""
+msgstr "匯入物件"
 
 #: ../../../usage/type-conversions.md:746
 msgid ""
@@ -1396,7 +1396,7 @@ msgstr ""
 
 #: ../../../usage/type-conversions.md:759
 msgid "let x = pyodide.globals.get(\"x\");\n"
-msgstr ""
+msgstr "let x = pyodide.globals.get(\"x\");\n"
 
 #: ../../../usage/type-conversions.md:763
 msgid ""
@@ -1412,6 +1412,8 @@ msgid ""
 "pyodide.globals.set(\"x\", 2);\n"
 "pyodide.runPython(\"print(x)\"); // Prints 2\n"
 msgstr ""
+"pyodide.globals.set(\"x\", 2);\n"
+"pyodide.runPython(\"print(x)\"); // 列印 2\n"
 
 #: ../../../usage/type-conversions.md:774
 msgid ""
@@ -1425,6 +1427,9 @@ msgid ""
 "pyodide.runPython(\"x=2\", my_py_namespace);\n"
 "let x = my_py_namespace.get(\"x\");\n"
 msgstr ""
+"let my_py_namespace = pyodide.globals.get(\"dict\")();\n"
+"pyodide.runPython(\"x=2\", my_py_namespace);\n"
+"let x = my_py_namespace.get(\"x\");\n"
 
 #: ../../../usage/type-conversions.md:783
 msgid ""
