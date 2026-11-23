@@ -23,7 +23,7 @@ msgstr "變更日誌"
 
 #: ../../../project/changelog.md:18
 msgid "Version 0.29.4"
-msgstr ""
+msgstr "0.29.4 版本"
 
 #: ../../../project/changelog.md:20
 msgid "_May 7, 2026_"
@@ -535,7 +535,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:25
 msgid "Version 0.29.3"
-msgstr ""
+msgstr "0.29.3 版本"
 
 #: ../../../project/changelog.md:27
 msgid "_January 28, 2026_"
@@ -549,7 +549,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:32
 msgid "Version 0.29.2"
-msgstr ""
+msgstr "0.29.2 版本"
 
 #: ../../../project/changelog.md:34
 msgid "_January 21, 2026_"
@@ -618,7 +618,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:56
 msgid "Version 0.29.1"
-msgstr ""
+msgstr "0.29.1 版本"
 
 #: ../../../project/changelog.md:58
 msgid "_January 7, 2026_"
@@ -633,7 +633,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:63
 msgid "Version 0.29.0"
-msgstr ""
+msgstr "0.29.0 版本"
 
 #: ../../../project/changelog.md:65
 msgid "_October 20, 2025_"
@@ -760,7 +760,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:102
 msgid "Version 0.28.3"
-msgstr ""
+msgstr "0.28.3 版本"
 
 #: ../../../project/changelog.md:104
 msgid "_September 22, 2025_"
@@ -787,7 +787,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:116
 msgid "Version 0.28.2"
-msgstr ""
+msgstr "0.28.2 版本"
 
 #: ../../../project/changelog.md:118
 msgid "_August 19, 2025_"
@@ -813,7 +813,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:130
 msgid "Version 0.28.1"
-msgstr ""
+msgstr "0.28.1 版本"
 
 #: ../../../project/changelog.md:132
 msgid "_August 04, 2025_"
@@ -900,7 +900,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:175
 msgid "Version 0.28.0"
-msgstr ""
+msgstr "0.28.0 版本"
 
 #: ../../../project/changelog.md:177
 msgid "_July 4, 2025_"
@@ -1167,7 +1167,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:302
 msgid "Version 0.27.7"
-msgstr ""
+msgstr "0.27.7 版本"
 
 #: ../../../project/changelog.md:304
 msgid "_June 04, 2025_"
@@ -1208,7 +1208,7 @@ msgstr ""
 
 #: ../../../project/changelog.md:325
 msgid "Version 0.27.6"
-msgstr ""
+msgstr "0.27.6 版本"
 
 #: ../../../project/changelog.md:327
 msgid "_May 15, 2025_"
